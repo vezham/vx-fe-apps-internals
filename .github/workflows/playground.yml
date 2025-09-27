@@ -13,6 +13,7 @@ on:
       - 'packages/**'
       - 'apps_internals/playground/**'
       - 'apps_internals/playground-e2e/**'
+      - 'apps_internals/playground-mock/**'
 
 jobs:
   run_if:
@@ -33,11 +34,11 @@ jobs:
               - 'vx/handbooks/ci.md'
             deploy:
               - 'vx/config/firebase/apps_internals/playground.json'
-              - 'apps_internals/playground/!(__mocks__/**)/**'
+              - 'apps_internals/playground/**'
               - 'packages/**'
             mocks:
               - 'vx/config/vercel/__mocks__/mock.json'
-              - 'apps_internals/playground/__mocks__/**'
+              - 'apps_internals/playground-mock/**'
 
   deploy:
     needs: run_if
