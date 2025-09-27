@@ -1,0 +1,19 @@
+{
+  "name": "playbook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps_internals/playbook/src",
+  "targets": {
+    "config-local-hostile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_internals/playbook",
+        "commands": [
+          "sudo pnpm exec hostile set localhost playbook.vezham.local && sudo pnpm exec hostile set localhost playbook.mock.vezham.local"
+        ],
+        "parallel": false
+      }
+    }
+  },
+  "tags": ["category:internal"]
+}

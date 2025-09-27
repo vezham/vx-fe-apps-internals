@@ -1,0 +1,59 @@
+# @vx/INFO: @vx/ci
+name: playbook | bnd
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [timeline]
+    paths:
+      - '.github/workflows/playbook.yml'
+      - 'vx/handbooks/ci.md'
+      - 'vx/config/firebase/apps_internals/playbook.json'
+      - 'vx/config/vercel/__mocks__/mock.json'
+      - 'packages/**'
+      - 'apps_internals/playbook/**'
+      - 'apps_internals/playbook-e2e/**'
+      - 'apps_internals/playbook-mock/**'
+
+jobs:
+  run_if:
+    runs-on: ubuntu-latest
+    outputs:
+      all: ${{ steps.filter.outputs.all }}
+      deploy: ${{ steps.filter.outputs.deploy }}
+      mocks: ${{ steps.filter.outputs.mocks }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          base: ${{ github.ref }}
+          filters: |
+            all:
+              - '.github/workflows/playbook.yml'
+              - 'vx/handbooks/ci.md'
+            deploy:
+              - 'vx/config/firebase/apps_internals/playbook.json'
+              - 'apps_internals/playbook/**'
+              - 'packages/**'
+            mocks:
+              - 'vx/config/vercel/__mocks__/mock.json'
+              - 'apps_internals/playbook-mock/**'
+
+  deploy:
+    needs: run_if
+    if: ${{ needs.run_if.outputs.all == 'true' || needs.run_if.outputs.deploy == 'true' }}
+    name: playbook | ${{ github.ref_name }}
+    uses: vezham/vx-fe-deployer/.github/workflows/playbook.yml@timeline
+    secrets: inherit
+    with:
+      CALLER: ${{ github.ref_name }}
+
+  mocks:
+    needs: run_if
+    if: ${{ needs.run_if.outputs.mocks == 'true' }}
+    name: playbook-mock | ${{ github.ref_name }}
+    uses: vezham/vx-fe-deployer/.github/workflows/playbook-mock.yml@timeline
+    secrets: inherit
+    with:
+      CALLER: ${{ github.ref_name }}
