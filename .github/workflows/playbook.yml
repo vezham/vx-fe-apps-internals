@@ -1,4 +1,4 @@
-# @vx/INFO: @vx/ci - testing
+# @vx/INFO: @vx/ci
 name: playbook | bnd
 
 on:
