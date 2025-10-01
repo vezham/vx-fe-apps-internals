@@ -16,6 +16,12 @@
     },
     {
       "path": "./apps_internals/playground"
+    },
+    {
+      "path": "./apps_internals/playbook-e2e"
+    },
+    {
+      "path": "./apps_internals/playbook"
     }
   ]
 }
