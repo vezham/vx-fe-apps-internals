@@ -49,7 +49,7 @@ const Banner = () => {
   ]
   return (
     <>
-      <div className="bg-background border-divider relative isolate z-50 flex items-center gap-x-16 overflow-hidden border-b-1 px-6 py-2 sm:px-3.5 sm:before:flex-0">
+      <div className="bg-background border-divider relative isolate z-30 flex items-center gap-x-16 overflow-hidden border-b-1 px-6 py-2 sm:px-3.5 sm:before:flex-0">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl">

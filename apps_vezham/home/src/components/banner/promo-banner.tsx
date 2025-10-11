@@ -10,7 +10,7 @@ interface PromoBannerProps {
 
 export const PromoBanner: React.FC<PromoBannerProps> = ({ onClose }) => {
   return (
-    <div className="from-primary-100 to-primary-50 relative z-50 mx-4 mb-4 rounded-lg bg-gradient-to-r px-6 py-2.5 shadow-sm">
+    <div className="from-primary-100 to-primary-50 relative z-30 mx-4 mb-4 rounded-lg bg-gradient-to-r px-6 py-2.5 shadow-sm">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 text-sm sm:text-base">
         <span className="text-foreground font-medium">
           Join us at Vezham Conference India—our signature user conference!
