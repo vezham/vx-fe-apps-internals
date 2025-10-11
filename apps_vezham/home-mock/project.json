@@ -1,0 +1,33 @@
+{
+  "name": "home-mock",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps_vezham/home-mock/src",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_vezham/home-mock",
+        "commands": ["pnpm serve"],
+        "parallel": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_vezham/home-mock",
+        "commands": ["pnpm build"],
+        "parallel": false
+      }
+    },
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_vezham/home-mock",
+        "commands": ["pnpm generate"],
+        "parallel": false
+      }
+    }
+  },
+  "tags": ["category:vezham", "mock"]
+}

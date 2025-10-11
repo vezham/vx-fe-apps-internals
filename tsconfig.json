@@ -16,6 +16,18 @@
     },
     {
       "path": "./apps_internals/playground"
+    },
+    {
+      "path": "./apps_internals/playbook-e2e"
+    },
+    {
+      "path": "./apps_internals/playbook"
+    },
+    {
+      "path": "./apps_vezham/home-e2e"
+    },
+    {
+      "path": "./apps_vezham/home"
     }
   ]
 }
