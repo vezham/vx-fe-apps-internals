@@ -6,15 +6,19 @@ import {
 } from '@tanstack/react-router'
 import React from 'react'
 
-import { AppDetailPage } from '../../pages/apps/appDetailPage'
-import { Footer } from '../footer'
-import { Header } from '../header'
-import { AppDetailModal } from './appDetailModal'
-import { ContentArea } from './contentArea'
-import { appDetails, categories, categoryContents } from './data'
-import { HeroBanner } from './herobanner'
-import { Sidebar } from './sidebar'
-import { type App } from './types'
+import { AppDetailModal } from '../../components/appExplore/appDetailModal'
+import { AppDetailPage } from '../../components/appExplore/appDetailPage'
+import { ContentArea } from '../../components/appExplore/contentArea'
+import {
+  appDetails,
+  categories,
+  categoryContents
+} from '../../components/appExplore/data'
+import { HeroBanner } from '../../components/appExplore/herobanner'
+import { Sidebar } from '../../components/appExplore/sidebar'
+import { type App } from '../../components/appExplore/types'
+import { Footer } from '../../components/footer'
+import { Header } from '../../components/header'
 
 // ---------------------- APP CONTENT ----------------------
 const AppContent = () => {

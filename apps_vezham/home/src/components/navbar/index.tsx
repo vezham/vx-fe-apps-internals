@@ -101,7 +101,7 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
               icon: 'lucide:layers',
               name: 'Books',
               description: 'Posts & Insights',
-              link: '/apps/vezham-books'
+              link: '/apps/books'
             },
             {
               icon: 'lucide:layers',
@@ -494,7 +494,7 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
 
           {/* Center the dropdown navigation with proper stacking context */}
           <div className="flex max-w-full flex-1 justify-center overflow-visible">
-            <div className="relative z-[70] flex justify-start">
+            <div className="z-[70] flex justify-start">
               <DropdownNavigation navItems={NAV_ITEMS} />
             </div>
           </div>

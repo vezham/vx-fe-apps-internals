@@ -4,10 +4,10 @@ import React from 'react'
 
 import { Button, Card } from '@vx-oss/react'
 
-import { appDetails as appDataMap } from '../../components/appExplore/data'
-import { Footer } from '../../components/footer'
-import { Header } from '../../components/header'
 import { cn } from '../../utils/cn'
+import { Footer } from '../footer'
+import { Header } from '../header'
+import { appDetails as appDataMap } from './data'
 
 const AppDetailPage: React.FC = () => {
   const router = useRouter()

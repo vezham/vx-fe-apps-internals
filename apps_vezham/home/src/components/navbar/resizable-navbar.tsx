@@ -77,7 +77,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
         damping: 30
       }}
       className={cn(
-        'fixed inset-x-0 z-50 w-full transition-all duration-300',
+        'fixed inset-x-0 z-30 w-full transition-all duration-300',
         className
       )}>
       {React.Children.map(children, child =>
