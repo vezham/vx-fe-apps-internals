@@ -16,6 +16,7 @@ type Link = {
 }
 
 type SubMenu = {
+  more: any
   title: string
   learn_more?: Link
   items: SubMenuItem[]
@@ -197,6 +198,59 @@ export function DropdownNavigation({ navItems }: Props) {
                                             {sub.learn_more?.label ||
                                               `Explore All ${sub.title}`}
                                           </p>
+
+                                          {/* <p className="text-foreground-500 group-hover:text-foreground text-xs transition-colors duration-300">
+                                            View all {sub.items.length} products
+                                          </p> */}
+                                        </div>
+                                      </Link>
+                                    )}
+                                  </div>
+                                  <div className="border-divider mt-2 border-t pt-2">
+                                    {isExternalLink(sub.more?.link) ? (
+                                      <a
+                                        href={
+                                          sub.more?.link ||
+                                          `/${sub.title.toLowerCase().replace(/\s+/g, '-')}`
+                                        }
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group flex w-full items-center space-x-3">
+                                        <div className="text-foreground group-hover:bg-content2 flex size-9 shrink-0 items-center justify-center rounded-md transition-colors duration-300">
+                                          <Icon
+                                            icon="lucide:external-link"
+                                            className="h-5 w-5 flex-none"
+                                          />
+                                        </div>
+                                        <div className="leading-5">
+                                          <p className="text-foreground text-sm font-medium">
+                                            {sub.more?.label ||
+                                              `Explore All ${sub.title}`}
+                                          </p>
+                                          {/* <p className="text-foreground-500 group-hover:text-foreground text-xs transition-colors duration-300">
+                                            View all {sub.items.length} products
+                                          </p> */}
+                                        </div>
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        to={
+                                          sub.more?.link ||
+                                          `/${sub.title.toLowerCase().replace(/\s+/g, '-')}`
+                                        }
+                                        className="group flex w-full items-center space-x-3">
+                                        <div className="text-foreground-500 group-hover:bg-content2 flex size-9 shrink-0 items-center justify-center rounded-md transition-colors duration-300">
+                                          <Icon
+                                            icon="lucide:layout-grid"
+                                            className="h-5 w-5 flex-none"
+                                          />
+                                        </div>
+                                        <div className="leading-5">
+                                          <p className="text-foreground-500 text-sm font-medium">
+                                            {sub.more?.label ||
+                                              `Explore All ${sub.title}`}
+                                          </p>
+
                                           {/* <p className="text-foreground-500 group-hover:text-foreground text-xs transition-colors duration-300">
                                             View all {sub.items.length} products
                                           </p> */}

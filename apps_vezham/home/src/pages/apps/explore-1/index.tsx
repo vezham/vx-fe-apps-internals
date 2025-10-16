@@ -6,15 +6,18 @@ import {
 } from '@tanstack/react-router'
 import React from 'react'
 
-import { AppDetailModal } from '../../components/appExplore/appDetailModal'
-import { AppDetailPage } from '../../components/appExplore/appDetailPage'
-import { ContentArea } from '../../components/appExplore/contentArea'
-import { categories, categoryContents } from '../../components/appExplore/data'
-import { HeroBanner } from '../../components/appExplore/herobanner'
-import { Sidebar } from '../../components/appExplore/sidebar'
-import { type App } from '../../components/appExplore/types'
-import { Footer } from '../../components/footer'
-import { Header } from '../../components/header'
+import { AppDetailModal } from '../../../components/appExplore-1/appDetailModal'
+import { AppDetailPage } from '../../../components/appExplore-1/appDetailPage'
+import { ContentArea } from '../../../components/appExplore-1/contentArea'
+import {
+  categories,
+  categoryContents
+} from '../../../components/appExplore-1/data'
+import { HeroBanner } from '../../../components/appExplore-1/herobanner'
+import { Sidebar } from '../../../components/appExplore-1/sidebar'
+import { type App } from '../../../components/appExplore-1/types'
+import { Footer } from '../../../components/footer'
+import { Header } from '../../../components/header'
 
 // ---------------------- APP CONTENT ----------------------
 const AppContent = () => {
@@ -319,22 +322,21 @@ const AppContent = () => {
 
   return (
     <div className="bg-background text-foreground flex min-h-screen flex-col scroll-smooth">
-      <div>
-        <Header />
-      </div>
-      <div>
-        <HeroBanner />
-      </div>
+      {<Header />}
+      {<HeroBanner />}
 
-      <div className="flex flex-1">
+      <div className="relative flex flex-1">
+        {/* Mobile sidebar overlay */}
         {isMobileSidebarVisible && (
           <div
             className="bg-overlay/50 fixed inset-0 z-30 lg:hidden"
-            onClick={toggleMobileSidebar}
-          />
+            onClick={toggleMobileSidebar}></div>
         )}
+
+        {/* Sidebar - Fixed positioning for mobile, static for desktop */}
         <div
           className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} bg-content1 border-divider fixed top-0 bottom-0 left-0 z-25 flex h-full w-64 flex-col overflow-hidden border-r transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0`}>
+          {/* Scrollable sidebar content with inline scrollbar styles */}
           <div className="flex-1 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-black/20 [&::-webkit-scrollbar-track]:bg-transparent">
             <Sidebar
               categories={categories}
@@ -345,7 +347,9 @@ const AppContent = () => {
             />
           </div>
         </div>
-        <div className="flex-1">
+
+        {/* Content area - with proper left padding on desktop */}
+        <div className="w-0 flex-1 lg:pl-0">
           <ContentArea
             ref={contentAreaRef}
             activeCategory={activeCategory}
@@ -359,14 +363,14 @@ const AppContent = () => {
           />
         </div>
       </div>
+
+      {/* App Detail Modal - now using selectedApp directly */}
       <AppDetailModal
         isOpen={isAppModalOpen}
         onClose={handleModalClose}
         app={selectedAppDetails}
       />
-      <div className="md:pt-10">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }

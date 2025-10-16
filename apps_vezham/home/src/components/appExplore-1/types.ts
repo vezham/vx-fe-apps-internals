@@ -41,6 +41,7 @@ export type SupportOption = {
 // Modify App type to include all the detailed fields
 export type App = {
   id: string
+  category: string
   title: string
   description: string
   icon: string
@@ -64,3 +65,60 @@ export type CategoryContent = {
 // Keep AppDetail for backward compatibility
 // FIX: Changed empty interface to a type alias.
 export type AppDetail = App
+
+export interface Benefit {
+  title: string
+  description: string
+  icon: string
+}
+
+export interface CaseStudy {
+  title: string
+  challenge: string
+  solution: string
+  results: {
+    title: string
+    value: string
+    label?: boolean
+    label_title?: string
+  }[]
+}
+
+export interface PainPoint {
+  title: string
+  description: string
+}
+
+export interface Impact {
+  title: string
+  description: string
+  value?: string
+  icon?: string
+  label?: boolean
+  hideValueLabel?: boolean
+}
+
+export interface Technology {
+  color?: string
+  id: string
+  category: string
+  title: string
+  description?: string
+  shortDescription: string
+  fullDescription: string
+  icon: string
+  image: string
+  bannerImage?: string
+  obstaclesImage?: string
+  featuresImage?: string
+  benefits?: Benefit[]
+  caseStudy?: CaseStudy
+  painPoints?: PainPoint[]
+  features?: Feature[]
+  impacts?: Impact[]
+  impacts_skip?: boolean
+  sections?: {
+    title: string
+    content: string
+  }[]
+}

@@ -73,7 +73,7 @@ const BookSection = () => {
         },
         ```
       */}
-      <main className="bg-hero-section-centered-navbar dark:from-default-900 dark:via-default-800 dark:to-primary-900 flex flex-col items-center rounded-2xl px-3 md:rounded-3xl md:px-0 dark:bg-gradient-to-br">
+      <main className="bg-hero-section-centered-navbar dark:from-default-900 dark:via-default-800 dark:to-primary-900 flex flex-col items-center rounded-2xl px-3 md:rounded-3xl md:px-0 lg:pt-20 dark:bg-gradient-to-br">
         <section className="my-14 mt-16 flex flex-col items-center justify-center gap-6">
           <Button
             className="bg-background dark:bg-default-100 text-default-500 h-9 px-[18px] shadow-[0_2px_15px_0_rgba(0,0,0,0.05)]"

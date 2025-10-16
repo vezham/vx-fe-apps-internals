@@ -90,6 +90,10 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
             label: 'Explore All Products',
             link: '/apps/explore'
           },
+          more: {
+            label: 'Explore-1 All Products',
+            link: '/apps/explore-1'
+          },
           items: [
             {
               icon: 'lucide:layers',
@@ -101,7 +105,7 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
               icon: 'lucide:layers',
               name: 'Books',
               description: 'Posts & Insights',
-              link: '/apps/books'
+              link: '/apps/vezham-books'
             },
             {
               icon: 'lucide:layers',

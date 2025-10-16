@@ -14,8 +14,10 @@ import { Route as rootRouteImport } from './routes/__root'
 
 const AppsLazyRouteImport = createFileRoute('/apps')()
 const IndexLazyRouteImport = createFileRoute('/')()
+const AppsVezhamBooksLazyRouteImport = createFileRoute('/apps/vezham-books')()
+const AppsExplore1LazyRouteImport = createFileRoute('/apps/explore-1')()
 const AppsExploreLazyRouteImport = createFileRoute('/apps/explore')()
-const AppsBooksLazyRouteImport = createFileRoute('/apps/books')()
+const AppsAppsIdLazyRouteImport = createFileRoute('/apps/$appsId')()
 const AppsAppIdLazyRouteImport = createFileRoute('/apps/$appId')()
 
 const AppsLazyRoute = AppsLazyRouteImport.update({
@@ -28,16 +30,30 @@ const IndexLazyRoute = IndexLazyRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+const AppsVezhamBooksLazyRoute = AppsVezhamBooksLazyRouteImport.update({
+  id: '/vezham-books',
+  path: '/vezham-books',
+  getParentRoute: () => AppsLazyRoute,
+} as any).lazy(() =>
+  import('./routes/apps/vezham-books.lazy').then((d) => d.Route),
+)
+const AppsExplore1LazyRoute = AppsExplore1LazyRouteImport.update({
+  id: '/explore-1',
+  path: '/explore-1',
+  getParentRoute: () => AppsLazyRoute,
+} as any).lazy(() =>
+  import('./routes/apps/explore-1.lazy').then((d) => d.Route),
+)
 const AppsExploreLazyRoute = AppsExploreLazyRouteImport.update({
   id: '/explore',
   path: '/explore',
   getParentRoute: () => AppsLazyRoute,
 } as any).lazy(() => import('./routes/apps/explore.lazy').then((d) => d.Route))
-const AppsBooksLazyRoute = AppsBooksLazyRouteImport.update({
-  id: '/books',
-  path: '/books',
+const AppsAppsIdLazyRoute = AppsAppsIdLazyRouteImport.update({
+  id: '/$appsId',
+  path: '/$appsId',
   getParentRoute: () => AppsLazyRoute,
-} as any).lazy(() => import('./routes/apps/books.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/apps/$appsId.lazy').then((d) => d.Route))
 const AppsAppIdLazyRoute = AppsAppIdLazyRouteImport.update({
   id: '/$appId',
   path: '/$appId',
@@ -48,36 +64,58 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/apps': typeof AppsLazyRouteWithChildren
   '/apps/$appId': typeof AppsAppIdLazyRoute
-  '/apps/books': typeof AppsBooksLazyRoute
+  '/apps/$appsId': typeof AppsAppsIdLazyRoute
   '/apps/explore': typeof AppsExploreLazyRoute
+  '/apps/explore-1': typeof AppsExplore1LazyRoute
+  '/apps/vezham-books': typeof AppsVezhamBooksLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/apps': typeof AppsLazyRouteWithChildren
   '/apps/$appId': typeof AppsAppIdLazyRoute
-  '/apps/books': typeof AppsBooksLazyRoute
+  '/apps/$appsId': typeof AppsAppsIdLazyRoute
   '/apps/explore': typeof AppsExploreLazyRoute
+  '/apps/explore-1': typeof AppsExplore1LazyRoute
+  '/apps/vezham-books': typeof AppsVezhamBooksLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
   '/apps': typeof AppsLazyRouteWithChildren
   '/apps/$appId': typeof AppsAppIdLazyRoute
-  '/apps/books': typeof AppsBooksLazyRoute
+  '/apps/$appsId': typeof AppsAppsIdLazyRoute
   '/apps/explore': typeof AppsExploreLazyRoute
+  '/apps/explore-1': typeof AppsExplore1LazyRoute
+  '/apps/vezham-books': typeof AppsVezhamBooksLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/apps' | '/apps/$appId' | '/apps/books' | '/apps/explore'
+  fullPaths:
+    | '/'
+    | '/apps'
+    | '/apps/$appId'
+    | '/apps/$appsId'
+    | '/apps/explore'
+    | '/apps/explore-1'
+    | '/apps/vezham-books'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/apps' | '/apps/$appId' | '/apps/books' | '/apps/explore'
+  to:
+    | '/'
+    | '/apps'
+    | '/apps/$appId'
+    | '/apps/$appsId'
+    | '/apps/explore'
+    | '/apps/explore-1'
+    | '/apps/vezham-books'
   id:
     | '__root__'
     | '/'
     | '/apps'
     | '/apps/$appId'
-    | '/apps/books'
+    | '/apps/$appsId'
     | '/apps/explore'
+    | '/apps/explore-1'
+    | '/apps/vezham-books'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -101,6 +139,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/apps/vezham-books': {
+      id: '/apps/vezham-books'
+      path: '/vezham-books'
+      fullPath: '/apps/vezham-books'
+      preLoaderRoute: typeof AppsVezhamBooksLazyRouteImport
+      parentRoute: typeof AppsLazyRoute
+    }
+    '/apps/explore-1': {
+      id: '/apps/explore-1'
+      path: '/explore-1'
+      fullPath: '/apps/explore-1'
+      preLoaderRoute: typeof AppsExplore1LazyRouteImport
+      parentRoute: typeof AppsLazyRoute
+    }
     '/apps/explore': {
       id: '/apps/explore'
       path: '/explore'
@@ -108,11 +160,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppsExploreLazyRouteImport
       parentRoute: typeof AppsLazyRoute
     }
-    '/apps/books': {
-      id: '/apps/books'
-      path: '/books'
-      fullPath: '/apps/books'
-      preLoaderRoute: typeof AppsBooksLazyRouteImport
+    '/apps/$appsId': {
+      id: '/apps/$appsId'
+      path: '/$appsId'
+      fullPath: '/apps/$appsId'
+      preLoaderRoute: typeof AppsAppsIdLazyRouteImport
       parentRoute: typeof AppsLazyRoute
     }
     '/apps/$appId': {
@@ -127,14 +179,18 @@ declare module '@tanstack/react-router' {
 
 interface AppsLazyRouteChildren {
   AppsAppIdLazyRoute: typeof AppsAppIdLazyRoute
-  AppsBooksLazyRoute: typeof AppsBooksLazyRoute
+  AppsAppsIdLazyRoute: typeof AppsAppsIdLazyRoute
   AppsExploreLazyRoute: typeof AppsExploreLazyRoute
+  AppsExplore1LazyRoute: typeof AppsExplore1LazyRoute
+  AppsVezhamBooksLazyRoute: typeof AppsVezhamBooksLazyRoute
 }
 
 const AppsLazyRouteChildren: AppsLazyRouteChildren = {
   AppsAppIdLazyRoute: AppsAppIdLazyRoute,
-  AppsBooksLazyRoute: AppsBooksLazyRoute,
+  AppsAppsIdLazyRoute: AppsAppsIdLazyRoute,
   AppsExploreLazyRoute: AppsExploreLazyRoute,
+  AppsExplore1LazyRoute: AppsExplore1LazyRoute,
+  AppsVezhamBooksLazyRoute: AppsVezhamBooksLazyRoute,
 }
 
 const AppsLazyRouteWithChildren = AppsLazyRoute._addFileChildren(

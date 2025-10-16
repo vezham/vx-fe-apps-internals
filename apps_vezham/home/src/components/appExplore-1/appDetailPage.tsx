@@ -11,8 +11,8 @@ import { categoryContents } from './data'
 
 const AppDetailPage: React.FC = () => {
   const router = useRouter()
-  const params = useParams<{ appId: string }>({ from: '/apps/$appId' })
-  const appId = params.appId
+  const params = useParams<{ appsId: string }>({ from: '/apps/$appsId' })
+  const appId = params.appsId
 
   // ✅ FIX: Find the app inside all categoryContents
   const app =
@@ -32,7 +32,7 @@ const AppDetailPage: React.FC = () => {
             color="primary"
             variant="flat"
             className="mt-4"
-            onPress={() => router.navigate({ to: '/apps/explore' })}
+            onPress={() => router.navigate({ to: '/apps/explore-1' })}
             startContent={<Icon icon="lucide:arrow-left" width={16} />}>
             Back to Apps
           </Button>
@@ -48,8 +48,9 @@ const AppDetailPage: React.FC = () => {
 
   return (
     <div className="bg-background text-foreground min-h-screen">
-      <Header />
-
+      <div>
+        <Header />
+      </div>
       {/* Header */}
       <div className="pt-20">
         <header className="border-divider bg-content1 border-b py-4">
@@ -57,7 +58,7 @@ const AppDetailPage: React.FC = () => {
             <Button
               color="default"
               variant="light"
-              onPress={() => router.navigate({ to: '/apps/explore' })}
+              onPress={() => router.navigate({ to: '/apps/explore-1' })}
               startContent={<Icon icon="lucide:arrow-left" width={16} />}>
               Back to Apps
             </Button>
@@ -75,7 +76,7 @@ const AppDetailPage: React.FC = () => {
 
         {/* Main content */}
         <main className="container mx-auto px-4 py-8">
-          {/* Overview */}
+          {/* Hero & Overview */}
           <section className="mb-12">
             <h1 className="mb-4 text-3xl font-bold">{app.title}</h1>
             <p className="text-default-600 text-lg">
@@ -83,7 +84,7 @@ const AppDetailPage: React.FC = () => {
             </p>
           </section>
 
-          {/* Image + Quick Features */}
+          {/* Overview section */}
           <section className="mb-16">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <div>
@@ -121,45 +122,42 @@ const AppDetailPage: React.FC = () => {
           </section>
 
           {/* Features section */}
-          {features.length > 0 && (
-            <section className="mb-16">
-              <h2 className="mb-6 text-2xl font-bold">Our Features</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={cn(
-                      'group/feature relative flex flex-col py-10 lg:border-r dark:border-neutral-800',
-                      (index === 0 || index === 4) &&
-                        'lg:border-l dark:border-neutral-800',
-                      index < 4 && 'lg:border-b dark:border-neutral-800'
-                    )}>
-                    {index < 4 ? (
-                      <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
-                    ) : (
-                      <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
-                    )}
-                    <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
-                      <Icon icon={feature.icon} width={24} height={24} />
-                    </div>
-                    <div className="relative z-10 mb-2 px-10 text-lg font-bold">
-                      <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-[#a91d44] dark:bg-neutral-700 dark:group-hover/feature:bg-[#df4861]" />
-                      <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
-                        {feature.title}
-                      </span>
-                    </div>
-                    <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
-                      {feature.description}
-                    </p>
+          <section className="mb-16">
+            <h2 className="mb-6 text-2xl font-bold">Our Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    'group/feature relative flex flex-col py-10 lg:border-r dark:border-neutral-800',
+                    (index === 0 || index === 4) &&
+                      'lg:border-l dark:border-neutral-800',
+                    index < 4 && 'lg:border-b dark:border-neutral-800'
+                  )}>
+                  {index < 4 ? (
+                    <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
+                  ) : (
+                    <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
+                  )}
+                  <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
+                    <Icon icon={feature.icon} width={24} height={24} />
                   </div>
-                ))}
-              </div>
-            </section>
-          )}
+                  <div className="relative z-10 mb-2 px-10 text-lg font-bold">
+                    <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-[#a91d44] dark:bg-neutral-700 dark:group-hover/feature:bg-[#df4861]" />
+                    <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
+                      {feature.title}
+                    </span>
+                  </div>
+                  <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-          {/* Pricing / Results / Support */}
+          {/* Pricing, Results, Support */}
           <section className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {/* Pricing */}
             {pricingPlans.length > 0 && (
               <Card className="p-6">
                 <h3 className="mb-4 text-xl font-bold">Pricing</h3>
@@ -201,7 +199,6 @@ const AppDetailPage: React.FC = () => {
               </Card>
             )}
 
-            {/* Results */}
             {results.length > 0 && (
               <Card className="p-6">
                 <h3 className="mb-4 text-xl font-bold">Results</h3>
@@ -253,7 +250,6 @@ const AppDetailPage: React.FC = () => {
               </Card>
             )}
 
-            {/* Support */}
             {supportOptions.length > 0 && (
               <Card className="p-6">
                 <h3 className="mb-4 text-xl font-bold">Support</h3>
@@ -279,21 +275,25 @@ const AppDetailPage: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <Button
-                  color="primary"
-                  variant="flat"
-                  className="mt-6"
-                  fullWidth
-                  endContent={<Icon icon="lucide:arrow-right" width={16} />}>
-                  Contact Support
-                </Button>
+                {supportOptions.length > 0 && (
+                  <Button
+                    color="primary"
+                    variant="flat"
+                    className="mt-6"
+                    fullWidth
+                    endContent={<Icon icon="lucide:arrow-right" width={16} />}>
+                    Contact Support
+                  </Button>
+                )}
               </Card>
             )}
           </section>
         </main>
       </div>
 
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   )
 }
