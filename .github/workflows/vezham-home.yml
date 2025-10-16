@@ -1,0 +1,59 @@
+# @vx/INFO: @vx/ci
+name: home | bnd
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [timeline, feat/*]
+    paths:
+      - '.github/workflows/vezham-home.yml'
+      - 'vx/handbooks/ci.md'
+      - 'vx/config/firebase/apps_vezham/home.json'
+      - 'vx/config/vercel/__mocks__/mock.json'
+      - 'packages/**'
+      - 'apps_vezham/home/**'
+      - 'apps_vezham/home-e2e/**'
+      - 'apps_vezham/home-mock/**'
+
+jobs:
+  run_if:
+    runs-on: ubuntu-latest
+    outputs:
+      all: ${{ steps.filter.outputs.all }}
+      deploy: ${{ steps.filter.outputs.deploy }}
+      mocks: ${{ steps.filter.outputs.mocks }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          base: ${{ github.ref }}
+          filters: |
+            all:
+              - '.github/workflows/vezham-home.yml'
+              - 'vx/handbooks/ci.md'
+            deploy:
+              - 'vx/config/firebase/apps_vezham/home.json'
+              - 'apps_vezham/home/**'
+              - 'packages/**'
+            mocks:
+              - 'vx/config/vercel/__mocks__/mock.json'
+              - 'apps_vezham/home-mock/**'
+
+  deploy:
+    needs: run_if
+    if: ${{ needs.run_if.outputs.all == 'true' || needs.run_if.outputs.deploy == 'true' }}
+    name: home | ${{ github.ref_name }}
+    uses: vezham/vx-fe-deployer/.github/workflows/vezham-home.yml@timeline
+    secrets: inherit
+    with:
+      CALLER: ${{ github.ref_name }}
+
+  mocks:
+    needs: run_if
+    if: ${{ needs.run_if.outputs.mocks == 'true' }}
+    name: home-mock | ${{ github.ref_name }}
+    uses: vezham/vx-fe-deployer/.github/workflows/vezham-home-mock.yml@timeline
+    secrets: inherit
+    with:
+      CALLER: ${{ github.ref_name }}
