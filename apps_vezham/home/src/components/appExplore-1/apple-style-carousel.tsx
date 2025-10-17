@@ -59,26 +59,20 @@ export const AppleStyleCarousel: React.FC<{
   return (
     <div className="relative w-full">
       {/* Controls */}
-      <div className="flex items-center justify-end gap-4 pr-4 pb-4">
+      <div className="flex items-center justify-end gap-4 pb-4">
         <div className="flex gap-6">
-          <Button
-            isIconOnly
-            variant="light"
-            onPress={scrollLeft}
-            isDisabled={!canScrollLeft}
-            className={`z-10 ${canScrollLeft ? 'bg-default-500/30' : ''}`}
-            radius="full">
-            <Icon icon="lucide:arrow-left" className="h-6 w-6" />
-          </Button>
-          <Button
-            isIconOnly
-            variant="light"
-            onPress={scrollRight}
-            isDisabled={!canScrollRight}
-            className={`z-10 ${canScrollRight ? 'bg-default-500/30' : ''}`}
-            radius="full">
-            <Icon icon="lucide:arrow-right" className="h-6 w-6" />
-          </Button>
+          <button
+            onClick={scrollLeft}
+            disabled={!canScrollLeft}
+            className={`z-10 flex h-[36px] w-[36px] items-center justify-center rounded-full ${canScrollLeft ? 'bg-default-500/30' : ''}`}>
+            <Icon icon="lucide:chevron-left" />
+          </button>
+          <button
+            onClick={scrollRight}
+            disabled={!canScrollRight}
+            className={`z-10 flex h-[36px] w-[36px] items-center justify-center rounded-full ${canScrollRight ? 'bg-default-500/30' : ''}`}>
+            <Icon icon="lucide:chevron-right" className="h-5 w-5" />
+          </button>
         </div>
       </div>
 
@@ -128,24 +122,26 @@ export const AppleStyleCarousel: React.FC<{
                   <div className={`rounded-lg backdrop-blur-md ${item.color}`}>
                     <Image src={item.icon} className="h-14 w-14 text-white" />
                   </div>
-                  <div className="max-w-xs text-left text-xl font-semibold text-white md:text-2xl">
+                  <h3 className="max-w-xs text-left text-[21px] font-semibold text-white md:text-[24px] lg:text-[28px]">
                     {item.title}
-                  </div>
+                  </h3>
                 </div>
 
                 {/* description */}
-                <p className="mb-3 text-sm text-white">{item.description}</p>
+                <p className="mb-3 text-[14px] text-white md:text-[17px]">
+                  {item.description}
+                </p>
 
                 {/* buttons */}
                 <div className="mb-auto flex items-center gap-4">
                   <button
                     onClick={item.onPress}
-                    className="cursor-pointer rounded-full bg-white/90 px-2.5 py-0.75 text-xs font-medium text-black hover:bg-white">
+                    className="cursor-pointer rounded-full bg-white/90 px-2.5 py-0.75 text-[12px] font-medium text-black hover:bg-white">
                     Open
                   </button>
                   <button
                     onClick={handleViewDetails}
-                    className="hover:text-primary flex cursor-pointer items-center text-sm text-white">
+                    className="hover:text-primary flex cursor-pointer items-center text-[14px] text-white">
                     Learn more
                     <Icon
                       icon="lucide:chevron-right"
@@ -157,8 +153,10 @@ export const AppleStyleCarousel: React.FC<{
 
                 {/* footer label */}
                 <div className="absolute bottom-8 left-8 z-50 flex flex-col items-start">
-                  <p className="text-sm font-semibold text-white/90">Apps</p>
-                  <p className="text-sm font-medium text-white/90">
+                  <p className="text-[14px] font-semibold text-white/90">
+                    Apps
+                  </p>
+                  <p className="text-[14px] font-medium text-white/90">
                     {item.title}
                   </p>
                 </div>

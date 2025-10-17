@@ -73,7 +73,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                   ref={el => (contentRefs.current[subcategory.id] = el)}
                   className="scroll-mt-20 pb-10">
                   <div className="flex items-center">
-                    <h2 className="items-center text-xl font-medium md:text-3xl">
+                    <h2 className="items-center text-[28px] font-medium md:text-[40px] lg:text-[48px]">
                       {content.title}
                     </h2>
                   </div>
@@ -111,7 +111,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 ref={el => (contentRefs.current[subcategory.id] = el)}
                 className="scroll-mt-20 pb-10">
                 <div className="flex items-center">
-                  <h2 className="items-center text-xl font-medium md:text-3xl">
+                  <h2 className="items-center text-[28px] font-medium md:text-[40px] lg:text-[48px]">
                     {content.title}
                   </h2>
                 </div>
@@ -142,7 +142,9 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 aria-label="Show sidebar">
                 <Icon icon="lucide:menu" width={20} height={20} />
               </button>
-              <h2 className="text-4xl font-bold">All Collections</h2>
+              <h2 className="text-[28px] font-bold md:text-[40px] lg:text-[48px]">
+                All Collections
+              </h2>
             </div>
           </div>
 
