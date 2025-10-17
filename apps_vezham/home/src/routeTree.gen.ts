@@ -17,8 +17,8 @@ const IndexLazyRouteImport = createFileRoute('/')()
 const AppsVezhamBooksLazyRouteImport = createFileRoute('/apps/vezham-books')()
 const AppsExplore1LazyRouteImport = createFileRoute('/apps/explore-1')()
 const AppsExploreLazyRouteImport = createFileRoute('/apps/explore')()
-const AppsAppsIdLazyRouteImport = createFileRoute('/apps/$appsId')()
 const AppsAppIdLazyRouteImport = createFileRoute('/apps/$appId')()
+const AppsAppExploreIdLazyRouteImport = createFileRoute('/apps/$appExploreId')()
 
 const AppsLazyRoute = AppsLazyRouteImport.update({
   id: '/apps',
@@ -49,22 +49,24 @@ const AppsExploreLazyRoute = AppsExploreLazyRouteImport.update({
   path: '/explore',
   getParentRoute: () => AppsLazyRoute,
 } as any).lazy(() => import('./routes/apps/explore.lazy').then((d) => d.Route))
-const AppsAppsIdLazyRoute = AppsAppsIdLazyRouteImport.update({
-  id: '/$appsId',
-  path: '/$appsId',
-  getParentRoute: () => AppsLazyRoute,
-} as any).lazy(() => import('./routes/apps/$appsId.lazy').then((d) => d.Route))
 const AppsAppIdLazyRoute = AppsAppIdLazyRouteImport.update({
   id: '/$appId',
   path: '/$appId',
   getParentRoute: () => AppsLazyRoute,
 } as any).lazy(() => import('./routes/apps/$appId.lazy').then((d) => d.Route))
+const AppsAppExploreIdLazyRoute = AppsAppExploreIdLazyRouteImport.update({
+  id: '/$appExploreId',
+  path: '/$appExploreId',
+  getParentRoute: () => AppsLazyRoute,
+} as any).lazy(() =>
+  import('./routes/apps/$appExploreId.lazy').then((d) => d.Route),
+)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/apps': typeof AppsLazyRouteWithChildren
+  '/apps/$appExploreId': typeof AppsAppExploreIdLazyRoute
   '/apps/$appId': typeof AppsAppIdLazyRoute
-  '/apps/$appsId': typeof AppsAppsIdLazyRoute
   '/apps/explore': typeof AppsExploreLazyRoute
   '/apps/explore-1': typeof AppsExplore1LazyRoute
   '/apps/vezham-books': typeof AppsVezhamBooksLazyRoute
@@ -72,8 +74,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/apps': typeof AppsLazyRouteWithChildren
+  '/apps/$appExploreId': typeof AppsAppExploreIdLazyRoute
   '/apps/$appId': typeof AppsAppIdLazyRoute
-  '/apps/$appsId': typeof AppsAppsIdLazyRoute
   '/apps/explore': typeof AppsExploreLazyRoute
   '/apps/explore-1': typeof AppsExplore1LazyRoute
   '/apps/vezham-books': typeof AppsVezhamBooksLazyRoute
@@ -82,8 +84,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
   '/apps': typeof AppsLazyRouteWithChildren
+  '/apps/$appExploreId': typeof AppsAppExploreIdLazyRoute
   '/apps/$appId': typeof AppsAppIdLazyRoute
-  '/apps/$appsId': typeof AppsAppsIdLazyRoute
   '/apps/explore': typeof AppsExploreLazyRoute
   '/apps/explore-1': typeof AppsExplore1LazyRoute
   '/apps/vezham-books': typeof AppsVezhamBooksLazyRoute
@@ -93,8 +95,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/apps'
+    | '/apps/$appExploreId'
     | '/apps/$appId'
-    | '/apps/$appsId'
     | '/apps/explore'
     | '/apps/explore-1'
     | '/apps/vezham-books'
@@ -102,8 +104,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/apps'
+    | '/apps/$appExploreId'
     | '/apps/$appId'
-    | '/apps/$appsId'
     | '/apps/explore'
     | '/apps/explore-1'
     | '/apps/vezham-books'
@@ -111,8 +113,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/apps'
+    | '/apps/$appExploreId'
     | '/apps/$appId'
-    | '/apps/$appsId'
     | '/apps/explore'
     | '/apps/explore-1'
     | '/apps/vezham-books'
@@ -160,13 +162,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppsExploreLazyRouteImport
       parentRoute: typeof AppsLazyRoute
     }
-    '/apps/$appsId': {
-      id: '/apps/$appsId'
-      path: '/$appsId'
-      fullPath: '/apps/$appsId'
-      preLoaderRoute: typeof AppsAppsIdLazyRouteImport
-      parentRoute: typeof AppsLazyRoute
-    }
     '/apps/$appId': {
       id: '/apps/$appId'
       path: '/$appId'
@@ -174,20 +169,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppsAppIdLazyRouteImport
       parentRoute: typeof AppsLazyRoute
     }
+    '/apps/$appExploreId': {
+      id: '/apps/$appExploreId'
+      path: '/$appExploreId'
+      fullPath: '/apps/$appExploreId'
+      preLoaderRoute: typeof AppsAppExploreIdLazyRouteImport
+      parentRoute: typeof AppsLazyRoute
+    }
   }
 }
 
 interface AppsLazyRouteChildren {
+  AppsAppExploreIdLazyRoute: typeof AppsAppExploreIdLazyRoute
   AppsAppIdLazyRoute: typeof AppsAppIdLazyRoute
-  AppsAppsIdLazyRoute: typeof AppsAppsIdLazyRoute
   AppsExploreLazyRoute: typeof AppsExploreLazyRoute
   AppsExplore1LazyRoute: typeof AppsExplore1LazyRoute
   AppsVezhamBooksLazyRoute: typeof AppsVezhamBooksLazyRoute
 }
 
 const AppsLazyRouteChildren: AppsLazyRouteChildren = {
+  AppsAppExploreIdLazyRoute: AppsAppExploreIdLazyRoute,
   AppsAppIdLazyRoute: AppsAppIdLazyRoute,
-  AppsAppsIdLazyRoute: AppsAppsIdLazyRoute,
   AppsExploreLazyRoute: AppsExploreLazyRoute,
   AppsExplore1LazyRoute: AppsExplore1LazyRoute,
   AppsVezhamBooksLazyRoute: AppsVezhamBooksLazyRoute,

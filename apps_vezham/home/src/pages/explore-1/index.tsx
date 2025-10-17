@@ -6,21 +6,21 @@ import {
 } from '@tanstack/react-router'
 import React from 'react'
 
-import { AppDetailModal } from '../../../components/appExplore-1/appDetailModal'
-import { AppDetailPage } from '../../../components/appExplore-1/appDetailPage'
-import { ContentArea } from '../../../components/appExplore-1/contentArea'
+import { AppDetailModal } from '../../components/appExplore-1/appDetailModal'
+import { AppDetailView } from '../../components/appExplore-1/appDetailPage'
+import { ContentArea } from '../../components/appExplore-1/contentArea'
 import {
   categories,
   categoryContents
-} from '../../../components/appExplore-1/data'
-import { HeroBanner } from '../../../components/appExplore-1/herobanner'
-import { Sidebar } from '../../../components/appExplore-1/sidebar'
-import { type App } from '../../../components/appExplore-1/types'
-import { Footer } from '../../../components/footer'
-import { Header } from '../../../components/header'
+} from '../../components/appExplore-1/data'
+import { HeroBanner } from '../../components/appExplore-1/herobanner'
+import { Sidebar } from '../../components/appExplore-1/sidebar'
+import { type App } from '../../components/appExplore-1/types'
+import { Footer } from '../../components/footer'
+import { Header } from '../../components/header'
 
 // ---------------------- APP CONTENT ----------------------
-const AppContent = () => {
+const AppExploreContent = () => {
   const [activeCategory, setActiveCategory] = React.useState(() => {
     return localStorage.getItem('activeCategory') || 'featured'
   })
@@ -54,8 +54,8 @@ const AppContent = () => {
     )
   }, [selectedAppId])
 
-  const handleAppClick = (appId: string, app: App) => {
-    setSelectedAppId(appId)
+  const handleAppClick = (appsId: string, app: App) => {
+    setSelectedAppId(appsId)
     setSelectedApp(app)
     setIsAppModalOpen(true)
   }
@@ -375,18 +375,18 @@ const AppContent = () => {
   )
 }
 
-export { AppContent }
+export { AppExploreContent }
 
 // ---------------------- ROUTES ----------------------
 
 const rootRoute = new RootRoute({
-  component: () => <AppContent />
+  component: () => <AppExploreContent />
 })
 
 const appRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/app/$appId',
-  component: AppDetailPage
+  path: '/app/$appsId',
+  component: AppDetailView
 })
 
 const router = createRouter({

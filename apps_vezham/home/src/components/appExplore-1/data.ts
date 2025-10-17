@@ -1,4 +1,4 @@
-import { Category, CategoryContent, Technology } from './types'
+import { Category, CategoryContent } from './types'
 
 export const categories: Category[] = [
   {
@@ -11,23 +11,23 @@ export const categories: Category[] = [
         hasChildren: true
       },
       {
-        id: 'popular',
-        name: 'Popular',
+        id: 'entertainment',
+        name: 'Entertainment & Home',
         hasChildren: true
       },
       {
-        id: 'new',
-        name: 'New',
+        id: 'health',
+        name: 'Health & Fitness',
         hasChildren: true
       },
       {
-        id: 'free-install',
-        name: 'Free Install',
+        id: 'exploration',
+        name: 'Exploration',
         hasChildren: true
       },
       {
-        id: 'support-teams',
-        name: 'Support Teams',
+        id: 'productivity',
+        name: 'Productivity',
         hasChildren: true
       }
     ]
@@ -37,18 +37,18 @@ export const categories: Category[] = [
     name: 'Categories',
     subcategories: [
       {
-        id: 'sales',
-        name: 'Sales',
+        id: 'communication',
+        name: 'Communication',
         hasChildren: true
       },
       {
-        id: 'marketing',
-        name: 'Marketing',
+        id: 'creativity',
+        name: 'Creativity',
         hasChildren: true
       },
       {
-        id: 'e-commerce',
-        name: 'E-commerce',
+        id: 'features',
+        name: 'Features',
         hasChildren: true
       },
       {
@@ -67,21 +67,20 @@ export const categories: Category[] = [
 
 export const categoryContents: Record<string, CategoryContent> = {
   // All Collections subcategories
-  popular: {
-    title: 'Popular',
+  entertainment: {
+    title: 'Entertainment & Home',
     apps: [
       {
-        id: 'whatsapp',
-        category: 'Meta',
-        title: 'WhatsApp',
+        id: 'apple',
+        title: 'Apple Tv',
         description:
-          'Easily receive and reply to WhatsApp messages from your inbox',
-        icon: 'logos:whatsapp',
+          'Subscribe to premium channels, streaming services, Apple TV+ and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/tv_chiclet__ferr96ys58qe_xlarge_2x.png',
         iconColor: 'text-green-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Our Subscribe to premium channels, streaming services, Apple TV+ and more empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/tv_bg__dbiy5mcaqxea_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -175,17 +174,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'jira',
-        category: 'Meta',
-        title: 'Jira for Tickets',
+        id: 'applemusic',
+        title: 'Apple Music',
         description:
-          'Create Jira Issues from Intercom and automate with Workflows',
-        icon: 'logos:jira',
+          'Play over 100 million songs and 30,000 playlists ad-free across your devices, get personalised recommendations and immerse yourself in lossless and Spatial Audio.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/music_chiclet__exy1t5wu2zki_xlarge.png',
         iconColor: 'text-blue-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Play over 100 million songs and 30,000 playlists ad-free across your devices, get personalised recommendations and immerse yourself in lossless and Spatial Audio.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/music_bg__d2ssg7rps0ya_xlarge.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -279,17 +277,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'salesforce',
-        title: 'Salesforce',
-        category: 'Sales',
+        id: 'applearcade',
+        title: 'Apple Arcade',
         description:
-          'Sync data and streamline workflows for sales, marketing and support',
-        icon: 'logos:salesforce',
+          'Enjoy unlimited access to 200+ games with no ads or in-app purchases across all your Apple devices. Subscribe and enjoy with your entire family.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/arcade_chiclet__bexahhvxmb4y_xlarge.png',
         iconColor: 'text-blue-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Enjoy unlimited access to 200+ games with no ads or in-app purchases across all your Apple devices. Subscribe and enjoy with your entire family.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/arcade_bg__ehsmlvjqlg2u_xlarge.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -383,17 +380,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'instagram',
-        title: 'Instagram',
-        category: 'Meta',
+        id: 'applemusicclassical',
+        title: 'Apple Music Classical',
         description:
-          'Easily reply to Instagram private messages from your inbox',
-        icon: 'logos:instagram-icon',
+          'Discover over 5 million tracks and a powerful search built specifically for classical music. All included with an Apple Music subscription.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/music_classical_chiclet__e8bn9ava95qq_xlarge.png',
         iconColor: 'text-pink-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Discover over 5 million tracks and a powerful search built specifically for classical music. All included with an Apple Music subscription.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/music_classical_bg__ezbwlqoj80q6_xlarge.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -487,17 +483,17 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'slack',
-        title: 'Slack',
-        category: 'Slack',
+        id: 'applepodcasts',
+        title: 'Apple Podcasts',
+
         description:
-          'Send messages and notifications directly to your Slack channels',
-        icon: 'logos:slack-icon',
+          'Listen to millions of shows, from big names to independent publishers, and get access to premium content with subscriptions.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/podcasts_chiclet__faovcb48n5ua_xlarge.png',
         iconColor: 'text-purple-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Listen to millions of shows, from big names to independent publishers, and get access to premium content with subscriptions.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/podcasts_bg__dfk2zkahk8uq_xlarge.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -591,16 +587,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'zendesk',
-        title: 'Zendesk',
+        id: 'applebooks',
+        title: 'Apple Books',
         description:
-          'Connect your Zendesk and Intercom accounts for seamless support',
-        icon: 'logos:zendesk-icon',
+          'Discover books online or offline — including classics and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/books_chiclet__f93jz5f4tmmy_xlarge.png',
         iconColor: 'text-green-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Discover books online or offline — including classics and more.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -696,20 +692,20 @@ export const categoryContents: Record<string, CategoryContent> = {
       }
     ]
   },
-  new: {
-    title: 'New & noteworthy',
+  health: {
+    title: 'Health & Fitness',
     apps: [
       {
-        id: 'delighted',
-        title: 'Delighted Inc.',
+        id: 'vitals',
+        title: 'Vitals',
         description:
-          'Sync customer feedback and trigger surveys based on key events',
-        icon: 'lucide:smile',
+          'Wear your Apple Watch to sleep to better understand your daily health status and receive notifications if any of your metrics are outside your typical range.6',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/vitals_chiclet__f0xsst775qa2_xlarge.png',
         iconColor: 'text-black',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Wear your Apple Watch to sleep to better understand your daily health status and receive notifications if any of your metrics are outside your typical range.6',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/vitals_bg__5pygtlfh7o26_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -803,16 +799,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'whatsapp-new',
-        title: 'WhatsApp',
+        id: 'applehealth',
+        title: 'Apple Health',
         description:
-          'Easily receive and reply to WhatsApp messages from your inbox',
-        icon: 'logos:whatsapp',
+          'Organise and access your health and fitness data in one secure, central place — and share your information with those you trust.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/health_chiclet__ff5zpcq1nze6_xlarge.png',
         iconColor: 'text-green-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Organise and access your health and fitness data in one secure, central place — and share your information with those you trust.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/health_bg__fefaj499xryy_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -906,16 +902,15 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'jira-new',
-        title: 'Jira for Tickets',
-        description:
-          'Create Jira Issues from Intercom and automate with Workflows',
-        icon: 'logos:jira',
+        id: 'fitness',
+        title: 'Fitness',
+        description: 'View and share your fitness and activity details.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/fitness_chiclet__bydfahurlj6q_xlarge.png',
         iconColor: 'text-blue-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'View and share your fitness and activity details.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/fitness_bg__cacuddw3n22q_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -1009,16 +1004,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'instagram-new',
-        title: 'Instagram',
+        id: 'workout',
+        title: 'Workout',
         description:
-          'Easily reply to Instagram private messages from your inbox',
-        icon: 'logos:instagram-icon',
+          'Track your workout sessions, set specific goals, view advanced metrics, and receive updates like pace alerts and goal progress along the way.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/workout_chiclet__dnlj4uiqlz6u_xlarge.png',
         iconColor: 'text-pink-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Track your workout sessions, set specific goals, view advanced metrics, and receive updates like pace alerts and goal progress along the way.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/workout_bg__b2s36r6bda2u_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -1112,16 +1107,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'hubspot-new',
-        title: 'HubSpot',
+        id: 'sleep',
+        title: 'Sleep',
         description:
-          'Sync contacts and conversations between Intercom and HubSpot',
-        icon: 'logos:hubspot',
+          'Meet your sleep goals — including getting enough sleep, getting to bed on time and even creating a bedtime routine.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/sleep_chiclet__bsnmi9idnib6_xlarge.png',
         iconColor: 'text-orange-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Meet your sleep goals — including getting enough sleep, getting to bed on time and even creating a bedtime routine.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/sleep_bg__dxy1qfeff48y_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -1215,15 +1210,16 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'stripe-new',
-        title: 'Stripe',
-        description: 'View customer payment details and subscription status',
-        icon: 'logos:stripe',
+        id: 'mindfulness',
+        title: 'Mindfulness',
+        description:
+          'Improve your well-being by logging your state of mind and practicing deep breathing during guided sessions.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/mindfulness_chiclet__gbtomjgedviy_xlarge.png',
         iconColor: 'text-blue-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Improve your well-being by logging your state of mind and practicing deep breathing during guided sessions.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mindfulness_bg__cr5bsd7b1xiu_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -1318,20 +1314,20 @@ export const categoryContents: Record<string, CategoryContent> = {
       }
     ]
   },
-  'free-install': {
-    title: 'Free Install',
+  exploration: {
+    title: 'Exploration',
     apps: [
       {
-        id: 'google-analytics',
-        title: 'Google Analytics',
+        id: 'passwords',
+        title: 'Passwords',
         description:
-          'Measure the impact of your Messenger on website conversions',
-        icon: 'logos:google-analytics',
+          'Easily access your passwords, passkeys and other credentials in one place. Quickly sign in with AutoFill, get alerts for compromised accounts and sync on the go.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/passwords_chiclet__e0zkdjy9tqye_xlarge.png',
         iconColor: 'text-yellow-500',
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Easily access your passwords, passkeys and other credentials in one place. Quickly sign in with AutoFill, get alerts for compromised accounts and sync on the go.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/passwords_bg__gin2d8t3p1ui_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -1424,108 +1420,139 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'mailchimp',
-        title: 'Mailchimp',
-        description: 'Sync your Intercom and Mailchimp contacts automatically',
-        icon: 'logos:mailchimp-icon',
-        iconColor: 'text-yellow-500'
-      },
-      {
-        id: 'shopify',
-        title: 'Shopify',
+        id: 'safari',
+        title: 'Safari',
         description:
-          'Connect your Shopify store to provide better customer support',
-        icon: 'logos:shopify',
-        iconColor: 'text-green-500'
+          'njoy the Internet with blazing-fast speed, optimised battery life and powerful privacy protections built right in.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/safari_chiclet__ervigamv5qye_xlarge.png',
+        iconColor: 'text-yellow-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/safari_bg__ccegus8jih9e_xlarge_2x.jpg'
       },
       {
-        id: 'zapier',
-        title: 'Zapier',
-        description: 'Connect Intercom with 3,000+ apps without any code',
-        icon: 'logos:zapier-icon',
-        iconColor: 'text-orange-500'
-      },
-      {
-        id: 'calendly',
-        title: 'Calendly',
+        id: 'maps',
+        title: 'Maps',
         description:
-          'Skip the scheduling back and forth, with Calendly for Intercom',
-        icon: 'logos:calendly-icon',
-        iconColor: 'text-blue-500'
+          'Get around with ease using multi-stop routing, voice-guided navigation and real-time traffic conditions — all with your privacy protected.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/maps_chiclet__b825c0yhl64i_xlarge.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/maps_bg__cu7g9d28ddg2_xlarge_2x.jpg'
       },
       {
-        id: 'google-calendar',
-        title: 'Google Calendar',
-        description: 'Let leads and customers book meetings in the Messenger',
-        icon: 'logos:google-calendar',
-        iconColor: 'text-blue-500'
+        id: 'weather',
+        title: 'Weather',
+        description:
+          'Check current and forecasted weather at a glance. View precipitation, air quality and wind conditions. And stay notified of severe local weather.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/weather_chiclet__85gxx6e7lnmm_xlarge.png',
+        iconColor: 'text-orange-500',
+        image:
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/weather_bg__dhkuy7pxpugm_xlarge_2x.jpg'
+      },
+      {
+        id: 'findmy',
+        title: 'Find My',
+        description:
+          'Track items with AirTag, share your location with friends and family, and find your devices — even if they’re offline.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/find_my_chiclet__dkvz0535bjwy_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/find_my_bg__3svhbvmavde6_xlarge_2x.jpg'
+      },
+      {
+        id: 'translate',
+        title: 'Translate',
+        description:
+          'Translate voice and text, have a conversation between languages or translate text in photos.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/translate_chiclet__glboej28ciq2_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/translate_bg__duvmu57ovsq6_xlarge_2x.jpg'
       }
     ]
   },
-  'support-teams': {
-    title: 'Support Teams',
+  productivity: {
+    title: 'Productivity',
     apps: [
       {
-        id: 'zendesk-support',
-        title: 'Zendesk',
+        id: 'notes',
+        title: 'Notes',
         description:
-          'Connect your Zendesk and Intercom accounts for seamless support',
-        icon: 'logos:zendesk-icon',
-        iconColor: 'text-green-500'
+          'Jot down short or long notes — anytime, anywhere. You can add checklists, images, drawings, links, scanned documents and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/notes_chiclet__clow1nl1x7bm_xlarge.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/notes_bg__8mndkoaputu6_xlarge_2x.jpg'
       },
       {
-        id: 'front',
-        title: 'Front',
-        description: 'Manage all your communication channels in one place',
-        icon: 'lucide:inbox',
-        iconColor: 'text-blue-500'
-      },
-      {
-        id: 'helpscout',
-        title: 'Help Scout',
-        description: 'Connect Help Scout to provide seamless customer support',
-        icon: 'lucide:help-circle',
-        iconColor: 'text-blue-500'
-      },
-      {
-        id: 'freshdesk',
-        title: 'Freshdesk',
-        description: 'Sync conversations between Intercom and Freshdesk',
-        icon: 'lucide:headphones',
-        iconColor: 'text-green-500'
-      },
-      {
-        id: 'gorgias',
-        title: 'Gorgias',
+        id: 'finder',
+        title: 'Finder',
         description:
-          'Helpdesk for ecommerce brands on Shopify, Magento and BigCommerce',
-        icon: 'lucide:message-square',
-        iconColor: 'text-purple-500'
+          'Search, browse and organise files stored on your Mac, iCloud Drive, external drives and other cloud providers. Save favourites, batch rename files, collaborate and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/finder_chiclet__cc9vmms3qady_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/finder_bg__corgdpfyztw2_xlarge_2x.jpg'
       },
       {
-        id: 'kustomer',
-        title: 'Kustomer',
-        description: 'Connect your Kustomer and Intercom accounts',
-        icon: 'lucide:users',
-        iconColor: 'text-blue-500'
+        id: 'pages',
+        title: 'Pages',
+        description:
+          'Collaborate on documents in real time with powerful design tools. Customise fonts, personalise text styles and add beautiful graphics.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/pages_chiclet__ch6gvzxvajrm_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/pages_bg__giy3dxe5olay_xlarge_2x.jpg'
+      },
+      {
+        id: 'numbers',
+        title: 'Numbers',
+        description:
+          'Create stellar spreadsheets and enter data on the go with forms. Collaborate with others, visualise your data and choose from hundreds of powerful functions.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/numbers_chiclet__z8rm4rnfj42a_xlarge.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/numbers_bg__e6clggpam3wy_xlarge_2x.jpg'
+      },
+      {
+        id: 'files',
+        title: 'Files',
+        description:
+          'Browse, locate and organise files stored on your device, iCloud Drive, external drives and other cloud providers. Use tags and recents to keep items at your fingertips.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/files_chiclet__csi48qoljj8m_xlarge.png',
+        iconColor: 'text-purple-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/files_bg__d7u8mhmrbo02_xlarge_2x.jpg'
+      },
+      {
+        id: 'shortcuts',
+        title: 'Shortcuts',
+        description:
+          'Create custom automations or choose from hundreds of built-in actions in your favourite apps to help you accomplish everyday tasks using Siri or a simple tap.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/shortcuts_chiclet__dexircp9ahm6_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/shortcuts_bg__c6cppk49ikwi_xlarge_2x.jpg'
       }
     ]
   },
+
   // Categories
-  sales: {
-    title: 'Sales',
+  communication: {
+    title: 'Communication',
     apps: [
       {
-        id: 'crm',
-        title: 'CRM',
-        description: 'Comprehensive CRM platform for customer-facing teams.',
-        icon: 'lucide:link',
+        id: 'phone',
+        title: 'Phone',
+        description:
+          'Make and receive phone calls, including on Mac and iPad when your iPhone is nearby.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/phone_chiclet__f1brppw3aqy6_xlarge.png',
         iconColor: 'text-blue-500',
         // Add detailed information
         detailedDescription:
-          'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+          'Make and receive phone calls, including on Mac and iPad when your iPhone is nearby.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/phone_bg__cxedli9m3yc2_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:database',
@@ -1619,17 +1646,17 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'bigin',
-        title: 'Bigin',
+        id: 'messages',
+        title: 'Messages',
         description:
-          'Simple CRM for small businesses moving from spreadsheets.',
-        icon: 'lucide:filter',
+          'Send end-to-end encrypted messages from any Apple device and express yourself using text effects, emoji and sticker Tapbacks, and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/messages_chiclet__f8bzind6fdqy_xlarge.png',
         iconColor: 'text-green-500',
         // Add detailed information
         detailedDescription:
-          'Bigin is a simple yet powerful CRM designed specifically for small businesses transitioning from spreadsheets. Get up and running in minutes with an intuitive interface that requires no technical expertise.',
+          'Send end-to-end encrypted messages from any Apple device and express yourself using text effects, emoji and sticker Tapbacks, and more.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=bigin-dashboard',
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/messages_bg__fbdw60yaz9qy_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:zap',
@@ -1723,50 +1750,62 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'sign',
-        title: 'Sign',
-        description: 'Digital signature app for businesses.',
-        icon: 'lucide:file-signature',
-        iconColor: 'text-blue-500'
+        id: 'facetime',
+        title: 'Facetime',
+        description:
+          'Connect with friends and family on video or audio calls. And share your screen or use SharePlay to listen to music together, watch TV and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/facetime_chiclet__dkfd0tacahua_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/facetime_bg__f6jkxmeyuua2_xlarge_2x.jpg'
       },
       {
-        id: 'salesforce-sales',
-        title: 'Salesforce',
-        description: 'Sync data and streamline workflows for sales teams',
-        icon: 'logos:salesforce',
-        iconColor: 'text-blue-500'
+        id: 'mail',
+        title: 'Mail',
+        description:
+          'Access email from iCloud, Gmail, Exchange, Yahoo, Outlook and other providers in one place — and enjoy powerful productivity features.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/mail_chiclet__s40xvfy4twyu_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mail_bg__bc785xyf5l9u_xlarge_2x.jpg'
       },
       {
-        id: 'hubspot-sales',
-        title: 'HubSpot',
-        description: 'Sync contacts and conversations between platforms',
-        icon: 'logos:hubspot',
-        iconColor: 'text-orange-500'
+        id: 'contacts',
+        title: 'Contacts',
+        description:
+          'Manage contacts and keep their information up to date across your devices and accounts. And customise how you appear to others with Contact Posters.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/contacts_chiclet__bfsq7qs1ptjm_xlarge.png',
+        iconColor: 'text-orange-500',
+        image:
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/contacts_bg__bhsamcn0o0c2_xlarge_2x.jpg'
       },
       {
-        id: 'pipedrive',
-        title: 'Pipedrive',
-        description: 'CRM designed to help small sales teams',
-        icon: 'lucide:git-pull-request',
-        iconColor: 'text-green-500'
+        id: 'walkie-talkie',
+        title: 'Walkie-Talkie',
+        description:
+          'Get in touch with other Apple Watch users in just a tap. You can control your availability and decide when you can be contacted.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/walkie_talkie_chiclet__dbuyb9ra48sy_xlarge.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/walkie_talkie_bg__bqaxmk1cyr5y_xlarge_2x.jpg'
       }
     ]
   },
-  marketing: {
-    title: 'Marketing',
+  creativity: {
+    title: 'Creativity',
     apps: [
       {
-        id: 'campaigns',
-        title: 'Campaigns',
+        id: 'photos',
+        title: 'Photos',
         description:
-          'Create, send, and track targeted email campaigns that drive sales.',
-        icon: 'lucide:megaphone',
+          'Browse, edit and share your amazing photos and videos. And use intelligent, personalised features that help you find, enjoy and share your best shots.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/photos_chiclet__cs6rufbxntqq_xlarge.png',
         iconColor: 'text-red-500',
         // Add detailed information
         detailedDescription:
           'Our Campaigns platform helps you create, send, and analyze email marketing campaigns that drive engagement and conversions. With powerful segmentation, beautiful templates, and detailed analytics.',
         image:
-          'https://img.heroui.chat/image/dashboard?w=600&h=400&u=campaigns-dashboard',
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/photos_bg__ms16z7ivnyye_xlarge_2x.jpg',
         features: [
           {
             icon: 'lucide:target',
@@ -1860,86 +1899,119 @@ export const categoryContents: Record<string, CategoryContent> = {
         ]
       },
       {
-        id: 'mailchimp-marketing',
-        title: 'Mailchimp',
-        description: 'Sync your contacts automatically',
-        icon: 'logos:mailchimp-icon',
-        iconColor: 'text-yellow-500'
+        id: 'camera',
+        title: 'Camera',
+        description:
+          'Take stunning photos and videos with true-to‑life colour in any situation — from everyday snapshots to studio-quality portraits.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/camera_chiclet__durqmihra2s2_xlarge.png',
+        iconColor: 'text-yellow-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/camera_bg__c6m5k4dggw6e_xlarge_2x.jpg'
       },
       {
-        id: 'hubspot-marketing',
-        title: 'HubSpot Marketing',
-        description: 'Connect your marketing automation platform',
-        icon: 'logos:hubspot',
-        iconColor: 'text-orange-500'
+        id: 'garage-band',
+        title: 'Garage Band',
+        description:
+          'Make music with ease — using a fully equipped music creation studio, a complete Sound Library that includes instruments and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/garageband_chiclet__d3ng9hjlxdiu_xlarge.png',
+        iconColor: 'text-orange-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/garageband_bg__fa0kyvfwgdua_xlarge_2x.jpg'
       },
       {
-        id: 'marketo',
-        title: 'Marketo',
-        description: 'Engage customers with personalized marketing',
-        icon: 'lucide:mail',
-        iconColor: 'text-purple-500'
+        id: 'imovie',
+        title: 'iMovie',
+        description:
+          'Create memorable cinema-quality videos with intuitive editing tools and storyboard options for Hollywood-style trailers and movies.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/imovie_chiclet__embecerqsn2a_xlarge.png',
+        iconColor: 'text-purple-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/imovie_bg__dershya9pcae_xlarge_2x.jpg'
       },
       {
-        id: 'salesiq',
-        title: 'SalesIQ',
-        description: 'Live chat app to engage and convert website visitors.',
-        icon: 'lucide:target',
-        iconColor: 'text-red-500'
+        id: 'logicpro',
+        title: 'Logic Pro for iPad',
+        description:
+          'Experience a complete collection of sophisticated creative tools for professional songwriting, beat making, editing and mixing — designed entirely for touch.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/logic_pro_ipad_chiclet__ffn3y2bee7m2_xlarge.png',
+        iconColor: 'text-red-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/logic_pro_ipad_bg__gygw5xn2rb6m_xlarge_2x.jpg'
       },
       {
-        id: 'google-analytics-marketing',
-        title: 'Google Analytics',
-        description: 'Measure the impact of your campaigns',
-        icon: 'logos:google-analytics',
-        iconColor: 'text-yellow-500'
+        id: 'clips',
+        title: 'Clips',
+        description:
+          'Capture joyful moments, add Memoji and amazing augmented reality effects, then share it all with friends, family or the world.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/clips_chiclet__ci5oaty0xas2_xlarge.png',
+        iconColor: 'text-yellow-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/clips_bg__c5n8lybrc42u_xlarge_2x.jpg'
       }
     ]
   },
-  'e-commerce': {
+  features: {
     title: 'E-commerce',
     apps: [
       {
-        id: 'shopify-ecommerce',
-        title: 'Shopify',
-        description: 'Connect your Shopify store for better customer support',
-        icon: 'logos:shopify',
-        iconColor: 'text-green-500'
+        id: 'mainstage',
+        title: 'Mainstage',
+        description:
+          'Turn your Mac into a musical instrument, voice processor or guitar rig for studio-level sound onstage — without any extra equipment.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/mainstage_chiclet__gfjm8nlipr6m_xlarge.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mainstage_bg__eg1efye61ewm_xlarge_2x.jpg'
       },
       {
-        id: 'woocommerce',
-        title: 'WooCommerce',
-        description: 'Connect your WooCommerce store to Intercom',
-        icon: 'logos:woocommerce-icon',
-        iconColor: 'text-purple-500'
+        id: 'journal',
+        title: 'Journal',
+        description:
+          'Reflect on everyday moments and life’s special events using inspiration from private, personalised suggestions — and include your photos, videos and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/journal_chiclet__fd4r6x6g12my_xlarge.png',
+        iconColor: 'text-purple-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/journal_bg__fsmzvvexile2_xlarge_2x.jpg'
       },
       {
-        id: 'magento',
-        title: 'Magento',
-        description: 'Connect your Magento store for seamless integration',
-        icon: 'logos:magento',
-        iconColor: 'text-orange-500'
+        id: 'airplay',
+        title: 'AirPlay',
+        description:
+          'Share videos, photos, music and more from Apple devices to Apple TV, Mac, your favourite speakers and popular smart TVs.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/airplay_chiclet__fumkechuax6q_xlarge.png',
+        iconColor: 'text-orange-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/airplay_bg__fmlchz3w1jyy_xlarge_2x.jpg'
       },
       {
-        id: 'stripe-ecommerce',
-        title: 'Stripe',
-        description: 'View customer payment details and subscription status',
-        icon: 'logos:stripe',
-        iconColor: 'text-blue-500'
+        id: 'reality',
+        title: 'Augumented Reality',
+        description:
+          'Experience the world’s largest augmented reality platform, with millions of AR‑enabled devices and thousands of AR apps.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/ar_chiclet__decotk2jkay6_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/ar_bg__ey4tycitk9yu_xlarge_2x.jpg'
       },
       {
-        id: 'bigcommerce',
-        title: 'BigCommerce',
-        description: 'Connect your BigCommerce store to Intercom',
-        icon: 'lucide:shopping-bag',
-        iconColor: 'text-blue-500'
+        id: 'siri',
+        title: 'Siri',
+        description:
+          'Simplify and accelerate everyday tasks with the help of the most private intelligent assistant.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/siri_chiclet__fuvctveekday_xlarge.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/siri_bg__f5cxl7davnqm_xlarge_2x.jpg'
       },
       {
-        id: 'gorgias-ecommerce',
-        title: 'Gorgias',
-        description: 'Helpdesk for ecommerce brands',
-        icon: 'lucide:message-square',
-        iconColor: 'text-purple-500'
+        id: 'icloud',
+        title: 'iCloud',
+        description:
+          'Keep your photos, files, notes and more safely backed up and available wherever you are. Upgrade to iCloud+ for premium features and more storage.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/icloud_chiclet__gf9x6hrim466_xlarge.png',
+        iconColor: 'text-purple-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg'
       }
     ]
   },
@@ -1947,47 +2019,32 @@ export const categoryContents: Record<string, CategoryContent> = {
     title: 'Service',
     apps: [
       {
-        id: 'desk',
-        title: 'Desk',
+        id: 'support',
+        title: 'Apple Support',
         description:
-          'Customer service software for exceptional customer support.',
-        icon: 'lucide:headphones',
-        iconColor: 'text-blue-500'
+          'Work seamlessly across Apple devices. Start a task on one device and finish on another. And even use them together with Continuity Camera, Universal Control and more.',
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/apple_support_chiclet__djopgez3aj6u_large_2x.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg'
       },
       {
-        id: 'assist',
-        title: 'Assist',
+        id: 'configurator',
+        title: 'Apple Configurator',
         description: 'Remote support and screen sharing solution.',
-        icon: 'lucide:life-buoy',
-        iconColor: 'text-green-500'
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/apple_configurator_chiclet__fsp84ajqxvau_large_2x.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/podcasts_bg__dfk2zkahk8uq_xlarge_2x.jpg'
       },
       {
-        id: 'zendesk-service',
-        title: 'Zendesk',
+        id: 'classroom',
+        title: 'Classroom',
         description: 'Connect for seamless support',
-        icon: 'logos:zendesk-icon',
-        iconColor: 'text-green-500'
-      },
-      {
-        id: 'freshdesk-service',
-        title: 'Freshdesk',
-        description: 'Sync conversations between platforms',
-        icon: 'lucide:headphones',
-        iconColor: 'text-green-500'
-      },
-      {
-        id: 'helpscout-service',
-        title: 'Help Scout',
-        description: 'Connect to provide seamless customer support',
-        icon: 'lucide:help-circle',
-        iconColor: 'text-blue-500'
-      },
-      {
-        id: 'front-service',
-        title: 'Front',
-        description: 'Manage all your communication channels in one place',
-        icon: 'lucide:inbox',
-        iconColor: 'text-blue-500'
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/classroom_chiclet__fvo7mm281mum_large_2x.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg'
       }
     ]
   },
@@ -1995,895 +2052,32 @@ export const categoryContents: Record<string, CategoryContent> = {
     title: 'Finance',
     apps: [
       {
-        id: 'books',
-        title: 'Books',
+        id: 'alarm',
+        title: 'Alarm',
         description: 'Accounting software for growing businesses.',
-        icon: 'lucide:book',
-        iconColor: 'text-green-500'
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/alarms_chiclet__f7i6s8kcggmu_large_2x.png',
+        iconColor: 'text-green-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg'
       },
       {
-        id: 'invoice',
-        title: 'Invoice',
+        id: 'store',
+        title: 'App store',
         description: 'Create and send professional invoices.',
-        icon: 'lucide:file-text',
-        iconColor: 'text-blue-500'
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/apple_developer_chiclet__cw2x17fztgeq_large_2x.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg'
       },
       {
-        id: 'stripe-finance',
-        title: 'Stripe',
+        id: 'calculator',
+        title: 'Calculator',
         description: 'View customer payment details and subscription status',
-        icon: 'logos:stripe',
-        iconColor: 'text-blue-500'
-      },
-      {
-        id: 'xero',
-        title: 'Xero',
-        description: 'Connect your accounting software to Intercom',
-        icon: 'lucide:dollar-sign',
-        iconColor: 'text-blue-500'
-      },
-      {
-        id: 'quickbooks',
-        title: 'QuickBooks',
-        description: 'Sync your financial data with Intercom',
-        icon: 'lucide:credit-card',
-        iconColor: 'text-green-500'
-      },
-      {
-        id: 'chargebee',
-        title: 'Chargebee',
-        description: 'Subscription billing and revenue management',
-        icon: 'lucide:repeat',
-        iconColor: 'text-purple-500'
+        icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/calculator_chiclet__f35da2cpbm6a_large_2x.png',
+        iconColor: 'text-blue-500',
+        image:
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/logic_pro_ipad_bg__gygw5xn2rb6m_xlarge_2x.jpg'
       }
     ]
   }
 }
-
-export const technologiesData: Technology[] = [
-  {
-    color: 'text-purple-600',
-    category: 'Infrastructure',
-    id: 'cloud-transformation',
-    title: 'Cloud Transformation',
-    description:
-      'Seamless migration and optimization of your infrastructure with secure, scalable cloud solutions.',
-    shortDescription:
-      'Accelerate your business with next-generation cloud technology for enhanced agility, scalability, and security.',
-    fullDescription:
-      "In today's fast-paced digital landscape, businesses need agility, scalability, and security to stay ahead. RamInfosys delivers end-to-end cloud transformation services—helping enterprises migrate, modernize, and optimize their IT infrastructure for peak performance, cost efficiency, and innovation.",
-    icon: 'lucide:cloud',
-    image: '../images/services/cloud-1.jpg',
-    bannerImage: '../images/services/cloud.jpg',
-    obstaclesImage: '../images/services/cloud-2.jpg',
-    sections: [
-      {
-        title: 'Why Cloud Transformation is Essential',
-        content:
-          'Legacy systems slow you down. Outdated infrastructure leads to high operational costs from maintaining physical servers, downtime risks during upgrades or failures, limited scalability, making it hard to handle traffic spikes, and security vulnerabilities in aging IT environments. Our cloud-first approach eliminates these barriers, enabling faster innovation with DevOps and CI/CD pipelines, elastic scalability to match business demand, predictable costs with pay-as-you-go models, and enterprise-grade security & compliance (GDPR, HIPAA, SOC 2).'
-      },
-      {
-        title: 'Our Cloud Solutions: Migration, Modernization & Management',
-        content:
-          'We offer seamless cloud migration with zero-downtime transitions from on-premise to cloud (AWS, Azure, GCP), automated workload assessment for optimal cloud architecture, and legacy app modernization (containerization, serverless). Our smart cloud optimization includes AI-driven cost management to reduce waste with auto-scaling & reserved instances, performance tuning with high-availability architectures for mission-critical apps, and multi-cloud & hybrid strategies to avoid vendor lock-in. We also provide secure cloud operations with 24/7 monitoring & incident response, automated backups & disaster recovery, and identity & access management (IAM) for strict compliance.'
-      }
-    ],
-    painPoints: [
-      {
-        title: 'Outdated infrastructure',
-        description:
-          "Legacy systems will slow's you down in this aging IT environments"
-      },
-      {
-        title: 'High operational costs',
-        description:
-          'High operational costs from maintaining physical servers while comparing with cloud'
-      },
-      {
-        title: 'Downtime risks',
-        description:
-          'Downtime risks during upgrades or failures & from cyber attacks'
-      },
-      {
-        title: 'Limited scalability',
-        description: 'Making it hard to handle traffic spikes'
-      },
-      {
-        title: 'Security vulnerabilities',
-        description: 'Open to security vulnerabilities in aging IT environments'
-      }
-    ],
-    features: [
-      {
-        title: 'Zero-downtime cloud migration',
-        description:
-          'Seamless transitions from on-premise to cloud (AWS, Azure, GCP)',
-        icon: 'lucide:check'
-      },
-      {
-        title: 'Legacy app modernization',
-        description:
-          'Upgrade with latest tools like containerization, serverless',
-        icon: 'lucide:check'
-      },
-      {
-        title: 'AI-driven cost optimization',
-        description: 'Reduce waste with auto-scaling & reserved instances',
-        icon: 'lucide:check'
-      },
-      {
-        title: 'Performance tuning',
-        description:
-          'High-availability architectures for mission-critical apps',
-        icon: 'lucide:check'
-      },
-      {
-        title: 'Multi-cloud & hybrid strategies',
-        description:
-          'Avoid vendor lock-in with 24/7 monitoring & incident response',
-        icon: 'lucide:check'
-      },
-      {
-        title: 'Secured Cloud Operations',
-        description:
-          'provides Identity & access management (IAM) for strict compliance with Automated backups & disaster recovery',
-        icon: 'lucide:check'
-      }
-    ],
-    impacts: [
-      {
-        title: '45%',
-        description: 'Average Cost Reduction',
-        value: '45%',
-        hideValueLabel: true
-      },
-      {
-        title: '60%',
-        description: 'Deployment Speed Improvement',
-        value: '60%',
-        hideValueLabel: true
-      },
-      {
-        title: 'Downtime',
-        description: 'App Crash report',
-        value: '<1%',
-        label: true
-      }
-    ],
-    impacts_skip: true,
-    benefits: [
-      {
-        title: 'Faster Innovation',
-        description: 'Accelerate development with DevOps and CI/CD pipelines',
-        icon: 'lucide:rocket'
-      },
-      {
-        title: 'Elastic Scalability',
-        description: 'Scale resources up or down to match business demand',
-        icon: 'lucide:expand'
-      },
-      {
-        title: 'Predictable Costs',
-        description: 'Pay-as-you-go models for better budget management',
-        icon: 'lucide:wallet'
-      },
-      {
-        title: 'Enterprise Security',
-        description: 'Compliance with GDPR, HIPAA, SOC 2 standards',
-        icon: 'lucide:shield'
-      },
-      {
-        title: 'Certified Cloud Architects',
-        description:
-          'Certified partner with popular Cloud Providers (AWS, Azure, Google Cloud)',
-        icon: 'lucide:check'
-      }
-    ],
-    caseStudy: {
-      title: 'Retail Giant Cuts Costs by 45%',
-      challenge:
-        'A leading retailer struggled with slow deployments and high infrastructure costs.',
-      solution:
-        'We migrated their systems to a hybrid AWS + Azure cloud, optimizing resource allocation.',
-      results: [
-        {
-          title: 'Infrastructure Cost Reduction',
-          value: '45%'
-        },
-        {
-          title: 'Deployment Speed Improvement',
-          value: '60%'
-        },
-        {
-          title: 'Inventory Tracking Downtime',
-          value: '<1%',
-          label: true,
-          label_title: 'Downtime'
-        }
-      ]
-    }
-  },
-  {
-    color: 'text-green-600',
-    category: 'Artificial Intelligence',
-    id: 'ai-ml',
-    title: 'AI & Machine Learning',
-    shortDescription:
-      'Transform data into actionable insights and automated actions for growth and efficiency.',
-    fullDescription:
-      'Our AI and Machine Learning solutions help businesses leverage their data to gain predictive insights, automate processes, and create personalized experiences that drive growth and efficiency.',
-    icon: 'lucide:brain',
-    image: '../images/services/ai.jpg',
-    bannerImage: '../images/services/ai-1.jpg',
-    obstaclesImage: '../images/services/ai-2.jpg',
-    featuresImage: '../images/services/ai-3.jpg',
-    // "https://img.heroui.chat/image/ai?w=1200&h=600&u=ai1",
-    painPoints: [
-      {
-        title: 'Data Overload',
-        description: 'Overwhelming amounts of data with no actionable insights'
-      },
-      {
-        title: 'Manual Decision Making',
-        description: 'Error-prone processes relying on human judgment alone'
-      },
-      {
-        title: 'Personalization Gaps',
-        description: 'Inability to deliver customized experiences to customers'
-      }
-    ],
-    features: [
-      {
-        title: 'Predictive Analytics',
-        description: 'Forecast trends and outcomes with advanced algorithms',
-        icon: 'lucide:line-chart'
-      },
-      {
-        title: 'NLP Chatbots',
-        description:
-          'Natural language processing for intelligent customer service',
-        icon: 'lucide:message-circle'
-      },
-      {
-        title: 'Computer Vision',
-        description: 'Image recognition and processing for quality control',
-        icon: 'lucide:eye'
-      },
-      {
-        title: 'Anomaly Detection',
-        description:
-          'Real-time identification of unusual patterns or behaviors',
-        icon: 'lucide:alert-triangle'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Prediction Accuracy',
-        description:
-          'ML algorithms achieved high accuracy in patient readmission risk prediction',
-        value: '82%'
-      },
-      {
-        title: 'Readmission Reduction',
-        description: 'Healthcare provider reduced patient readmission rates',
-        value: '28%'
-      },
-      {
-        title: 'Response Time',
-        description: 'Improved care response time for at-risk patients'
-      }
-    ]
-  },
-  {
-    color: 'text-green-600',
-    category: 'Infrastructure',
-    id: 'blockchain',
-    title: 'Blockchain',
-    shortDescription:
-      'Secure, transparent, and tamper-proof digital transactions',
-    fullDescription:
-      'Our blockchain solutions provide businesses with decentralized, immutable ledger technology that enhances security, transparency, and efficiency across various processes and transactions.',
-    icon: 'lucide:link',
-    image: '../images/services/blockchain.jpg',
-    bannerImage: '../images/services/blockchain-1.jpg',
-    obstaclesImage: '../images/services/blockchain-2.jpg',
-    featuresImage: '../images/services/blockchain-3.jpg',
-    painPoints: [
-      {
-        title: 'Transaction Transparency',
-        description:
-          'Lack of visibility and traceability in complex transactions'
-      },
-      {
-        title: 'Data Tampering',
-        description: 'Vulnerability to fraud and unauthorized modifications'
-      },
-      {
-        title: 'Centralized Systems',
-        description:
-          'Single points of failure in traditional database architectures'
-      }
-    ],
-    features: [
-      {
-        title: 'Decentralized Ledgers',
-        description: 'Distributed and tamper-proof record-keeping',
-        icon: 'lucide:database'
-      },
-      {
-        title: 'Smart Contracts',
-        description: 'Self-executing agreements with predefined conditions',
-        icon: 'lucide:file-check'
-      },
-      {
-        title: 'Asset Tokenization',
-        description: 'Digital representation of assets for seamless exchange',
-        icon: 'lucide:badge'
-      },
-      {
-        title: 'Identity Verification',
-        description: 'Secure authentication and comprehensive audit trails',
-        icon: 'lucide:fingerprint'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Traceability Increase',
-        description: 'Logistics firm improved shipment tracking across borders',
-        value: '90%'
-      },
-      {
-        title: 'Fraud Reduction',
-        description: 'Significant decrease in fraudulent activities'
-      },
-      {
-        title: 'Processing Time',
-        description:
-          'Reduced customs processing time for international shipments',
-        value: '40%'
-      }
-    ]
-  },
-  {
-    color: 'text-green-600',
-    category: 'Productivity',
-    id: 'internet-of-things',
-    title: 'Internet of Things (IoT)',
-    shortDescription:
-      'Connect and optimize physical assets with intelligent monitoring',
-    fullDescription:
-      'Our IoT solutions connect devices, sensors, and systems to create intelligent networks that provide real-time insights, enable predictive maintenance, and optimize operational efficiency.',
-    icon: 'lucide:wifi',
-    image: '../images/services/iot-1.jpg',
-    bannerImage: '../images/services/iot.jpg',
-    obstaclesImage: '../images/services/iot-2.jpg',
-    featuresImage: '../images/services/iot-3.jpg',
-    painPoints: [
-      {
-        title: 'Equipment Downtime',
-        description:
-          'Unexpected failures leading to costly production interruptions'
-      },
-      {
-        title: 'Operational Visibility',
-        description: 'Limited real-time insights into equipment performance'
-      },
-      {
-        title: 'Energy Consumption',
-        description: 'Excessive and inefficient use of power resources'
-      }
-    ],
-    features: [
-      {
-        title: 'Device Integration',
-        description:
-          'Seamless connection of sensors and equipment to central systems',
-        icon: 'lucide:plug'
-      },
-      {
-        title: 'Predictive Maintenance',
-        description:
-          'Early detection of potential failures through sensor data analysis',
-        icon: 'lucide:alert-circle'
-      },
-      {
-        title: 'Remote Monitoring',
-        description: 'Real-time observation and control of distributed systems',
-        icon: 'lucide:monitor'
-      },
-      {
-        title: 'Energy Optimization',
-        description:
-          'Intelligent management of power consumption across facilities',
-        icon: 'lucide:zap'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Downtime Reduction',
-        description:
-          'Manufacturing plant decreased unplanned equipment failures',
-        value: '50%'
-      },
-      {
-        title: 'Annual Savings',
-        description: 'Cost reduction in maintenance and operational expenses',
-        value: '$300K+',
-        label: true
-      },
-      {
-        title: 'Productivity Increase',
-        description: 'Improved overall equipment effectiveness and output'
-      }
-    ]
-  },
-  {
-    color: 'text-pink-600',
-    category: 'Artificial Intelligence',
-    id: 'data-analytics',
-    title: 'Data Analytics & AI',
-    description:
-      'Transform raw data into actionable insights with advanced analytics and artificial intelligence.',
-    // description: "Turn complex data into actionable business intelligence.",
-    shortDescription:
-      'Turn complex data into competitive advantage with real-time analytics and insights.',
-    fullDescription:
-      'Our data analytics solutions help organizations collect, process, and analyze data from multiple sources to uncover insights, identify trends, and make data-driven decisions that drive business growth.',
-    icon: 'lucide:bar-chart-2',
-    image: '../images/services/data-analytics.jpg',
-    bannerImage: '../images/services/data-analytics-1.jpg',
-    obstaclesImage: '../images/services/data-analytics-2.jpg',
-    featuresImage: '../images/services/data-analytics-3.jpg',
-    painPoints: [
-      {
-        title: 'Siloed Data',
-        description:
-          'Fragmented information across different systems and departments'
-      },
-      {
-        title: 'Trend Identification',
-        description:
-          'Inability to recognize patterns in customer behavior and market changes'
-      },
-      {
-        title: 'Reporting Delays',
-        description: 'Time-consuming manual processes for generating insights'
-      }
-    ],
-    features: [
-      {
-        title: 'Centralized Dashboards',
-        description: 'Unified view of KPIs and metrics with real-time updates',
-        icon: 'lucide:layout-dashboard'
-      },
-      {
-        title: 'Prescriptive Analytics',
-        description:
-          'Advanced analysis to recommend optimal actions and strategies',
-        icon: 'lucide:lightbulb'
-      },
-      {
-        title: 'Data Integration',
-        description:
-          'Seamless connection of multiple data sources (ERP, CRM, etc.)',
-        icon: 'lucide:database'
-      },
-      {
-        title: 'Visualization Tools',
-        description:
-          'Interactive charts and graphs for intuitive data exploration',
-        icon: 'lucide:pie-chart'
-      }
-    ],
-    impacts: [
-      {
-        title: 'ROI Improvement',
-        description: 'eCommerce company optimized advertising spend',
-        value: '35%'
-      },
-      {
-        title: 'Sales Increase',
-        description: 'Enhanced campaign performance through better targeting',
-        value: '22%'
-      },
-      {
-        title: 'Customer Segmentation',
-        description:
-          'More accurate identification of customer groups and preferences'
-      },
-      {
-        title: 'Decision Speed',
-        description: 'Improvement in time to make data-driven decisions',
-        value: '25-35%'
-      },
-      {
-        title: 'Revenue Growth',
-        description: 'Increase through more intelligent targeting',
-        value: '20%'
-      }
-    ]
-  },
-  {
-    color: 'text-blue-600',
-    category: 'Product',
-    id: 'enterprise-software-development',
-    title: 'Enterprise Software Development',
-    description:
-      'Custom software solutions tailored to address your unique business challenges and streamline operations.',
-    shortDescription:
-      'Transform operations with purpose-built software tailored to your industry and workflows.',
-    fullDescription:
-      "We design and develop custom enterprise-grade software tailored to your industry, workflows, and long-term goals. Whether you're modernizing legacy systems or building from scratch, we focus on scalability, performance, and seamless integration.",
-    icon: 'lucide:code-2',
-    image: '../images/services/software-development.jpg',
-    bannerImage: '../images/services/software-development-1.jpg',
-    featuresImage: '../images/services/software-development-2.jpg',
-    benefits: [
-      {
-        title: 'Custom-Fit Solutions',
-        description: 'Perfectly aligned with your unique business model',
-        icon: 'lucide:puzzle'
-      },
-      {
-        title: 'Operational Efficiency',
-        description: 'Streamlined workflows and improved collaboration',
-        icon: 'lucide:settings'
-      },
-      {
-        title: 'System Integration',
-        description: 'Seamless connection with ERP, CRM, and legacy systems',
-        icon: 'lucide:plug'
-      },
-      {
-        title: 'Scalable Architecture',
-        description: 'Built to accommodate future growth and expansion',
-        icon: 'lucide:layers'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Process Efficiency',
-        description:
-          'Reduction in operational inefficiencies through custom software',
-        value: '40%'
-      },
-      {
-        title: 'Time-to-Market',
-        description: 'Faster deployment of new products and services',
-        value: '30%'
-      }
-    ]
-  },
-  {
-    color: 'text-teal-600',
-    category: 'Productivity',
-    id: 'it-consulting-n-strategy',
-    title: 'IT Consulting & Strategy',
-    description:
-      'Strategic guidance to align technology investments with business goals for maximum ROI.',
-    shortDescription:
-      'Accelerate digital success with strategic insights and 24/7 operational excellence.',
-    fullDescription:
-      'RamInfosys empowers enterprises with a dual approach: expert IT consulting to align technology with business goals and fully managed IT services to ensure performance, reliability, and scalability.',
-    icon: 'lucide:users',
-    image: '../images/services/consulting.jpg',
-    bannerImage: '../images/services/consulting-1.jpg',
-    featuresImage: '../images/services/consulting-2.jpg',
-    sections: [
-      {
-        title: 'What We Deliver',
-        content:
-          'From high-level digital strategy to hands-on operational management, our services help drive innovation, eliminate inefficiencies, and maintain seamless operations across your IT landscape.'
-      }
-    ],
-    benefits: [
-      {
-        title: 'Strategic IT Consulting',
-        description: 'Roadmap development tailored to your business KPIs',
-        icon: 'lucide:map'
-      },
-      {
-        title: 'Gap Analysis',
-        description:
-          'Digital maturity assessments to identify improvement areas',
-        icon: 'lucide:search'
-      },
-      {
-        title: 'Technology Enablement',
-        description: 'Cloud, DevOps, and automation implementation',
-        icon: 'lucide:rocket'
-      },
-      {
-        title: 'Vendor-Neutral Advisory',
-        description:
-          'Independent technology recommendations based on your needs',
-        icon: 'lucide:shield'
-      }
-    ],
-    impacts: [
-      {
-        title: 'IT Resource Utilization',
-        description: 'Improvement in efficiency of IT resources',
-        value: '30-45%'
-      },
-      {
-        title: 'Support Ticket Reduction',
-        description: 'Decrease in support issues through proactive maintenance',
-        value: '60%'
-      },
-      {
-        title: 'System Uptime',
-        description: 'Ensuring continuous operational availability',
-        value: '99.9%'
-      },
-      {
-        title: 'ROI Acceleration',
-        description:
-          'Faster return on IT investments aligned with business goals'
-      }
-    ]
-  },
-  {
-    color: 'text-indigo-600',
-    category: 'Infrastructure',
-    id: 'managed-it-services',
-    title: 'Managed IT Services',
-    description:
-      'Comprehensive IT management to keep your systems running smoothly and efficiently.',
-    shortDescription:
-      'Comprehensive IT management to keep your systems running smoothly and efficiently.',
-    fullDescription:
-      'Leverage our fully managed IT services to ensure performance, reliability, and scalability across your IT landscape.',
-    icon: 'lucide:settings',
-    image: '../images/services/it-services.jpg',
-    bannerImage: '../images/services/it-services-1.jpg',
-    featuresImage: '../images/services/it-services-2.jpg',
-    benefits: [
-      {
-        title: 'Risk Monitoring',
-        description: '24x7 infrastructure monitoring and incident resolution',
-        icon: 'lucide:eye'
-      },
-      {
-        title: 'scalable Infrastructure',
-        description:
-          'Predictable, scalable service models for any business size',
-        icon: 'lucide:bar-chart'
-      },
-      {
-        title: 'Zero Downtime',
-        description: 'Proactive maintenance to prevent downtime',
-        icon: 'lucide:trending-up'
-      },
-      {
-        title: 'Continuous Optimization',
-        description: 'Continuous system updates and performance optimization',
-        icon: 'lucide:database'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Decision Speed',
-        description: 'Improvement in time to make data-driven decisions',
-        value: '25-35%'
-      },
-      {
-        title: 'Revenue Growth',
-        description: 'Increase through more intelligent targeting',
-        value: '20%'
-      },
-      {
-        title: 'System Uptime',
-        description: 'Ensuring continuous operational availability',
-        value: '99.9%'
-      },
-      {
-        title: 'ROI Acceleration',
-        description:
-          'Faster return on IT investments aligned with business goals'
-      }
-    ]
-  },
-  {
-    color: 'text-amber-600',
-    category: 'Infrastructure',
-    id: 'cyber-security',
-    title: 'Cyber Security',
-    description:
-      'Protect your digital assets with comprehensive security strategies and advanced threat detection.',
-    shortDescription:
-      'Guard your business against evolving cyber threats with multi-layered security frameworks.',
-    fullDescription:
-      'We deploy multi-layered security frameworks to safeguard your infrastructure, applications, and data from internal and external threats.',
-    icon: 'lucide:shield',
-    image: '../images/services/cyber-security.jpg',
-    bannerImage: '../images/services/cyber-security-1.jpg',
-    featuresImage: '../images/services/cyber-security-2.jpg',
-    benefits: [
-      {
-        title: 'Threat Detection',
-        description:
-          'Proactive identification and response to security incidents',
-        icon: 'lucide:search'
-      },
-      {
-        title: 'Comprehensive Protection',
-        description: 'Endpoint, email, and network security solutions',
-        icon: 'lucide:lock'
-      },
-      {
-        title: 'Data Security',
-        description: 'Encryption and identity management systems',
-        icon: 'lucide:key'
-      },
-      {
-        title: 'Compliance',
-        description: 'Adherence to GDPR, HIPAA, and ISO standards',
-        icon: 'lucide:check-circle'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Threat Exposure',
-        description: 'Reduction in security vulnerabilities',
-        value: '90%'
-      },
-      {
-        title: 'Data Breaches',
-        description: 'No security incidents after implementation',
-        value: 'Zero',
-        label: true
-      }
-    ]
-  },
-  {
-    color: 'text-red-600',
-    category: 'Infrastructure',
-    id: 'security-management',
-    title: 'Security Management',
-    description:
-      'Comprehensive security oversight to identify and mitigate potential threats.',
-    shortDescription: 'Holistic oversight to secure your IT ecosystem',
-    fullDescription:
-      'We offer end-to-end security governance—from vulnerability assessments to compliance audits—ensuring that your security posture evolves with emerging risks.',
-    icon: 'lucide:lock',
-    image: '../images/services/security.jpg',
-    bannerImage: '../images/services/security-1.jpg',
-    featuresImage: '../images/services/security-2.jpg',
-    benefits: [
-      {
-        title: 'Risk Monitoring',
-        description:
-          'Continuous assessment of security threats and vulnerabilities',
-        icon: 'lucide:activity'
-      },
-      {
-        title: 'Policy Management',
-        description: 'Development and enforcement of security protocols',
-        icon: 'lucide:file-text'
-      },
-      {
-        title: 'Access Control',
-        description: 'Privileged account management and authorization systems',
-        icon: 'lucide:user-check'
-      },
-      {
-        title: 'Security Audits',
-        description: 'Regular assessments and threat simulations',
-        icon: 'lucide:clipboard-check'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Security Audit Scores',
-        description: 'Improvement in compliance and security ratings',
-        value: '35%'
-      },
-      {
-        title: 'Incident Response',
-        description: 'Decrease in time to address security events',
-        value: '50%'
-      }
-    ]
-  },
-  {
-    color: 'text-purple-600',
-    category: 'Product',
-    id: 'digital-experience-platforms',
-    title: 'Digital Experience Platforms (DXP)',
-    description:
-      'Create seamless, omnichannel experiences that engage customers across all digital touchpoints.',
-    shortDescription:
-      'Deliver connected, personalized experiences across channels',
-    fullDescription:
-      'We build and integrate digital experience platforms that unify content, data, and customer interactions across web, mobile, and other digital touchpoints.',
-    icon: 'lucide:smartphone',
-    image: '../images/services/digital.jpg',
-    bannerImage: '../images/services/digital-1.jpg',
-    featuresImage: '../images/services/digital-2.jpg',
-    benefits: [
-      {
-        title: 'Omnichannel Delivery',
-        description: 'Consistent content across all digital platforms',
-        icon: 'lucide:layout'
-      },
-      {
-        title: 'Personalization',
-        description:
-          'Tailored experiences based on user behavior and preferences',
-        icon: 'lucide:user'
-      },
-      {
-        title: 'System Integration',
-        description: 'Seamless connection with CRM, CMS, and analytics tools',
-        icon: 'lucide:git-merge'
-      },
-      {
-        title: 'Scalable Frameworks',
-        description: 'Flexible architecture for rapid content updates',
-        icon: 'lucide:expand'
-      }
-    ],
-    impacts: [
-      {
-        title: 'User Engagement',
-        description: 'Increase in interaction with digital platforms',
-        value: '60%'
-      },
-      {
-        title: 'Customer Retention',
-        description: 'Improvement in customer loyalty and repeat business',
-        value: '25%'
-      }
-    ]
-  },
-  {
-    color: 'text-green-600',
-    category: 'Product',
-    id: 'helpdesk-support',
-    title: 'Helpdesk Support',
-    description:
-      'Responsive technical assistance to resolve issues quickly and minimize downtime.',
-    shortDescription: 'Fast, friendly, and effective IT assistance',
-    fullDescription:
-      'Our dedicated helpdesk ensures your employees stay productive by quickly resolving technical issues—backed by SLAs and real-time tracking.',
-    icon: 'lucide:headphones',
-    image: '../images/services/support.jpg',
-    bannerImage: '../images/services/support-1.jpg',
-    featuresImage: '../images/services/support-2.jpg',
-    benefits: [
-      {
-        title: 'Multi-channel Support',
-        description: 'Assistance via email, phone, and chat platforms',
-        icon: 'lucide:message-circle'
-      },
-      {
-        title: 'Tiered Support',
-        description: 'Structured escalation process for complex issues',
-        icon: 'lucide:layers'
-      },
-      {
-        title: 'Issue Tracking',
-        description: 'Comprehensive monitoring of resolution progress',
-        icon: 'lucide:check-square'
-      },
-      {
-        title: 'Self-Service Portals',
-        description: 'Knowledge bases and tools for common problems',
-        icon: 'lucide:book-open'
-      }
-    ],
-    impacts: [
-      {
-        title: 'Resolution Time',
-        description: 'Reduction in average time to fix technical issues',
-        value: '40%'
-      },
-      {
-        title: 'User Satisfaction',
-        description: 'Increase in employee satisfaction with IT support',
-        value: '30%'
-      }
-    ]
-  }
-]

@@ -2,17 +2,17 @@ import { Icon } from '@iconify/react'
 import { useParams, useRouter } from '@tanstack/react-router'
 import React from 'react'
 
-import { Button, Card } from '@vx-oss/react'
+import { Button, Card, Image } from '@vx-oss/react'
 
 import { cn } from '../../utils/cn'
 import { Footer } from '../footer'
 import { Header } from '../header'
 import { categoryContents } from './data'
 
-const AppDetailPage: React.FC = () => {
+const AppDetailView: React.FC = () => {
   const router = useRouter()
-  const params = useParams<{ appsId: string }>({ from: '/apps/$appsId' })
-  const appId = params.appsId
+  const params = useParams({ from: '/apps/$appExploreId' })
+  const appId = params.appExploreId
 
   // ✅ FIX: Find the app inside all categoryContents
   const app =
@@ -63,8 +63,8 @@ const AppDetailPage: React.FC = () => {
               Back to Apps
             </Button>
             <div className="flex items-center">
-              <Icon
-                icon={app.icon}
+              <Image
+                src={app.icon}
                 className={app.iconColor}
                 width={32}
                 height={32}
@@ -86,23 +86,21 @@ const AppDetailPage: React.FC = () => {
 
           {/* Overview section */}
           <section className="mb-16">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <div>
-                <img
+            <div className="flex flex-col gap-8 md:flex-row">
+              <div className="md:w-1/3">
+                <Image
                   src={
                     app.image ||
                     `https://img.heroui.chat/image/dashboard?w=600&h=400&u=${app.id}`
                   }
                   alt={`${app.title} overview`}
-                  className="h-auto w-full rounded-lg object-cover shadow-md"
+                  className="h-auto w-full rounded-lg shadow-md"
                 />
               </div>
-              <div>
-                <p className="text-default-600 text-lg">
-                  {app.detailedDescription ||
-                    `${app.title} is a comprehensive solution designed to help businesses streamline their operations and improve productivity.`}
-                </p>
-                <ul className="mt-6 space-y-3">
+              <div className="md:w-2/3">
+                <h2 className="mb-6 text-2xl font-bold">Our Features</h2>
+
+                <ul className="my-6 space-y-3">
                   {features.slice(0, 3).map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <div className="bg-primary/10 mr-3 rounded-full p-1">
@@ -117,44 +115,43 @@ const AppDetailPage: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+                <section className="mb-16">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    {features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className={cn(
+                          'group/feature relative flex flex-col py-10 lg:border-r dark:border-neutral-800',
+                          (index === 0 || index === 4) &&
+                            'lg:border-l dark:border-neutral-800',
+                          index < 4 && 'lg:border-b dark:border-neutral-800'
+                        )}>
+                        {index < 4 ? (
+                          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
+                        ) : (
+                          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
+                        )}
+                        <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
+                          <Icon icon={feature.icon} width={24} height={24} />
+                        </div>
+                        <div className="relative z-10 mb-2 px-10 text-lg font-bold">
+                          <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-[#a91d44] dark:bg-neutral-700 dark:group-hover/feature:bg-[#df4861]" />
+                          <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
+                            {feature.title}
+                          </span>
+                        </div>
+                        <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
+                          {feature.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
               </div>
             </div>
           </section>
 
           {/* Features section */}
-          <section className="mb-16">
-            <h2 className="mb-6 text-2xl font-bold">Our Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    'group/feature relative flex flex-col py-10 lg:border-r dark:border-neutral-800',
-                    (index === 0 || index === 4) &&
-                      'lg:border-l dark:border-neutral-800',
-                    index < 4 && 'lg:border-b dark:border-neutral-800'
-                  )}>
-                  {index < 4 ? (
-                    <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
-                  ) : (
-                    <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
-                  )}
-                  <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
-                    <Icon icon={feature.icon} width={24} height={24} />
-                  </div>
-                  <div className="relative z-10 mb-2 px-10 text-lg font-bold">
-                    <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-[#a91d44] dark:bg-neutral-700 dark:group-hover/feature:bg-[#df4861]" />
-                    <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
-                      {feature.title}
-                    </span>
-                  </div>
-                  <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
 
           {/* Pricing, Results, Support */}
           <section className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -298,4 +295,4 @@ const AppDetailPage: React.FC = () => {
   )
 }
 
-export { AppDetailPage }
+export { AppDetailView }

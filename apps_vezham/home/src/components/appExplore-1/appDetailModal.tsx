@@ -27,17 +27,16 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
   app
 }) => {
   const router = useRouter()
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
 
   if (!app) return null
 
   const handleViewDetails = () => {
-    if (!app?.id) return
     onClose()
     router.navigate({ to: `/apps/${app.id}` })
+    console.log(app.id)
   }
-
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
 
   return (
     <Modal
@@ -54,7 +53,7 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
           <>
             <ModalHeader className="flex flex-col gap-1">
               <div className="flex items-center gap-4">
-                <Icon icon={app.icon} className={`${app.iconColor} h-8 w-8`} />
+                <Image src={app.icon} className={`${app.iconColor} h-8 w-8`} />
                 <h3 className="text-xl font-semibold">{app.title}</h3>
               </div>
             </ModalHeader>

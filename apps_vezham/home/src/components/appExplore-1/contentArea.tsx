@@ -13,7 +13,7 @@ interface ContentAreaProps {
   onBackClick?: () => void
   isMobileView?: boolean
   visibleContent: string
-  onAppClick: (appId: string, app: App) => void
+  onAppClick: (appsId: string, app: App) => void
 }
 
 export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
@@ -51,35 +51,6 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
         onPress: () => onAppClick(app.id, app)
       }))
 
-    // 🔹 Render a single section (subcategory)
-    const renderSingleSection = (contentId: string) => {
-      const content = categoryContents[contentId]
-      if (!content) return null
-
-      return (
-        <div
-          id={contentId}
-          ref={el => (contentRefs.current[contentId] = el)}
-          className="p-8">
-          <div className="mb-4 flex items-center justify-between">
-            <div className="flex items-center">
-              <button
-                onClick={onBackClick}
-                className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden"
-                aria-label="Show sidebar">
-                <Icon icon="lucide:menu" width={20} height={20} />
-              </button>
-              <h2 className="text-xl font-bold">{content.title}</h2>
-            </div>
-          </div>
-
-          <div className="container mx-auto">
-            <AppleStyleCarousel items={toCarouselItems(content.apps)} />
-          </div>
-        </div>
-      )
-    }
-
     // 🔹 Render featured subcategories
     const renderFeaturedSubcategories = () => {
       const featuredCategory = categories.find(cat => cat.id === 'featured')
@@ -102,20 +73,9 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                   ref={el => (contentRefs.current[subcategory.id] = el)}
                   className="scroll-mt-20 pb-10">
                   <div className="flex items-center">
-                    <h2 className="items-center text-xl font-bold">
+                    <h2 className="items-center text-xl font-medium md:text-3xl">
                       {content.title}
                     </h2>
-                    <button
-                      onClick={() =>
-                        window.handleSubcategoryClick?.(subcategory.id)
-                      }
-                      className="text-foreground-500 hover:text-foreground ml-2 text-sm font-medium">
-                      <Icon
-                        icon="lucide:chevron-right"
-                        className="mt-1"
-                        width={20}
-                      />
-                    </button>
                   </div>
 
                   {/* 🔸 Replace AppCard grid with Carousel */}
@@ -151,20 +111,9 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 ref={el => (contentRefs.current[subcategory.id] = el)}
                 className="scroll-mt-20 pb-10">
                 <div className="flex items-center">
-                  <h2 className="items-center text-xl font-bold">
+                  <h2 className="items-center text-xl font-medium md:text-3xl">
                     {content.title}
                   </h2>
-                  <button
-                    onClick={() =>
-                      window.handleSubcategoryClick?.(subcategory.id)
-                    }
-                    className="text-foreground-500 hover:text-foreground ml-2 text-sm font-medium">
-                    <Icon
-                      icon="lucide:chevron-right"
-                      className="mt-1"
-                      width={20}
-                    />
-                  </button>
                 </div>
 
                 <div className="container mx-auto">
@@ -193,7 +142,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 aria-label="Show sidebar">
                 <Icon icon="lucide:menu" width={20} height={20} />
               </button>
-              <h2 className="text-xl font-bold">All Collections</h2>
+              <h2 className="text-4xl font-bold">All Collections</h2>
             </div>
           </div>
 
@@ -203,17 +152,11 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       </div>
     )
 
-    const renderContent = React.useCallback(() => {
-      return visibleContent === 'all-collections'
-        ? renderAllContent()
-        : renderSingleSection(visibleContent)
-    }, [visibleContent, renderAllContent, renderSingleSection])
-
     return (
       <div
         ref={ref}
         className="bg-background text-foreground min-h-screen w-full pb-20">
-        {renderContent()}
+        {renderAllContent()}
       </div>
     )
   }
