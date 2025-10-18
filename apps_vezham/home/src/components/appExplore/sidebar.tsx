@@ -104,7 +104,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <div
       ref={sidebarRef}
-      className="bg-content1 text-foreground h-full w-full flex-shrink-0 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin]">
+      className="text-foreground h-full w-full flex-shrink-0 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin]">
       <div className="pt-safe py-4 lg:py-4">
         {categories.map(category => (
           <div key={category.id} className="mb-1">
@@ -113,7 +113,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               ref={el => (itemRefs.current[category.id] = el)}
               data-category-id={category.id}
               onClick={() => toggleCategoryExpansion(category.id)}
-              className={`bg-content1/90 sticky top-0 z-10 flex cursor-pointer items-center justify-between px-6 py-3 text-sm backdrop-blur-sm transition-all duration-200 ease-out sm:text-base ${
+              className={`sticky top-0 z-10 flex cursor-pointer items-center justify-between px-6 py-3 text-sm backdrop-blur-sm transition-all duration-200 ease-out sm:text-base ${
                 activeCategory === category.id && !activeSubcategory
                   ? 'text-foreground font-medium'
                   : 'text-foreground-500'

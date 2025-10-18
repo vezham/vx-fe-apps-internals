@@ -335,9 +335,9 @@ const AppExploreContent = () => {
 
         {/* Sidebar - Fixed positioning for mobile, static for desktop */}
         <div
-          className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} bg-content1 border-divider fixed top-0 bottom-0 left-0 z-25 flex h-full w-64 flex-col overflow-hidden border-r transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0`}>
+          className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} bg-content1 dark:bg-blackx border-divider fixed top-0 bottom-0 left-0 z-40 flex h-full w-64 flex-col overflow-hidden border-r transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0`}>
           {/* Scrollable sidebar content with inline scrollbar styles */}
-          <div className="flex-1 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-black/20 [&::-webkit-scrollbar-track]:bg-transparent">
+          <div className="flex-1 overflow-y-auto">
             <Sidebar
               categories={categories}
               activeCategory={activeCategory}

@@ -46,7 +46,8 @@ export type App = {
   description: string
   icon: string
   iconColor: string
-  // Add optional detailed fields
+  footerItems: string[]
+  painPoints?: PainPoint[]
   detailedDescription?: string
   image?: string
   features?: Feature[]
@@ -65,3 +66,8 @@ export type CategoryContent = {
 // Keep AppDetail for backward compatibility
 // FIX: Changed empty interface to a type alias.
 export type AppDetail = App
+
+export interface PainPoint {
+  title: string
+  description: string
+}

@@ -78,33 +78,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
     if (!activeItemId || !sidebarRef.current) return
     const activeEl = itemRefs.current[activeItemId]
     if (!activeEl) return
-
-    // const sidebar = sidebarRef.current
-    // const topOffset = 50
-    // const bottomOffset = 30
-    // const rect = activeEl.getBoundingClientRect()
-    // const sidebarRect = sidebar.getBoundingClientRect()
-
-    // if (
-    //   rect.top < sidebarRect.top + topOffset ||
-    //   rect.bottom > sidebarRect.bottom - bottomOffset
-    // ) {
-    //   activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-    //   setTimeout(() => {
-    //     const currentTop = activeEl.getBoundingClientRect().top
-    //     const sidebarTop = sidebar.getBoundingClientRect().top
-    //     sidebar.scrollBy({
-    //       top: currentTop - sidebarTop - topOffset,
-    //       behavior: 'instant'
-    //     })
-    //   }, 250)
-    // }
   }, [activeCategory, activeSubcategory])
 
   return (
     <div
       ref={sidebarRef}
-      className="bg-content1 text-foreground h-full w-full flex-shrink-0 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin]">
+      className="text-foreground h-full w-full flex-shrink-0 pt-20 [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin] lg:pt-0">
       <div className="pt-safe py-4 lg:py-4">
         {categories.map(category => (
           <div key={category.id} className="mb-1">
@@ -113,7 +92,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               ref={el => (itemRefs.current[category.id] = el)}
               data-category-id={category.id}
               onClick={() => toggleCategoryExpansion(category.id)}
-              className={`bg-content1/90 sticky top-0 z-10 flex cursor-pointer items-center justify-between px-6 py-3 text-sm backdrop-blur-sm transition-all duration-200 ease-out sm:text-base ${
+              className={`sticky top-0 z-10 flex cursor-pointer items-center justify-between overflow-y-auto px-5 py-3 text-sm backdrop-blur-sm transition-all duration-200 ease-out sm:text-base ${
                 activeCategory === category.id && !activeSubcategory
                   ? 'text-foreground font-medium'
                   : 'text-foreground-500'
@@ -135,18 +114,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             {/* ✅ Subcategories (only clickable for navigation) */}
             {category.subcategories && expandedCategories[category.id] && (
-              <div className="ml-6 transition-all duration-300 ease-in-out">
+              <div className="transition-all duration-300 ease-in-out">
                 {category.subcategories.map(subcategory => (
                   <div
                     key={subcategory.id}
                     ref={el => (itemRefs.current[subcategory.id] = el)}
                     onClick={() => onSubcategoryClick(subcategory.id)}
-                    className={`relative flex cursor-pointer items-center px-6 py-3 text-sm transition-all duration-200 ease-out ${
+                    className={`relative flex cursor-pointer items-center py-3 text-sm transition-all duration-200 ease-out ${
                       activeSubcategory === subcategory.id
                         ? 'bg-default-100 text-primary rounded-l-lg font-medium'
                         : 'text-foreground-400 hover:bg-default-100 hover:rounded-l-lg'
                     }`}>
-                    <span>{subcategory.name}</span>
+                    <span className="ml-5">{subcategory.name}</span>
                   </div>
                 ))}
               </div>

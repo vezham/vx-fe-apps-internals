@@ -11,23 +11,23 @@ export const categories: Category[] = [
         hasChildren: true
       },
       {
-        id: 'entertainment',
-        name: 'Entertainment & Home',
+        id: 'popular',
+        name: 'Popular',
         hasChildren: true
       },
       {
-        id: 'health',
-        name: 'Health & Fitness',
+        id: 'new',
+        name: 'New',
         hasChildren: true
       },
       {
-        id: 'exploration',
-        name: 'Exploration',
+        id: 'free-install',
+        name: 'Free Install',
         hasChildren: true
       },
       {
-        id: 'productivity',
-        name: 'Productivity',
+        id: 'support-teams',
+        name: 'Support Teams',
         hasChildren: true
       }
     ]
@@ -37,18 +37,18 @@ export const categories: Category[] = [
     name: 'Categories',
     subcategories: [
       {
-        id: 'communication',
-        name: 'Communication',
+        id: 'sales',
+        name: 'Sales',
         hasChildren: true
       },
       {
-        id: 'creativity',
-        name: 'Creativity',
+        id: 'marketing',
+        name: 'Marketing',
         hasChildren: true
       },
       {
-        id: 'features',
-        name: 'Features',
+        id: 'e-commerce',
+        name: 'E-Commerce',
         hasChildren: true
       },
       {
@@ -67,8 +67,8 @@ export const categories: Category[] = [
 
 export const categoryContents: Record<string, CategoryContent> = {
   // All Collections subcategories
-  entertainment: {
-    title: 'Entertainment & Home',
+  popular: {
+    title: 'Popular',
     apps: [
       {
         id: 'apple',
@@ -81,6 +81,33 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Our Subscribe to premium channels, streaming services, Apple TV+ and more empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
         image:
           'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/tv_bg__dbiy5mcaqxea_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
+        painPoints: [
+          {
+            title: 'Outdated infrastructure',
+            description:
+              "Legacy systems will slow's you down in this aging IT environments"
+          },
+          {
+            title: 'High operational costs',
+            description:
+              'High operational costs from maintaining physical servers while comparing with cloud'
+          },
+          {
+            title: 'Downtime risks',
+            description:
+              'Downtime risks during upgrades or failures & from cyber attacks'
+          },
+          {
+            title: 'Limited scalability',
+            description: 'Making it hard to handle traffic spikes'
+          },
+          {
+            title: 'Security vulnerabilities',
+            description:
+              'Open to security vulnerabilities in aging IT environments'
+          }
+        ],
         features: [
           {
             icon: 'lucide:database',
@@ -184,6 +211,33 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Play over 100 million songs and 30,000 playlists ad-free across your devices, get personalised recommendations and immerse yourself in lossless and Spatial Audio.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/music_bg__d2ssg7rps0ya_xlarge.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
+        painPoints: [
+          {
+            title: 'Outdated infrastructure',
+            description:
+              "Legacy systems will slow's you down in this aging IT environments"
+          },
+          {
+            title: 'High operational costs',
+            description:
+              'High operational costs from maintaining physical servers while comparing with cloud'
+          },
+          {
+            title: 'Downtime risks',
+            description:
+              'Downtime risks during upgrades or failures & from cyber attacks'
+          },
+          {
+            title: 'Limited scalability',
+            description: 'Making it hard to handle traffic spikes'
+          },
+          {
+            title: 'Security vulnerabilities',
+            description:
+              'Open to security vulnerabilities in aging IT environments'
+          }
+        ],
         features: [
           {
             icon: 'lucide:database',
@@ -287,6 +341,33 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Enjoy unlimited access to 200+ games with no ads or in-app purchases across all your Apple devices. Subscribe and enjoy with your entire family.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/arcade_bg__ehsmlvjqlg2u_xlarge.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
+        painPoints: [
+          {
+            title: 'Outdated infrastructure',
+            description:
+              "Legacy systems will slow's you down in this aging IT environments"
+          },
+          {
+            title: 'High operational costs',
+            description:
+              'High operational costs from maintaining physical servers while comparing with cloud'
+          },
+          {
+            title: 'Downtime risks',
+            description:
+              'Downtime risks during upgrades or failures & from cyber attacks'
+          },
+          {
+            title: 'Limited scalability',
+            description: 'Making it hard to handle traffic spikes'
+          },
+          {
+            title: 'Security vulnerabilities',
+            description:
+              'Open to security vulnerabilities in aging IT environments'
+          }
+        ],
         features: [
           {
             icon: 'lucide:database',
@@ -381,7 +462,7 @@ export const categoryContents: Record<string, CategoryContent> = {
       },
       {
         id: 'applemusicclassical',
-        title: 'Apple Music Classical',
+        title: 'Apple  Classical',
         description:
           'Discover over 5 million tracks and a powerful search built specifically for classical music. All included with an Apple Music subscription.',
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/music_classical_chiclet__e8bn9ava95qq_xlarge.png',
@@ -390,6 +471,33 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Discover over 5 million tracks and a powerful search built specifically for classical music. All included with an Apple Music subscription.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/music_classical_bg__ezbwlqoj80q6_xlarge.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
+        painPoints: [
+          {
+            title: 'Outdated infrastructure',
+            description:
+              "Legacy systems will slow's you down in this aging IT environments"
+          },
+          {
+            title: 'High operational costs',
+            description:
+              'High operational costs from maintaining physical servers while comparing with cloud'
+          },
+          {
+            title: 'Downtime risks',
+            description:
+              'Downtime risks during upgrades or failures & from cyber attacks'
+          },
+          {
+            title: 'Limited scalability',
+            description: 'Making it hard to handle traffic spikes'
+          },
+          {
+            title: 'Security vulnerabilities',
+            description:
+              'Open to security vulnerabilities in aging IT environments'
+          }
+        ],
         features: [
           {
             icon: 'lucide:database',
@@ -494,6 +602,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Listen to millions of shows, from big names to independent publishers, and get access to premium content with subscriptions.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/podcasts_bg__dfk2zkahk8uq_xlarge.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -597,6 +706,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Discover books online or offline — including classics and more.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -692,8 +802,8 @@ export const categoryContents: Record<string, CategoryContent> = {
       }
     ]
   },
-  health: {
-    title: 'Health & Fitness',
+  new: {
+    title: 'New',
     apps: [
       {
         id: 'vitals',
@@ -706,6 +816,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Wear your Apple Watch to sleep to better understand your daily health status and receive notifications if any of your metrics are outside your typical range.6',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/vitals_bg__5pygtlfh7o26_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -809,6 +920,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Organise and access your health and fitness data in one secure, central place — and share your information with those you trust.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/health_bg__fefaj499xryy_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -911,6 +1023,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'View and share your fitness and activity details.',
         image:
           'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/fitness_bg__cacuddw3n22q_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -1014,6 +1127,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Track your workout sessions, set specific goals, view advanced metrics, and receive updates like pace alerts and goal progress along the way.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/workout_bg__b2s36r6bda2u_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -1117,6 +1231,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Meet your sleep goals — including getting enough sleep, getting to bed on time and even creating a bedtime routine.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/sleep_bg__dxy1qfeff48y_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -1220,6 +1335,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Improve your well-being by logging your state of mind and practicing deep breathing during guided sessions.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mindfulness_bg__cr5bsd7b1xiu_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -1314,8 +1430,8 @@ export const categoryContents: Record<string, CategoryContent> = {
       }
     ]
   },
-  exploration: {
-    title: 'Exploration',
+  'free-install': {
+    title: 'Free Install',
     apps: [
       {
         id: 'passwords',
@@ -1328,6 +1444,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Easily access your passwords, passkeys and other credentials in one place. Quickly sign in with AutoFill, get alerts for compromised accounts and sync on the go.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/passwords_bg__gin2d8t3p1ui_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -1427,7 +1544,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/safari_chiclet__ervigamv5qye_xlarge.png',
         iconColor: 'text-yellow-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/safari_bg__ccegus8jih9e_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/safari_bg__ccegus8jih9e_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'maps',
@@ -1437,7 +1555,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/maps_chiclet__b825c0yhl64i_xlarge.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/maps_bg__cu7g9d28ddg2_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/maps_bg__cu7g9d28ddg2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'weather',
@@ -1447,7 +1566,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/weather_chiclet__85gxx6e7lnmm_xlarge.png',
         iconColor: 'text-orange-500',
         image:
-          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/weather_bg__dhkuy7pxpugm_xlarge_2x.jpg'
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/weather_bg__dhkuy7pxpugm_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'findmy',
@@ -1457,7 +1577,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/find_my_chiclet__dkvz0535bjwy_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/find_my_bg__3svhbvmavde6_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/find_my_bg__3svhbvmavde6_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'translate',
@@ -1467,12 +1588,13 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/translate_chiclet__glboej28ciq2_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/translate_bg__duvmu57ovsq6_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/translate_bg__duvmu57ovsq6_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       }
     ]
   },
-  productivity: {
-    title: 'Productivity',
+  'support-teams': {
+    title: 'Support Teams',
     apps: [
       {
         id: 'notes',
@@ -1482,7 +1604,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/notes_chiclet__clow1nl1x7bm_xlarge.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/notes_bg__8mndkoaputu6_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/notes_bg__8mndkoaputu6_xlarge_2x.jpg',
+        footerItems: ['Mac', 'iPhone', 'iMac']
       },
       {
         id: 'finder',
@@ -1492,7 +1615,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/finder_chiclet__cc9vmms3qady_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/finder_bg__corgdpfyztw2_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/finder_bg__corgdpfyztw2_xlarge_2x.jpg',
+        footerItems: ['Mac', 'iPhone', 'iMac']
       },
       {
         id: 'pages',
@@ -1502,7 +1626,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/pages_chiclet__ch6gvzxvajrm_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/pages_bg__giy3dxe5olay_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/pages_bg__giy3dxe5olay_xlarge_2x.jpg',
+        footerItems: ['Mac', 'iPhone', 'iMac']
       },
       {
         id: 'numbers',
@@ -1512,7 +1637,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/numbers_chiclet__z8rm4rnfj42a_xlarge.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/numbers_bg__e6clggpam3wy_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/numbers_bg__e6clggpam3wy_xlarge_2x.jpg',
+        footerItems: ['Mac', 'iPhone', 'iMac']
       },
       {
         id: 'files',
@@ -1522,7 +1648,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/files_chiclet__csi48qoljj8m_xlarge.png',
         iconColor: 'text-purple-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/files_bg__d7u8mhmrbo02_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/files_bg__d7u8mhmrbo02_xlarge_2x.jpg',
+        footerItems: ['Mac', 'iPhone', 'iMac']
       },
       {
         id: 'shortcuts',
@@ -1532,14 +1659,15 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/shortcuts_chiclet__dexircp9ahm6_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/shortcuts_bg__c6cppk49ikwi_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/shortcuts_bg__c6cppk49ikwi_xlarge_2x.jpg',
+        footerItems: ['Mac', 'iPhone', 'iMac']
       }
     ]
   },
 
   // Categories
-  communication: {
-    title: 'Communication',
+  sales: {
+    title: 'Sales',
     apps: [
       {
         id: 'phone',
@@ -1553,6 +1681,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Make and receive phone calls, including on Mac and iPad when your iPhone is nearby.',
         image:
           'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/phone_bg__cxedli9m3yc2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:database',
@@ -1657,6 +1786,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Send end-to-end encrypted messages from any Apple device and express yourself using text effects, emoji and sticker Tapbacks, and more.',
         image:
           'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/messages_bg__fbdw60yaz9qy_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:zap',
@@ -1757,7 +1887,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/facetime_chiclet__dkfd0tacahua_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/facetime_bg__f6jkxmeyuua2_xlarge_2x.jpg'
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/facetime_bg__f6jkxmeyuua2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'mail',
@@ -1767,7 +1898,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/mail_chiclet__s40xvfy4twyu_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mail_bg__bc785xyf5l9u_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mail_bg__bc785xyf5l9u_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'contacts',
@@ -1777,7 +1909,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/contacts_chiclet__bfsq7qs1ptjm_xlarge.png',
         iconColor: 'text-orange-500',
         image:
-          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/contacts_bg__bhsamcn0o0c2_xlarge_2x.jpg'
+          'https://www.apple.com/in/apps/images/overview/apps/tier1/bg/contacts_bg__bhsamcn0o0c2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'walkie-talkie',
@@ -1787,12 +1920,13 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/walkie_talkie_chiclet__dbuyb9ra48sy_xlarge.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/walkie_talkie_bg__bqaxmk1cyr5y_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/walkie_talkie_bg__bqaxmk1cyr5y_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       }
     ]
   },
-  creativity: {
-    title: 'Creativity',
+  marketing: {
+    title: 'Marketing',
     apps: [
       {
         id: 'photos',
@@ -1806,6 +1940,7 @@ export const categoryContents: Record<string, CategoryContent> = {
           'Our Campaigns platform helps you create, send, and analyze email marketing campaigns that drive engagement and conversions. With powerful segmentation, beautiful templates, and detailed analytics.',
         image:
           'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/photos_bg__ms16z7ivnyye_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac '],
         features: [
           {
             icon: 'lucide:target',
@@ -1906,7 +2041,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/camera_chiclet__durqmihra2s2_xlarge.png',
         iconColor: 'text-yellow-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/camera_bg__c6m5k4dggw6e_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/camera_bg__c6m5k4dggw6e_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'garage-band',
@@ -1916,7 +2052,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/garageband_chiclet__d3ng9hjlxdiu_xlarge.png',
         iconColor: 'text-orange-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/garageband_bg__fa0kyvfwgdua_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/garageband_bg__fa0kyvfwgdua_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'imovie',
@@ -1926,7 +2063,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/imovie_chiclet__embecerqsn2a_xlarge.png',
         iconColor: 'text-purple-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/imovie_bg__dershya9pcae_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/imovie_bg__dershya9pcae_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'logicpro',
@@ -1936,7 +2074,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/logic_pro_ipad_chiclet__ffn3y2bee7m2_xlarge.png',
         iconColor: 'text-red-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/logic_pro_ipad_bg__gygw5xn2rb6m_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/logic_pro_ipad_bg__gygw5xn2rb6m_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'clips',
@@ -1946,11 +2085,12 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/clips_chiclet__ci5oaty0xas2_xlarge.png',
         iconColor: 'text-yellow-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/clips_bg__c5n8lybrc42u_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/clips_bg__c5n8lybrc42u_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       }
     ]
   },
-  features: {
+  'e-commerce': {
     title: 'E-commerce',
     apps: [
       {
@@ -1961,7 +2101,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/mainstage_chiclet__gfjm8nlipr6m_xlarge.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mainstage_bg__eg1efye61ewm_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/mainstage_bg__eg1efye61ewm_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'journal',
@@ -1971,7 +2112,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/journal_chiclet__fd4r6x6g12my_xlarge.png',
         iconColor: 'text-purple-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/journal_bg__fsmzvvexile2_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/journal_bg__fsmzvvexile2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'airplay',
@@ -1981,7 +2123,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/airplay_chiclet__fumkechuax6q_xlarge.png',
         iconColor: 'text-orange-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/airplay_bg__fmlchz3w1jyy_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/airplay_bg__fmlchz3w1jyy_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'reality',
@@ -1991,7 +2134,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/ar_chiclet__decotk2jkay6_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/ar_bg__ey4tycitk9yu_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/ar_bg__ey4tycitk9yu_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'siri',
@@ -2001,7 +2145,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/siri_chiclet__fuvctveekday_xlarge.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/siri_bg__f5cxl7davnqm_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/siri_bg__f5cxl7davnqm_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'icloud',
@@ -2011,7 +2156,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier1/chiclets/icloud_chiclet__gf9x6hrim466_xlarge.png',
         iconColor: 'text-purple-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       }
     ]
   },
@@ -2026,7 +2172,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/apple_support_chiclet__djopgez3aj6u_large_2x.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'configurator',
@@ -2035,7 +2182,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/apple_configurator_chiclet__fsp84ajqxvau_large_2x.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/podcasts_bg__dfk2zkahk8uq_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/podcasts_bg__dfk2zkahk8uq_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'classroom',
@@ -2044,7 +2192,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/classroom_chiclet__fvo7mm281mum_large_2x.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       }
     ]
   },
@@ -2058,7 +2207,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/alarms_chiclet__f7i6s8kcggmu_large_2x.png',
         iconColor: 'text-green-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/books_bg__cmcq731s3pw2_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'store',
@@ -2067,7 +2217,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/apple_developer_chiclet__cw2x17fztgeq_large_2x.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/icloud_bg__fht6d0dw7rue_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       },
       {
         id: 'calculator',
@@ -2076,7 +2227,8 @@ export const categoryContents: Record<string, CategoryContent> = {
         icon: 'https://www.apple.com/v/apps/e/images/overview/apps/tier2/calculator_chiclet__f35da2cpbm6a_large_2x.png',
         iconColor: 'text-blue-500',
         image:
-          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/logic_pro_ipad_bg__gygw5xn2rb6m_xlarge_2x.jpg'
+          'https://www.apple.com/v/apps/e/images/overview/apps/tier1/bg/logic_pro_ipad_bg__gygw5xn2rb6m_xlarge_2x.jpg',
+        footerItems: ['Mac, ', 'iPhone, ', 'iMac ']
       }
     ]
   }

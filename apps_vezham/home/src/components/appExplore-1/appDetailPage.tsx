@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react'
 import { useParams, useRouter } from '@tanstack/react-router'
 import React from 'react'
 
-import { Button, Card, Image } from '@vx-oss/react'
+import { Accordion, AccordionItem, Button, Card, Image } from '@vx-oss/react'
 
 import { cn } from '../../utils/cn'
 import { Footer } from '../footer'
@@ -98,7 +98,30 @@ const AppDetailView: React.FC = () => {
                 />
               </div>
               <div className="md:w-2/3">
-                <h2 className="mb-6 text-2xl font-bold">Our Features</h2>
+                <div>
+                  <h2 className="mb-6 text-2xl font-bold">Our Obstacles</h2>
+
+                  <Accordion variant="splitted" className="mt-6">
+                    {app.painPoints.map((point, index) => (
+                      <AccordionItem
+                        key={index}
+                        aria-label={point.title}
+                        title={point.title}
+                        startContent={
+                          <div className="rounded-lg p-2">
+                            <p className="">0{index + 1} </p>
+                            {/* <Icon icon={point.icon || 'lucide:alert-circle'} className="text-primary" width={24} height={24} /> */}
+                          </div>
+                        }>
+                        <p className="text-default-500 px-4 pb-3">
+                          {point.description}
+                        </p>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+
+                <h2 className="mt-6 text-2xl font-bold">Features List</h2>
 
                 <ul className="my-6 space-y-3">
                   {features.slice(0, 3).map((feature, i) => (
@@ -115,43 +138,44 @@ const AppDetailView: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <section className="mb-16">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    {features.map((feature, index) => (
-                      <div
-                        key={index}
-                        className={cn(
-                          'group/feature relative flex flex-col py-10 lg:border-r dark:border-neutral-800',
-                          (index === 0 || index === 4) &&
-                            'lg:border-l dark:border-neutral-800',
-                          index < 4 && 'lg:border-b dark:border-neutral-800'
-                        )}>
-                        {index < 4 ? (
-                          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
-                        ) : (
-                          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
-                        )}
-                        <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
-                          <Icon icon={feature.icon} width={24} height={24} />
-                        </div>
-                        <div className="relative z-10 mb-2 px-10 text-lg font-bold">
-                          <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-[#a91d44] dark:bg-neutral-700 dark:group-hover/feature:bg-[#df4861]" />
-                          <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
-                            {feature.title}
-                          </span>
-                        </div>
-                        <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
-                          {feature.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </section>
               </div>
             </div>
           </section>
 
           {/* Features section */}
+          <h2 className="mb-6 text-2xl font-bold">Our Features</h2>
+          <section className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    'group/feature relative flex flex-col py-10 lg:border-r dark:border-neutral-800',
+                    (index === 0 || index === 4) &&
+                      'lg:border-l dark:border-neutral-800',
+                    index < 4 && 'lg:border-b dark:border-neutral-800'
+                  )}>
+                  {index < 4 ? (
+                    <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
+                  ) : (
+                    <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-[#a91d44]/5 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-[#df4861]/15" />
+                  )}
+                  <div className="relative z-10 mb-4 px-10 text-neutral-600 dark:text-neutral-400">
+                    <Icon icon={feature.icon} width={24} height={24} />
+                  </div>
+                  <div className="relative z-10 mb-2 px-10 text-lg font-bold">
+                    <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-[#a91d44] dark:bg-neutral-700 dark:group-hover/feature:bg-[#df4861]" />
+                    <span className="inline-block text-neutral-800 transition duration-200 group-hover/feature:translate-x-2 dark:text-neutral-100">
+                      {feature.title}
+                    </span>
+                  </div>
+                  <p className="relative z-10 max-w-xs px-10 text-sm text-neutral-600 dark:text-neutral-300">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* Pricing, Results, Support */}
           <section className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3">

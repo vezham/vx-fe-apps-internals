@@ -1,7 +1,12 @@
 import { Icon } from '@iconify/react'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-import { AppleStyleCarousel } from './apple-style-carousel'
+import { ScrollShadow } from '@vx-oss/react'
+
+import {
+  AppleStyleCarousel,
+  AppleStyleCarouselRef
+} from './apple-style-carousel'
 import { categories } from './data'
 import { App, CategoryContent } from './types'
 
@@ -21,14 +26,11 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     { categoryContents, contentRefs, onBackClick, visibleContent, onAppClick },
     ref
   ) => {
-    const [expandedSections, setExpandedSections] = React.useState<
-      Record<string, boolean>
-    >({})
-    const [showAllForSubcategory, setShowAllForSubcategory] = React.useState<
+    const [showAllForSubcategory, setShowAllForSubcategory] = useState<
       Record<string, boolean>
     >({})
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (visibleContent && visibleContent !== 'all-collections') {
         setShowAllForSubcategory(prev => ({
           ...prev,
@@ -37,103 +39,232 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       }
     }, [visibleContent])
 
-    // Modify toCarouselItems to include the app ID
+    // Convert apps to carousel items
     const toCarouselItems = (apps: App[]) =>
       apps.map(app => ({
-        id: app.id, // Add the ID directly to the carousel item
+        id: app.id,
         category: app.category ?? '',
         title: app.title,
         icon: app.icon,
         color: app.iconColor,
         image: app.image,
         description: app.description || '',
-        app: app, // Pass the entire app object as well
+        app,
         onPress: () => onAppClick(app.id, app)
       }))
 
-    // 🔹 Render featured subcategories
+    const SectionWithControls = ({
+      id,
+      title,
+      apps
+    }: {
+      id: string
+      title: string
+      apps: App[]
+    }) => {
+      const carouselRef = useRef<AppleStyleCarouselRef>(null)
+      const [canScrollLeft, setCanScrollLeft] = useState(false)
+      // FIX: Initialize canScrollRight to true so the right button appears initially
+      const [canScrollRight, setCanScrollRight] = useState(true)
+
+      const updateScrollState = () => {
+        if (carouselRef.current) {
+          setCanScrollLeft(carouselRef.current.canScrollLeft)
+          setCanScrollRight(carouselRef.current.canScrollRight)
+        }
+      }
+
+      useEffect(() => {
+        const interval = setInterval(updateScrollState, 200)
+        return () => clearInterval(interval)
+      }, [])
+
+      return (
+        <div
+          key={id}
+          id={id}
+          ref={el => (contentRefs.current[id] = el)}
+          className="scroll-mt-20">
+          <div className="mb-4 flex items-center justify-between">
+            <h2
+              className="text-[28px] md:text-[40px] lg:text-[48px]"
+              style={{ fontWeight: 600 }}>
+              {title}
+            </h2>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => carouselRef.current?.scrollLeft()}
+                disabled={!canScrollLeft}
+                className={`flex h-9 w-9 items-center justify-center rounded-full ${
+                  canScrollLeft
+                    ? 'bg-gray-200 transition-colors hover:bg-gray-300'
+                    : 'cursor-not-allowed opacity-40'
+                }`}>
+                <Icon icon="lucide:chevron-left" />
+              </button>
+              <button
+                onClick={() => carouselRef.current?.scrollRight()}
+                disabled={!canScrollRight}
+                className={`flex h-9 w-9 items-center justify-center rounded-full ${
+                  canScrollRight
+                    ? 'bg-gray-200 transition-colors hover:bg-gray-300'
+                    : 'cursor-not-allowed opacity-40'
+                }`}>
+                <Icon icon="lucide:chevron-right" />
+              </button>
+            </div>
+          </div>
+
+          {/* Carousel */}
+          <ScrollShadow orientation="horizontal">
+            <AppleStyleCarousel
+              ref={carouselRef}
+              items={toCarouselItems(apps)}
+            />
+          </ScrollShadow>
+        </div>
+      )
+    }
+
+    const SingleSectionWithControls = ({
+      contentId
+    }: {
+      contentId: string
+    }) => {
+      const content = categoryContents[contentId]
+      if (!content) return null
+
+      const carouselRef = useRef<AppleStyleCarouselRef>(null)
+      const [canScrollLeft, setCanScrollLeft] = useState(false)
+      const [canScrollRight, setCanScrollRight] = useState(true)
+
+      const updateScrollState = () => {
+        if (carouselRef.current) {
+          setCanScrollLeft(carouselRef.current.canScrollLeft)
+          setCanScrollRight(carouselRef.current.canScrollRight)
+        }
+      }
+
+      // Update scroll state for button visibility
+      useEffect(() => {
+        const interval = setInterval(updateScrollState, 200)
+        return () => clearInterval(interval)
+      }, [])
+
+      return (
+        <div
+          id={contentId}
+          ref={el => (contentRefs.current[contentId] = el)}
+          className="p-4 lg:p-8" // Kept existing padding
+        >
+          <div className="mb-4 flex items-center justify-between">
+            <div className="flex items-center">
+              {/* Back button visible in mobile view */}
+              <button
+                onClick={onBackClick}
+                className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden"
+                aria-label="Show sidebar">
+                <Icon icon="lucide:menu" width={20} height={20} />
+              </button>
+              <h2 className="text-[28px] font-medium md:text-[40px] lg:text-[48px]">
+                {content.title}
+              </h2>
+            </div>
+
+            {/* FIX: Controls added to the single section view */}
+            <div className="flex gap-3">
+              <button
+                onClick={() => carouselRef.current?.scrollLeft()}
+                disabled={!canScrollLeft}
+                className={`flex h-9 w-9 items-center justify-center rounded-full ${
+                  canScrollLeft
+                    ? 'bg-gray-200 transition-colors hover:bg-gray-300'
+                    : 'cursor-not-allowed opacity-40'
+                }`}>
+                <Icon icon="lucide:chevron-left" />
+              </button>
+              <button
+                onClick={() => carouselRef.current?.scrollRight()}
+                disabled={!canScrollRight}
+                className={`flex h-9 w-9 items-center justify-center rounded-full ${
+                  canScrollRight
+                    ? 'bg-gray-200 transition-colors hover:bg-gray-300'
+                    : 'cursor-not-allowed opacity-40'
+                }`}>
+                <Icon icon="lucide:chevron-right" />
+              </button>
+            </div>
+            {/* END FIX: Controls added */}
+          </div>
+
+          <ScrollShadow orientation="horizontal">
+            <AppleStyleCarousel
+              ref={carouselRef}
+              items={toCarouselItems(content.apps)}
+            />
+          </ScrollShadow>
+        </div>
+      )
+    }
+
+    const renderSingleSection = (contentId: string) => {
+      return <SingleSectionWithControls contentId={contentId} />
+    }
+
     const renderFeaturedSubcategories = () => {
       const featuredCategory = categories.find(cat => cat.id === 'featured')
-      const featuredSubcategories = featuredCategory?.subcategories || []
+      const featuredSubs = featuredCategory?.subcategories || []
 
       return (
         <>
-          {featuredSubcategories
+          {featuredSubs
             .filter(sub => sub.id !== 'all-collections')
-            .map(subcategory => {
-              const content = categoryContents[subcategory.id]
+            .map(sub => {
+              const content = categoryContents[sub.id]
               if (!content) return null
-
-              const displayedApps = content.apps
-
               return (
-                <div
-                  key={subcategory.id}
-                  id={subcategory.id}
-                  ref={el => (contentRefs.current[subcategory.id] = el)}
-                  className="scroll-mt-20 pb-10">
-                  <div className="flex items-center">
-                    <h2 className="items-center text-[28px] font-medium md:text-[40px] lg:text-[48px]">
-                      {content.title}
-                    </h2>
-                  </div>
-
-                  {/* 🔸 Replace AppCard grid with Carousel */}
-                  <div className="container mx-auto">
-                    <AppleStyleCarousel
-                      items={toCarouselItems(displayedApps)}
-                    />
-                  </div>
-                </div>
+                <SectionWithControls
+                  key={sub.id}
+                  id={sub.id}
+                  title={content.title}
+                  apps={content.apps}
+                />
               )
             })}
         </>
       )
     }
 
-    // 🔹 Render category sections
     const renderCategoriesSections = () => {
-      const categoriesCategory = categories.find(cat => cat.id === 'categories')
-      const categoriesSubcategories = categoriesCategory?.subcategories || []
+      const catCategory = categories.find(cat => cat.id === 'categories')
+      const subs = catCategory?.subcategories || []
 
       return (
         <>
-          {categoriesSubcategories.map(subcategory => {
-            const content = categoryContents[subcategory.id]
+          {subs.map(sub => {
+            const content = categoryContents[sub.id]
             if (!content) return null
-
-            const displayedApps = content.apps
-
             return (
-              <div
-                key={subcategory.id}
-                id={subcategory.id}
-                ref={el => (contentRefs.current[subcategory.id] = el)}
-                className="scroll-mt-20 pb-10">
-                <div className="flex items-center">
-                  <h2 className="items-center text-[28px] font-medium md:text-[40px] lg:text-[48px]">
-                    {content.title}
-                  </h2>
-                </div>
-
-                <div className="container mx-auto">
-                  <AppleStyleCarousel items={toCarouselItems(displayedApps)} />
-                </div>
-              </div>
+              <SectionWithControls
+                key={sub.id}
+                id={sub.id}
+                title={content.title}
+                apps={content.apps}
+              />
             )
           })}
         </>
       )
     }
 
-    // 🔹 Render all collections page
     const renderAllContent = () => (
       <div className="pb-20" id="continuous-scroll-container">
         <div
           id="all-collections"
           ref={el => (contentRefs.current['all-collections'] = el)}
-          className="scroll-mt-20 p-4 lg:p-8"
-          data-section-type="header">
+          className="scroll-mt-20 p-4 lg:p-6">
+          {/* FIX: Made the "All Collections" header consistent with others */}
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center">
               <button
@@ -142,7 +273,9 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 aria-label="Show sidebar">
                 <Icon icon="lucide:menu" width={20} height={20} />
               </button>
-              <h2 className="text-[28px] font-bold md:text-[40px] lg:text-[48px]">
+              <h2
+                className="text-[28px] md:text-[40px] lg:text-[48px]"
+                style={{ fontWeight: 600 }}>
                 All Collections
               </h2>
             </div>
@@ -154,11 +287,17 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       </div>
     )
 
+    const renderContent = React.useCallback(() => {
+      return visibleContent === 'all-collections'
+        ? renderAllContent()
+        : renderSingleSection(visibleContent)
+    }, [visibleContent])
+
     return (
       <div
         ref={ref}
         className="bg-background text-foreground min-h-screen w-full pb-20">
-        {renderAllContent()}
+        {renderContent()}
       </div>
     )
   }
