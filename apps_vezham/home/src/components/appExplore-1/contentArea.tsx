@@ -127,90 +127,90 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       )
     }
 
-    const SingleSectionWithControls = ({
-      contentId
-    }: {
-      contentId: string
-    }) => {
-      const content = categoryContents[contentId]
-      if (!content) return null
+    // const SingleSectionWithControls = ({
+    //   contentId
+    // }: {
+    //   contentId: string
+    // }) => {
+    //   const content = categoryContents[contentId]
+    //   if (!content) return null
 
-      const carouselRef = useRef<AppleStyleCarouselRef>(null)
-      const [canScrollLeft, setCanScrollLeft] = useState(false)
-      const [canScrollRight, setCanScrollRight] = useState(true)
+    //   const carouselRef = useRef<AppleStyleCarouselRef>(null)
+    //   const [canScrollLeft, setCanScrollLeft] = useState(false)
+    //   const [canScrollRight, setCanScrollRight] = useState(true)
 
-      const updateScrollState = () => {
-        if (carouselRef.current) {
-          setCanScrollLeft(carouselRef.current.canScrollLeft)
-          setCanScrollRight(carouselRef.current.canScrollRight)
-        }
-      }
+    //   const updateScrollState = () => {
+    //     if (carouselRef.current) {
+    //       setCanScrollLeft(carouselRef.current.canScrollLeft)
+    //       setCanScrollRight(carouselRef.current.canScrollRight)
+    //     }
+    //   }
 
-      // Update scroll state for button visibility
-      useEffect(() => {
-        const interval = setInterval(updateScrollState, 200)
-        return () => clearInterval(interval)
-      }, [])
+    //   // Update scroll state for button visibility
+    //   useEffect(() => {
+    //     const interval = setInterval(updateScrollState, 200)
+    //     return () => clearInterval(interval)
+    //   }, [])
 
-      return (
-        <div
-          id={contentId}
-          ref={el => (contentRefs.current[contentId] = el)}
-          className="p-4 lg:p-8" // Kept existing padding
-        >
-          <div className="mb-4 flex items-center justify-between">
-            <div className="flex items-center">
-              {/* Back button visible in mobile view */}
-              <button
-                onClick={onBackClick}
-                className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden"
-                aria-label="Show sidebar">
-                <Icon icon="lucide:menu" width={20} height={20} />
-              </button>
-              <h2 className="text-[28px] font-medium md:text-[40px] lg:text-[48px]">
-                {content.title}
-              </h2>
-            </div>
+    //   return (
+    //     <div
+    //       id={contentId}
+    //       ref={el => (contentRefs.current[contentId] = el)}
+    //       className="p-4 lg:p-8" // Kept existing padding
+    //     >
+    //       <div className="mb-4 flex items-center justify-between">
+    //         <div className="flex items-center">
+    //           {/* Back button visible in mobile view */}
+    //           <button
+    //             onClick={onBackClick}
+    //             className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden"
+    //             aria-label="Show sidebar">
+    //             <Icon icon="lucide:menu" width={20} height={20} />
+    //           </button>
+    //           <h2 className="text-[28px] font-medium md:text-[40px] lg:text-[48px]">
+    //             {content.title}
+    //           </h2>
+    //         </div>
 
-            {/* FIX: Controls added to the single section view */}
-            <div className="flex gap-3">
-              <button
-                onClick={() => carouselRef.current?.scrollLeft()}
-                disabled={!canScrollLeft}
-                className={`flex h-9 w-9 items-center justify-center rounded-full ${
-                  canScrollLeft
-                    ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
-                    : 'cursor-not-allowed opacity-40'
-                }`}>
-                <Icon icon="lucide:chevron-left" />
-              </button>
-              <button
-                onClick={() => carouselRef.current?.scrollRight()}
-                disabled={!canScrollRight}
-                className={`flex h-9 w-9 items-center justify-center rounded-full ${
-                  canScrollRight
-                    ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
-                    : 'cursor-not-allowed opacity-40'
-                }`}>
-                <Icon icon="lucide:chevron-right" />
-              </button>
-            </div>
-            {/* END FIX: Controls added */}
-          </div>
+    //         {/* FIX: Controls added to the single section view */}
+    //         <div className="flex gap-3">
+    //           <button
+    //             onClick={() => carouselRef.current?.scrollLeft()}
+    //             disabled={!canScrollLeft}
+    //             className={`flex h-9 w-9 items-center justify-center rounded-full ${
+    //               canScrollLeft
+    //                 ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
+    //                 : 'cursor-not-allowed opacity-40'
+    //             }`}>
+    //             <Icon icon="lucide:chevron-left" />
+    //           </button>
+    //           <button
+    //             onClick={() => carouselRef.current?.scrollRight()}
+    //             disabled={!canScrollRight}
+    //             className={`flex h-9 w-9 items-center justify-center rounded-full ${
+    //               canScrollRight
+    //                 ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
+    //                 : 'cursor-not-allowed opacity-40'
+    //             }`}>
+    //             <Icon icon="lucide:chevron-right" />
+    //           </button>
+    //         </div>
+    //         {/* END FIX: Controls added */}
+    //       </div>
 
-          <ScrollShadow orientation="vertical">
-            <AppleStyleCarousel
-              ref={carouselRef}
-              items={toCarouselItems(content.apps)}
-            />
-          </ScrollShadow>
-        </div>
-      )
-    }
+    //       <ScrollShadow orientation="vertical">
+    //         <AppleStyleCarousel
+    //           ref={carouselRef}
+    //           items={toCarouselItems(content.apps)}
+    //         />
+    //       </ScrollShadow>
+    //     </div>
+    //   )
+    // }
 
-    const renderSingleSection = (contentId: string) => {
-      return <SingleSectionWithControls contentId={contentId} />
-    }
+    // const renderSingleSection = (contentId: string) => {
+    //   return <SingleSectionWithControls contentId={contentId} />
+    // }
 
     const renderFeaturedSubcategories = () => {
       const featuredCategory = categories.find(cat => cat.id === 'featured')
@@ -287,17 +287,17 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       </div>
     )
 
-    const renderContent = React.useCallback(() => {
-      return visibleContent === 'all-collections'
-        ? renderAllContent()
-        : renderSingleSection(visibleContent)
-    }, [visibleContent])
+    // const renderContent = React.useCallback(() => {
+    //   return visibleContent === 'all-collections'
+    //     ? renderAllContent()
+    //     : renderSingleSection(visibleContent)
+    // }, [visibleContent])
 
     return (
       <div
         ref={ref}
         className="bg-background text-foreground min-h-screen w-full">
-        {renderContent()}
+        {renderAllContent()}
       </div>
     )
   }

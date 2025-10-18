@@ -38,6 +38,10 @@ export type SupportOption = {
   description: string
 }
 
+export type footeritems = {
+  icon: string
+}
+
 // Modify App type to include all the detailed fields
 export type App = {
   id: string
@@ -46,7 +50,7 @@ export type App = {
   description: string
   icon: string
   iconColor: string
-  footerItems: string[]
+  footerItems: footeritems[]
   painPoints?: PainPoint[]
   detailedDescription?: string
   image?: string

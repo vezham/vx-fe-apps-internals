@@ -145,14 +145,18 @@ export const AppleStyleCarousel = forwardRef<
                   </button>
                 </div>
 
-                <div className="absolute bottom-[25px] z-50 flex flex-col items-start">
+                <div className="absolute bottom-[25px] left-[25px] z-50 flex flex-col items-start gap-1">
                   <p className="text-[14px] font-semibold text-white/90">
                     Compatibility
                   </p>
-                  <p
-                    className="text-[14px] text-white/90"
-                    style={{ fontWeight: 400 }}>
-                    {item.app?.footerItems}
+                  <p style={{ fontWeight: 400 }} className="flex gap-2">
+                    {item.app?.footerItems.map((iconName, index) => (
+                      <Icon
+                        key={index}
+                        icon={iconName.icon}
+                        className="h-6 w-6"
+                      />
+                    ))}
                   </p>
                 </div>
               </div>
