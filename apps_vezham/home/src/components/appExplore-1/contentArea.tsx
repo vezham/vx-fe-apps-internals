@@ -117,7 +117,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
           </div>
 
           {/* Carousel */}
-          <ScrollShadow orientation="vertical" className="w-[60rem]">
+          <ScrollShadow orientation="vertical">
             <AppleStyleCarousel
               ref={carouselRef}
               items={toCarouselItems(apps)}
@@ -198,7 +198,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
             {/* END FIX: Controls added */}
           </div>
 
-          <ScrollShadow orientation="horizontal" className="w=[60rem]">
+          <ScrollShadow orientation="vertical">
             <AppleStyleCarousel
               ref={carouselRef}
               items={toCarouselItems(content.apps)}
