@@ -145,7 +145,7 @@ export const AppleStyleCarousel = forwardRef<
                   </button>
                 </div>
 
-                <div className="absolute bottom-8 left-8 z-50 flex flex-col items-start">
+                <div className="absolute bottom-[25px] z-50 flex flex-col items-start">
                   <p className="text-[14px] font-semibold text-white/90">
                     Compatibility
                   </p>
