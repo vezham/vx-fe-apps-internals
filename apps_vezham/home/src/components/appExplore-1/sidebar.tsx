@@ -83,8 +83,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <div
       ref={sidebarRef}
-      className="text-foreground h-full w-full flex-shrink-0 pt-20 [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin] lg:pt-0">
-      <div className="pt-safe py-4 lg:py-4">
+      className="text-foreground h-full w-full flex-shrink-0 dark:bg-black">
+      <div className="pt-20 pb-5 lg:py-3 lg:pb-0 dark:bg-black">
         {categories.map(category => (
           <div key={category.id} className="mb-1">
             {/* ✅ Category header (whole area toggles expansion) */}

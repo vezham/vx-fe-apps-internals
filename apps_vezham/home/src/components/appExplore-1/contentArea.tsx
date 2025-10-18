@@ -179,7 +179,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 disabled={!canScrollLeft}
                 className={`flex h-9 w-9 items-center justify-center rounded-full ${
                   canScrollLeft
-                    ? 'bg-gray-200 transition-colors hover:bg-gray-300'
+                    ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
                     : 'cursor-not-allowed opacity-40'
                 }`}>
                 <Icon icon="lucide:chevron-left" />
@@ -189,7 +189,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 disabled={!canScrollRight}
                 className={`flex h-9 w-9 items-center justify-center rounded-full ${
                   canScrollRight
-                    ? 'bg-gray-200 transition-colors hover:bg-gray-300'
+                    ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
                     : 'cursor-not-allowed opacity-40'
                 }`}>
                 <Icon icon="lucide:chevron-right" />
@@ -259,7 +259,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     }
 
     const renderAllContent = () => (
-      <div className="pb-20" id="continuous-scroll-container">
+      <div id="continuous-scroll-container">
         <div
           id="all-collections"
           ref={el => (contentRefs.current['all-collections'] = el)}
@@ -296,7 +296,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     return (
       <div
         ref={ref}
-        className="bg-background text-foreground min-h-screen w-full pb-20">
+        className="bg-background text-foreground min-h-screen w-full">
         {renderContent()}
       </div>
     )

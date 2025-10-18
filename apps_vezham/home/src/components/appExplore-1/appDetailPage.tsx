@@ -14,7 +14,6 @@ const AppDetailView: React.FC = () => {
   const params = useParams({ from: '/apps/$appExploreId' })
   const appId = params.appExploreId
 
-  // ✅ FIX: Find the app inside all categoryContents
   const app =
     Object.values(categoryContents)
       .flatMap(category => category.apps)
@@ -45,6 +44,7 @@ const AppDetailView: React.FC = () => {
   const pricingPlans = app.pricing || []
   const results = app.metrics || []
   const supportOptions = app.support || []
+  const painPoints = Array.isArray(app.painPoints) ? app.painPoints : []
 
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -102,7 +102,7 @@ const AppDetailView: React.FC = () => {
                   <h2 className="mb-6 text-2xl font-bold">Our Obstacles</h2>
 
                   <Accordion variant="splitted" className="mt-6">
-                    {app.painPoints.map((point, index) => (
+                    {painPoints.map((point, index) => (
                       <AccordionItem
                         key={index}
                         aria-label={point.title}

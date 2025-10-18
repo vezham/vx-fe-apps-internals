@@ -10,6 +10,7 @@ type SubMenuItem = {
 }
 
 type NavItem = {
+  more: any
   learn_more: any
   title: string
   items: SubMenuItem[]
@@ -131,6 +132,60 @@ export default function MobileSubmenu({ subMenus }: MobileSubmenuProps) {
                       <p className="text-sm font-medium">
                         {navItem.learn_more?.label ||
                           `Explore All ${navItem.title}`}
+                      </p>
+                      <p className="text-default-500 text-xs">
+                        View all {navItem.items.length} products
+                      </p>
+                    </div>
+                  </Link>
+                )}
+              </div>
+            )}
+
+            {navItem.items.length > 5 && (
+              <div className="border-divider mt-2 border-t pt-2">
+                {isExternalLink(navItem.more?.link) ? (
+                  <a
+                    href={
+                      navItem.learn_more?.link ||
+                      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex w-full items-start gap-3 rounded-md p-2 transition-colors">
+                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
+                      <Icon
+                        icon="lucide:external-link"
+                        width={20}
+                        className="text-primary"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">
+                        {navItem.more?.label || `Explore All ${navItem.title}`}
+                      </p>
+                      <p className="text-default-500 text-xs">
+                        View all {navItem.items.length} products
+                      </p>
+                    </div>
+                  </a>
+                ) : (
+                  <Link
+                    to={
+                      navItem.more?.link ||
+                      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
+                    }
+                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex w-full items-start gap-3 rounded-md p-2 transition-colors">
+                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
+                      <Icon
+                        icon="lucide:layout-grid"
+                        width={20}
+                        className="text-primary"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">
+                        {navItem.more?.label || `Explore All ${navItem.title}`}
                       </p>
                       <p className="text-default-500 text-xs">
                         View all {navItem.items.length} products
