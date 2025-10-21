@@ -133,45 +133,56 @@ const AppExploreContent = () => {
             }
           }
 
-          if (foundCategory === 'categories') {
-            if (foundCategory) {
-              setActiveCategory(foundCategory)
-            }
-
-            if (foundSubcategory) {
-              setActiveSubcategory(foundSubcategory)
-
-              if (visibleContent !== 'all-collections') {
-                setVisibleContent(foundSubcategory)
-              }
-            } else if (foundCategory) {
-              setActiveSubcategory('')
-
-              if (visibleContent !== 'all-collections') {
-                setVisibleContent(foundCategory)
-              }
-            }
-          } else if (sectionId === 'all-collections') {
+          // Update active category and subcategory based on scroll position
+          if (sectionId === 'all-collections') {
             setActiveCategory('featured')
             setActiveSubcategory('all-collections')
+            localStorage.setItem('activeCategory', 'featured')
+            localStorage.setItem('activeSubcategory', 'all-collections')
+          } else if (foundSubcategory) {
+            // If we found a subcategory, update both category and subcategory
+            setActiveCategory(foundCategory)
+            setActiveSubcategory(foundSubcategory)
+            localStorage.setItem('activeCategory', foundCategory)
+            localStorage.setItem('activeSubcategory', foundSubcategory)
+
+            // Only update visibleContent if we're not in all-collections view
+            if (visibleContent !== 'all-collections') {
+              setVisibleContent(foundSubcategory)
+              localStorage.setItem('visibleContent', foundSubcategory)
+            }
+          } else if (foundCategory) {
+            // If we only found a category, update just the category
+            setActiveCategory(foundCategory)
+            setActiveSubcategory('')
+            localStorage.setItem('activeCategory', foundCategory)
+            localStorage.setItem('activeSubcategory', '')
+
+            // Only update visibleContent if we're not in all-collections view
+            if (visibleContent !== 'all-collections') {
+              setVisibleContent(foundCategory)
+              localStorage.setItem('visibleContent', foundCategory)
+            }
           }
 
+          // Reset scrolling flag after a short delay
           setTimeout(() => {
             isScrollingRef.current = false
-          }, 100)
+          }, 150)
         }
       },
       {
-        threshold: [
-          0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
-        ],
-        rootMargin: '-5% 0px -45% 0px'
+        // More granular thresholds for better detection
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        // Adjust rootMargin to better detect sections at the top of the viewport
+        rootMargin: '-10% 0px -40% 0px'
       }
     )
 
     const observeSections = () => {
       observer.disconnect()
 
+      // Find all sections with IDs
       const allSections = document.querySelectorAll('[id]')
       console.log(`Found ${allSections.length} sections to observe`)
 
@@ -186,10 +197,11 @@ const AppExploreContent = () => {
       })
     }
 
+    // Initial observation
     observeSections()
 
+    // Re-observe after a delay to catch any dynamically rendered sections
     const timer = setTimeout(observeSections, 500)
-
     const contentChangeTimer = setTimeout(observeSections, 1000)
 
     return () => {
@@ -202,7 +214,6 @@ const AppExploreContent = () => {
   React.useEffect(() => {
     const safetyTimer = setInterval(() => {
       if (ignoreScrollUpdatesRef.current) {
-        console.log('Safety reset of ignoreScrollUpdatesRef')
         ignoreScrollUpdatesRef.current = false
       }
     }, 2000)
@@ -241,8 +252,6 @@ const AppExploreContent = () => {
     }
 
     ignoreScrollUpdatesRef.current = true
-
-    console.log('Navigating to subcategory:', subcategoryId)
 
     setActiveSubcategory(subcategoryId)
     localStorage.setItem('activeSubcategory', subcategoryId)
@@ -302,23 +311,9 @@ const AppExploreContent = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  React.useEffect(() => {
-    ;(window as any).handleSubcategoryClick = handleSubcategoryClick
-
-    return () => {
-      delete (window as any).handleSubcategoryClick
-    }
-  }, [])
-
   const toggleMobileSidebar = () => {
     setIsMobileSidebarVisible(prev => !prev)
   }
-
-  React.useEffect(() => {
-    console.log('Active Category:', activeCategory)
-    console.log('Active Subcategory:', activeSubcategory)
-    console.log('Visible Content:', visibleContent)
-  }, [activeCategory, activeSubcategory, visibleContent])
 
   return (
     <div className="bg-background text-foreground flex min-h-screen flex-col scroll-smooth">

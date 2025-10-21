@@ -15,9 +15,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
   categories,
   activeCategory,
   activeSubcategory,
+  onCategoryClick,
   onSubcategoryClick
 }) => {
-  // ✅ Initialize expanded categories from localStorage or defaults
+  // Initialize expanded categories from localStorage or defaults
   const [expandedCategories, setExpandedCategories] = React.useState<
     Record<string, boolean>
   >(() => {
@@ -32,7 +33,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const sidebarRef = React.useRef<HTMLDivElement>(null)
   const itemRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
 
-  // ✅ Unified category toggle handler
+  // Unified category toggle handler
   const toggleCategoryExpansion = (categoryId: string) => {
     setExpandedCategories(prev => {
       const newState = { ...prev, [categoryId]: !prev[categoryId] }
@@ -41,7 +42,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     })
   }
 
-  // ✅ Ensure active category and subcategory remain expanded
+  // Ensure active category and subcategory remain expanded
   React.useEffect(() => {
     setExpandedCategories(prev => {
       let changed = false
@@ -72,22 +73,34 @@ export const Sidebar: React.FC<SidebarProps> = ({
     })
   }, [activeCategory, activeSubcategory, categories])
 
-  // ✅ Keep active item visible
+  // Scroll active item into view when it changes
   React.useEffect(() => {
-    const activeItemId = activeSubcategory || activeCategory
-    if (!activeItemId || !sidebarRef.current) return
-    const activeEl = itemRefs.current[activeItemId]
-    if (!activeEl) return
-  }, [activeCategory, activeSubcategory])
+    if (activeSubcategory && itemRefs.current[activeSubcategory]) {
+      const element = itemRefs.current[activeSubcategory]
+      if (element && sidebarRef.current) {
+        // Smooth scroll the sidebar to show the active item
+        const sidebarTop = sidebarRef.current.getBoundingClientRect().top
+        const elementTop = element.getBoundingClientRect().top
+        const offset = elementTop - sidebarTop - 100 // 100px from top
+
+        if (offset < 0 || offset > sidebarRef.current.clientHeight - 100) {
+          sidebarRef.current.scrollTo({
+            top: sidebarRef.current.scrollTop + offset,
+            behavior: 'smooth'
+          })
+        }
+      }
+    }
+  }, [activeSubcategory])
 
   return (
     <div
       ref={sidebarRef}
-      className="text-foreground h-full w-full flex-shrink-0 dark:bg-black">
-      <div className="pt-20 pb-5 lg:py-3 lg:pb-0 dark:bg-black">
+      className="text-foreground h-full w-full flex-shrink-0 overflow-y-auto">
+      <div className="pt-20 pb-5 lg:py-3 lg:pb-0">
         {categories.map(category => (
           <div key={category.id} className="mb-1">
-            {/* ✅ Category header (whole area toggles expansion) */}
+            {/* Category header (whole area toggles expansion) */}
             <div
               ref={el => (itemRefs.current[category.id] = el)}
               data-category-id={category.id}
@@ -112,7 +125,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               )}
             </div>
 
-            {/* ✅ Subcategories (only clickable for navigation) */}
+            {/* Subcategories (only clickable for navigation) */}
             {category.subcategories && expandedCategories[category.id] && (
               <div className="transition-all duration-300 ease-in-out">
                 {category.subcategories.map(subcategory => (
