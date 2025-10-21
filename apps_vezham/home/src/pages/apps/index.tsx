@@ -130,27 +130,36 @@ const AppContent = () => {
             }
           }
 
-          if (foundCategory === 'categories') {
-            if (foundCategory) {
-              setActiveCategory(foundCategory)
-            }
-
-            if (foundSubcategory) {
-              setActiveSubcategory(foundSubcategory)
-
-              if (visibleContent !== 'all-collections') {
-                setVisibleContent(foundSubcategory)
-              }
-            } else if (foundCategory) {
-              setActiveSubcategory('')
-
-              if (visibleContent !== 'all-collections') {
-                setVisibleContent(foundCategory)
-              }
-            }
-          } else if (sectionId === 'all-collections') {
+          // Update active category and subcategory based on scroll position
+          if (sectionId === 'all-collections') {
             setActiveCategory('featured')
             setActiveSubcategory('all-collections')
+            localStorage.setItem('activeCategory', 'featured')
+            localStorage.setItem('activeSubcategory', 'all-collections')
+          } else if (foundSubcategory) {
+            // If we found a subcategory, update both category and subcategory
+            setActiveCategory(foundCategory)
+            setActiveSubcategory(foundSubcategory)
+            localStorage.setItem('activeCategory', foundCategory)
+            localStorage.setItem('activeSubcategory', foundSubcategory)
+
+            // Only update visibleContent if we're not in all-collections view
+            if (visibleContent !== 'all-collections') {
+              setVisibleContent(foundSubcategory)
+              localStorage.setItem('visibleContent', foundSubcategory)
+            }
+          } else if (foundCategory) {
+            // If we only found a category, update just the category
+            setActiveCategory(foundCategory)
+            setActiveSubcategory('')
+            localStorage.setItem('activeCategory', foundCategory)
+            localStorage.setItem('activeSubcategory', '')
+
+            // Only update visibleContent if we're not in all-collections view
+            if (visibleContent !== 'all-collections') {
+              setVisibleContent(foundCategory)
+              localStorage.setItem('visibleContent', foundCategory)
+            }
           }
 
           setTimeout(() => {
@@ -334,7 +343,7 @@ const AppContent = () => {
           />
         )}
         <div
-          className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} border-divider fixed top-0 bottom-0 left-0 z-25 flex h-full w-64 flex-col overflow-hidden border-r transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0`}>
+          className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} border-divider fixed top-0 bottom-0 left-0 z-40 flex h-full w-64 flex-col overflow-hidden border-r bg-white transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 dark:bg-black`}>
           <div className="flex-1 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-black/20 [&::-webkit-scrollbar-track]:bg-transparent">
             <Sidebar
               categories={categories}

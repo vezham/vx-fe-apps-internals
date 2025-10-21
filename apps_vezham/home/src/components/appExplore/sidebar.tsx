@@ -104,8 +104,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <div
       ref={sidebarRef}
-      className="text-foreground h-full w-full flex-shrink-0 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin]">
-      <div className="pt-safe py-4 lg:py-4">
+      className="text-foreground h-full w-full flex-shrink-0">
+      <div className="pt-20 pb-5 lg:py-3 lg:pb-0">
         {categories.map(category => (
           <div key={category.id} className="mb-1">
             {/* ✅ Category header (whole area toggles expansion) */}
@@ -113,7 +113,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               ref={el => (itemRefs.current[category.id] = el)}
               data-category-id={category.id}
               onClick={() => toggleCategoryExpansion(category.id)}
-              className={`sticky top-0 z-10 flex cursor-pointer items-center justify-between px-6 py-3 text-sm backdrop-blur-sm transition-all duration-200 ease-out sm:text-base ${
+              className={`sticky top-0 z-10 flex cursor-pointer items-center justify-between overflow-y-auto px-5 py-3 text-sm backdrop-blur-sm transition-all duration-200 ease-out sm:text-base ${
                 activeCategory === category.id && !activeSubcategory
                   ? 'text-foreground font-medium'
                   : 'text-foreground-500'
@@ -135,16 +135,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             {/* ✅ Subcategories (only clickable for navigation) */}
             {category.subcategories && expandedCategories[category.id] && (
-              <div className="ml-6 transition-all duration-300 ease-in-out">
+              <div className="transition-all duration-300 ease-in-out">
                 {category.subcategories.map(subcategory => (
                   <div
                     key={subcategory.id}
                     ref={el => (itemRefs.current[subcategory.id] = el)}
                     onClick={() => onSubcategoryClick(subcategory.id)}
-                    className={`relative flex cursor-pointer items-center px-6 py-3 text-sm transition-all duration-200 ease-out ${
+                    className={`relative my-2 flex cursor-pointer items-center px-5 py-3 text-sm transition-all duration-200 ease-out ${
                       activeSubcategory === subcategory.id
-                        ? 'bg-default-100 text-primary rounded-l-lg font-medium'
-                        : 'text-foreground-400 hover:bg-default-100 hover:rounded-l-lg'
+                        ? 'bg-default-100 text-primary font-medium'
+                        : 'text-foreground-400 hover:bg-default-100'
                     }`}>
                     <span>{subcategory.name}</span>
                   </div>

@@ -156,7 +156,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                   key={subcategory.id}
                   id={subcategory.id} // Ensure ID matches subcategory.id exactly
                   ref={el => (contentRefs.current[subcategory.id] = el)}
-                  className="min-h-[50vh] scroll-mt-20 pb-5">
+                  className="min-h-[auto] scroll-mt-20 pb-5">
                   <div className="mb-4 flex items-center justify-between">
                     <div>
                       <h2 className="mb-1 flex text-xl font-bold">
@@ -236,7 +236,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 key={subcategory.id}
                 id={subcategory.id}
                 ref={el => (contentRefs.current[subcategory.id] = el)}
-                className="min-h-[50vh] scroll-mt-20 pb-5">
+                className="scroll-mt-20 pb-5">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <h2 className="mb-1 flex items-center text-xl font-bold">

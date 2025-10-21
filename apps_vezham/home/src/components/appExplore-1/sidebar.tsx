@@ -96,7 +96,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <div
       ref={sidebarRef}
-      className="text-foreground h-full w-full flex-shrink-0 overflow-y-auto">
+      className="text-foreground h-full w-full flex-shrink-0">
       <div className="pt-20 pb-5 lg:py-3 lg:pb-0">
         {categories.map(category => (
           <div key={category.id} className="mb-1">
@@ -133,10 +133,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     key={subcategory.id}
                     ref={el => (itemRefs.current[subcategory.id] = el)}
                     onClick={() => onSubcategoryClick(subcategory.id)}
-                    className={`relative flex cursor-pointer items-center py-3 text-sm transition-all duration-200 ease-out ${
+                    className={`relative my-2 flex cursor-pointer items-center py-3 text-sm transition-all duration-200 ease-out ${
                       activeSubcategory === subcategory.id
-                        ? 'bg-default-100 text-primary rounded-l-lg font-medium'
-                        : 'text-foreground-400 hover:bg-default-100 hover:rounded-l-lg'
+                        ? 'bg-default-100 text-primary font-medium'
+                        : 'text-foreground-400 hover:bg-default-100'
                     }`}>
                     <span className="ml-5">{subcategory.name}</span>
                   </div>

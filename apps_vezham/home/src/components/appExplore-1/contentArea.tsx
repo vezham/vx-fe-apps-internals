@@ -83,8 +83,8 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
           key={id}
           id={id}
           ref={el => (contentRefs.current[id] = el)}
-          className="scroll-mt-20 py-8">
-          <div className="mb-4 flex items-center justify-between">
+          className="scroll-mt-20 py-2">
+          <div className="mb-5 flex items-center justify-between">
             <h2
               className="text-[28px] md:text-[40px] lg:text-[48px]"
               style={{ fontWeight: 600 }}>
@@ -177,7 +177,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
         <div
           id="all-collections"
           ref={el => (contentRefs.current['all-collections'] = el)}
-          className="scroll-mt-20 p-4 lg:p-6">
+          className="p-4 lg:p-6">
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center">
               <button

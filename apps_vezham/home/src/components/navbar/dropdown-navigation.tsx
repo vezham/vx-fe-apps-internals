@@ -285,9 +285,7 @@ export function DropdownNavigation({ navItems }: Props) {
                   {' '}
                   <Icon
                     icon="lucide:more-vertical"
-                    className={`h-4 w-4 transition-transform duration-300 ${
-                      openMenu === 'More' ? 'rotate-180' : ''
-                    }`}
+                    className={`h-4 w-4 transition-transform duration-300`}
                   />
                 </span>
 
