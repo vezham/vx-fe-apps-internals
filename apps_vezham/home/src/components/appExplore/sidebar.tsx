@@ -141,7 +141,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     key={subcategory.id}
                     ref={el => (itemRefs.current[subcategory.id] = el)}
                     onClick={() => onSubcategoryClick(subcategory.id)}
-                    className={`relative my-2 flex cursor-pointer items-center px-5 py-3 text-sm transition-all duration-200 ease-out ${
+                    className={`relative my-3 flex cursor-pointer items-center px-5 py-3 text-sm transition-all duration-200 ease-out ${
                       activeSubcategory === subcategory.id
                         ? 'bg-default-100 text-primary font-medium'
                         : 'text-foreground-400 hover:bg-default-100'
