@@ -4,9 +4,9 @@ import React from 'react'
 
 import { Accordion, AccordionItem, Button, Card, Image } from '@vx-oss/react'
 
+import { Header } from '../../pages/header'
 import { cn } from '../../utils/cn'
 import { Footer } from '../footer'
-import { Header } from '../header'
 import { categoryContents } from './data'
 
 const AppDetailView: React.FC = () => {

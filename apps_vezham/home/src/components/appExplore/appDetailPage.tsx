@@ -4,9 +4,9 @@ import React from 'react'
 
 import { Button, Card } from '@vx-oss/react'
 
+import { Header } from '../../pages/header'
 import { cn } from '../../utils/cn'
 import { Footer } from '../footer'
-import { Header } from '../header'
 import { categoryContents } from './data'
 
 const AppDetailPage: React.FC = () => {

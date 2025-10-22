@@ -14,7 +14,7 @@ import { HeroBanner } from '../../components/appExplore/herobanner'
 import { Sidebar } from '../../components/appExplore/sidebar'
 import { type App } from '../../components/appExplore/types'
 import { Footer } from '../../components/footer'
-import { Header } from '../../components/header'
+import { Header } from '../header'
 
 // ---------------------- APP CONTENT ----------------------
 const AppContent = () => {

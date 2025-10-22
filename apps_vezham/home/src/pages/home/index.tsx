@@ -1,8 +1,6 @@
-import React from 'react'
-
 import { Footer } from '../../components/footer'
-import { Header } from '../../components/header'
 import { HeroSection } from '../../components/herosection/hero-section-1'
+import { Header } from '../header'
 
 const index = () => {
   return (
