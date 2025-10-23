@@ -80,7 +80,7 @@ export const AppleStyleCarousel = forwardRef<
 
             const normalizedPath = navigateBasePath.startsWith('/')
               ? navigateBasePath
-              : `${navigateBasePath}`
+              : `/${navigateBasePath}`
 
             router.navigate({
               to: `${normalizedPath}/$appExploreId`,

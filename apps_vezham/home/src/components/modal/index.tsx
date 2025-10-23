@@ -32,7 +32,7 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
     onClose()
     const normalizedPath = navigatePath.startsWith('/')
       ? navigatePath
-      : `${navigatePath}`
+      : `/${navigatePath}`
     router.navigate({ to: `${normalizedPath}/${app.id}` })
   }
 
