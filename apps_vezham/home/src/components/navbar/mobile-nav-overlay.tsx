@@ -1,24 +1,27 @@
+// MobileNavOverlay.tsx
 import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 
-interface MobileNavOverlayProps {
-  isOpen: boolean
-  onClick: () => void
-}
+import { MobileNavOverlayProps } from './types'
+import { mobileNavOverlayVariants as v } from './variant'
 
 export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({
   isOpen,
-  onClick
+  onClick,
+  variant = 'dark'
 }) => {
+  const animation = v.animations
+  const overlayClass = `${v.base.overlay} ${v.variants.variant[variant]}`
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+          initial={animation.initial}
+          animate={animation.animate}
+          exit={animation.exit}
+          transition={animation.transition}
+          className={overlayClass}
           onClick={onClick}
           aria-hidden="true"
         />

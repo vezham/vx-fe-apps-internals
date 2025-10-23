@@ -13,7 +13,7 @@ import { categories, categoryContents } from '../../components/appExplore/data'
 import { HeroBanner } from '../../components/appExplore/herobanner'
 import { Sidebar } from '../../components/appExplore/sidebar'
 import { type App } from '../../components/appExplore/types'
-import { Footer } from '../../components/footer'
+import { Footer } from '../footer'
 import { Header } from '../header'
 
 // ---------------------- APP CONTENT ----------------------

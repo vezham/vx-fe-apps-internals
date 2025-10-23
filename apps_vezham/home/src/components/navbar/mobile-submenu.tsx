@@ -1,203 +1,100 @@
+// MobileSubmenu.tsx
 import { Icon } from '@iconify/react'
 import { Link } from '@tanstack/react-router'
-import React from 'react'
 
-type SubMenuItem = {
-  name: string
-  description: string
-  icon: string
-  link: string
-}
-
-type NavItem = {
-  more: any
-  learn_more: any
-  title: string
-  items: SubMenuItem[]
-}
-
-type MobileSubmenuProps = {
-  subMenus: NavItem[]
-}
+import { MobileSubmenuProps } from './types'
+import { mobileSubmenuVariants as v } from './variant'
 
 export default function MobileSubmenu({ subMenus }: MobileSubmenuProps) {
-  const isExternalLink = (link: string): boolean => {
-    return link.startsWith('http') || link.startsWith('https')
-  }
+  const isExternalLink = (link: string): boolean =>
+    link.startsWith('http') || link.startsWith('https')
 
   return (
-    <div className="pl-4">
+    <div className={v.base.container}>
       {subMenus.map((navItem, index) => (
-        <div key={index} className="mb-4">
-          {navItem.title && (
-            <p className="text-default-500 mb-2 text-xs font-bold">
-              {navItem.title}
-            </p>
-          )}
+        <div key={index} className={v.base.section}>
+          {navItem.title && <p className={v.base.title}>{navItem.title}</p>}
 
-          <div className="flex flex-col gap-3">
-            {/* First 5 items */}
-            {navItem.items.slice(0, 5).map((item, idx) => (
-              <React.Fragment key={idx}>
-                {isExternalLink(item.link) ? (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex items-start gap-3 rounded-md p-2 transition-colors">
-                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
-                      <Icon
-                        icon={item.icon}
-                        width={20}
-                        className="text-primary"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">{item.name}</p>
-                      {item.description && (
-                        <p className="text-default-500 text-xs">
-                          {item.description}
-                        </p>
-                      )}
-                    </div>
-                  </a>
-                ) : (
-                  <Link
-                    to={item.link || '/'}
-                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex items-start gap-3 rounded-md p-2 transition-colors">
-                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
-                      <Icon
-                        icon={item.icon}
-                        width={20}
-                        className="text-primary"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">{item.name}</p>
-                      {item.description && (
-                        <p className="text-default-500 text-xs">
-                          {item.description}
-                        </p>
-                      )}
-                    </div>
-                  </Link>
-                )}
-              </React.Fragment>
-            ))}
+          <div className={v.base.list}>
+            {navItem.items.slice(0, 5).map((item, idx) => {
+              const Wrapper = isExternalLink(item.link) ? 'a' : Link
+              const wrapperProps = isExternalLink(item.link)
+                ? {
+                    href: item.link,
+                    target: '_blank',
+                    rel: 'noopener noreferrer'
+                  }
+                : { to: item.link || '/' }
 
-            {/* "Explore All Products" section */}
+              return (
+                <Wrapper key={idx} {...wrapperProps} className={v.base.link}>
+                  <div className={v.base.iconWrapper}>
+                    <Icon icon={item.icon} width={20} className={v.base.icon} />
+                  </div>
+                  <div>
+                    <p className={v.base.label}>{item.name}</p>
+                    {item.description && (
+                      <p className={v.base.description}>{item.description}</p>
+                    )}
+                  </div>
+                </Wrapper>
+              )
+            })}
+
+            {/* Learn more section */}
             {navItem.items.length > 5 && (
-              <div className="border-divider mt-2 border-t pt-2">
-                {isExternalLink(navItem.learn_more?.link) ? (
-                  <a
-                    href={
-                      navItem.learn_more?.link ||
-                      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex w-full items-start gap-3 rounded-md p-2 transition-colors">
-                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
-                      <Icon
-                        icon="lucide:external-link"
-                        width={20}
-                        className="text-primary"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">
-                        {navItem.learn_more?.label ||
-                          `Explore All ${navItem.title}`}
-                      </p>
-                      <p className="text-default-500 text-xs">
-                        View all {navItem.items.length} products
-                      </p>
-                    </div>
-                  </a>
-                ) : (
-                  <Link
-                    to={
-                      navItem.learn_more?.link ||
-                      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
-                    }
-                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex w-full items-start gap-3 rounded-md p-2 transition-colors">
-                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
-                      <Icon
-                        icon="lucide:layout-grid"
-                        width={20}
-                        className="text-primary"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">
-                        {navItem.learn_more?.label ||
-                          `Explore All ${navItem.title}`}
-                      </p>
-                      <p className="text-default-500 text-xs">
-                        View all {navItem.items.length} products
-                      </p>
-                    </div>
-                  </Link>
-                )}
-              </div>
-            )}
-
-            {navItem.items.length > 5 && (
-              <div className="border-divider mt-2 border-t pt-2">
-                {isExternalLink(navItem.more?.link) ? (
-                  <a
-                    href={
-                      navItem.learn_more?.link ||
-                      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex w-full items-start gap-3 rounded-md p-2 transition-colors">
-                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
-                      <Icon
-                        icon="lucide:external-link"
-                        width={20}
-                        className="text-primary"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">
-                        {navItem.more?.label || `Explore All ${navItem.title}`}
-                      </p>
-                      <p className="text-default-500 text-xs">
-                        View all {navItem.items.length} products
-                      </p>
-                    </div>
-                  </a>
-                ) : (
-                  <Link
-                    to={
-                      navItem.more?.link ||
-                      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
-                    }
-                    className="hover:bg-default-100 dark:hover:bg-default-200/20 flex w-full items-start gap-3 rounded-md p-2 transition-colors">
-                    <div className="bg-primary/10 flex h-7 w-7 items-center justify-center rounded-md">
-                      <Icon
-                        icon="lucide:layout-grid"
-                        width={20}
-                        className="text-primary"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">
-                        {navItem.more?.label || `Explore All ${navItem.title}`}
-                      </p>
-                      <p className="text-default-500 text-xs">
-                        View all {navItem.items.length} products
-                      </p>
-                    </div>
-                  </Link>
-                )}
-              </div>
+              <>
+                <div className={v.base.divider}>
+                  {renderExtraLink(
+                    navItem.learn_more,
+                    navItem,
+                    'lucide:layout-grid',
+                    'Explore All'
+                  )}
+                </div>
+                <div className={v.base.divider}>
+                  {renderExtraLink(
+                    navItem.more,
+                    navItem,
+                    'lucide:external-link',
+                    'More'
+                  )}
+                </div>
+              </>
             )}
           </div>
         </div>
       ))}
     </div>
   )
+
+  function renderExtraLink(
+    linkObj: any,
+    navItem: any,
+    icon: string,
+    fallbackText: string
+  ) {
+    const label = linkObj?.label || `${fallbackText} ${navItem.title}`
+    const url =
+      linkObj?.link ||
+      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
+    const Wrapper = isExternalLink(url) ? 'a' : Link
+    const wrapperProps = isExternalLink(url)
+      ? { href: url, target: '_blank', rel: 'noopener noreferrer' }
+      : { to: url }
+
+    return (
+      <Wrapper {...wrapperProps} className={v.base.link}>
+        <div className={v.base.iconWrapper}>
+          <Icon icon={icon} width={20} className={v.base.icon} />
+        </div>
+        <div>
+          <p className={v.base.label}>{label}</p>
+          <p className={v.base.description}>
+            View all {navItem.items.length} products
+          </p>
+        </div>
+      </Wrapper>
+    )
+  }
 }

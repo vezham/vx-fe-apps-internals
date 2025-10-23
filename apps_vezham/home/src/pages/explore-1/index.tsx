@@ -330,7 +330,7 @@ const AppExploreContent = () => {
 
         {/* Sidebar - Fixed positioning for mobile, static for desktop */}
         <div
-          className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} border-divider fixed top-0 bottom-0 left-0 z-40 flex h-full w-64 flex-col overflow-hidden border-r bg-white transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0`}>
+          className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} border-divider fixed top-0 bottom-0 left-0 z-40 flex h-full w-64 flex-col overflow-hidden border-r bg-white transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 dark:bg-black`}>
           {/* Scrollable sidebar content with inline scrollbar styles */}
           <div className="flex-1 overflow-y-auto">
             <Sidebar
