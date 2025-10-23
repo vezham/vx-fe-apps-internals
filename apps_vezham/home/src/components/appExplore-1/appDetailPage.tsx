@@ -11,7 +11,7 @@ import { categoryContents } from './data'
 
 const AppDetailView: React.FC = () => {
   const router = useRouter()
-  const params = useParams({ from: '/apps/$appExploreId' })
+  const params = useParams({ from: '/apps/explore-1/$appExploreId' })
   const appId = params.appExploreId
 
   const app =

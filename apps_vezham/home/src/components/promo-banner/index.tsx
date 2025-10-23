@@ -5,26 +5,19 @@ import React from 'react'
 import { Link } from '@vx-oss/react'
 
 import type { PromoBannerProps } from './types'
-import {
-  closeButton,
-  closeIcon,
-  promoBanner,
-  promoContent,
-  promoLink,
-  promoText
-} from './variant'
+import { styles } from './variant'
 
 export const PromoBanner: React.FC<PromoBannerProps> = ({
   onClose,
   variant = 'primary'
 }) => {
   return (
-    <div className={promoBanner({ variant })}>
-      <div className={promoContent()}>
-        <span className={promoText()}>
+    <div className={`${styles.banner.base} ${styles.banner.variant[variant]}`}>
+      <div className={styles.content}>
+        <span className={styles.text}>
           Join us at Vezham Conference India—our signature user conference!
         </span>
-        <Link as={RouterLink} to="/conference" className={promoLink()}>
+        <Link as={RouterLink} to="/conference" className={styles.link}>
           Grab early bird tickets
         </Link>
       </div>
@@ -32,9 +25,9 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({
       {onClose && (
         <button
           onClick={onClose}
-          className={closeButton()}
+          className={styles.closeButton}
           aria-label="Close banner">
-          <Icon icon="lucide:x" className={closeIcon()} />
+          <Icon icon="lucide:x" className={styles.closeIcon} />
         </button>
       )}
     </div>

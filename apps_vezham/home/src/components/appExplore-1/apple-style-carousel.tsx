@@ -96,7 +96,7 @@ export const AppleStyleCarousel = forwardRef<
             const targetId = item.id || item.app?.id
             if (!targetId) return
             router.navigate({
-              to: '/apps/$appExploreId',
+              to: '/apps/explore-1/$appExploreId',
               params: { appExploreId: targetId }
             })
           }

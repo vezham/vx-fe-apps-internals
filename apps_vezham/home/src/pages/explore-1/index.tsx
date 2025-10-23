@@ -13,10 +13,10 @@ import {
   categories,
   categoryContents
 } from '../../components/appExplore-1/data'
-import { HeroBanner } from '../../components/appExplore-1/herobanner'
 import { Sidebar } from '../../components/appExplore-1/sidebar'
 import { type App } from '../../components/appExplore-1/types'
-import { Footer } from '../../components/footer'
+import { HeroBanner } from '../../components/heroBanner'
+import { Footer } from '../footer'
 import { Header } from '../header'
 
 // ---------------------- APP CONTENT ----------------------
@@ -175,7 +175,7 @@ const AppExploreContent = () => {
         // More granular thresholds for better detection
         threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
         // Adjust rootMargin to better detect sections at the top of the viewport
-        rootMargin: '-10% 0px -40% 0px'
+        rootMargin: '-5% 0px -45% 0px'
       }
     )
 
@@ -311,6 +311,14 @@ const AppExploreContent = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  React.useEffect(() => {
+    ;(window as any).handleSubcategoryClick = handleSubcategoryClick
+
+    return () => {
+      delete (window as any).handleSubcategoryClick
+    }
+  }, [])
+
   const toggleMobileSidebar = () => {
     setIsMobileSidebarVisible(prev => !prev)
   }
@@ -380,7 +388,7 @@ const rootRoute = new RootRoute({
 
 const appRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/app/$appsId',
+  path: '/apps/$appExploreId',
   component: AppDetailView
 })
 

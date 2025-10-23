@@ -34,8 +34,7 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
 
   const handleViewDetails = () => {
     onClose()
-    router.navigate({ to: `/apps/${app.id}` })
-    console.log(app.id)
+    router.navigate({ to: `/apps/explore-1/${app.id}` })
   }
 
   return (

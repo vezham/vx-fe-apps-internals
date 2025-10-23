@@ -31,9 +31,8 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
   if (!app) return null
 
   const handleViewDetails = () => {
-    if (!app?.id) return
     onClose()
-    router.navigate({ to: `/apps/${app.id}`, params: { appId: app.id } })
+    router.navigate({ to: `/apps/explore/${app.id}` })
   }
 
   const { theme } = useTheme()

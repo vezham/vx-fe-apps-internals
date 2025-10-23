@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import React from 'react'
 
-import { AppCard } from './appCard'
+import { AppCard } from '../card'
 import { categories } from './data'
 import { App, CategoryContent } from './types'
 

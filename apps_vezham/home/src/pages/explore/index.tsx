@@ -10,9 +10,9 @@ import { AppDetailModal } from '../../components/appExplore/appDetailModal'
 import { AppDetailPage } from '../../components/appExplore/appDetailPage'
 import { ContentArea } from '../../components/appExplore/contentArea'
 import { categories, categoryContents } from '../../components/appExplore/data'
-import { HeroBanner } from '../../components/appExplore/herobanner'
 import { Sidebar } from '../../components/appExplore/sidebar'
 import { type App } from '../../components/appExplore/types'
+import { HeroBanner } from '../../components/heroBanner'
 import { Footer } from '../footer'
 import { Header } from '../header'
 
@@ -319,12 +319,6 @@ const AppContent = () => {
   const toggleMobileSidebar = () => {
     setIsMobileSidebarVisible(prev => !prev)
   }
-
-  React.useEffect(() => {
-    console.log('Active Category:', activeCategory)
-    console.log('Active Subcategory:', activeSubcategory)
-    console.log('Visible Content:', visibleContent)
-  }, [activeCategory, activeSubcategory, visibleContent])
 
   return (
     <div className="bg-background text-foreground flex min-h-screen flex-col scroll-smooth">

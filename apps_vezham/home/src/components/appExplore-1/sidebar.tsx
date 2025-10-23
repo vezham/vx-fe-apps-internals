@@ -15,7 +15,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   categories,
   activeCategory,
   activeSubcategory,
-  onCategoryClick,
   onSubcategoryClick
 }) => {
   // Initialize expanded categories from localStorage or defaults
@@ -73,26 +72,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
     })
   }, [activeCategory, activeSubcategory, categories])
 
-  // Scroll active item into view when it changes
-  React.useEffect(() => {
-    if (activeSubcategory && itemRefs.current[activeSubcategory]) {
-      const element = itemRefs.current[activeSubcategory]
-      if (element && sidebarRef.current) {
-        // Smooth scroll the sidebar to show the active item
-        const sidebarTop = sidebarRef.current.getBoundingClientRect().top
-        const elementTop = element.getBoundingClientRect().top
-        const offset = elementTop - sidebarTop - 100 // 100px from top
-
-        if (offset < 0 || offset > sidebarRef.current.clientHeight - 100) {
-          sidebarRef.current.scrollTo({
-            top: sidebarRef.current.scrollTop + offset,
-            behavior: 'smooth'
-          })
-        }
-      }
-    }
-  }, [activeSubcategory])
-
   return (
     <div
       ref={sidebarRef}
@@ -133,12 +112,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     key={subcategory.id}
                     ref={el => (itemRefs.current[subcategory.id] = el)}
                     onClick={() => onSubcategoryClick(subcategory.id)}
-                    className={`relative my-2 flex cursor-pointer items-center py-3 text-sm transition-all duration-200 ease-out ${
+                    className={`relative my-2 flex cursor-pointer items-center px-5 py-3 text-sm transition-all duration-200 ease-out ${
                       activeSubcategory === subcategory.id
                         ? 'bg-default-100 text-primary font-medium'
                         : 'text-foreground-400 hover:bg-default-100'
                     }`}>
-                    <span className="ml-5">{subcategory.name}</span>
+                    <span>{subcategory.name}</span>
                   </div>
                 ))}
               </div>

@@ -1,0 +1,56 @@
+export const appCardVariants = {
+  base: {
+    card: `
+      cursor-pointer justify-start border
+      text-start transition-all duration-200
+      hover:scale-105 hover:shadow-md
+    `,
+    iconWrapper: 'mb-3 sm:mb-4',
+    title: 'text-foreground text-md mb-1 font-bold sm:mb-2',
+    description: 'text-default-500 text-sm'
+  },
+
+  variants: {
+    variant: {
+      default: {
+        card: 'bg-content1 border-divider',
+        title: 'text-foreground',
+        description: 'text-default-500',
+        iconWrapper: ''
+      },
+      outlined: {
+        card: 'bg-transparent border-primary hover:bg-primary/5',
+        title: 'text-primary',
+        description: 'text-primary/80',
+        iconWrapper: ''
+      },
+      filled: {
+        card: 'bg-primary text-white border-primary hover:bg-primary/90',
+        title: 'text-white',
+        description: 'text-white/80',
+        iconWrapper: ''
+      }
+    },
+
+    size: {
+      sm: {
+        card: 'p-3',
+        title: 'text-sm',
+        description: 'text-xs',
+        iconWrapper: 'mb-2'
+      },
+      md: {
+        card: 'p-5',
+        title: 'text-md',
+        description: 'text-sm',
+        iconWrapper: 'mb-3 sm:mb-4'
+      },
+      lg: {
+        card: 'p-7',
+        title: 'text-lg',
+        description: 'text-base',
+        iconWrapper: 'mb-5'
+      }
+    }
+  }
+}

@@ -72,35 +72,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
     })
   }, [activeCategory, activeSubcategory, categories])
 
-  // ✅ Keep active item visible
-  React.useEffect(() => {
-    const activeItemId = activeSubcategory || activeCategory
-    if (!activeItemId || !sidebarRef.current) return
-    const activeEl = itemRefs.current[activeItemId]
-    if (!activeEl) return
-
-    // const sidebar = sidebarRef.current
-    // const topOffset = 50
-    // const bottomOffset = 30
-    // const rect = activeEl.getBoundingClientRect()
-    // const sidebarRect = sidebar.getBoundingClientRect()
-
-    // if (
-    //   rect.top < sidebarRect.top + topOffset ||
-    //   rect.bottom > sidebarRect.bottom - bottomOffset
-    // ) {
-    //   activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-    //   setTimeout(() => {
-    //     const currentTop = activeEl.getBoundingClientRect().top
-    //     const sidebarTop = sidebar.getBoundingClientRect().top
-    //     sidebar.scrollBy({
-    //       top: currentTop - sidebarTop - topOffset,
-    //       behavior: 'instant'
-    //     })
-    //   }, 250)
-    // }
-  }, [activeCategory, activeSubcategory])
-
   return (
     <div
       ref={sidebarRef}

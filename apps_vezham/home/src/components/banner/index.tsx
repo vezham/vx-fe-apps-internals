@@ -48,26 +48,29 @@ const Banner: React.FC<BannerProps> = () => {
   ]
 
   return (
-    <div className={bannerWrapper()}>
+    <div className={bannerWrapper.base}>
       {/* Background gradients */}
       <div
         aria-hidden="true"
-        className={gradientContainer({ side: 'left', tone: 'light' })}>
+        className={gradientContainer.getClass('left', 'light')}>
         <div style={gradientShapeStyle} />
       </div>
       <div
         aria-hidden="true"
-        className={gradientContainer({ side: 'right', tone: 'medium' })}>
+        className={gradientContainer.getClass('right', 'medium')}>
         <div style={gradientShapeStyle} />
       </div>
 
       {/* Content */}
-      <div className={contentWrapper()}>
-        <a href="/contact" rel="noopener noreferrer" className={bannerText()}>
+      <div className={contentWrapper.base}>
+        <a
+          href="/contact"
+          rel="noopener noreferrer"
+          className={bannerText.base}>
           <span aria-label="engage" className="hidden md:block" role="img">
             🤝🏻
           </span>
-          <span className={gradientText()}>
+          <span className={gradientText.base}>
             Discover endless possibilities! Schedule your free consultation
             today.
           </span>
@@ -76,9 +79,9 @@ const Banner: React.FC<BannerProps> = () => {
         <a
           href="/contact"
           rel="noopener noreferrer"
-          className={scheduleButton()}>
-          <span className={spinningBackground()} />
-          <div className={scheduleInner()}>
+          className={scheduleButton.base}>
+          <span className={spinningBackground.base} />
+          <div className={scheduleInner.base}>
             Schedule
             <Icon
               aria-hidden="true"
@@ -91,14 +94,13 @@ const Banner: React.FC<BannerProps> = () => {
       </div>
 
       {/* Social icons */}
-      {/* Social icons */}
-      <div className={socialWrapper()}>
+      <div className={socialWrapper.base}>
         {socialLinks.map((item: SocialItem) => (
           <Link
             key={item.name}
             href={item.href}
             isExternal
-            className={socialIcon()}>
+            className={socialIcon.base}>
             <span className="sr-only">{item.name}</span>
             {item.icon({ 'aria-hidden': true, className: 'w-6' })}
           </Link>

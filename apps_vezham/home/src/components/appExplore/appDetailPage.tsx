@@ -11,14 +11,13 @@ import { categoryContents } from './data'
 
 const AppDetailPage: React.FC = () => {
   const router = useRouter()
-  const params = useParams<{ appId: string }>({ from: '/apps/$appId' })
-  const appId = params.appId
+  const params = useParams({ from: '/apps/explore/$exploreId' })
+  const appId = params.exploreId
 
   // ✅ FIX: Find the app inside all categoryContents
-  const app =
-    Object.values(categoryContents)
-      .flatMap(category => category.apps)
-      .find(a => a.id === appId) || null
+  const app = Object.values(categoryContents)
+    .flatMap(category => category.apps)
+    .find(a => a.id === appId)
 
   if (!app) {
     return (

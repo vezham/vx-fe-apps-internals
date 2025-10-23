@@ -1,6 +1,6 @@
 import { BookSection } from '../../components/books/index'
-import { Footer } from '../../components/footer'
 import { BookNavbar } from '../../components/navbar-1'
+import { Footer } from '../footer'
 import { Header } from '../header'
 
 const Books = () => {
