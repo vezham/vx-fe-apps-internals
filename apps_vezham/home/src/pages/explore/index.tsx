@@ -6,13 +6,13 @@ import {
 } from '@tanstack/react-router'
 import React from 'react'
 
-import { AppDetailModal } from '../../components/appExplore/appDetailModal'
 import { AppDetailPage } from '../../components/appExplore/appDetailPage'
 import { ContentArea } from '../../components/appExplore/contentArea'
 import { categories, categoryContents } from '../../components/appExplore/data'
-import { Sidebar } from '../../components/appExplore/sidebar'
 import { type App } from '../../components/appExplore/types'
 import { HeroBanner } from '../../components/heroBanner'
+import { AppDetailModal } from '../../components/modal'
+import { Sidebar } from '../../components/sidebar'
 import { Footer } from '../footer'
 import { Header } from '../header'
 
@@ -366,6 +366,7 @@ const AppContent = () => {
         isOpen={isAppModalOpen}
         onClose={handleModalClose}
         app={selectedAppDetails}
+        navigatePath="apps/explore"
       />
       <div className="md:pt-10">
         <Footer />

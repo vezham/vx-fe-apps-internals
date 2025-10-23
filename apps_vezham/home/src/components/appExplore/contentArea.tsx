@@ -22,29 +22,10 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     { categoryContents, contentRefs, onBackClick, visibleContent, onAppClick },
     ref
   ) => {
-    // Add state to track which sections are expanded
-    const [expandedSections, setExpandedSections] = React.useState<
-      Record<string, boolean>
-    >({})
-
     // Add state to track which subcategories should show all cards
     const [showAllForSubcategory, setShowAllForSubcategory] = React.useState<
       Record<string, boolean>
     >({})
-
-    const getDisplayedApps = React.useCallback(
-      (apps: any[], sectionId: string, limit = 3) => {
-        if (
-          expandedSections[sectionId] ||
-          showAllForSubcategory[sectionId] ||
-          visibleContent === sectionId
-        ) {
-          return apps
-        }
-        return apps.slice(0, limit)
-      },
-      [expandedSections, showAllForSubcategory, visibleContent]
-    )
 
     // When visibleContent changes, update the showAllForSubcategory state
     React.useEffect(() => {

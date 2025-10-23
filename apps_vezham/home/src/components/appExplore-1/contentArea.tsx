@@ -3,10 +3,8 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { ScrollShadow } from '@vx-oss/react'
 
-import {
-  AppleStyleCarousel,
-  AppleStyleCarouselRef
-} from './apple-style-carousel'
+import { AppleStyleCarousel } from '../carousel'
+import { AppleStyleCarouselRef } from '../carousel/types'
 import { categories } from './data'
 import { App, CategoryContent } from './types'
 
@@ -120,6 +118,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
             <AppleStyleCarousel
               ref={carouselRef}
               items={toCarouselItems(apps)}
+              navigateBasePath="apps/explore-1"
             />
           </ScrollShadow>
         </div>
