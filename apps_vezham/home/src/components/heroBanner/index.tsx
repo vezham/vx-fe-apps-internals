@@ -1,39 +1,46 @@
 import { Icon } from '@iconify/react'
-import React from 'react'
+import { forwardRef } from 'react'
 
 import { Input } from '@vx-oss/react'
 
-import type { HeroBannerProps } from './types'
-import { heroBannerVariants as hv } from './variant'
+import { Props, useProps } from './types'
 
-export const HeroBanner: React.FC<HeroBannerProps> = ({
-  variant = 'default',
-  size = 'md'
-}) => {
-  const cls = hv.getClasses(variant, size)
+const HeroBanner = forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const {
+    getBaseProps,
+    getContentProps,
+    getTitleProps,
+    getInputContainerProps,
+    getInputWrapperProps,
+    getIconProps,
+    inputClasses
+  } = useProps({ ...props, ref })
 
   return (
-    <div className={cls.wrapper}>
-      <div className={cls.content}>
-        <h1 className={cls.title}>
+    <div {...getBaseProps()}>
+      <div {...getContentProps()}>
+        <h1 {...getTitleProps()}>
           All the software you need to run your business
         </h1>
       </div>
 
-      <div className={cls.inputContainer}>
-        <div className={cls.inputWrapper}>
+      <div {...getInputContainerProps()}>
+        <div {...getInputWrapperProps()}>
           <Input
             variant="flat"
             size="lg"
             radius="md"
             placeholder="I'm looking for..."
             startContent={
-              <Icon icon="lucide:search" className={cls.icon} width={24} />
+              <Icon icon="lucide:search" {...getIconProps()} width={24} />
             }
-            classNames={hv.inputClasses}
+            classNames={inputClasses}
           />
         </div>
       </div>
     </div>
   )
-}
+})
+
+HeroBanner.displayName = 'HeroBanner'
+export { HeroBanner }

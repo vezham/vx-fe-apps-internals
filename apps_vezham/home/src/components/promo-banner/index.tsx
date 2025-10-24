@@ -1,37 +1,43 @@
 import { Icon } from '@iconify/react'
 import { Link as RouterLink } from '@tanstack/react-router'
-import React from 'react'
+
+import { forwardRef } from '@vezham/react-utils'
 
 import { Link } from '@vx-oss/react'
 
-import type { PromoBannerProps } from './types'
-import { styles } from './variant'
+import { Props, useProps } from './types'
 
-export const PromoBanner: React.FC<PromoBannerProps> = ({
-  onClose,
-  variant = 'primary'
-}) => {
+const PromoBanner = forwardRef<'div', Props>((props, ref) => {
+  const {
+    getBaseProps,
+    getContentProps,
+    getTextProps,
+    getLinkProps,
+    getCloseButtonProps,
+    getCloseIconProps,
+    onClose
+  } = useProps({ ...props, ref })
+
   return (
-    <div className={`${styles.banner.base} ${styles.banner.variant[variant]}`}>
-      <div className={styles.content}>
-        <span className={styles.text}>
+    <div {...getBaseProps()}>
+      <div {...getContentProps()}>
+        <span {...getTextProps()}>
           Join us at Vezham Conference India—our signature user conference!
         </span>
-        <Link as={RouterLink} to="/conference" className={styles.link}>
+        <Link as={RouterLink} to="/conference" {...getLinkProps()}>
           Grab early bird tickets
         </Link>
       </div>
 
       {onClose && (
-        <button
-          onClick={onClose}
-          className={styles.closeButton}
-          aria-label="Close banner">
-          <Icon icon="lucide:x" className={styles.closeIcon} />
+        <button {...getCloseButtonProps()} onClick={onClose}>
+          <Icon icon="lucide:x" {...getCloseIconProps()} />
         </button>
       )}
     </div>
   )
-}
+})
 
-export default PromoBanner
+PromoBanner.displayName = 'PromoBanner'
+
+export { PromoBanner }
