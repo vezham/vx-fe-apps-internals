@@ -53,7 +53,7 @@ export type App = {
   footerItems: footeritems[]
   painPoints?: PainPoint[]
   detailedDescription?: string
-  image?: string
+  image: string
   features?: Feature[]
   metrics?: Metric[]
   pricing?: PricingPlan[] // Add pricing
@@ -74,4 +74,23 @@ export type AppDetail = App
 export interface PainPoint {
   title: string
   description: string
+}
+
+export interface ContentAreaProps {
+  activeCategory: string
+  activeSubcategory: string
+  categoryContents: Record<string, CategoryContent>
+  contentRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>
+  onBackClick?: () => void
+  isMobileView?: boolean
+  visibleContent: string
+  onAppClick: (appId: string, app: App) => void
+}
+
+export interface SectionWithControlsProps {
+  id: string
+  title: string
+  apps: App[]
+  contentRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>
+  onAppClick: (appId: string, app: App) => void
 }

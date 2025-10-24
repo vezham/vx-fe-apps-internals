@@ -6,18 +6,8 @@ import { ScrollShadow } from '@vx-oss/react'
 import { AppleStyleCarousel } from '../carousel'
 import { AppleStyleCarouselRef } from '../carousel/types'
 import { categories } from './data'
-import { App, CategoryContent } from './types'
-
-interface ContentAreaProps {
-  activeCategory: string
-  activeSubcategory: string
-  categoryContents: Record<string, CategoryContent>
-  contentRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>
-  onBackClick?: () => void
-  isMobileView?: boolean
-  visibleContent: string
-  onAppClick: (appId: string, app: App) => void
-}
+import { App, ContentAreaProps, SectionWithControlsProps } from './types'
+import { contentAreaStyles } from './variant'
 
 export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
   (
@@ -37,7 +27,6 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       }
     }, [visibleContent])
 
-    // Convert apps to carousel items
     const toCarouselItems = (apps: App[]) =>
       apps.map(app => ({
         id: app.id,
@@ -51,14 +40,12 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
         onPress: () => onAppClick(app.id, app)
       }))
 
-    const SectionWithControls = ({
+    const SectionWithControls: React.FC<SectionWithControlsProps> = ({
       id,
       title,
-      apps
-    }: {
-      id: string
-      title: string
-      apps: App[]
+      apps,
+      contentRefs,
+      onAppClick
     }) => {
       const carouselRef = useRef<AppleStyleCarouselRef>(null)
       const [canScrollLeft, setCanScrollLeft] = useState(false)
@@ -80,40 +67,36 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
         <div
           key={id}
           id={id}
-          ref={el => (contentRefs.current[id] = el)}
-          className="scroll-mt-20 py-2">
-          <div className="mb-5 flex items-center justify-between">
-            <h2
-              className="text-[28px] md:text-[40px] lg:text-[48px]"
-              style={{ fontWeight: 600 }}>
-              {title}
-            </h2>
-
-            <div className="flex gap-3">
+          ref={el => {
+            contentRefs.current[id] = el
+          }}
+          className={contentAreaStyles.section}>
+          <div className={contentAreaStyles.sectionHeader}>
+            <h2 className={contentAreaStyles.sectionTitle}>{title}</h2>
+            <div className={contentAreaStyles.controls}>
               <button
                 onClick={() => carouselRef.current?.scrollLeft()}
                 disabled={!canScrollLeft}
-                className={`flex h-9 w-9 items-center justify-center rounded-full ${
+                className={
                   canScrollLeft
-                    ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
-                    : 'cursor-not-allowed opacity-40'
-                }`}>
+                    ? contentAreaStyles.controlBtn
+                    : contentAreaStyles.controlBtnDisabled
+                }>
                 <Icon icon="lucide:chevron-left" />
               </button>
               <button
                 onClick={() => carouselRef.current?.scrollRight()}
                 disabled={!canScrollRight}
-                className={`flex h-9 w-9 items-center justify-center rounded-full ${
+                className={
                   canScrollRight
-                    ? 'dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300'
-                    : 'cursor-not-allowed opacity-40'
-                }`}>
+                    ? contentAreaStyles.controlBtn
+                    : contentAreaStyles.controlBtnDisabled
+                }>
                 <Icon icon="lucide:chevron-right" />
               </button>
             </div>
           </div>
 
-          {/* Carousel */}
           <ScrollShadow orientation="vertical">
             <AppleStyleCarousel
               ref={carouselRef}
@@ -142,6 +125,8 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                   id={sub.id}
                   title={content.title}
                   apps={content.apps}
+                  contentRefs={contentRefs}
+                  onAppClick={onAppClick}
                 />
               )
             })}
@@ -164,6 +149,8 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 id={sub.id}
                 title={content.title}
                 apps={content.apps}
+                contentRefs={contentRefs}
+                onAppClick={onAppClick}
               />
             )
           })}
@@ -172,22 +159,24 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     }
 
     const renderAllContent = () => (
-      <div id="continuous-scroll-container" className="space-y-12">
+      <div
+        id="continuous-scroll-container"
+        className={contentAreaStyles.continuousContainer}>
         <div
           id="all-collections"
-          ref={el => (contentRefs.current['all-collections'] = el)}
-          className="p-4 lg:p-6">
-          <div className="mb-4 flex items-center justify-between">
+          ref={el => {
+            contentRefs.current['all-collections'] = el
+          }}
+          className={contentAreaStyles.allCollectionsWrapper}>
+          <div className={contentAreaStyles.allCollectionsHeader}>
             <div className="flex items-center">
               <button
                 onClick={onBackClick}
-                className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden"
+                className={contentAreaStyles.backButton}
                 aria-label="Show sidebar">
                 <Icon icon="lucide:menu" width={20} height={20} />
               </button>
-              <h2
-                className="text-[28px] md:text-[40px] lg:text-[48px]"
-                style={{ fontWeight: 600 }}>
+              <h2 className={contentAreaStyles.sectionTitle}>
                 All Collections
               </h2>
             </div>
@@ -200,9 +189,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     )
 
     return (
-      <div
-        ref={ref}
-        className="bg-background text-foreground min-h-screen w-full">
+      <div ref={ref} className={contentAreaStyles.wrapper}>
         {renderAllContent()}
       </div>
     )

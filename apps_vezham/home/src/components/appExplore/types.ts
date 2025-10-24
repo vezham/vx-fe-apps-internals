@@ -22,7 +22,6 @@ export type Metric = {
   description: string
 }
 
-// Add PricingPlan type
 export type PricingPlan = {
   name: string
   price: string
@@ -31,36 +30,47 @@ export type PricingPlan = {
   isPopular: boolean
 }
 
-// Add SupportOption type
 export type SupportOption = {
   icon: string
   title: string
   description: string
 }
 
-// Modify App type to include all the detailed fields
 export type App = {
   id: string
   title: string
   description: string
   icon: string
   iconColor: string
-  // Add optional detailed fields
   detailedDescription?: string
   image?: string
   features?: Feature[]
   metrics?: Metric[]
-  pricing?: PricingPlan[] // Add pricing
-  support?: SupportOption[] // Add support
+  pricing?: PricingPlan[]
+  support?: SupportOption[]
 }
 
-// Keep CategoryContent the same
 export type CategoryContent = {
   title: string
   hero?: boolean
-  apps: App[] // This now contains all app details
+  apps: App[]
 }
 
-// Keep AppDetail for backward compatibility
-// FIX: Changed empty interface to a type alias.
 export type AppDetail = App
+
+export interface ContentAreaProps {
+  activeCategory: string
+  activeSubcategory: string
+  categoryContents: Record<string, CategoryContent>
+  contentRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>
+  onBackClick?: () => void
+  isMobileView?: boolean
+  visibleContent: string
+  onAppClick: (appId: string, app: App) => void
+}
+
+declare global {
+  interface Window {
+    handleSubcategoryClick?: (subcategoryId: string) => void
+  }
+}

@@ -65,7 +65,6 @@ export const categories: Category[] = [
   }
 ]
 
-// Update the category contents to match the new structure
 export const categoryContents: Record<string, CategoryContent> = {
   // All Collections subcategories
   popular: {

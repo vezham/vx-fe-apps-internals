@@ -49,10 +49,13 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
           <>
             <ModalHeader className={styles.header}>
               <div className={styles.headerInner}>
-                <Image
-                  src={app.icon}
+                <Icon
+                  icon={app.icon}
                   className={`${app.iconColor} ${styles.icon}`}
+                  width={36}
+                  height={36}
                 />
+
                 <h3 className={styles.title}>{app.title}</h3>
               </div>
             </ModalHeader>
