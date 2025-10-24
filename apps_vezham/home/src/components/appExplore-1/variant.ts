@@ -61,8 +61,8 @@ export const styles = {
   cardsGrid: 'mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3',
   cardBase: 'p-6',
 
-  plan: 'rounded-lg border p-4',
-  pricingCard: 'rounded-lg border p-4',
+  plan: 'px-4 text-xl font-bold',
+  pricingCard: 'rounded-lg  p-4',
   pricingPopular: 'border-primary bg-primary/5',
   pricingLabel: 'text-primary mb-2 text-xs font-medium',
   pricingName: 'mb-2 text-lg font-bold',
