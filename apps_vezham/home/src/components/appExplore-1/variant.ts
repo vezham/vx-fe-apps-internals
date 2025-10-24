@@ -94,7 +94,7 @@ export const contentAreaStyles = {
   continuousContainer: 'space-y-12',
   section: 'scroll-mt-20 py-2',
   sectionHeader: 'mb-5 flex items-center justify-between',
-  sectionTitle: 'text-[28px] md:text-[40px] lg:text-[48px] font-semibold',
+  sectionTitle: 'text-[28px] md:text-[40px] lg:text-[48px] font-medium',
   controls: 'flex gap-3',
   controlBtn:
     'flex h-9 w-9 items-center justify-center rounded-full dark:bg-content1 bg-gray-200 transition-colors hover:bg-gray-300',

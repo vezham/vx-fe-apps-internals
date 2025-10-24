@@ -44,8 +44,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       id,
       title,
       apps,
-      contentRefs,
-      onAppClick
+      contentRefs
     }) => {
       const carouselRef = useRef<AppleStyleCarouselRef>(null)
       const [canScrollLeft, setCanScrollLeft] = useState(false)

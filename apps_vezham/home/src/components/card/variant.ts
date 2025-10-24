@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: `cursor-pointer justify-start border text-start transition-all duration-200 hover:scale-105 hover:shadow-md`,
+    base: `border-default-200 cursor-pointer justify-start border text-start transition-all duration-200 hover:scale-105 hover:shadow-md`,
     iconWrapper: 'mb-3 sm:mb-4',
     title: 'text-foreground text-md mb-1 font-bold sm:mb-2',
     description: 'text-default-500 text-sm'
@@ -10,40 +10,36 @@ const tva = tv({
   variants: {
     variant: {
       default: {
-        card: 'bg-content1 border-divider',
+        base: 'bg-content1 border-divider',
         title: 'text-foreground',
-        description: 'text-default-500',
-        iconWrapper: ''
+        description: 'text-default-500'
       },
       outlined: {
-        card: 'border-primary hover:bg-primary/5 bg-transparent',
+        base: 'border-primary hover:bg-primary/5 bg-transparent',
         title: 'text-primary',
-        description: 'text-primary/80',
-        iconWrapper: ''
+        description: 'text-primary/80'
       },
       filled: {
-        card: 'bg-primary border-primary hover:bg-primary/90 text-white',
+        base: 'bg-primary border-primary hover:bg-primary/90 text-white',
         title: 'text-white',
-        description: 'text-white/80',
-        iconWrapper: ''
+        description: 'text-white/80'
       }
     },
-
     size: {
       sm: {
-        card: 'p-3',
+        base: 'p-3',
         title: 'text-sm',
         description: 'text-xs',
         iconWrapper: 'mb-2'
       },
       md: {
-        card: 'p-5',
+        base: 'p-5',
         title: 'text-md',
         description: 'text-sm',
         iconWrapper: 'mb-3 sm:mb-4'
       },
       lg: {
-        card: 'p-7',
+        base: 'p-7',
         title: 'text-lg',
         description: 'text-base',
         iconWrapper: 'mb-5'
@@ -52,7 +48,7 @@ const tva = tv({
   },
   defaultVariants: {
     variant: 'default',
-    size: 'sm'
+    size: 'md'
   }
 })
 

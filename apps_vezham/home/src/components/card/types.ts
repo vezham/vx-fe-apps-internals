@@ -18,6 +18,8 @@ interface Props extends tvProps, v0xdsHTMLProps<'div'> {
   title: string
   description: string
   onPress?: () => void
+  variant?: 'default' | 'outlined' | 'filled'
+  size?: 'sm' | 'md' | 'lg'
 }
 
 const useProps = (originalProps: Props) => {

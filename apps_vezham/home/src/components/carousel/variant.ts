@@ -9,7 +9,7 @@ export const styles = {
     'relative z-40 flex h-full w-full flex-col pt-[25px] pr-[19px] pb-[435px] pl-[25px]',
   headerWrapper: 'ml-[-11px] flex items-center',
   headerTitle:
-    'text-white md:text-[24px] lg:text-[28px] text-[21px] font-semibold',
+    'text-white md:text-[24px] lg:text-[28px] text-[21px] font-medium',
   description: 'mb-3 text-white md:text-[17px] text-[14px] font-normal',
   buttonGroup: 'mb-auto flex items-center gap-4',
   openButton:

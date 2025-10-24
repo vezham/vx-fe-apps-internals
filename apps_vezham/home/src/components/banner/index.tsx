@@ -1,76 +1,81 @@
 import { Icon } from '@iconify/react'
-import React from 'react'
+
+import { forwardRef } from '@vezham/react-utils'
 
 import { Link } from '@vx-oss/react'
 
-import { BannerProps, SocialItem } from './types'
-import {
-  bannerText,
-  bannerWrapper,
-  contentWrapper,
-  gradientContainer,
-  gradientShapeStyle,
-  gradientText,
-  scheduleButton,
-  scheduleInner,
-  socialIcon,
-  socialWrapper,
-  spinningBackground
-} from './variant'
+import { Props, useProps } from './types'
 
-const Banner: React.FC<BannerProps> = () => {
-  const socialLinks: SocialItem[] = [
+const Banner = forwardRef<'div', Props>((props, ref) => {
+  const {
+    getBaseProps,
+    getGradientProps,
+    getContentWrapperProps,
+    getBannerTextProps,
+    getGradientTextProps,
+    getScheduleButtonProps,
+    getSpinningBackgroundProps,
+    getScheduleInnerProps,
+    getSocialWrapperProps,
+    getSocialIconProps,
+    social
+  } = useProps({ ...props, ref })
+
+  const socialLinks = social || [
     {
       name: 'LinkedIn',
       href: '#',
-      icon: props => <Icon {...props} icon="fontisto:linkedin" />
+      icon: (p: any) => <Icon {...p} icon="fontisto:linkedin" />
     },
     {
       name: 'X',
       href: '#',
-      icon: props => <Icon {...props} icon="prime:twitter" />
+      icon: (p: any) => <Icon {...p} icon="prime:twitter" />
     },
     {
       name: 'Facebook',
       href: '#',
-      icon: props => <Icon {...props} icon="fontisto:facebook" />
+      icon: (p: any) => <Icon {...p} icon="fontisto:facebook" />
     },
     {
       name: 'Instagram',
       href: '#',
-      icon: props => <Icon {...props} icon="fontisto:instagram" />
+      icon: (p: any) => <Icon {...p} icon="fontisto:instagram" />
     },
     {
       name: 'GitHub',
       href: '#',
-      icon: props => <Icon {...props} icon="fontisto:github" />
+      icon: (p: any) => <Icon {...p} icon="fontisto:github" />
     }
   ]
 
   return (
-    <div className={bannerWrapper.base}>
-      {/* Background gradients */}
-      <div
-        aria-hidden="true"
-        className={gradientContainer.getClass('left', 'light')}>
-        <div style={gradientShapeStyle} />
+    <div {...getBaseProps()}>
+      {/* Gradients */}
+      <div aria-hidden="true" {...getGradientProps('left')}>
+        <div
+          style={{
+            clipPath:
+              'polygon(74.8% 41.9%,97.2% 73.2%,100% 34.9%,92.5% 0.4%,87.5% 0%,75% 28.6%,58.5% 54.6%,50.1% 56.8%,46.9% 44%,48.3% 17.4%,24.7% 53.9%,0% 27.9%,11.9% 74.2%,24.9% 54.1%,68.6% 100%,74.8% 41.9%)'
+          }}
+        />
       </div>
-      <div
-        aria-hidden="true"
-        className={gradientContainer.getClass('right', 'medium')}>
-        <div style={gradientShapeStyle} />
+      <div aria-hidden="true" {...getGradientProps('right')}>
+        <div
+          style={{
+            clipPath:
+              'polygon(74.8% 41.9%,97.2% 73.2%,100% 34.9%,92.5% 0.4%,87.5% 0%,75% 28.6%,58.5% 54.6%,50.1% 56.8%,46.9% 44%,48.3% 17.4%,24.7% 53.9%,0% 27.9%,11.9% 74.2%,24.9% 54.1%,68.6% 100%,74.8% 41.9%)'
+          }}
+        />
       </div>
 
       {/* Content */}
-      <div className={contentWrapper.base}>
-        <a
-          href="/contact"
-          rel="noopener noreferrer"
-          className={bannerText.base}>
+      <div {...getContentWrapperProps()}>
+        <a href="/contact" rel="noopener noreferrer" {...getBannerTextProps()}>
           <span aria-label="engage" className="hidden md:block" role="img">
             🤝🏻
           </span>
-          <span className={gradientText.base}>
+          <span {...getGradientTextProps()}>
             Discover endless possibilities! Schedule your free consultation
             today.
           </span>
@@ -79,9 +84,9 @@ const Banner: React.FC<BannerProps> = () => {
         <a
           href="/contact"
           rel="noopener noreferrer"
-          className={scheduleButton.base}>
-          <span className={spinningBackground.base} />
-          <div className={scheduleInner.base}>
+          {...getScheduleButtonProps()}>
+          <span {...getSpinningBackgroundProps()} />
+          <div {...getScheduleInnerProps()}>
             Schedule
             <Icon
               aria-hidden="true"
@@ -94,13 +99,13 @@ const Banner: React.FC<BannerProps> = () => {
       </div>
 
       {/* Social icons */}
-      <div className={socialWrapper.base}>
-        {socialLinks.map((item: SocialItem) => (
+      <div {...getSocialWrapperProps()}>
+        {socialLinks.map(item => (
           <Link
             key={item.name}
             href={item.href}
             isExternal
-            className={socialIcon.base}>
+            {...getSocialIconProps()}>
             <span className="sr-only">{item.name}</span>
             {item.icon({ 'aria-hidden': true, className: 'w-6' })}
           </Link>
@@ -108,6 +113,7 @@ const Banner: React.FC<BannerProps> = () => {
       </div>
     </div>
   )
-}
+})
 
+Banner.displayName = 'Banner'
 export { Banner }
