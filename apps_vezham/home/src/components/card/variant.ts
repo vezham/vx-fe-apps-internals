@@ -1,15 +1,12 @@
-export const appCardVariants = {
-  base: {
-    card: `
-      cursor-pointer justify-start border
-      text-start transition-all duration-200
-      hover:scale-105 hover:shadow-md
-    `,
+import { VariantProps, tv } from '@vezham/react-utils'
+
+const tva = tv({
+  slots: {
+    base: `cursor-pointer justify-start border text-start transition-all duration-200 hover:scale-105 hover:shadow-md`,
     iconWrapper: 'mb-3 sm:mb-4',
     title: 'text-foreground text-md mb-1 font-bold sm:mb-2',
     description: 'text-default-500 text-sm'
   },
-
   variants: {
     variant: {
       default: {
@@ -19,13 +16,13 @@ export const appCardVariants = {
         iconWrapper: ''
       },
       outlined: {
-        card: 'bg-transparent border-primary hover:bg-primary/5',
+        card: 'border-primary hover:bg-primary/5 bg-transparent',
         title: 'text-primary',
         description: 'text-primary/80',
         iconWrapper: ''
       },
       filled: {
-        card: 'bg-primary text-white border-primary hover:bg-primary/90',
+        card: 'bg-primary border-primary hover:bg-primary/90 text-white',
         title: 'text-white',
         description: 'text-white/80',
         iconWrapper: ''
@@ -52,5 +49,15 @@ export const appCardVariants = {
         iconWrapper: 'mb-5'
       }
     }
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'sm'
   }
-}
+})
+
+type tvProps = VariantProps<typeof tva>
+type tvSlots = keyof ReturnType<typeof tva>
+
+export { tva }
+export type { tvProps, tvSlots }

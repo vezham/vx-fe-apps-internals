@@ -324,6 +324,9 @@ importers:
 
   apps_vezham/home:
     devDependencies:
+      '@vezham/react-utils':
+        specifier: 0.0.1
+        version: 0.0.1(react@19.0.0)(tailwindcss@4.1.13)
       '@vx/start':
         specifier: workspace:*
         version: link:../../packages/vx/start
@@ -2602,6 +2605,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
+  '@react-types/shared@3.27.0':
+    resolution: {integrity: sha512-gvznmLhi6JPEf0bsq7SwRYTHAKKq/wcmKqFez9sRdbED+SPMUmK5omfZ6w3EwUFQHbYUa4zPBYedQ7Knv70RMw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+
   '@react-types/shared@3.32.0':
     resolution: {integrity: sha512-t+cligIJsZYFMSPFMvsJMjzlzde06tZMOIOFa1OV5Z0BcMowrb2g4mB57j/9nP28iJIRYn10xCniQts+qadrqQ==}
     peerDependencies:
@@ -3732,6 +3740,30 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@v0xoss/react-rsc-utils@0.0.4':
+    resolution: {integrity: sha512-pR3uD/boyVJ2ncz8hFN/cmLfP3vCUVP5KrcrQsJk5Vce+2SXvvCEe6x131PySVR61iUhZIfOiy3cmPl1YtU4NA==}
+    peerDependencies:
+      react: '>=18 || >=19.0.0-rc.0'
+
+  '@v0xoss/react-utils@0.0.4':
+    resolution: {integrity: sha512-OrKDLWDxVpGElr46YSxeYedsYgU0BlKf0MXXH8ajf39jorb8wnZsxvX2vYv1uduGV4Np6Vv951QpajTbbxpQKQ==}
+    peerDependencies:
+      react: '>=18 || >=19.0.0-rc.0'
+
+  '@v0xoss/shared-utils@0.0.4':
+    resolution: {integrity: sha512-sAOYVZHfGzv9fe8ld2iQ0XVRMiQTJ5VwavVcmptXgkybzmmpSpsxbCpnqqhBvRp/brQBa0QTULQS//H+IS8gHw==}
+
+  '@v0xoss/system-rsc@0.0.4':
+    resolution: {integrity: sha512-PM/LWwY+4gYpbb+uQSk8rBbnsz3NWsdNv35Q+kVASG/9famecOuFx/wxj4Rz5n3v7MsgMmcJjllM+XmuPUhVQQ==}
+    peerDependencies:
+      '@v0xoss/theme': '>=0.0.0'
+      react: '>=18 || >=19.0.0-rc.0'
+
+  '@v0xoss/theme@0.0.4':
+    resolution: {integrity: sha512-my8JNiRaK9DTmLdwlPYVkpNXu2EMATsTCjb2uqXFklTM3WOJwpFot2JZNxuXD1D8itQaaIBY8qJscqNl/QM60g==}
+    peerDependencies:
+      tailwindcss: '>=3.4.0'
+
   '@verdaccio/auth@8.0.0-next-8.19':
     resolution: {integrity: sha512-VEWhj9Zs6qY2vzVpwY0uViPGxCPhiVo+g2WTLPNGa8avYz6sC8eiHZOJv3E22TKm/PaeSzclvSbMXiXP1bYuMA==}
     engines: {node: '>=18'}
@@ -3806,6 +3838,9 @@ packages:
   '@verdaccio/utils@8.1.0-next-8.19':
     resolution: {integrity: sha512-mQoe1yUlYR4ujR65xVNAr4and102UNvAjlx6+IYyVPa7h3CZ0w5e8sRjlbYIXXL/qDI4RPVzfJVpquiwPkUCGg==}
     engines: {node: '>=18'}
+
+  '@vezham/react-utils@0.0.1':
+    resolution: {integrity: sha512-MFDEP1h68CFzp0094u6hJe2y8SLiqbQDw43F3oXr1t4qCXBscuvV5gfVm7tRBZf/dTBOBR8ejDfCLuAHguwv+g==}
 
   '@vezham/use-logger@0.3.3':
     resolution: {integrity: sha512-b0f7GVXDxfUU1FPHb4XWEIT6NNU00TLueuQcAKq46JjiZfFw0NdHX3h/ZO20AR0iKsCkhRyjtqw6+QkGBj2lMg==}
@@ -8997,8 +9032,17 @@ packages:
     resolution: {integrity: sha512-9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A==}
     engines: {node: '>=10.0.0'}
 
+  tailwind-merge@2.5.4:
+    resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
+
   tailwind-merge@3.3.1:
     resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
+
+  tailwind-variants@0.3.0:
+    resolution: {integrity: sha512-ho2k5kn+LB1fT5XdNS3Clb96zieWxbStE9wNLK7D0AV64kdZMaYzAKo0fWl6fXLPY99ffF9oBJnIj5escEl/8A==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
 
   tailwind-variants@3.1.0:
     resolution: {integrity: sha512-ieiYaEfUr+sNhw/k++dosmZfVA4VIG5bV+G1eGdJSC4FcflqQv0iSIlOLj/RbzRuTu/VrIiNSlwh1esBM3BXUg==}
@@ -12910,6 +12954,10 @@ snapshots:
       '@react-types/shared': 3.32.0(react@19.0.0)
       react: 19.0.0
 
+  '@react-types/shared@3.27.0(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+
   '@react-types/shared@3.32.0(react@19.0.0)':
     dependencies:
       react: 19.0.0
@@ -14035,6 +14083,37 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
+  '@v0xoss/react-rsc-utils@0.0.4(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+
+  '@v0xoss/react-utils@0.0.4(react@19.0.0)':
+    dependencies:
+      '@v0xoss/react-rsc-utils': 0.0.4(react@19.0.0)
+      '@v0xoss/shared-utils': 0.0.4
+      react: 19.0.0
+
+  '@v0xoss/shared-utils@0.0.4': {}
+
+  '@v0xoss/system-rsc@0.0.4(@v0xoss/theme@0.0.4(tailwindcss@4.1.13))(react@19.0.0)':
+    dependencies:
+      '@react-types/shared': 3.27.0(react@19.0.0)
+      '@v0xoss/theme': 0.0.4(tailwindcss@4.1.13)
+      clsx: 1.2.1
+      react: 19.0.0
+
+  '@v0xoss/theme@0.0.4(tailwindcss@4.1.13)':
+    dependencies:
+      '@v0xoss/shared-utils': 0.0.4
+      clsx: 1.2.1
+      color: 4.2.3
+      color2k: 2.0.3
+      deepmerge: 4.3.1
+      flat: 5.0.2
+      tailwind-merge: 2.5.4
+      tailwind-variants: 0.3.0(tailwindcss@4.1.13)
+      tailwindcss: 4.1.13
+
   '@verdaccio/auth@8.0.0-next-8.19':
     dependencies:
       '@verdaccio/config': 8.0.0-next-8.19
@@ -14179,6 +14258,15 @@ snapshots:
       '@verdaccio/core': 8.0.0-next-8.19
       lodash: 4.17.21
       minimatch: 7.4.6
+
+  '@vezham/react-utils@0.0.1(react@19.0.0)(tailwindcss@4.1.13)':
+    dependencies:
+      '@v0xoss/react-utils': 0.0.4(react@19.0.0)
+      '@v0xoss/system-rsc': 0.0.4(@v0xoss/theme@0.0.4(tailwindcss@4.1.13))(react@19.0.0)
+      '@v0xoss/theme': 0.0.4(tailwindcss@4.1.13)
+    transitivePeerDependencies:
+      - react
+      - tailwindcss
 
   '@vezham/use-logger@0.3.3': {}
 
@@ -20493,7 +20581,14 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
 
+  tailwind-merge@2.5.4: {}
+
   tailwind-merge@3.3.1: {}
+
+  tailwind-variants@0.3.0(tailwindcss@4.1.13):
+    dependencies:
+      tailwind-merge: 2.5.4
+      tailwindcss: 4.1.13
 
   tailwind-variants@3.1.0(tailwind-merge@3.3.1)(tailwindcss@4.1.13):
     dependencies:
