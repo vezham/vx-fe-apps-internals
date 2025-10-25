@@ -13,15 +13,53 @@ import {
 } from '@vx-oss/react'
 import { useTheme } from '@vx-oss/use-theme'
 
-import type { AppDetailModalProps } from './types'
-import { styles } from './variant'
+import { Props, useProps } from './types'
 
-export const AppDetailModal: React.FC<AppDetailModalProps> = ({
-  isOpen,
-  onClose,
-  app,
-  navigatePath
-}) => {
+const AppDetailModal: React.FC<Props> = props => {
+  const {
+    app,
+    onClose,
+    navigatePath,
+    getModalProps,
+    getHeaderProps,
+    getHeaderInnerProps,
+    getIconProps,
+    getTitleProps,
+    getBodyProps,
+    getColumnsProps,
+    getLeftColumnProps,
+    getRightColumnProps,
+    getImageWrapperProps,
+    getMainImageProps,
+    getDescriptionProps,
+    getBuiltByProps,
+    getLogoProps,
+    getFreeIconProps,
+    getSectionProps,
+    getSectionTitleProps,
+    getSectionContentProps,
+    getFeatureItemProps,
+    getSubTextProps,
+    getCategoriesProps,
+    getCategoryItemProps,
+    getTermsProps,
+    getLinkProps,
+    getViewDetailsButtonProps,
+    getSectionHeaderProps,
+    getFeaturesGridProps,
+    getFeatureItemWrapperProps,
+    getFeatureIconWrapperProps,
+    getFeatureIconProps,
+    getFeatureTitleProps,
+    getFeatureDescriptionProps,
+    getMetricWrapperProps,
+    getMetricSvgProps,
+    getMetricBgProps,
+    getMetricFgProps,
+    getMetricTextProps,
+    getImagesGridProps
+  } = useProps(props)
+
   const router = useRouter()
   const { theme } = useTheme()
   const isDark = theme === 'dark'
@@ -38,44 +76,39 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
 
   return (
     <Modal
-      isOpen={isOpen}
-      onClose={onClose}
+      {...getModalProps()}
       size="4xl"
       scrollBehavior="inside"
-      backdrop="blur"
-      classNames={{ base: styles.modalBase }}>
+      backdrop="blur">
       <ModalContent>
-        {onClose => (
+        {() => (
           <>
-            <ModalHeader className={styles.header}>
-              <div className={styles.headerInner}>
+            <ModalHeader {...getHeaderProps()}>
+              <div {...getHeaderInnerProps()}>
                 <Icon
                   icon={app.icon}
-                  className={`${app.iconColor} ${styles.icon}`}
-                  width={36}
-                  height={36}
+                  className={app.iconColor}
+                  {...getIconProps()}
                 />
-
-                <h3 className={styles.title}>{app.title}</h3>
+                <h3 {...getTitleProps()}>{app.title}</h3>
               </div>
             </ModalHeader>
 
-            <ModalBody className={styles.body}>
-              <div className={styles.columns}>
+            <ModalBody {...getBodyProps()}>
+              <div {...getColumnsProps()}>
                 {/* Left Column */}
-                <div className={styles.leftColumn}>
-                  <div className={styles.imageWrapper}>
+                <div {...getLeftColumnProps()}>
+                  <div {...getImageWrapperProps()}>
                     <Image
                       src={app.image}
                       alt={app.title}
-                      className={styles.mainImage}
+                      {...getMainImageProps()}
                     />
                   </div>
-                  <p className={styles.description}>
-                    {app.detailedDescription}
-                  </p>
 
-                  <div className={styles.builtBySection}>
+                  <p {...getDescriptionProps()}>{app.detailedDescription}</p>
+
+                  <div {...getBuiltByProps()}>
                     <img
                       src={
                         isDark
@@ -83,73 +116,61 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
                           : 'https://static.cdn.vezham.com/images/logo-black.png'
                       }
                       alt="Vezham Logo"
-                      className={styles.logo}
+                      {...getLogoProps()}
                     />
                     <span>Built by Vezham</span>
-                    <Icon
-                      icon="lucide:check-circle"
-                      className={styles.freeIcon}
-                      width={16}
-                    />
+                    <Icon icon="lucide:check-circle" {...getFreeIconProps()} />
                     <span>Free</span>
                   </div>
 
                   <Button
                     color="primary"
                     fullWidth
-                    className={styles.signInButton}>
+                    {...getViewDetailsButtonProps()}>
                     Sign in to install
                   </Button>
 
                   {/* Works With */}
-                  <div className={styles.section}>
-                    <h3 className={styles.sectionTitle}>Works with</h3>
-                    <div className={styles.sectionContent}>
-                      <div className={styles.featureItem}>
-                        <Icon
-                          className={styles.inboxIcon}
-                          icon="lucide:inbox"
-                          width={16}
-                        />
+                  <div {...getSectionProps()}>
+                    <h3 {...getSectionTitleProps()}>Works with</h3>
+                    <div {...getSectionContentProps()}>
+                      <div {...getFeatureItemProps()}>
+                        <Icon icon="lucide:inbox" {...getIconProps()} />
                         <span>Inbox</span>
                       </div>
-                      <div className={styles.subText}>
+                      <div {...getSubTextProps()}>
                         Add to conversation details
                       </div>
                     </div>
                   </div>
 
                   {/* Automations */}
-                  <div className={styles.section}>
-                    <h3 className={styles.sectionTitle}>Automations</h3>
-                    <div className={styles.subText}>
-                      Use as follow up actions
-                    </div>
+                  <div {...getSectionProps()}>
+                    <h3 {...getSectionTitleProps()}>Automations</h3>
+                    <div {...getSubTextProps()}>Use as follow up actions</div>
                   </div>
 
                   {/* Categories */}
-                  <div className={styles.section}>
-                    <h3 className={styles.sectionTitle}>Categories</h3>
-                    <div className={styles.categories}>
-                      <div className={styles.categoryItem}>
+                  <div {...getSectionProps()}>
+                    <h3 {...getSectionTitleProps()}>Categories</h3>
+                    <div {...getCategoriesProps()}>
+                      <div {...getCategoryItemProps()}>
                         Conversation management
                       </div>
-                      <div className={styles.categoryItem}>
+                      <div {...getCategoryItemProps()}>
                         Issue tracking & ticketing
                       </div>
-                      <div className={styles.categoryItem}>
-                        For Support Agents
-                      </div>
+                      <div {...getCategoryItemProps()}>For Support Agents</div>
                     </div>
                   </div>
 
                   {/* Terms & Policy */}
-                  <div className={styles.section}>
-                    <div className={styles.terms}>
-                      <a href="#" className={styles.link}>
+                  <div {...getSectionProps()}>
+                    <div {...getTermsProps()}>
+                      <a href="#" {...getLinkProps()}>
                         Terms of service
                       </a>
-                      <a href="#" className={styles.link}>
+                      <a href="#" {...getLinkProps()}>
                         Privacy policy
                       </a>
                     </div>
@@ -160,8 +181,8 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
                     variant="faded"
                     color="primary"
                     onPress={handleViewDetails}
-                    className={styles.viewDetailsButton}
                     fullWidth
+                    {...getViewDetailsButtonProps()}
                     endContent={
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
@@ -178,24 +199,20 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
                 </div>
 
                 {/* Right Column */}
-                <div className={styles.rightColumn}>
-                  {/* Features */}
-                  <h3 className={styles.sectionHeader}>Our Features</h3>
-                  <div className={styles.featuresGrid}>
+                <div {...getRightColumnProps()}>
+                  <h3 {...getSectionHeaderProps()}>Our Features</h3>
+                  <div {...getFeaturesGridProps()}>
                     {app.features?.slice(0, 4).map((feature, index) => (
-                      <div key={index} className={styles.featureItemWrapper}>
-                        <div className={styles.featureIconWrapper}>
+                      <div key={index} {...getFeatureItemWrapperProps()}>
+                        <div {...getFeatureIconWrapperProps()}>
                           <Icon
                             icon={feature.icon}
-                            className={styles.featureIcon}
-                            width={20}
+                            {...getFeatureIconProps()}
                           />
                         </div>
                         <div>
-                          <h4 className={styles.featureTitle}>
-                            {feature.title}
-                          </h4>
-                          <p className={styles.featureDescription}>
+                          <h4 {...getFeatureTitleProps()}>{feature.title}</h4>
+                          <p {...getFeatureDescriptionProps()}>
                             {feature.description}
                           </p>
                         </div>
@@ -206,50 +223,38 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
                   {/* Metrics */}
                   {app.metrics?.length ? (
                     <>
-                      <h3 className={styles.sectionHeader}>Results</h3>
-                      <div className={styles.featuresGrid}>
+                      <h3 {...getSectionHeaderProps()}>Results</h3>
+                      <div {...getFeaturesGridProps()}>
                         {app.metrics.map((metric, index) => (
-                          <div
-                            key={index}
-                            className={styles.featureItemWrapper}>
-                            <div className={styles.metricWrapper}>
-                              <svg
-                                className={styles.metricSvg}
-                                viewBox="0 0 36 36">
+                          <div key={index} {...getFeatureItemWrapperProps()}>
+                            <div {...getMetricWrapperProps()}>
+                              <svg viewBox="0 0 36 36" {...getMetricSvgProps()}>
                                 <circle
                                   cx="18"
                                   cy="18"
                                   r="16"
-                                  fill="none"
-                                  className={styles.metricBg}
-                                  strokeWidth={2}
+                                  {...getMetricBgProps()}
                                 />
                                 <circle
                                   cx="18"
                                   cy="18"
                                   r="16"
-                                  fill="none"
-                                  className={styles.metricFg}
-                                  strokeWidth={2}
-                                  strokeDasharray={`${(2 * Math.PI * 16 * metric.value) / 100} ${2 * Math.PI * 16}`}
-                                  strokeDashoffset="0"
+                                  {...getMetricFgProps()}
+                                  strokeDasharray={`${(2 * Math.PI * 16 * metric.value) / 100} ${
+                                    2 * Math.PI * 16
+                                  }`}
                                   transform="rotate(-90 18 18)"
                                 />
-                                <text
-                                  x="18"
-                                  y="18"
-                                  dominantBaseline="middle"
-                                  textAnchor="middle"
-                                  className={styles.metricText}>
+                                <text x="8" y="22" {...getMetricTextProps()}>
                                   {metric.value}%
                                 </text>
                               </svg>
                             </div>
                             <div>
-                              <h4 className={styles.featureTitle}>
+                              <h4 {...getFeatureTitleProps()}>
                                 {metric.title}
                               </h4>
-                              <p className={styles.featureDescription}>
+                              <p {...getFeatureDescriptionProps()}>
                                 {metric.description}
                               </p>
                             </div>
@@ -260,7 +265,7 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
                   ) : null}
 
                   {/* Images Grid */}
-                  <div className={styles.imagesGrid}>
+                  <div {...getImagesGridProps()}>
                     {[1, 2, 3, 4].map(item => (
                       <div
                         key={item}
@@ -284,4 +289,4 @@ export const AppDetailModal: React.FC<AppDetailModalProps> = ({
   )
 }
 
-export default AppDetailModal
+export { AppDetailModal }

@@ -1,22 +1,30 @@
 import { Icon } from '@iconify/react'
 import React from 'react'
 
-import type { SidebarProps } from './types'
-import { styles } from './variant'
+import { forwardRef } from '@vezham/react-utils'
 
-export const Sidebar: React.FC<SidebarProps> = ({
-  categories,
-  activeCategory,
-  activeSubcategory,
-  onCategoryClick,
-  onSubcategoryClick
-}) => {
+import { SidebarProps, useProps } from './types'
+
+const Sidebar = forwardRef<'div', SidebarProps>((props, ref) => {
+  const {
+    categories,
+    activeCategory,
+    activeSubcategory,
+    onCategoryClick,
+    onSubcategoryClick,
+    getBaseProps,
+    getContainerProps,
+    getCategoryWrapperProps,
+    getCategoryHeaderProps,
+    getSubcategoriesWrapperProps,
+    getSubcategoryProps
+  } = useProps({ ...props, ref })
+
   const [expandedCategories, setExpandedCategories] = React.useState<
     Record<string, boolean>
   >(() => {
     const saved = localStorage.getItem('expandedCategories')
-    if (saved) return JSON.parse(saved)
-    return {}
+    return saved ? JSON.parse(saved) : {}
   })
 
   const sidebarRef = React.useRef<HTMLDivElement>(null)
@@ -31,6 +39,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     onCategoryClick?.(categoryId)
   }
 
+  // Auto-expand for active category / subcategory
   React.useEffect(() => {
     setExpandedCategories(prev => {
       const newState = { ...prev }
@@ -40,24 +49,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
       if (activeSubcategory) {
         for (const cat of categories) {
           if (cat.subcategories?.some(sub => sub.id === activeSubcategory)) {
-            if (!prev[cat.id]) newState[cat.id] = true
+            newState[cat.id] = true
             break
           }
         }
       }
+
       localStorage.setItem('expandedCategories', JSON.stringify(newState))
       return newState
     })
   }, [activeCategory, activeSubcategory, categories])
 
+  // Smooth scroll active subcategory into view
   React.useEffect(() => {
     if (activeSubcategory && itemRefs.current[activeSubcategory]) {
       const element = itemRefs.current[activeSubcategory]
       if (element && sidebarRef.current) {
-        // Smooth scroll the sidebar to show the active item
         const sidebarTop = sidebarRef.current.getBoundingClientRect().top
         const elementTop = element.getBoundingClientRect().top
-        const offset = elementTop - sidebarTop - 100 // 100px from top
+        const offset = elementTop - sidebarTop - 100
 
         if (offset < 0 || offset > sidebarRef.current.clientHeight - 100) {
           sidebarRef.current.scrollTo({
@@ -70,21 +80,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
   }, [activeSubcategory])
 
   return (
-    <div ref={sidebarRef} className={styles.wrapper}>
-      <div className={styles.container}>
+    <div ref={sidebarRef} {...getBaseProps()}>
+      <div {...getContainerProps()}>
         {categories.map(category => (
-          <div key={category.id} className={styles.categoryWrapper}>
+          <div key={category.id} {...getCategoryWrapperProps()}>
             <div
-              ref={el => {
-                itemRefs.current[category.id] = el ?? null
-              }}
+              ref={el => (itemRefs.current[category.id] = el ?? null)}
               onClick={() => toggleCategoryExpansion(category.id)}
-              className={`${styles.categoryHeader} ${
+              {...getCategoryHeaderProps(
                 activeCategory === category.id && !activeSubcategory
-                  ? styles.activeCategory
-                  : styles.inactiveCategory
-              }`}>
-              <span className={styles.categoryName}>{category.name}</span>
+              )()}>
+              <span>{category.name}</span>
               {category.subcategories?.length ? (
                 <Icon
                   icon={
@@ -93,25 +99,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       : 'lucide:chevron-right'
                   }
                   width={18}
-                  className={styles.chevron}
                 />
               ) : null}
             </div>
 
             {category.subcategories && expandedCategories[category.id] && (
-              <div className={styles.subcategoriesWrapper}>
+              <div {...getSubcategoriesWrapperProps()}>
                 {category.subcategories.map(subcategory => (
                   <div
                     key={subcategory.id}
-                    ref={el => {
-                      itemRefs.current[subcategory.id] = el ?? null
-                    }}
+                    ref={el => (itemRefs.current[subcategory.id] = el ?? null)}
                     onClick={() => onSubcategoryClick(subcategory.id)}
-                    className={
+                    {...getSubcategoryProps(
                       activeSubcategory === subcategory.id
-                        ? `${styles.subcategory} ${styles.activeSubcategory}`
-                        : `${styles.subcategory} ${styles.inactiveSubcategory}`
-                    }>
+                    )()}>
                     {subcategory.name}
                   </div>
                 ))}
@@ -122,6 +123,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </div>
     </div>
   )
-}
+})
 
-export default Sidebar
+Sidebar.displayName = 'Sidebar'
+export { Sidebar }

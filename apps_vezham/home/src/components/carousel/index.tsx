@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import { useRouter } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import {
+import React, {
   forwardRef,
   useImperativeHandle,
   useLayoutEffect,
@@ -14,14 +14,34 @@ import { Image } from '@vx-oss/react'
 import {
   AppleStyleCarouselProps,
   AppleStyleCarouselRef,
-  CardProps
+  useProps
 } from './types'
-import { styles } from './variant'
 
 export const AppleStyleCarousel = forwardRef<
   AppleStyleCarouselRef,
   AppleStyleCarouselProps
->(({ items, initialScroll = 0, navigateBasePath }, ref) => {
+>((props, ref) => {
+  const {
+    items,
+    initialScroll = 0,
+    navigateBasePath,
+    getBaseProps,
+    getScrollContainerProps,
+    getCardProps,
+    getOverlayProps,
+    getContentWrapperProps,
+    getHeaderWrapperProps,
+    getHeaderTitleProps,
+    getDescriptionProps,
+    getButtonGroupProps,
+    getOpenButtonProps,
+    getLearnMoreButtonProps,
+    getFooterWrapperProps,
+    getFooterTitleProps,
+    getFooterIconsProps,
+    getMainImageProps
+  } = useProps(props)
+
   const router = useRouter()
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
@@ -61,17 +81,11 @@ export const AppleStyleCarousel = forwardRef<
   }))
 
   return (
-    <div className={styles.container}>
+    <div {...getBaseProps()}>
       <div
         ref={scrollContainerRef}
         onScroll={checkScrollability}
-        className={styles.scrollContainer}
-        style={{
-          overflowY: 'hidden',
-          WebkitOverflowScrolling: 'touch',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none'
-        }}>
+        {...getScrollContainerProps()}>
         {items.map((item, index) => {
           const targetId = item.id || item.app?.id
 
@@ -89,22 +103,23 @@ export const AppleStyleCarousel = forwardRef<
           }
 
           return (
-            <motion.div key={index} className={styles.card}>
-              <div className={styles.overlay} />
-              <div className={styles.contentWrapper}>
-                <div className={styles.headerWrapper}>
+            <motion.div key={index} {...getCardProps()}>
+              <div {...getOverlayProps()} />
+              <div {...getContentWrapperProps()}>
+                <div {...getHeaderWrapperProps()}>
                   <Image src={item.icon} className="h-18 w-18" />
-                  <h3 className={styles.headerTitle}>{item.title}</h3>
+                  <h3 {...getHeaderTitleProps()}>{item.title}</h3>
                 </div>
-                <p className={styles.description}>{item.description}</p>
 
-                <div className={styles.buttonGroup}>
-                  <button onClick={item.onPress} className={styles.openButton}>
+                <p {...getDescriptionProps()}>{item.description}</p>
+
+                <div {...getButtonGroupProps()}>
+                  <button onClick={item.onPress} {...getOpenButtonProps()}>
                     Open
                   </button>
                   <button
                     onClick={handleViewDetails}
-                    className={styles.learnMoreButton}>
+                    {...getLearnMoreButtonProps()}>
                     Learn more{' '}
                     <Icon
                       icon="lucide:chevron-right"
@@ -114,9 +129,9 @@ export const AppleStyleCarousel = forwardRef<
                   </button>
                 </div>
 
-                <div className={styles.footerWrapper}>
-                  <p className={styles.footerTitle}>Compatibility</p>
-                  <p className={styles.footerIcons}>
+                <div {...getFooterWrapperProps()}>
+                  <p {...getFooterTitleProps()}>Compatibility</p>
+                  <p {...getFooterIconsProps()}>
                     {item.app?.footerItems?.map((iconName, idx) => (
                       <Icon
                         key={idx}
@@ -132,7 +147,7 @@ export const AppleStyleCarousel = forwardRef<
                 removeWrapper
                 src={item.image}
                 alt={item.title}
-                className={styles.mainImage}
+                {...getMainImageProps()}
               />
             </motion.div>
           )

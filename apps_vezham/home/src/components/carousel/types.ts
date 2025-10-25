@@ -1,34 +1,16 @@
-import React from 'react'
+import {
+  PropGetter,
+  ReactRef,
+  SlotsToClasses,
+  cn,
+  mapPropsVariants,
+  useDOMRef,
+  v0xdsHTMLProps
+} from '@vezham/react-utils'
 
-export type Feature = {
-  icon: string
-  title: string
-  description: string
-}
+import { tvProps, tvSlots, tva } from './variant'
 
-export type Metric = {
-  value: number
-  title: string
-  description: string
-}
-
-export type PricingPlan = {
-  name: string
-  price: string
-  period: string
-  features: string[]
-  isPopular: boolean
-}
-
-export type SupportOption = {
-  icon: string
-  title: string
-  description: string
-}
-
-export type footeritems = {
-  icon: string
-}
+export type footeritems = { icon: string }
 
 export type App = {
   id: string
@@ -38,26 +20,7 @@ export type App = {
   icon: string
   iconColor: string
   footerItems: footeritems[]
-  painPoints?: PainPoint[]
-  detailedDescription?: string
   image?: string
-  features?: Feature[]
-  metrics?: Metric[]
-  pricing?: PricingPlan[]
-  support?: SupportOption[]
-}
-
-export type CategoryContent = {
-  title: string
-  hero?: boolean
-  apps: App[]
-}
-
-export type AppDetail = App
-
-export interface PainPoint {
-  title: string
-  description: string
 }
 
 export interface CardProps {
@@ -67,8 +30,7 @@ export interface CardProps {
   color?: string
   description: string
   image: string
-  content?: React.ReactNode
-  app?: AppDetail | null
+  app?: App | null
   onPress?: () => void
 }
 
@@ -79,8 +41,125 @@ export interface AppleStyleCarouselRef {
   canScrollRight: boolean
 }
 
-export interface AppleStyleCarouselProps {
+interface Props extends tvProps, v0xdsHTMLProps<'div'> {
+  ref?: ReactRef<HTMLDivElement | null>
+  classNames?: SlotsToClasses<tvSlots>
   items: CardProps[]
   initialScroll?: number
   navigateBasePath: string
 }
+
+const useProps = (originalProps: Props) => {
+  const [props, variantProps] = mapPropsVariants(originalProps, tva.variantKeys)
+
+  const {
+    as,
+    id,
+    ref,
+    className,
+    classNames,
+    items,
+    initialScroll,
+    navigateBasePath,
+    ...otherProps
+  } = props
+
+  const Component = as || 'div'
+  const domRef = useDOMRef(ref)
+  const slots = tva(variantProps)
+
+  const getBaseProps: PropGetter = () => ({
+    id,
+    ref: domRef,
+    className: slots.base({ class: cn(classNames?.base, className) }),
+    ...otherProps
+  })
+
+  const getScrollContainerProps: PropGetter = () => ({
+    className: slots.scrollContainer({ class: classNames?.scrollContainer }),
+    style: {
+      overflowY: 'hidden',
+      WebkitOverflowScrolling: 'touch',
+      scrollbarWidth: 'none',
+      msOverflowStyle: 'none'
+    }
+  })
+
+  const getCardProps: PropGetter = () => ({
+    className: slots.card({ class: classNames?.card })
+  })
+
+  const getOverlayProps: PropGetter = () => ({
+    className: slots.overlay({ class: classNames?.overlay })
+  })
+
+  const getContentWrapperProps: PropGetter = () => ({
+    className: slots.contentWrapper({ class: classNames?.contentWrapper })
+  })
+
+  const getHeaderWrapperProps: PropGetter = () => ({
+    className: slots.headerWrapper({ class: classNames?.headerWrapper })
+  })
+
+  const getHeaderTitleProps: PropGetter = () => ({
+    className: slots.headerTitle({ class: classNames?.headerTitle })
+  })
+
+  const getDescriptionProps: PropGetter = () => ({
+    className: slots.description({ class: classNames?.description })
+  })
+
+  const getButtonGroupProps: PropGetter = () => ({
+    className: slots.buttonGroup({ class: classNames?.buttonGroup })
+  })
+
+  const getOpenButtonProps: PropGetter = () => ({
+    className: slots.openButton({ class: classNames?.openButton })
+  })
+
+  const getLearnMoreButtonProps: PropGetter = () => ({
+    className: slots.learnMoreButton({ class: classNames?.learnMoreButton })
+  })
+
+  const getFooterWrapperProps: PropGetter = () => ({
+    className: slots.footerWrapper({ class: classNames?.footerWrapper })
+  })
+
+  const getFooterTitleProps: PropGetter = () => ({
+    className: slots.footerTitle({ class: classNames?.footerTitle })
+  })
+
+  const getFooterIconsProps: PropGetter = () => ({
+    className: slots.footerIcons({ class: classNames?.footerIcons })
+  })
+
+  const getMainImageProps: PropGetter = () => ({
+    className: slots.mainImage({ class: classNames?.mainImage })
+  })
+
+  return {
+    Component,
+    domRef,
+    items,
+    initialScroll,
+    navigateBasePath,
+    getBaseProps,
+    getScrollContainerProps,
+    getCardProps,
+    getOverlayProps,
+    getContentWrapperProps,
+    getHeaderWrapperProps,
+    getHeaderTitleProps,
+    getDescriptionProps,
+    getButtonGroupProps,
+    getOpenButtonProps,
+    getLearnMoreButtonProps,
+    getFooterWrapperProps,
+    getFooterTitleProps,
+    getFooterIconsProps,
+    getMainImageProps
+  }
+}
+
+export { useProps }
+export type { Props as AppleStyleCarouselProps }
