@@ -3,24 +3,21 @@ import React from 'react'
 
 import { AppCard } from '../card'
 import { categories } from './data'
-import { ContentAreaProps } from './types'
-import { contentAreaVariants as styles } from './variant'
+import { ContentAreaProps, useProps } from './types'
 
 export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
   (
     { categoryContents, contentRefs, onBackClick, visibleContent, onAppClick },
     ref
   ) => {
+    const props = useProps({})
     const [showAllForSubcategory, setShowAllForSubcategory] = React.useState<
       Record<string, boolean>
     >({})
 
     React.useEffect(() => {
       if (visibleContent && visibleContent !== 'all-collections') {
-        setShowAllForSubcategory(prev => ({
-          ...prev,
-          [visibleContent]: true
-        }))
+        setShowAllForSubcategory(prev => ({ ...prev, [visibleContent]: true }))
       }
     }, [visibleContent])
 
@@ -29,25 +26,23 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       return (
         <div
           id={contentId}
-          ref={el => {
-            contentRefs.current[contentId] = el
-          }}
-          className={styles.section}>
-          <div className={styles.header}>
+          ref={el => (contentRefs.current[contentId] = el)}
+          {...props.getSectionProps()}>
+          <div {...props.getHeaderProps()}>
             <div className="flex items-center">
               <button
                 onClick={onBackClick}
-                className={styles.backButton}
+                {...props.getSeeAllButtonProps()}
                 aria-label="Show sidebar">
                 <Icon icon="lucide:menu" width={20} height={20} />
               </button>
               <div>
-                <h2 className={styles.title}>{content.title}</h2>
+                <h2 {...props.getTitleProps()}>{content.title}</h2>
               </div>
             </div>
           </div>
 
-          <div className={styles.grid}>
+          <div {...props.getGridProps()}>
             {content.apps.map(app => (
               <AppCard
                 key={app.id}
@@ -64,24 +59,23 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     }
 
     const renderAllContent = () => (
-      <div className={styles.continuousScroll} id="continuous-scroll-container">
+      <div
+        {...props.getContinuousScrollProps()}
+        id="continuous-scroll-container">
         <div
           id="all-collections"
-          ref={el => {
-            contentRefs.current['all-collections'] = el
-          }}
-          className={styles.scrollSection}
-          data-section-type="header">
-          <div className={styles.header}>
-            <div className="flex items-center">
+          ref={el => (contentRefs.current['all-collections'] = el)}
+          {...props.getScrollSectionProps()}>
+          <div {...props.getHeaderProps()}>
+            <div className="mb-4 flex items-center gap-3">
               <button
                 onClick={onBackClick}
-                className={styles.backButton}
+                {...props.getSidebarButtonProps()}
                 aria-label="Show sidebar">
-                <Icon icon="lucide:menu" width={20} height={20} />
+                <Icon icon="lucide:menu" width={24} height={24} />
               </button>
               <div>
-                <h2 className={styles.title}>All Collections</h2>
+                <h2 {...props.getTitleProps()}>All Collections</h2>
               </div>
             </div>
           </div>
@@ -103,38 +97,31 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
             .map(subcategory => {
               const content = categoryContents[subcategory.id]
               if (!content) return null
-
               const displayedApps = content.apps.slice(0, 3)
               return (
                 <div
                   key={subcategory.id}
                   id={subcategory.id}
-                  ref={el => {
-                    contentRefs.current[subcategory.id] = el
-                  }}
-                  className={styles.categoryWrapper}>
-                  <div className={styles.header}>
+                  ref={el => (contentRefs.current[subcategory.id] = el)}
+                  {...props.getCategoryWrapperProps()}>
+                  <div {...props.getHeaderProps()}>
                     <div>
-                      <h2 className="mb-1 flex text-xl font-bold">
+                      <h2 {...props.getTitleProps()}>
                         {content.title}
                         {content.apps.length > 3 && (
                           <button
                             onClick={() =>
                               window.handleSubcategoryClick?.(subcategory.id)
                             }
-                            className={styles.seeAllButton}>
-                            <Icon
-                              icon="lucide:chevron-right"
-                              className="mt-1 ml-2"
-                              width={20}
-                            />
+                            {...props.getSeeAllButtonProps()}>
+                            <Icon icon="lucide:chevron-right" width={20} />
                           </button>
                         )}
                       </h2>
                     </div>
                   </div>
 
-                  <div className={styles.subGrid}>
+                  <div {...props.getSubGridProps()}>
                     {displayedApps.map(app => (
                       <AppCard
                         key={app.id}
@@ -162,38 +149,31 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
           {categoriesSubcategories.map(subcategory => {
             const content = categoryContents[subcategory.id]
             if (!content) return null
-
             const displayedApps = content.apps.slice(0, 3)
             return (
               <div
                 key={subcategory.id}
                 id={subcategory.id}
-                ref={el => {
-                  contentRefs.current[subcategory.id] = el
-                }}
-                className={styles.categoryWrapper}>
-                <div className={styles.header}>
+                ref={el => (contentRefs.current[subcategory.id] = el)}
+                {...props.getCategoryWrapperProps()}>
+                <div {...props.getHeaderProps()}>
                   <div>
-                    <h2 className="mb-1 flex items-center text-xl font-bold">
+                    <h2 {...props.getTitleProps()}>
                       {content.title}
                       {content.apps.length > 3 && (
                         <button
                           onClick={() =>
                             window.handleSubcategoryClick?.(subcategory.id)
                           }
-                          className={styles.seeAllButton}>
-                          <Icon
-                            icon="lucide:chevron-right"
-                            className="mt-1 ml-2"
-                            width={20}
-                          />
+                          {...props.getSeeAllButtonProps()}>
+                          <Icon icon="lucide:chevron-right" width={20} />
                         </button>
                       )}
                     </h2>
                   </div>
                 </div>
 
-                <div className={styles.subGrid}>
+                <div {...props.getSubGridProps()}>
                   {displayedApps.map(app => (
                     <AppCard
                       key={app.id}
@@ -215,10 +195,10 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     const renderContent = React.useCallback(() => {
       if (visibleContent === 'all-collections') return renderAllContent()
       return renderSingleSection(visibleContent)
-    }, [visibleContent, renderAllContent, renderSingleSection])
+    }, [visibleContent])
 
     return (
-      <div ref={ref} className={styles.base}>
+      <div ref={ref} {...props.getBaseProps()}>
         {renderContent()}
       </div>
     )

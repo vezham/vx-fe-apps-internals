@@ -6,24 +6,26 @@ import { ScrollShadow } from '@vx-oss/react'
 import { AppleStyleCarousel } from '../carousel'
 import { AppleStyleCarouselRef } from '../carousel/types'
 import { categories } from './data'
-import { App, ContentAreaProps, SectionWithControlsProps } from './types'
-import { contentAreaStyles } from './variant'
+import {
+  App,
+  ContentAreaProps,
+  SectionWithControlsProps,
+  useProps
+} from './types'
 
 export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
   (
     { categoryContents, contentRefs, onBackClick, visibleContent, onAppClick },
     ref
   ) => {
+    const props = useProps({ ref })
     const [showAllForSubcategory, setShowAllForSubcategory] = useState<
       Record<string, boolean>
     >({})
 
     useEffect(() => {
       if (visibleContent && visibleContent !== 'all-collections') {
-        setShowAllForSubcategory(prev => ({
-          ...prev,
-          [visibleContent]: true
-        }))
+        setShowAllForSubcategory(prev => ({ ...prev, [visibleContent]: true }))
       }
     }, [visibleContent])
 
@@ -35,7 +37,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
         icon: app.icon,
         color: app.iconColor,
         image: app.image,
-        description: app.description || '',
+        description: app.description,
         app,
         onPress: () => onAppClick(app.id, app)
       }))
@@ -64,38 +66,39 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
 
       return (
         <div
-          key={id}
           id={id}
           ref={el => {
             contentRefs.current[id] = el
           }}
-          className={contentAreaStyles.section}>
-          <div className={contentAreaStyles.sectionHeader}>
-            <h2 className={contentAreaStyles.sectionTitle}>{title}</h2>
-            <div className={contentAreaStyles.controls}>
+          {...props.getSectionProps()}>
+          <div {...props.getSectionHeaderProps()}>
+            <h2 {...props.getSectionTitleProps()}>{title}</h2>
+            <div {...props.getControlsProps()}>
               <button
+                {...props.getControlBtnProps()}
                 onClick={() => carouselRef.current?.scrollLeft()}
                 disabled={!canScrollLeft}
                 className={
                   canScrollLeft
-                    ? contentAreaStyles.controlBtn
-                    : contentAreaStyles.controlBtnDisabled
+                    ? props.getControlBtnProps().className
+                    : props.getControlBtnDisabledProps().className
                 }>
                 <Icon icon="lucide:chevron-left" />
               </button>
+
               <button
+                {...props.getControlBtnProps()}
                 onClick={() => carouselRef.current?.scrollRight()}
                 disabled={!canScrollRight}
                 className={
                   canScrollRight
-                    ? contentAreaStyles.controlBtn
-                    : contentAreaStyles.controlBtnDisabled
+                    ? props.getControlBtnProps().className
+                    : props.getControlBtnDisabledProps().className
                 }>
                 <Icon icon="lucide:chevron-right" />
               </button>
             </div>
           </div>
-
           <ScrollShadow orientation="vertical">
             <AppleStyleCarousel
               ref={carouselRef}
@@ -110,86 +113,63 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     const renderFeaturedSubcategories = () => {
       const featuredCategory = categories.find(cat => cat.id === 'featured')
       const featuredSubs = featuredCategory?.subcategories || []
-
-      return (
-        <>
-          {featuredSubs
-            .filter(sub => sub.id !== 'all-collections')
-            .map(sub => {
-              const content = categoryContents[sub.id]
-              if (!content) return null
-              return (
-                <SectionWithControls
-                  key={sub.id}
-                  id={sub.id}
-                  title={content.title}
-                  apps={content.apps}
-                  contentRefs={contentRefs}
-                  onAppClick={onAppClick}
-                />
-              )
-            })}
-        </>
-      )
+      return featuredSubs
+        .filter(sub => sub.id !== 'all-collections')
+        .map(sub => {
+          const content = categoryContents[sub.id]
+          if (!content) return null
+          return (
+            <SectionWithControls
+              key={sub.id}
+              id={sub.id}
+              title={content.title}
+              apps={content.apps}
+              contentRefs={contentRefs}
+              onAppClick={onAppClick}
+            />
+          )
+        })
     }
 
     const renderCategoriesSections = () => {
       const catCategory = categories.find(cat => cat.id === 'categories')
       const subs = catCategory?.subcategories || []
-
-      return (
-        <>
-          {subs.map(sub => {
-            const content = categoryContents[sub.id]
-            if (!content) return null
-            return (
-              <SectionWithControls
-                key={sub.id}
-                id={sub.id}
-                title={content.title}
-                apps={content.apps}
-                contentRefs={contentRefs}
-                onAppClick={onAppClick}
-              />
-            )
-          })}
-        </>
-      )
+      return subs.map(sub => {
+        const content = categoryContents[sub.id]
+        if (!content) return null
+        return (
+          <SectionWithControls
+            key={sub.id}
+            id={sub.id}
+            title={content.title}
+            apps={content.apps}
+            contentRefs={contentRefs}
+            onAppClick={onAppClick}
+          />
+        )
+      })
     }
 
-    const renderAllContent = () => (
-      <div
-        id="continuous-scroll-container"
-        className={contentAreaStyles.continuousContainer}>
-        <div
-          id="all-collections"
-          ref={el => {
-            contentRefs.current['all-collections'] = el
-          }}
-          className={contentAreaStyles.allCollectionsWrapper}>
-          <div className={contentAreaStyles.allCollectionsHeader}>
-            <div className="flex items-center">
-              <button
-                onClick={onBackClick}
-                className={contentAreaStyles.backButton}
-                aria-label="Show sidebar">
+    return (
+      <div {...props.getContentWrapperProps()}>
+        <div {...props.getContinuousContainerProps()}>
+          <div
+            id="all-collections"
+            ref={el => {
+              contentRefs.current['all-collections'] = el
+            }}
+            {...props.getAllCollectionsWrapperProps()}>
+            <div {...props.getAllCollectionsHeaderProps()}>
+              <button {...props.getBackButtonProps()} onClick={onBackClick}>
                 <Icon icon="lucide:menu" width={20} height={20} />
               </button>
-              <h2 className={contentAreaStyles.sectionTitle}>
-                All Collections
-              </h2>
+              <h2 {...props.getSectionTitleProps()}>All Collections</h2>
             </div>
+
+            {renderFeaturedSubcategories()}
+            {renderCategoriesSections()}
           </div>
-
-          {renderFeaturedSubcategories()}
-          {renderCategoriesSections()}
         </div>
-      </div>
-    )
-
-    return (
-      <div ref={ref} className={contentAreaStyles.wrapper}>
-        {renderAllContent()}
       </div>
     )
   }

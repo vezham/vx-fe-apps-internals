@@ -85,11 +85,15 @@ const AppDetailModal: React.FC<Props> = props => {
           <>
             <ModalHeader {...getHeaderProps()}>
               <div {...getHeaderInnerProps()}>
-                <Icon
-                  icon={app.icon}
-                  className={app.iconColor}
-                  {...getIconProps()}
-                />
+                {app.icon.startsWith('https') ? (
+                  <Image src={app.icon} alt={app.title} {...getIconProps()} />
+                ) : (
+                  <Icon
+                    icon={app.icon}
+                    className={app.iconColor}
+                    {...getIconProps()}
+                  />
+                )}
                 <h3 {...getTitleProps()}>{app.title}</h3>
               </div>
             </ModalHeader>

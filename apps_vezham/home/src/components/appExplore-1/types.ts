@@ -1,3 +1,8 @@
+import { PropGetter, ReactRef, cn, useDOMRef } from '@vezham/react-utils'
+
+import { tvProps, tvSlots, tva } from './variant'
+
+// Subcategory and Category
 export type Subcategory = {
   id: string
   name: string
@@ -10,6 +15,7 @@ export type Category = {
   subcategories?: Subcategory[]
 }
 
+// Feature, Metric, PricingPlan, SupportOption
 export type Feature = {
   icon: string
   title: string
@@ -22,7 +28,6 @@ export type Metric = {
   description: string
 }
 
-// Add PricingPlan type
 export type PricingPlan = {
   name: string
   price: string
@@ -31,18 +36,24 @@ export type PricingPlan = {
   isPopular: boolean
 }
 
-// Add SupportOption type
 export type SupportOption = {
   icon: string
   title: string
   description: string
 }
 
-export type footeritems = {
+// Footer items
+export type FooterItem = {
   icon: string
 }
 
-// Modify App type to include all the detailed fields
+// PainPoint
+export interface PainPoint {
+  title: string
+  description: string
+}
+
+// App
 export type App = {
   id: string
   category?: string
@@ -50,32 +61,27 @@ export type App = {
   description: string
   icon: string
   iconColor: string
-  footerItems: footeritems[]
+  footerItems: FooterItem[]
   painPoints?: PainPoint[]
   detailedDescription?: string
   image: string
   features?: Feature[]
   metrics?: Metric[]
-  pricing?: PricingPlan[] // Add pricing
-  support?: SupportOption[] // Add support
+  pricing?: PricingPlan[]
+  support?: SupportOption[]
 }
 
-// Keep CategoryContent the same
+// Category content
 export type CategoryContent = {
   title: string
   hero?: boolean
-  apps: App[] // This now contains all app details
+  apps: App[]
 }
 
-// Keep AppDetail for backward compatibility
-// FIX: Changed empty interface to a type alias.
+// AppDetail (alias for App for backward compatibility)
 export type AppDetail = App
 
-export interface PainPoint {
-  title: string
-  description: string
-}
-
+// ContentArea props
 export interface ContentAreaProps {
   activeCategory: string
   activeSubcategory: string
@@ -87,10 +93,115 @@ export interface ContentAreaProps {
   onAppClick: (appId: string, app: App) => void
 }
 
+// SectionWithControls props
 export interface SectionWithControlsProps {
   id: string
   title: string
   apps: App[]
   contentRefs: React.MutableRefObject<Record<string, HTMLDivElement | null>>
   onAppClick: (appId: string, app: App) => void
+}
+
+export interface UsePropsArgs extends tvProps {
+  ref?: ReactRef<HTMLDivElement | null>
+  classNames?: Partial<Record<tvSlots, string>>
+}
+
+export const useProps = (props: UsePropsArgs) => {
+  const domRef = useDOMRef(props.ref)
+  const slots = tva({})
+
+  const getSlotProps =
+    (slot: tvSlots): PropGetter =>
+    () => ({
+      ref: slot === 'wrapper' ? domRef : undefined,
+      className: cn(slots[slot]?.(), props.classNames?.[slot])
+    })
+
+  return {
+    domRef,
+    slots,
+    getWrapperProps: getSlotProps('wrapper'),
+    getContainerProps: getSlotProps('container'),
+    getMainProps: getSlotProps('main'),
+    getHeaderBaseProps: getSlotProps('headerBase'),
+    getHeaderInnerProps: getSlotProps('headerInner'),
+    getHeaderTitleWrapProps: getSlotProps('headerTitleWrap'),
+    getHeaderTitleProps: getSlotProps('headerTitle'),
+
+    // Not Found
+    getNotFoundWrapperProps: getSlotProps('notFoundWrapper'),
+    getNotFoundInnerProps: getSlotProps('notFoundInner'),
+    getNotFoundTitleProps: getSlotProps('notFoundTitle'),
+    getNotFoundDescProps: getSlotProps('notFoundDesc'),
+    getNotFoundButtonProps: getSlotProps('notFoundButton'),
+
+    // Hero
+    getHeroSectionProps: getSlotProps('heroSection'),
+    getHeroTitleProps: getSlotProps('heroTitle'),
+    getHeroDescProps: getSlotProps('heroDesc'),
+
+    // Overview
+    getOverviewSectionProps: getSlotProps('overviewSection'),
+    getOverviewImageWrapProps: getSlotProps('overviewImageWrap'),
+    getOverviewImageProps: getSlotProps('overviewImage'),
+    getOverviewContentProps: getSlotProps('overviewContent'),
+    getOverviewHeadingProps: getSlotProps('overviewHeading'),
+    getOverviewAccordionProps: getSlotProps('overviewAccordion'),
+    getOverviewFeatureListProps: getSlotProps('overviewFeatureList'),
+    getOverviewFeatureItemProps: getSlotProps('overviewFeatureItem'),
+    getOverviewFeatureIconProps: getSlotProps('overviewFeatureIcon'),
+
+    // Features
+    getFeaturesTitleProps: getSlotProps('featuresTitle'),
+    getFeaturesGridProps: getSlotProps('featuresGrid'),
+    getFeatureCardProps: getSlotProps('featureCard'),
+    getFeatureCardLeftProps: getSlotProps('featureCardLeft'),
+    getFeatureCardBottomProps: getSlotProps('featureCardBottom'),
+    getFeatureIconProps: getSlotProps('featureIcon'),
+    getFeatureTitleWrapperProps: getSlotProps('featureTitleWrapper'),
+    getFeatureTitleHighlightProps: getSlotProps('featureTitleHighlight'),
+    getFeatureTitleProps: getSlotProps('featureTitle'),
+    getFeatureDescProps: getSlotProps('featureDescription'),
+
+    // Cards / Pricing / Results / Support
+    getCardsGridProps: getSlotProps('cardsGrid'),
+    getCardBaseProps: getSlotProps('cardBase'),
+    getPlanProps: getSlotProps('plan'),
+    getPricingCardProps: getSlotProps('pricingCard'),
+    getPricingPopularProps: getSlotProps('pricingPopular'),
+    getPricingLabelProps: getSlotProps('pricingLabel'),
+    getPricingNameProps: getSlotProps('pricingName'),
+    getPricingValueProps: getSlotProps('pricingValue'),
+    getPricingPeriodProps: getSlotProps('pricingPeriod'),
+    getPricingFeatureProps: getSlotProps('pricingFeature'),
+    getPricingFeatureIconProps: getSlotProps('pricingFeatureIcon'),
+
+    getResultsTitleProps: getSlotProps('resultsTitle'),
+    getResultsWrapperProps: getSlotProps('resultsWrapper'),
+    getResultsItemProps: getSlotProps('resultsItem'),
+    getResultCircleProps: getSlotProps('resultCircle'),
+    getResultTextProps: getSlotProps('resultText'),
+
+    getSupportHeadProps: getSlotProps('supportHead'),
+    getSupportWrapperProps: getSlotProps('supportWrapper'),
+    getSupportItemProps: getSlotProps('supportItem'),
+    getSupportIconWrapperProps: getSlotProps('supportIconWrapper'),
+    getSupportTitleProps: getSlotProps('supportTitle'),
+    getSupportDescProps: getSlotProps('supportDescription'),
+    getSupportButtonProps: getSlotProps('supportButton'),
+
+    // ContentArea
+    getContentWrapperProps: getSlotProps('contentWrapper'),
+    getContinuousContainerProps: getSlotProps('continuousContainer'),
+    getSectionProps: getSlotProps('section'),
+    getSectionHeaderProps: getSlotProps('sectionHeader'),
+    getSectionTitleProps: getSlotProps('sectionTitle'),
+    getControlsProps: getSlotProps('controls'),
+    getControlBtnProps: getSlotProps('controlBtn'),
+    getControlBtnDisabledProps: getSlotProps('controlBtnDisabled'),
+    getAllCollectionsWrapperProps: getSlotProps('allCollectionsWrapper'),
+    getAllCollectionsHeaderProps: getSlotProps('allCollectionsHeader'),
+    getBackButtonProps: getSlotProps('backButton')
+  }
 }
