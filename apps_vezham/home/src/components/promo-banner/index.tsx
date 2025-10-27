@@ -22,7 +22,7 @@ const PromoBanner = forwardRef<'div', Props>((props, ref) => {
     <div {...getBaseProps()}>
       <div {...getContentProps()}>
         <span {...getTextProps()}>
-          Join us at Vezham Conference India—our signature user conference!
+          Join us at Vezham Conference India - our signature user conference!
         </span>
         <Link as={RouterLink} to="/conference" {...getLinkProps()}>
           Grab early bird tickets

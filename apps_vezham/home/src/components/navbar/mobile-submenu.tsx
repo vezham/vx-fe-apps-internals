@@ -1,21 +1,63 @@
-// MobileSubmenu.tsx
 import { Icon } from '@iconify/react'
 import { Link } from '@tanstack/react-router'
+import React from 'react'
 
-import { MobileSubmenuProps } from './types'
-import { mobileSubmenuVariants as v } from './variant'
+import { MobileSubmenuProps, useMobileSubmenuProps } from './types'
 
-export default function MobileSubmenu({ subMenus }: MobileSubmenuProps) {
-  const isExternalLink = (link: string): boolean =>
-    link.startsWith('http') || link.startsWith('https')
+const MobileSubmenu: React.FC<MobileSubmenuProps> = props => {
+  const {
+    subMenus,
+    getContainerProps,
+    getSectionProps,
+    getTitleProps,
+    getListProps,
+    getLinkProps,
+    getIconWrapperProps,
+    getIconProps,
+    getLabelProps,
+    getDescriptionProps,
+    getDividerProps
+  } = useMobileSubmenuProps(props)
+
+  const isExternalLink = (link: string) =>
+    link.startsWith('http://') || link.startsWith('https://')
+
+  const renderExtraLink = (
+    linkObj: any,
+    navItem: any,
+    icon: string,
+    fallbackText: string
+  ) => {
+    const label = linkObj?.label || `${fallbackText} ${navItem.title}`
+    const url =
+      linkObj?.link ||
+      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
+    const Wrapper = isExternalLink(url) ? 'a' : Link
+    const wrapperProps = isExternalLink(url)
+      ? { href: url, target: '_blank', rel: 'noopener noreferrer' }
+      : { to: url }
+
+    return (
+      <Wrapper {...wrapperProps} {...getLinkProps()}>
+        <div {...getIconWrapperProps()}>
+          <Icon icon={icon} width={20} {...getIconProps()} />
+        </div>
+        <div>
+          <p {...getLabelProps()}>{label}</p>
+          <p {...getDescriptionProps()}>
+            View all {navItem.items.length} products
+          </p>
+        </div>
+      </Wrapper>
+    )
+  }
 
   return (
-    <div className={v.base.container}>
+    <div {...getContainerProps()}>
       {subMenus.map((navItem, index) => (
-        <div key={index} className={v.base.section}>
-          {navItem.title && <p className={v.base.title}>{navItem.title}</p>}
-
-          <div className={v.base.list}>
+        <div key={index} {...getSectionProps()}>
+          {navItem.title && <p {...getTitleProps()}>{navItem.title}</p>}
+          <div {...getListProps()}>
             {navItem.items.slice(0, 5).map((item, idx) => {
               const Wrapper = isExternalLink(item.link) ? 'a' : Link
               const wrapperProps = isExternalLink(item.link)
@@ -27,24 +69,23 @@ export default function MobileSubmenu({ subMenus }: MobileSubmenuProps) {
                 : { to: item.link || '/' }
 
               return (
-                <Wrapper key={idx} {...wrapperProps} className={v.base.link}>
-                  <div className={v.base.iconWrapper}>
-                    <Icon icon={item.icon} width={20} className={v.base.icon} />
+                <Wrapper key={idx} {...wrapperProps} {...getLinkProps()}>
+                  <div {...getIconWrapperProps()}>
+                    <Icon icon={item.icon} width={20} {...getIconProps()} />
                   </div>
                   <div>
-                    <p className={v.base.label}>{item.name}</p>
+                    <p {...getLabelProps()}>{item.name}</p>
                     {item.description && (
-                      <p className={v.base.description}>{item.description}</p>
+                      <p {...getDescriptionProps()}>{item.description}</p>
                     )}
                   </div>
                 </Wrapper>
               )
             })}
 
-            {/* Learn more section */}
             {navItem.items.length > 5 && (
               <>
-                <div className={v.base.divider}>
+                <div {...getDividerProps()}>
                   {renderExtraLink(
                     navItem.learn_more,
                     navItem,
@@ -52,7 +93,7 @@ export default function MobileSubmenu({ subMenus }: MobileSubmenuProps) {
                     'Explore All'
                   )}
                 </div>
-                <div className={v.base.divider}>
+                <div {...getDividerProps()}>
                   {renderExtraLink(
                     navItem.more,
                     navItem,
@@ -67,34 +108,8 @@ export default function MobileSubmenu({ subMenus }: MobileSubmenuProps) {
       ))}
     </div>
   )
-
-  function renderExtraLink(
-    linkObj: any,
-    navItem: any,
-    icon: string,
-    fallbackText: string
-  ) {
-    const label = linkObj?.label || `${fallbackText} ${navItem.title}`
-    const url =
-      linkObj?.link ||
-      `/explore/${navItem.title.toLowerCase().replace(/\s+/g, '-')}`
-    const Wrapper = isExternalLink(url) ? 'a' : Link
-    const wrapperProps = isExternalLink(url)
-      ? { href: url, target: '_blank', rel: 'noopener noreferrer' }
-      : { to: url }
-
-    return (
-      <Wrapper {...wrapperProps} className={v.base.link}>
-        <div className={v.base.iconWrapper}>
-          <Icon icon={icon} width={20} className={v.base.icon} />
-        </div>
-        <div>
-          <p className={v.base.label}>{label}</p>
-          <p className={v.base.description}>
-            View all {navItem.items.length} products
-          </p>
-        </div>
-      </Wrapper>
-    )
-  }
 }
+
+MobileSubmenu.displayName = 'MobileSubmenu'
+
+export { MobileSubmenu }

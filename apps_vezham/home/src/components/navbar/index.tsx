@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react'
 import { Link as RouterLink } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
@@ -6,7 +5,7 @@ import { Accordion, AccordionItem } from '@vx-oss/react'
 
 import { NAV_ITEMS } from './data'
 import { DropdownNavigation } from './dropdown-navigation'
-import MobileSubmenu from './mobile-submenu'
+import { MobileSubmenu } from './mobile-submenu'
 import {
   MobileNav,
   MobileNavHeader,
@@ -18,15 +17,29 @@ import {
   NavbarLogo
 } from './resizable-navbar'
 import { ThemeSwitcher } from './theme-switcher'
-import { navVariants as dv } from './variant'
+import { useNavProps } from './types'
 
-interface NavbarDemoProps {
-  showPromoBanner?: boolean
-}
-
-const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
+const Navbars = (originalProps: any) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+
+  const {
+    getContainerProps,
+    getBodyProps,
+    getLogoWrapperProps,
+    getCenterProps,
+    getActionsProps,
+    getOverlayProps,
+    getMenuProps,
+    getMenuScrollProps,
+    getMenuItemWrapperProps,
+    getMenuItemProps,
+    getMenuFooterProps,
+    getIconChevronProps,
+    getTitleProps,
+    getLinkProps,
+    showPromoBanner
+  } = useNavProps(originalProps)
 
   const navbarTopClass = showPromoBanner ? 'sm:top-30 md:top-25' : 'sm:top-13'
 
@@ -41,19 +54,18 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
   }, [])
 
   return (
-    <div className={dv.navbar.container}>
+    <div {...getContainerProps()}>
       <Navbar className={navbarTopClass}>
-        {/* Desktop Navigation */}
-        <NavBody className={dv.navbar.body}>
-          <div className={dv.navbar.logoWrapper}>
+        <NavBody {...getBodyProps()}>
+          <div {...getLogoWrapperProps()}>
             <NavbarLogo visible={isScrolled} />
           </div>
 
-          <div className="flex flex-1 justify-center">
+          <div {...getCenterProps()}>
             <DropdownNavigation navItems={NAV_ITEMS} />
           </div>
 
-          <div className="flex items-center gap-2">
+          <div {...getActionsProps()}>
             <ThemeSwitcher />
             <NavbarButton variant="secondary" className="hidden sm:flex">
               Sign in
@@ -62,11 +74,10 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
           </div>
         </NavBody>
 
-        {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo visible={isScrolled} />
-            <div className="flex items-center gap-2">
+            <div {...getActionsProps()}>
               <NavbarButton variant="primary" size="sm" className="sm:hidden">
                 Sign in
               </NavbarButton>
@@ -80,15 +91,16 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
 
           {isMobileMenuOpen && (
             <div
-              className={dv.mobile.overlay}
+              {...getOverlayProps()}
               onClick={() => setIsMobileMenuOpen(false)}
             />
           )}
 
           <MobileNavMenu
+            {...getMenuProps()}
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}>
-            <div className="max-h-[60vh] w-full overflow-y-auto">
+            <div {...getMenuScrollProps()}>
               {NAV_ITEMS.map((navItem, index) =>
                 navItem.subMenus ? (
                   <Accordion key={index} selectionMode="single">
@@ -96,39 +108,27 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
                       key={navItem.label}
                       aria-label={navItem.label}
                       title={navItem.label}
-                      classNames={{ title: 'text-base font-medium' }}
-                      startContent={
-                        <Icon
-                          icon="lucide:chevron-right"
-                          className="text-default-500"
-                          width={16}
-                        />
-                      }>
+                      classNames={{ title: getTitleProps().className }}>
                       <MobileSubmenu subMenus={navItem.subMenus} />
                     </AccordionItem>
                   </Accordion>
                 ) : (
-                  <div
-                    key={index}
-                    className="mb-2 flex w-full flex-col gap-2 px-2">
-                    <div className="bg-content1 rounded-medium px-4 py-4 shadow-xs">
+                  <div key={index} {...getMenuItemWrapperProps()}>
+                    <div {...getMenuItemProps()}>
                       {navItem.link ? (
-                        <RouterLink
-                          to={navItem.link}
-                          className="text-foreground text-base font-medium">
+                        <RouterLink to={navItem.link} {...getLinkProps()}>
                           {navItem.label}
                         </RouterLink>
                       ) : (
-                        <p className="text-foreground text-base font-medium">
-                          {navItem.label}
-                        </p>
+                        <p {...getTitleProps()}>{navItem.label}</p>
                       )}
                     </div>
                   </div>
                 )
               )}
             </div>
-            <div className="mt-4 flex w-full flex-col gap-4">
+
+            <div {...getMenuFooterProps()}>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="secondary"
@@ -148,5 +148,7 @@ const Navbars = ({ showPromoBanner = false }: NavbarDemoProps) => {
     </div>
   )
 }
+
+Navbars.displayName = 'Navbars'
 
 export { Navbars }
