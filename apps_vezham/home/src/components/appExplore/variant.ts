@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'bg-background text-foreground min-h-screen w-full pb-20',
+    base: 'bg-background text-foreground min-h-screen w-full',
 
     notFoundContainer: 'flex min-h-screen items-center justify-center',
     notFoundText: 'text-center',
@@ -46,7 +46,7 @@ const tva = tv({
     supportTitle: 'text-foreground mb-1 font-semibold',
     supportDescription: 'text-default-500 text-sm',
     supportButton: 'mt-6',
-    contentAreaBase: 'bg-background text-foreground min-h-screen w-full pb-20',
+    contentAreaBase: 'bg-background text-foreground min-h-screen w-full',
     sectionBase: 'p-8',
     headerBase: 'mb-4 flex items-center justify-between',
     title: 'mb-4 flex items-center gap-2 text-xl font-bold',
@@ -55,11 +55,11 @@ const tva = tv({
       'grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 md:pb-0 lg:grid-cols-3',
     categoryWrapper: 'min-h-[auto] scroll-mt-20 pb-5',
     sidebarButton:
-      'text-foreground-500 hover:text-foreground mb-1 text-sm font-medium transition-all duration-200 lg:hidden',
+      'text-foreground-500 hover:text-foreground mb-3 transition-all duration-200 lg:hidden',
+    sidebarWrapper: 'mb-2 flex items-center gap-3',
     seeAllButton:
-      'text-foreground-500 hover:text-foreground mt-2 text-sm font-medium transition-all duration-200 lg:hidden',
-    continuousScroll: 'pb-20',
-    scrollSection: 'scroll-mt-20 p-8',
+      'text-foreground-500 hover:text-foreground mt-1.25 text-sm font-medium transition-all duration-200 lg:hidden',
+    scrollSection: 'scroll-mt-20 p-6 lg:p-8',
     headerSection: ''
   },
   variants: {},

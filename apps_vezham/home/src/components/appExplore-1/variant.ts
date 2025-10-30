@@ -90,10 +90,10 @@ export const tva = tv({
     controlBtn:
       'dark:bg-content1 flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300',
     controlBtnDisabled: 'cursor-not-allowed opacity-40',
-    allCollectionsWrapper: 'p-4 lg:p-6',
-    allCollectionsHeader: 'mb-4 flex items-center justify-between',
+    allCollectionsWrapper: 'p-6 lg:p-8',
+    allCollectionsHeader: 'flex items-center',
     backButton:
-      'mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden'
+      'flex h-10 w-10 items-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden'
   },
   variants: {},
   defaultVariants: {}

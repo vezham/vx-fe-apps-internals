@@ -141,8 +141,8 @@ const useProps = (props: AppDetailProps) => {
     getSubGridProps: getSlotProps('subGrid'),
     getCategoryWrapperProps: getSlotProps('categoryWrapper'),
     getSidebarButtonProps: getSlotProps('sidebarButton'),
+    getSidebarWrapperProps: getSlotProps('sidebarWrapper'),
     getSeeAllButtonProps: getSlotProps('seeAllButton'),
-    getContinuousScrollProps: getSlotProps('continuousScroll'),
     getScrollSectionProps: getSlotProps('scrollSection')
   }
 }

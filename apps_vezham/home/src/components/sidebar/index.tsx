@@ -28,7 +28,7 @@ const Sidebar = forwardRef<'div', SidebarProps>((props, ref) => {
   })
 
   const sidebarRef = React.useRef<HTMLDivElement>(null)
-  const itemRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
+  const contentRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
 
   const toggleCategoryExpansion = (categoryId: string) => {
     setExpandedCategories(prev => {
@@ -62,8 +62,8 @@ const Sidebar = forwardRef<'div', SidebarProps>((props, ref) => {
 
   // Smooth scroll active subcategory into view
   React.useEffect(() => {
-    if (activeSubcategory && itemRefs.current[activeSubcategory]) {
-      const element = itemRefs.current[activeSubcategory]
+    if (activeSubcategory && contentRefs.current[activeSubcategory]) {
+      const element = contentRefs.current[activeSubcategory]
       if (element && sidebarRef.current) {
         const sidebarTop = sidebarRef.current.getBoundingClientRect().top
         const elementTop = element.getBoundingClientRect().top
@@ -85,7 +85,9 @@ const Sidebar = forwardRef<'div', SidebarProps>((props, ref) => {
         {categories.map(category => (
           <div key={category.id} {...getCategoryWrapperProps()}>
             <div
-              ref={el => (itemRefs.current[category.id] = el ?? null)}
+              ref={el => {
+                contentRefs.current[category.id] = el ?? null
+              }}
               onClick={() => toggleCategoryExpansion(category.id)}
               {...getCategoryHeaderProps(
                 activeCategory === category.id && !activeSubcategory
@@ -108,7 +110,9 @@ const Sidebar = forwardRef<'div', SidebarProps>((props, ref) => {
                 {category.subcategories.map(subcategory => (
                   <div
                     key={subcategory.id}
-                    ref={el => (itemRefs.current[subcategory.id] = el ?? null)}
+                    ref={el => {
+                      contentRefs.current[subcategory.id] = el ?? null
+                    }}
                     onClick={() => onSubcategoryClick(subcategory.id)}
                     {...getSubcategoryProps(
                       activeSubcategory === subcategory.id

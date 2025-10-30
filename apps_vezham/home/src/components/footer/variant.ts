@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'flex w-full flex-col pt-5',
+    base: 'flex w-full flex-col',
     container: 'mx-auto max-w-7xl px-6 pb-8',
     gridWrapper: 'xl:grid xl:grid-cols-3 xl:gap-8',
     logoWrapper: 'flex flex-col items-start space-y-8 md:pr-8',

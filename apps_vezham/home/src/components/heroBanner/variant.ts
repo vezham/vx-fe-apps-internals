@@ -22,19 +22,19 @@ const tva = tv({
         inputWrapper: 'max-w-2xl'
       },
       md: {
-        wrapper: 'py-30',
+        wrapper: 'py-24',
         title: 'text-3xl md:text-5xl',
         inputWrapper: 'max-w-3xl'
       },
       lg: {
-        wrapper: 'py-40',
+        wrapper: 'py-33',
         title: 'text-4xl md:text-6xl',
         inputWrapper: 'max-w-4xl'
       }
     }
   },
 
-  defaultVariants: { variant: 'default', size: 'md' }
+  defaultVariants: { variant: 'default', size: 'lg' }
 })
 
 tva.inputClasses = {

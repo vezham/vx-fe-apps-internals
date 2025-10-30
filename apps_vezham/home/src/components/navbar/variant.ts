@@ -28,16 +28,16 @@ const navVariants = tv({
 
     size: {
       sm: {
-        body: 'px-2 py-1',
-        menu: 'p-3'
+        body: 'px-1 py-1',
+        menu: 'p-2'
       },
       md: {
-        body: 'px-4 py-2',
-        menu: 'p-4'
+        body: 'px-2 py-2',
+        menu: 'p-3'
       },
       lg: {
-        body: 'px-6 py-3',
-        menu: 'p-6'
+        body: 'px-3 py-3',
+        menu: 'p-4'
       }
     }
   },
@@ -85,9 +85,9 @@ const dropdownVariants = tv({
       subtle: {}
     },
     size: {
-      sm: { navButton: 'px-2 py-1 text-xs' },
-      md: { navButton: 'px-3 py-1.5 text-sm' },
-      lg: { navButton: 'px-4 py-2 text-base' }
+      sm: { navButton: 'px-1 py-1 text-xs' },
+      md: { navButton: 'px-2 py-1.5 text-sm' },
+      lg: { navButton: 'px-3 py-2 text-base' }
     }
   },
 
@@ -165,7 +165,7 @@ const navbarVariants = {
   base: {
     wrapper: 'fixed inset-x-0 z-50 w-full transition-all duration-300',
     navBody:
-      'max-w-8xl z-[60] mx-auto hidden flex-row items-center justify-between self-start rounded-full px-2 py-2 backdrop-blur-md backdrop-saturate-150 sm:px-4 lg:flex',
+      'max-w-8xl z-[60] mx-auto hidden flex-row items-center justify-between self-start rounded-full px-2 py-2 backdrop-blur-md  sm:px-4 lg:flex',
     navItems:
       'text-foreground-500 hover:text-foreground inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2',
     navItem: 'text-foreground-600 dark:text-foreground-400 relative px-4 py-2',
@@ -182,18 +182,18 @@ const navbarVariants = {
   },
   variants: {
     navBody: {
-      visible: 'bg-background/100 dark:bg-content1/100'
+      visible: 'bg-background dark:bg-content1/100'
     },
     mobileNav: {
-      visible: 'bg-background/60 dark:bg-content1/90'
+      visible: 'bg-background dark:bg-content1'
     },
     navItemHover:
       'bg-content2 dark:bg-content2 absolute inset-0 h-full w-full rounded-full',
     button: {
       size: {
-        sm: 'text-xs py-1 px-2',
-        md: 'text-sm py-1.5 px-4',
-        lg: 'text-sm py-2 px-5'
+        sm: 'text-xs py-1 px-1',
+        md: 'text-sm py-1.5 px-2',
+        lg: 'text-sm py-2 px-3'
       },
       variant: {
         primary: 'bg-primary text-white shadow-sm hover:bg-primary-600',

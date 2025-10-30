@@ -151,7 +151,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     }
 
     return (
-      <div {...props.getContentWrapperProps()}>
+      <div ref={ref} {...props.getContentWrapperProps()}>
         <div {...props.getContinuousContainerProps()}>
           <div
             id="all-collections"

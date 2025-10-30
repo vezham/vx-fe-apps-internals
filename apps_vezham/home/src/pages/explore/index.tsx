@@ -16,7 +16,6 @@ import { Sidebar } from '../../components/sidebar'
 import { Footer } from '../footer'
 import { Header } from '../header'
 
-// ---------------------- APP CONTENT ----------------------
 const AppContent = () => {
   const [activeCategory, setActiveCategory] = React.useState(() => {
     return localStorage.getItem('activeCategory') || 'featured'
@@ -130,32 +129,27 @@ const AppContent = () => {
             }
           }
 
-          // Update active category and subcategory based on scroll position
           if (sectionId === 'all-collections') {
             setActiveCategory('featured')
             setActiveSubcategory('all-collections')
             localStorage.setItem('activeCategory', 'featured')
             localStorage.setItem('activeSubcategory', 'all-collections')
           } else if (foundSubcategory) {
-            // If we found a subcategory, update both category and subcategory
             setActiveCategory(foundCategory)
             setActiveSubcategory(foundSubcategory)
             localStorage.setItem('activeCategory', foundCategory)
             localStorage.setItem('activeSubcategory', foundSubcategory)
 
-            // Only update visibleContent if we're not in all-collections view
             if (visibleContent !== 'all-collections') {
               setVisibleContent(foundSubcategory)
               localStorage.setItem('visibleContent', foundSubcategory)
             }
           } else if (foundCategory) {
-            // If we only found a category, update just the category
             setActiveCategory(foundCategory)
             setActiveSubcategory('')
             localStorage.setItem('activeCategory', foundCategory)
             localStorage.setItem('activeSubcategory', '')
 
-            // Only update visibleContent if we're not in all-collections view
             if (visibleContent !== 'all-collections') {
               setVisibleContent(foundCategory)
               localStorage.setItem('visibleContent', foundCategory)

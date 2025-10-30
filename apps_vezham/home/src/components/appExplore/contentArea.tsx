@@ -26,7 +26,9 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       return (
         <div
           id={contentId}
-          ref={el => (contentRefs.current[contentId] = el)}
+          ref={el => {
+            contentRefs.current[contentId] = el
+          }}
           {...props.getSectionProps()}>
           <div {...props.getHeaderProps()}>
             <div className="flex items-center">
@@ -59,15 +61,15 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     }
 
     const renderAllContent = () => (
-      <div
-        {...props.getContinuousScrollProps()}
-        id="continuous-scroll-container">
+      <div id="continuous-scroll-container">
         <div
           id="all-collections"
-          ref={el => (contentRefs.current['all-collections'] = el)}
+          ref={el => {
+            contentRefs.current['all-collections'] = el
+          }}
           {...props.getScrollSectionProps()}>
           <div {...props.getHeaderProps()}>
-            <div className="mb-4 flex items-center gap-3">
+            <div {...props.getSidebarWrapperProps()}>
               <button
                 onClick={onBackClick}
                 {...props.getSidebarButtonProps()}
@@ -102,7 +104,9 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 <div
                   key={subcategory.id}
                   id={subcategory.id}
-                  ref={el => (contentRefs.current[subcategory.id] = el)}
+                  ref={el => {
+                    contentRefs.current[subcategory.id] = el
+                  }}
                   {...props.getCategoryWrapperProps()}>
                   <div {...props.getHeaderProps()}>
                     <div>
@@ -154,7 +158,9 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
               <div
                 key={subcategory.id}
                 id={subcategory.id}
-                ref={el => (contentRefs.current[subcategory.id] = el)}
+                ref={el => {
+                  contentRefs.current[subcategory.id] = el
+                }}
                 {...props.getCategoryWrapperProps()}>
                 <div {...props.getHeaderProps()}>
                   <div>
