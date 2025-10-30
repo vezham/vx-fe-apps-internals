@@ -81,8 +81,9 @@ export const tva = tv({
     supportButton: 'mt-6',
 
     // ContentArea
-    contentWrapper: 'bg-background text-foreground min-h-screen w-full',
-    continuousContainer: 'space-y-12',
+    contentWrapper:
+      'bg-background text-foreground min-h-screen w-full p-6 lg:p-8',
+    continuousContainer: 'space-y-0',
     section: 'scroll-mt-20 py-2',
     sectionHeader: 'mb-5 flex items-center justify-between',
     sectionTitle: 'text-[28px] font-medium md:text-[40px] lg:text-[48px]',
@@ -90,10 +91,10 @@ export const tva = tv({
     controlBtn:
       'dark:bg-content1 flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300',
     controlBtnDisabled: 'cursor-not-allowed opacity-40',
-    allCollectionsWrapper: 'p-6 lg:p-8',
+
     allCollectionsHeader: 'flex items-center',
     backButton:
-      'flex h-10 w-10 items-center rounded-full bg-black/[0.05] transition-colors hover:bg-black/[0.1] lg:hidden'
+      '-ml-2 flex h-10 w-10 items-center rounded-md transition-colors lg:hidden'
   },
   variants: {},
   defaultVariants: {}

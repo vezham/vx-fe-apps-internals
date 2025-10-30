@@ -200,7 +200,6 @@ export const useProps = (props: UsePropsArgs) => {
     getControlsProps: getSlotProps('controls'),
     getControlBtnProps: getSlotProps('controlBtn'),
     getControlBtnDisabledProps: getSlotProps('controlBtnDisabled'),
-    getAllCollectionsWrapperProps: getSlotProps('allCollectionsWrapper'),
     getAllCollectionsHeaderProps: getSlotProps('allCollectionsHeader'),
     getBackButtonProps: getSlotProps('backButton')
   }

@@ -28,19 +28,14 @@ const AppExploreContent = () => {
     return localStorage.getItem('activeSubcategory') || 'all-collections'
   })
 
-  // Initialize visibleContent from localStorage or default to all-collections
   const [visibleContent, setVisibleContent] = React.useState<string>(() => {
     return localStorage.getItem('visibleContent') || 'all-collections'
   })
 
   const contentRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
   const contentAreaRef = React.useRef<HTMLDivElement | null>(null)
-
-  // Add state for mobile sidebar visibility
   const [isMobileSidebarVisible, setIsMobileSidebarVisible] =
     React.useState(false)
-
-  // Add state for the app detail modal
   const [selectedAppId, setSelectedAppId] = React.useState<string | null>(null)
   const [isAppModalOpen, setIsAppModalOpen] = React.useState(false)
   const [selectedApp, setSelectedApp] = React.useState<App | null>(null)
@@ -65,98 +60,97 @@ const AppExploreContent = () => {
   }
 
   const isScrollingRef = React.useRef(false)
-
   const ignoreScrollUpdatesRef = React.useRef(false)
+
+  // In your AppExploreContent component, replace the intersection observer useEffect with this:
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
-        if (ignoreScrollUpdatesRef.current) {
-          return
-        }
+        if (ignoreScrollUpdatesRef.current) return
 
-        let maxVisibility = 0
-        let mostVisibleEntry = null
+        let mostVisibleEntry: IntersectionObserverEntry | null = null
+        let highestVisibility = 0
 
         entries.forEach(entry => {
+          if (!entry.isIntersecting) return
+
           const rect = entry.boundingClientRect
-          const windowHeight = window.innerHeight
+          const viewportHeight = window.innerHeight
 
-          if (rect.height < 50 || !entry.isIntersecting) {
-            return
-          }
-
+          // Calculate visible height
           const visibleTop = Math.max(0, rect.top)
-          const visibleBottom = Math.min(windowHeight, rect.bottom)
+          const visibleBottom = Math.min(viewportHeight, rect.bottom)
           const visibleHeight = Math.max(0, visibleBottom - visibleTop)
 
-          const visibilityRatio = visibleHeight / rect.height
-          const topProximityBonus = 1 - Math.max(0, visibleTop) / windowHeight
-          const visibility = visibilityRatio * 0.7 + topProximityBonus * 0.3
+          if (visibleHeight === 0) return
 
-          if (visibility > maxVisibility && visibility > 0.1) {
-            maxVisibility = visibility
+          const visibilityRatio = visibleHeight / rect.height
+          const distanceFromTop = Math.max(0, rect.top)
+          const topProximityBonus = 1 - distanceFromTop / viewportHeight
+
+          // Combined visibility score (weighted towards elements near top)
+          const visibilityScore =
+            visibilityRatio * 0.4 + topProximityBonus * 0.6
+
+          if (visibilityScore > highestVisibility) {
+            highestVisibility = visibilityScore
             mostVisibleEntry = entry
           }
         })
 
-        if (mostVisibleEntry) {
+        if (mostVisibleEntry && highestVisibility > 0.3) {
           const sectionId = mostVisibleEntry.target.id
           console.log(
-            'Most visible section:',
+            '🔄 Active section:',
             sectionId,
-            'with visibility:',
-            maxVisibility
+            'Score:',
+            highestVisibility.toFixed(2)
           )
 
           isScrollingRef.current = true
 
-          let foundCategory = ''
-          let foundSubcategory = ''
+          // Reset states first
+          let newCategory = activeCategory
+          let newSubcategory = activeSubcategory
 
-          const isMainCategory = categories.some(cat => cat.id === sectionId)
-          if (isMainCategory) {
-            foundCategory = sectionId
-            foundSubcategory = ''
-          } else {
-            for (const category of categories) {
-              if (category.subcategories) {
-                const subcategory = category.subcategories.find(
-                  sub => sub.id === sectionId
-                )
-                if (subcategory) {
-                  foundCategory = category.id
-                  foundSubcategory = subcategory.id
-                  break
-                }
-              }
-            }
+          // Check if it's the all-collections section
+          if (sectionId === 'all-collections') {
+            newCategory = 'featured'
+            newSubcategory = 'all-collections'
+          }
+          // Check if it's a featured subcategory
+          else if (
+            ['popular', 'new', 'free-install', 'support-teams'].includes(
+              sectionId
+            )
+          ) {
+            newCategory = 'featured'
+            newSubcategory = sectionId
+          }
+          // Check if it's a categories subcategory
+          else if (
+            ['sales', 'marketing', 'e-commerce', 'service', 'finance'].includes(
+              sectionId
+            )
+          ) {
+            newCategory = 'categories'
+            newSubcategory = sectionId
           }
 
-          if (sectionId === 'all-collections') {
-            setActiveCategory('featured')
-            setActiveSubcategory('all-collections')
-            localStorage.setItem('activeCategory', 'featured')
-            localStorage.setItem('activeSubcategory', 'all-collections')
-          } else if (foundSubcategory) {
-            setActiveCategory(foundCategory)
-            setActiveSubcategory(foundSubcategory)
-            localStorage.setItem('activeCategory', foundCategory)
-            localStorage.setItem('activeSubcategory', foundSubcategory)
+          // Only update if changed
+          if (
+            newCategory !== activeCategory ||
+            newSubcategory !== activeSubcategory
+          ) {
+            setActiveCategory(newCategory)
+            setActiveSubcategory(newSubcategory)
+            localStorage.setItem('activeCategory', newCategory)
+            localStorage.setItem('activeSubcategory', newSubcategory)
 
             if (visibleContent !== 'all-collections') {
-              setVisibleContent(foundSubcategory)
-              localStorage.setItem('visibleContent', foundSubcategory)
-            }
-          } else if (foundCategory) {
-            setActiveCategory(foundCategory)
-            setActiveSubcategory('')
-            localStorage.setItem('activeCategory', foundCategory)
-            localStorage.setItem('activeSubcategory', '')
-
-            if (visibleContent !== 'all-collections') {
-              setVisibleContent(foundCategory)
-              localStorage.setItem('visibleContent', foundCategory)
+              setVisibleContent(newSubcategory)
+              localStorage.setItem('visibleContent', newSubcategory)
             }
           }
 
@@ -166,52 +160,67 @@ const AppExploreContent = () => {
         }
       },
       {
-        // More granular thresholds for better detection
-        threshold: [
-          0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
-        ],
-        rootMargin: '-5% 0px -45% 0px'
+        threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+        rootMargin: '-20% 0px -30% 0px'
       }
     )
 
     const observeSections = () => {
       observer.disconnect()
 
-      // Find all sections with IDs
-      const allSections = document.querySelectorAll('[id]')
-      console.log(`Found ${allSections.length} sections to observe`)
+      // Observe all known sections
+      const sectionIds = [
+        'all-collections',
+        'popular',
+        'new',
+        'free-install',
+        'support-teams', // featured subcategories
+        'sales',
+        'marketing',
+        'e-commerce',
+        'service',
+        'finance' // categories subcategories
+      ]
 
-      allSections.forEach(section => {
-        if (
-          section.id &&
-          !section.id.startsWith('modal-') &&
-          !section.id.startsWith('drawer-')
-        ) {
-          observer.observe(section)
+      let observedCount = 0
+      sectionIds.forEach(sectionId => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          observer.observe(element)
+          observedCount++
+          console.log(`👀 Observing: ${sectionId}`)
+        } else {
+          console.warn(`❌ Section not found: ${sectionId}`)
         }
       })
+
+      console.log(`✅ Total sections being observed: ${observedCount}`)
     }
 
-    // Initial observation
-    observeSections()
+    // Initial observation with delay to ensure DOM is ready
+    const initTimer = setTimeout(observeSections, 500)
 
-    const timer = setTimeout(observeSections, 500)
+    // Re-observe when content changes
+    const contentTimer = setTimeout(observeSections, 1000)
 
-    const contentChangeTimer = setTimeout(observeSections, 1000)
+    // Also observe on resize
+    window.addEventListener('resize', observeSections)
 
     return () => {
-      clearTimeout(timer)
-      clearTimeout(contentChangeTimer)
+      clearTimeout(initTimer)
+      clearTimeout(contentTimer)
+      window.removeEventListener('resize', observeSections)
       observer.disconnect()
     }
-  }, [categories, visibleContent])
+  }, [categories, visibleContent, activeCategory, activeSubcategory])
 
+  // Safety timer to reset ignore flag
   React.useEffect(() => {
     const safetyTimer = setInterval(() => {
       if (ignoreScrollUpdatesRef.current) {
         ignoreScrollUpdatesRef.current = false
       }
-    }, 2000)
+    }, 3000)
 
     return () => clearInterval(safetyTimer)
   }, [])
@@ -222,35 +231,12 @@ const AppExploreContent = () => {
   }
 
   const handleSubcategoryClick = (subcategoryId: string) => {
-    if (isScrollingRef.current) {
-      setActiveSubcategory(subcategoryId)
-      localStorage.setItem('activeSubcategory', subcategoryId)
-
-      const featuredCategory = categories.find(cat => cat.id === 'featured')
-      const isFeatureSubcategory = featuredCategory?.subcategories?.some(
-        sub => sub.id === subcategoryId
-      )
-
-      if (isFeatureSubcategory) {
-        setActiveCategory('featured')
-        localStorage.setItem('activeCategory', 'featured')
-      } else {
-        for (const category of categories) {
-          if (category.subcategories?.some(sub => sub.id === subcategoryId)) {
-            setActiveCategory(category.id)
-            localStorage.setItem('activeCategory', category.id)
-            break
-          }
-        }
-      }
-      return
-    }
-
     ignoreScrollUpdatesRef.current = true
 
     setActiveSubcategory(subcategoryId)
     localStorage.setItem('activeSubcategory', subcategoryId)
 
+    // Find which category this subcategory belongs to
     const featuredCategory = categories.find(cat => cat.id === 'featured')
     const isFeatureSubcategory = featuredCategory?.subcategories?.some(
       sub => sub.id === subcategoryId
@@ -259,9 +245,6 @@ const AppExploreContent = () => {
     if (isFeatureSubcategory) {
       setActiveCategory('featured')
       localStorage.setItem('activeCategory', 'featured')
-
-      setVisibleContent(subcategoryId)
-      localStorage.setItem('visibleContent', subcategoryId)
     } else {
       for (const category of categories) {
         if (category.subcategories?.some(sub => sub.id === subcategoryId)) {
@@ -270,35 +253,38 @@ const AppExploreContent = () => {
           break
         }
       }
-
-      setVisibleContent(subcategoryId)
-      localStorage.setItem('visibleContent', subcategoryId)
     }
 
+    setVisibleContent(subcategoryId)
+    localStorage.setItem('visibleContent', subcategoryId)
+
+    // Scroll to the section
     if (contentRefs.current[subcategoryId]) {
       const element = contentRefs.current[subcategoryId]
-      const offsetTop = element?.getBoundingClientRect().top || 0
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const elementTop = element?.getBoundingClientRect().top || 0
+      const offsetPosition = elementTop + window.pageYOffset - 80
 
       window.scrollTo({
-        top: offsetTop + scrollTop - 80,
+        top: offsetPosition,
         behavior: 'smooth'
       })
     }
 
     setIsMobileSidebarVisible(false)
 
+    // Reset ignore flag after scroll completes
     setTimeout(() => {
       ignoreScrollUpdatesRef.current = false
-    }, 800)
+    }, 1000)
   }
 
+  // Reset ignore flag on scroll end
   React.useEffect(() => {
     const handleScroll = () => {
       if (ignoreScrollUpdatesRef.current) {
         setTimeout(() => {
           ignoreScrollUpdatesRef.current = false
-        }, 200)
+        }, 300)
       }
     }
 
@@ -306,9 +292,9 @@ const AppExploreContent = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Global access for debugging
   React.useEffect(() => {
     ;(window as any).handleSubcategoryClick = handleSubcategoryClick
-
     return () => {
       delete (window as any).handleSubcategoryClick
     }
@@ -331,10 +317,9 @@ const AppExploreContent = () => {
             onClick={toggleMobileSidebar}></div>
         )}
 
-        {/* Sidebar - Fixed positioning for mobile, static for desktop */}
+        {/* Sidebar */}
         <div
           className={`${isMobileSidebarVisible ? 'translate-x-0' : '-translate-x-full'} border-divider fixed top-0 bottom-0 left-0 z-40 flex h-full w-64 flex-col overflow-hidden border-r bg-white transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 dark:bg-black`}>
-          {/* Scrollable sidebar content with inline scrollbar styles */}
           <div className="flex-1 overflow-y-auto [scrollbar-color:rgba(0,0,0,0.2)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-black/20 [&::-webkit-scrollbar-track]:bg-transparent">
             <Sidebar
               categories={categories}
@@ -346,7 +331,7 @@ const AppExploreContent = () => {
           </div>
         </div>
 
-        {/* Content area - with proper left padding on desktop */}
+        {/* Content area */}
         <div className="w-0 flex-1 lg:pl-0">
           <ContentArea
             ref={contentAreaRef}
@@ -355,14 +340,14 @@ const AppExploreContent = () => {
             categoryContents={categoryContents}
             contentRefs={contentRefs}
             onBackClick={toggleMobileSidebar}
-            isMobileView={true} // Always show back button on mobile
+            isMobileView={true}
             visibleContent={visibleContent}
             onAppClick={handleAppClick}
           />
         </div>
       </div>
 
-      {/* App Detail Modal - now using selectedApp directly */}
+      {/* App Detail Modal */}
       <AppDetailModal
         isOpen={isAppModalOpen}
         onClose={handleModalClose}

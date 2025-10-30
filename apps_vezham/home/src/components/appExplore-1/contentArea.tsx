@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { ScrollShadow } from '@vx-oss/react'
+import { Button, ScrollShadow } from '@vx-oss/react'
 
 import { AppleStyleCarousel } from '../carousel'
 import { AppleStyleCarouselRef } from '../carousel/types'
@@ -113,35 +113,16 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
     const renderFeaturedSubcategories = () => {
       const featuredCategory = categories.find(cat => cat.id === 'featured')
       const featuredSubs = featuredCategory?.subcategories || []
-      return featuredSubs
-        .filter(sub => sub.id !== 'all-collections')
-        .map(sub => {
-          const content = categoryContents[sub.id]
-          if (!content) return null
-          return (
-            <SectionWithControls
-              key={sub.id}
-              id={sub.id}
-              title={content.title}
-              apps={content.apps}
-              contentRefs={contentRefs}
-              onAppClick={onAppClick}
-            />
-          )
-        })
-    }
 
-    const renderCategoriesSections = () => {
-      const catCategory = categories.find(cat => cat.id === 'categories')
-      const subs = catCategory?.subcategories || []
-      return subs.map(sub => {
+      return featuredSubs.map(sub => {
         const content = categoryContents[sub.id]
-        if (!content) return null
+        if (!content || !content.apps || content.apps.length === 0) return null
+
         return (
           <SectionWithControls
             key={sub.id}
             id={sub.id}
-            title={content.title}
+            title={content.title || sub.name}
             apps={content.apps}
             contentRefs={contentRefs}
             onAppClick={onAppClick}
@@ -150,25 +131,61 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
       })
     }
 
-    return (
-      <div ref={ref} {...props.getContentWrapperProps()}>
-        <div {...props.getContinuousContainerProps()}>
-          <div
+    const renderCategoriesSections = () => {
+      const catCategory = categories.find(cat => cat.id === 'categories')
+      const subs = catCategory?.subcategories || []
+
+      return subs.map(sub => {
+        const content = categoryContents[sub.id]
+        if (!content || !content.apps || content.apps.length === 0) return null
+
+        return (
+          <SectionWithControls
+            key={sub.id}
+            id={sub.id}
+            title={content.title || sub.name}
+            apps={content.apps}
+            contentRefs={contentRefs}
+            onAppClick={onAppClick}
+          />
+        )
+      })
+    }
+
+    // Render all sections in the correct order
+    const renderAllSections = () => {
+      return (
+        <>
+          <section
             id="all-collections"
             ref={el => {
               contentRefs.current['all-collections'] = el
-            }}
-            {...props.getAllCollectionsWrapperProps()}>
+            }}>
             <div {...props.getAllCollectionsHeaderProps()}>
-              <button {...props.getBackButtonProps()} onClick={onBackClick}>
+              <Button
+                isIconOnly
+                variant="light"
+                {...props.getBackButtonProps()}
+                onClick={onBackClick}>
                 <Icon icon="lucide:menu" width={20} height={20} />
-              </button>
+              </Button>
               <h2 {...props.getSectionTitleProps()}>All Collections</h2>
             </div>
+          </section>
 
-            {renderFeaturedSubcategories()}
-            {renderCategoriesSections()}
-          </div>
+          {/* Featured subcategories */}
+          {renderFeaturedSubcategories()}
+
+          {/* Categories sections */}
+          {renderCategoriesSections()}
+        </>
+      )
+    }
+
+    return (
+      <div ref={ref} {...props.getContentWrapperProps()}>
+        <div {...props.getContinuousContainerProps()}>
+          {renderAllSections()}
         </div>
       </div>
     )
