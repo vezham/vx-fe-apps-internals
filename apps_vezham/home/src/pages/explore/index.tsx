@@ -61,7 +61,6 @@ const AppContent = () => {
   }
 
   const isScrollingRef = React.useRef(false)
-
   const ignoreScrollUpdatesRef = React.useRef(false)
 
   React.useEffect(() => {

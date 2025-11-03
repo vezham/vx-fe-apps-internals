@@ -1,0 +1,19 @@
+{
+  "name": "blogs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps_platforms/blogs/src",
+  "targets": {
+    "config-local-hostile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_platforms/blogs",
+        "commands": [
+          "sudo pnpm exec hostile set localhost blogs.vezham.local && sudo pnpm exec hostile set localhost blogs.mock.vezham.local"
+        ],
+        "parallel": false
+      }
+    }
+  },
+  "tags": ["category:platform"]
+}

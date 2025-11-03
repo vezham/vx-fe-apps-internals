@@ -2,3 +2,4 @@ packages:
   - 'packages/**/**'
   - 'apps/**/**'
   - 'apps_*/*'
+  - 'apps_platforms'

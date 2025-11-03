@@ -12,7 +12,7 @@ const tva = tv({
       'border-divider bg-content1 mx-auto mt-24 flex items-center justify-between border-b px-2 py-4 md:px-6',
     headerTitle: 'text-md ml-2 font-bold md:text-xl',
     mainContainer: 'container mx-auto px-4 py-8',
-    section: 'mb-12',
+    section: 'mb-12 p-6',
     overviewTitle: 'mb-4 text-3xl font-bold',
     overviewDescription: 'text-default-600 text-lg',
     imageSection: 'mb-16 grid grid-cols-1 gap-8 md:grid-cols-2',
@@ -47,20 +47,25 @@ const tva = tv({
     supportDescription: 'text-default-500 text-sm',
     supportButton: 'mt-6',
     contentAreaBase: 'bg-background text-foreground min-h-screen w-full',
+
     sectionBase: 'p-8',
     headerBase: 'mb-4 flex items-center justify-between',
-    title: 'mb-4 flex items-center gap-2 text-xl font-bold',
-    grid: 'grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 lg:grid-cols-3',
+    title: 'flex items-center gap-2 text-xl font-bold',
+    grid: 'grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3',
     subGrid:
       'grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 md:pb-0 lg:grid-cols-3',
     categoryWrapper: 'min-h-[auto] scroll-mt-20 pb-5',
     sidebarButton:
-      'text-foreground-500 hover:text-foreground mb-3 transition-all duration-200 lg:hidden',
-    sidebarWrapper: 'mb-2 flex items-center gap-3',
+      'text-foreground-500 hover:text-foreground transition-all duration-200 lg:hidden',
+    sidebarWrapper: 'mb-4 flex items-center gap-3',
     seeAllButton:
+      'text-foreground-500 hover:text-foreground mt-1.25 text-sm font-medium transition-all duration-200',
+    seeAllSingleButton:
       'text-foreground-500 hover:text-foreground mt-1.25 text-sm font-medium transition-all duration-200 lg:hidden',
-    scrollSection: 'scroll-mt-20 p-6 lg:p-8',
-    headerSection: ''
+    scrollSection: 'scroll-mt-20 p-6',
+    headerGap: 'mb-4',
+    headerSection: ' ',
+    headerMenuSection: 'mb-4 flex items-center gap-3'
   },
   variants: {},
   defaultVariants: {}

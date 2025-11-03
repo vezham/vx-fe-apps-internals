@@ -31,10 +31,10 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
           }}
           {...props.getSectionProps()}>
           <div {...props.getHeaderProps()}>
-            <div className="flex items-center">
+            <div {...props.getHeaderMenuProps()}>
               <button
                 onClick={onBackClick}
-                {...props.getSeeAllButtonProps()}
+                {...props.getSeeAllSingleButtonProps()}
                 aria-label="Show sidebar">
                 <Icon icon="lucide:menu" width={20} height={20} />
               </button>
@@ -74,7 +74,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 onClick={onBackClick}
                 {...props.getSidebarButtonProps()}
                 aria-label="Show sidebar">
-                <Icon icon="lucide:menu" width={24} height={24} />
+                <Icon icon="lucide:menu" width={20} height={20} />
               </button>
               <div>
                 <h2 {...props.getTitleProps()}>All Collections</h2>
@@ -109,7 +109,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                   }}
                   {...props.getCategoryWrapperProps()}>
                   <div {...props.getHeaderProps()}>
-                    <div>
+                    <div {...props.getHeaderSectionProps()}>
                       <h2 {...props.getTitleProps()}>
                         {content.title}
                         {content.apps.length > 3 && (
@@ -163,7 +163,7 @@ export const ContentArea = React.forwardRef<HTMLDivElement, ContentAreaProps>(
                 }}
                 {...props.getCategoryWrapperProps()}>
                 <div {...props.getHeaderProps()}>
-                  <div>
+                  <div {...props.getHeaderSectionProps()}>
                     <h2 {...props.getTitleProps()}>
                       {content.title}
                       {content.apps.length > 3 && (

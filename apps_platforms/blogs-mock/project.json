@@ -1,0 +1,33 @@
+{
+  "name": "blogs-mock",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps_platforms/blogs-mock/src",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_platforms/blogs-mock",
+        "commands": ["pnpm serve"],
+        "parallel": false
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_platforms/blogs-mock",
+        "commands": ["pnpm build"],
+        "parallel": false
+      }
+    },
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps_platforms/blogs-mock",
+        "commands": ["pnpm generate"],
+        "parallel": false
+      }
+    }
+  },
+  "tags": ["category:platform", "mock"]
+}

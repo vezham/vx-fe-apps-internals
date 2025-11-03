@@ -89,9 +89,7 @@ const Sidebar = forwardRef<'div', SidebarProps>((props, ref) => {
                 contentRefs.current[category.id] = el ?? null
               }}
               onClick={() => toggleCategoryExpansion(category.id)}
-              {...getCategoryHeaderProps(
-                activeCategory === category.id && !activeSubcategory
-              )()}>
+              {...getCategoryHeaderProps(activeCategory === category.id)()}>
               <span>{category.name}</span>
               {category.subcategories?.length ? (
                 <Icon
