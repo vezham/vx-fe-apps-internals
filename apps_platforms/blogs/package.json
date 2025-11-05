@@ -3,7 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "@vezham/layouts": "workspace:*",
+    "@vx/contracts": "workspace:*",
+    "@vx/hooks": "workspace:*",
+    "@vx/shared-types": "workspace:*",
+    "@vx/shared-variants": "workspace:*",
     "@vx/start": "workspace:*",
-    "@vx/system-utils": "workspace:*"
+    "@vx/system-utils": "workspace:*",
+    "@vx/v-atoms": "workspace:*"
   }
 }

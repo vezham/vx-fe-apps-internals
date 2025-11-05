@@ -62,6 +62,9 @@
     "@vx-cli/react": "^0.1.2",
     "@vx-oss/react": "^0.1.7",
     "@vx-oss/use-theme": "^0.1.7",
+    "@vx/contracts": "workspace:*",
+    "@vx/shared-types": "workspace:*",
+    "@vx/shared-variants": "workspace:*",
     "autoprefixer": "10.4.13",
     "axios": "^1.11.0",
     "commitlint-plugin-function-rules": "^4.0.2",
@@ -105,5 +108,18 @@
   "engines": {
     "node": ">=22.x",
     "pnpm": ">=10.x"
+  },
+  "nx": {
+    "includedScripts": [],
+    "targets": {
+      "local-registry": {
+        "executor": "@nx/js:verdaccio",
+        "options": {
+          "port": 4873,
+          "config": ".verdaccio/config.yml",
+          "storage": "tmp/local-registry/storage"
+        }
+      }
+    }
   }
 }

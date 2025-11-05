@@ -1,9 +1,1262 @@
 {
-  "users": [],
-  "settings": {},
-  "posts": [],
-  "comments": [],
-  "categories": [],
-  "products": [],
-  "orders": []
+  "health": {
+    "status": true
+  },
+  "preferences": {
+    "theme": "default",
+    "color": "blue",
+    "mode": "system",
+    "font_family": "poppins",
+    "locale": "en",
+    "timezone": "America/Los_Angeles",
+    "time_format": "12",
+    "date_format": "MM/DD/YYYY"
+  },
+  "personalizations": {
+    "footer": {
+      "backdrop": "transparent",
+      "links": [
+        {
+          "label": "Home",
+          "links": [
+            {
+              "__type": "link",
+              "id": "home",
+              "label": "Home",
+              "url": "https://v.corp",
+              "target": "_blank"
+            },
+            {
+              "__type": "link",
+              "id": "about",
+              "label": "About",
+              "url": "https://v.corp/about",
+              "target": "_blank"
+            },
+            {
+              "__type": "link",
+              "id": "products",
+              "label": "Products",
+              "url": "https://v.corp/products",
+              "target": "_blank"
+            },
+            {
+              "__type": "link",
+              "id": "solutions",
+              "label": "Solutions",
+              "url": "https://v.corp/solutions",
+              "target": "_blank"
+            },
+            {
+              "__type": "link",
+              "id": "contact-us",
+              "label": "Contact US",
+              "url": "https://v.corp/contact-us",
+              "target": "_blank"
+            },
+            {
+              "__type": "link",
+              "id": "blogs",
+              "label": "Blogs",
+              "url": "https://v.corp/blogs",
+              "target": "_blank"
+            },
+            {
+              "__type": "link",
+              "id": "careers",
+              "label": "Careers",
+              "url": "https://v.corp/careers",
+              "target": "_blank"
+            },
+            {
+              "__type": "link",
+              "id": "policy-center",
+              "label": "Policy Center",
+              "url": "https://v.corp/policy-center",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    "default_locale": "en",
+    "available_locales": ["ar", "en", "fr", "el"],
+    "brand": {
+      "__type": "brand",
+      "name": "V Corp",
+      "label": "Accounts",
+      "avatar": {
+        "__type": "avatar",
+        "url": "https://images.unsplash.com/photo-1713707706933-64acbd795e24?q=80"
+      }
+    },
+    "social_accounts": [
+      {
+        "name": "linkedin",
+        "handle": "vcorp"
+      },
+      {
+        "name": "x",
+        "handle": "vcorp"
+      },
+      {
+        "name": "facebook",
+        "handle": "vcorp"
+      },
+      {
+        "name": "instagram",
+        "handle": "vcorp"
+      },
+      {
+        "name": "whatsapp",
+        "handle": "+1123456789"
+      },
+      {
+        "name": "mail",
+        "handle": "support@v.corp"
+      }
+    ],
+    "system_status": {
+      "__type": "system_status",
+      "status": "success",
+      "label": "All systems operational 🎉",
+      "url": "https://status.v.corp",
+      "target": "_blank"
+    },
+    "actions": [
+      {
+        "__type": "link",
+        "id": "home",
+        "label": "Home",
+        "url": "https://v.corp",
+        "target": "_blank"
+      },
+      {
+        "__type": "button",
+        "variant": "solid",
+        "id": "create-subscribe",
+        "label": "Subscribe",
+        "url": "/#subscribe"
+      }
+    ],
+    "cards": {
+      "newsletter": {
+        "__type": "newsletter",
+        "title": "Subscribe to our newsletter!",
+        "description": "Get weekly updates delivered right to your email, featuring the latest insights, trends, and tools.",
+        "actions": {
+          "submit": {
+            "label": "Subscribe"
+          },
+          "input": {
+            "placeholder": "stark@v.corp"
+          }
+        }
+      },
+      "welcome_message": {
+        "__type": "welcome_message",
+        "title": "Welcome to Blogs Center",
+        "description": "Find answers, ask questions, and connect with other peoples.",
+        "cover": {
+          "__type": "cover",
+          "type": "image",
+          "alt_text": "Paper bag poster",
+          "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+        }
+      },
+      "related_article": {
+        "__type": "related_article",
+        "title": "Related posts",
+        "description": "More posts from this Author, and in this sector."
+      }
+    }
+  },
+  "whois": {
+    "id": "WX215A22A4WAWCLL",
+    "business_id": "1X215B12A9QA0ROS",
+    "space_id": "AX215A22A4WAWCLL",
+    "data_center": "us",
+    "identifier": "vcorp",
+    "display_name": "V Corp",
+    "alias": {
+      "hostname": "hq.v.corp",
+      "status": "active",
+      "domain": "v.corp",
+      "subdomain": "hq",
+      "zone": "corp"
+    },
+    "status": "enabled",
+    "created_at": "2023-02-01T11:48:58Z",
+    "updated_at": "2023-02-09T11:48:58Z"
+  },
+  "blogs": [],
+  "top_trending": [
+    {
+      "id": "AX145A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-03-09T11:48:58Z",
+      "pinned": true,
+      "read_time": 110
+    },
+    {
+      "id": "AX245A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-09-27T11:48:58Z",
+      "pinned": true,
+      "read_time": 120
+    },
+    {
+      "id": "AX345A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "David Jerry",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-03-09T11:48:58Z",
+      "pinned": true,
+      "read_time": 110
+    },
+    {
+      "id": "AX445A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-07-09T11:48:58Z",
+      "pinned": true,
+      "read_time": 110
+    },
+    {
+      "id": "AX545A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-03-09T11:48:58Z",
+      "pinned": true,
+      "read_time": 110
+    },
+    {
+      "id": "AX645A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-01-05T11:48:58Z",
+      "pinned": true,
+      "read_time": 110
+    },
+    {
+      "id": "AX645A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Sara Smith",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1573165850883-9b0e18c44bd2?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-04-23T11:48:58Z",
+      "pinned": true,
+      "read_time": 110
+    },
+    {
+      "id": "AX845A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jen McCall",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1694564717876-7436bdf6a236?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-07-09T11:48:58Z",
+      "pinned": true,
+      "read_time": 310
+    },
+    {
+      "id": "AX945A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Vijay Ravichander",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-01-05T11:48:58Z",
+      "pinned": true,
+      "read_time": 110
+    },
+    {
+      "id": "AX105A22A9QA0ROS",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "we are with the trend we are with the trend we are with the trend, we are with the trend we are with the trend we are with the trend",
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Lisa Andrea",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1705798543441-37d6e3eb7ff3?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-12-10T11:48:58Z",
+      "pinned": true,
+      "read_time": 120
+    }
+  ],
+  "collections": [
+    {
+      "__type": "collection",
+      "-id": "AX145A22A9QA0ROS",
+      "id": "community",
+      "api_handle": "community",
+      "target": "_blank",
+      "name": "Community",
+      "description": "Get involved in our community. Everyone is welcome!",
+      "avatar": {
+        "__type": "avatar",
+        "url": "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    },
+    {
+      "__type": "collection",
+      "-id": "AX245A22A9QA0ROS",
+      "id": "getting-started",
+      "api_handle": "getting-started",
+      "name": "Getting Started",
+      "description": "Make beautiful, modern, and fast websites/applications regardless of your design experience.",
+      "avatar": {
+        "__type": "avatar",
+        "color": "blue",
+        "icon": "twitter"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    },
+    {
+      "__type": "collection",
+      "-id": "AX345A22A9QA0ROS",
+      "id": "privacy",
+      "api_handle": "privacy",
+      "name": "Issues",
+      "description": "To report bugs, request features and contribute to the project.",
+      "avatar": {
+        "__type": "avatar",
+        "color": "gray",
+        "icon": "setting"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    },
+    {
+      "__type": "collection",
+      "-id": "AX445A22A9QA0ROS",
+      "id": "security-1",
+      "api_handle": "security-1",
+      "name": "Security 1",
+      "description": "Get involved in our community. Everyone is welcome!",
+      "avatar": {
+        "__type": "avatar",
+        "color": "green",
+        "icon": "security"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    },
+    {
+      "__type": "collection",
+      "-id": "AX545A22A9QA0ROS",
+      "id": "security-2",
+      "api_handle": "security-2",
+      "name": "Compliance 1",
+      "description": "For announcements, tips and general information.",
+      "avatar": {
+        "__type": "avatar",
+        "url": "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    },
+    {
+      "__type": "collection",
+      "-id": "AX645A22A9QA0ROS",
+      "id": "security-3",
+      "api_handle": "security-3",
+      "name": "Compliance 3",
+      "description": "For announcements, tips and general information.",
+      "avatar": {
+        "__type": "avatar",
+        "color": "blue",
+        "icon": "headphone"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    },
+    {
+      "__type": "collection",
+      "-id": "AX745A22A9QA0ROS",
+      "id": "security-4",
+      "api_handle": "security-4",
+      "name": "Compliance 4",
+      "description": "For announcements, tips and general information.",
+      "avatar": {
+        "__type": "avatar",
+        "url": "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    },
+    {
+      "__type": "collection",
+      "-id": "AX845A22A9QA0ROS",
+      "id": "security-5",
+      "api_handle": "security-5",
+      "name": "Compliance 5",
+      "description": "For announcements, tips and general information.",
+      "avatar": {
+        "__type": "avatar",
+        "color": "orange",
+        "icon": "shield"
+      },
+      "updated_at": "2023-02-09T11:48:58Z",
+      "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+    }
+  ],
+  "post_summary": [
+    {
+      "-id": "AX145A22A9QA0ROS",
+      "id": "community",
+      "slug": "we-are-with-the-trend",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "Translating a Custom Design System to Tailwind CSS",
+      "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+      "blocks": [
+        {
+          "__type": "paragraph",
+          "text": "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
+        }
+      ],
+      "cover": {
+        "__type": "cover",
+        "type": "image",
+        "alt_text": "Paper bag poster",
+        "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+      },
+      "tags": [
+        {
+          "__type": "tag",
+          "id": "10123456",
+          "color": "blue",
+          "name": "Fundamentals",
+          "updated_at": "2023-02-09T11:48:58Z",
+          "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+        }
+      ],
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-03-09T11:48:58Z",
+      "read_time": 110,
+      "related_article_ids": [
+        "we-are-with-the-trend",
+        "we-are-with-the-trend",
+        "we-are-with-the-trend"
+      ]
+    },
+    {
+      "-id": "AX245A22A9QA0ROS",
+      "id": "communitys",
+      "slug": "we-are-with-the-trend",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "Adding Tailwind CSS to an Existing Project",
+      "description": "Learn how to add Tailwind CSS to an existing project without running into naming collisions or specificity issues.",
+      "blocks": [
+        {
+          "__type": "paragraph",
+          "text": "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
+        }
+      ],
+      "cover": {
+        "__type": "cover",
+        "type": "image",
+        "alt_text": "Paper bag poster",
+        "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+      },
+      "tags": [
+        {
+          "__type": "tag",
+          "id": "10123456",
+          "color": "green",
+          "name": "Newbie",
+          "updated_at": "2023-02-09T11:48:58Z",
+          "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+        }
+      ],
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-03-09T11:48:58Z",
+      "read_time": 110,
+      "related_article_ids": [
+        "we-are-with-the-trend",
+        "we-are-with-the-trend",
+        "we-are-with-the-trend"
+      ]
+    },
+    {
+      "-id": "AX345A22A9QA0ROS",
+      "id": "community",
+      "slug": "we-are-with-the-trend",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "Building a Headless Ecommerce Store with Tailwind CSS, Shopify, and Next.js",
+      "description": " Fetch products from a Shopify store using the GraphQL API and assemble the pages using Tailwind UI.",
+      "blocks": [
+        {
+          "__type": "paragraph",
+          "text": "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
+        }
+      ],
+      "cover": {
+        "__type": "cover",
+        "type": "image",
+        "alt_text": "Paper bag poster",
+        "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+      },
+      "tags": [
+        {
+          "__type": "tag",
+          "id": "10123456",
+          "color": "orange",
+          "name": "How we’d build it",
+          "updated_at": "2023-02-09T11:48:58Z",
+          "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+        }
+      ],
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-03-09T11:48:58Z",
+      "read_time": 110,
+      "related_article_ids": [
+        "we-are-with-the-trend",
+        "we-are-with-the-trend",
+        "we-are-with-the-trend"
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "-id": "AX145A22A9QA0ROS",
+      "id": "we-are-with-the-trend",
+      "collection_id": "community",
+      "slug": "we-are-with-the-trend",
+      "url": "/posts/we-are-with-the-trend",
+      "title": "Translating a Custom Design System to Tailwind CSS",
+      "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+      "blocks": [
+        {
+          "__type": "paragraph",
+          "text": "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
+        }
+      ],
+      "cover": {
+        "__type": "cover",
+        "type": "image",
+        "alt_text": "Paper bag poster",
+        "url": "https://images.unsplash.com/photo-1544816155-12df9643f363"
+      },
+      "tags": [
+        {
+          "__type": "tag",
+          "id": "10123456",
+          "color": "blue",
+          "name": "Fundamentals",
+          "updated_at": "2023-02-09T11:48:58Z",
+          "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+        },
+        {
+          "__type": "tag",
+          "id": "10223456",
+          "color": "gray",
+          "name": "AIR TRAFFIC ANALYTICS",
+          "updated_at": "2023-02-09T11:48:58Z",
+          "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+        },
+        {
+          "__type": "tag",
+          "id": "10323456",
+          "color": "red",
+          "name": "AI",
+          "updated_at": "2023-02-09T11:48:58Z",
+          "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+        },
+        {
+          "__type": "tag",
+          "id": "10423456",
+          "color": "orange",
+          "name": "ML",
+          "updated_at": "2023-02-09T11:48:58Z",
+          "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+        }
+      ],
+      "authors": [
+        {
+          "id": "1X245A22A9QA0ROS",
+          "name": "Jake Long",
+          "avatar": {
+            "__type": "avatar",
+            "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+          }
+        }
+      ],
+      "published_at": "2024-03-09T11:48:58Z",
+      "read_time": 110,
+      "related_article_ids": [
+        "we-are-with-the-trend",
+        "we-are-with-the-trend",
+        "we-are-with-the-trend"
+      ]
+    }
+  ],
+  "editorials": [
+    {
+      "__type": "editorial",
+      "-id": "AX145A22A9QA0ROS",
+      "id": "editors-choice",
+      "api_handle": "editors-choice",
+      "label": "Editor's Choice",
+      "articles": [
+        {
+          "id": "AX145A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Translating a Custom Design System to Tailwind CSS",
+          "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+          "blocks": [
+            {
+              "__type": "paragraph",
+              "text": "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
+            }
+          ],
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "blue",
+              "name": "Fundamentals",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            },
+            {
+              "__type": "tag",
+              "id": "10223456",
+              "color": "gray",
+              "name": "AIR TRAFFIC ANALYTICS",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            },
+            {
+              "__type": "tag",
+              "id": "10323456",
+              "color": "red",
+              "name": "AI",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            },
+            {
+              "__type": "tag",
+              "id": "10423456",
+              "color": "orange",
+              "name": "ML",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z",
+          "read_time": 110,
+          "related_article_ids": [
+            "we-are-with-the-trend",
+            "we-are-with-the-trend",
+            "we-are-with-the-trend"
+          ]
+        },
+        {
+          "id": "AX245A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Adding Tailwind CSS to an Existing Project",
+          "description": "Learn how to add Tailwind CSS to an existing project without running into naming collisions or specificity issues.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "green",
+              "name": "Newbie",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX345A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Building a Headless Ecommerce Store with Tailwind CSS, Shopify, and Next.js",
+          "description": " Fetch products from a Shopify store using the GraphQL API and assemble the pages using Tailwind UI.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "orange",
+              "name": "How we’d build it",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        }
+      ]
+    },
+    {
+      "__type": "editorial",
+      "-id": "AX245A22A9QA0ROS",
+      "id": "top-trends-of-ai",
+      "api_handle": "top-trends-of-ai",
+      "label": "Top Trends of AI",
+      "articles": [
+        {
+          "id": "AX145A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Translating a Custom Design System to Tailwind CSS",
+          "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "blue",
+              "name": "Fundamentals",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX245A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Adding Tailwind CSS to an Existing Project",
+          "description": "Learn how to add Tailwind CSS to an existing project without running into naming collisions or specificity issues.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "green",
+              "name": "Newbie",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX345A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Building a Headless Ecommerce Store with Tailwind CSS, Shopify, and Next.js",
+          "description": " Fetch products from a Shopify store using the GraphQL API and assemble the pages using Tailwind UI.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "orange",
+              "name": "How we’d build it",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX445A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Translating a Custom Design System to Tailwind CSS",
+          "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "blue",
+              "name": "Fundamentals",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX155A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Translating a Custom Design System to Tailwind CSS",
+          "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "blue",
+              "name": "Fundamentals",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        }
+      ]
+    },
+    {
+      "__type": "editorial",
+      "-id": "AX345A22A9QA0ROS",
+      "id": "support",
+      "api_handle": "support",
+      "label": "Support",
+      "articles": [
+        {
+          "id": "AX145A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Translating a Custom Design System to Tailwind CSS",
+          "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "blue",
+              "name": "Fundamentals",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX245A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Adding Tailwind CSS to an Existing Project",
+          "description": "Learn how to add Tailwind CSS to an existing project without running into naming collisions or specificity issues.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "green",
+              "name": "Newbie",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX345A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Building a Headless Ecommerce Store with Tailwind CSS, Shopify, and Next.js",
+          "description": " Fetch products from a Shopify store using the GraphQL API and assemble the pages using Tailwind UI.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "orange",
+              "name": "How we’d build it",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        }
+      ]
+    },
+    {
+      "__type": "editorial",
+      "-id": "AX445A22A9QA0ROS",
+      "id": "legal",
+      "api_handle": "legal",
+      "label": "Legal",
+      "articles": [
+        {
+          "id": "AX145A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Translating a Custom Design System to Tailwind CSS",
+          "description": "Learn how to configure Tailwind to create your own utility framework tuned specifically for your project.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "blue",
+              "name": "Fundamentals",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX245A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Adding Tailwind CSS to an Existing Project",
+          "description": "Learn how to add Tailwind CSS to an existing project without running into naming collisions or specificity issues.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "green",
+              "name": "Newbie",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        },
+        {
+          "id": "AX345A22A9QA0ROS",
+          "slug": "we-are-with-the-trend",
+          "url": "/posts/we-are-with-the-trend",
+          "title": "Building a Headless Ecommerce Store with Tailwind CSS, Shopify, and Next.js",
+          "description": " Fetch products from a Shopify store using the GraphQL API and assemble the pages using Tailwind UI.",
+          "cover": {
+            "__type": "cover",
+            "type": "image",
+            "alt_text": "Paper bag poster",
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80"
+          },
+          "tags": [
+            {
+              "__type": "tag",
+              "id": "10123456",
+              "color": "orange",
+              "name": "How we’d build it",
+              "updated_at": "2023-02-09T11:48:58Z",
+              "updated_by": "0xb1a9704fd76d43d698f1f4e1cae9d36c102e070af5162c2920a798102b902992"
+            }
+          ],
+          "authors": [
+            {
+              "id": "1X245A22A9QA0ROS",
+              "name": "Jake Long",
+              "avatar": {
+                "__type": "avatar",
+                "url": "https://images.unsplash.com/photo-1619533394727-57d522857f89?q=80"
+              }
+            }
+          ],
+          "published_at": "2024-03-09T11:48:58Z"
+        }
+      ]
+    }
+  ]
 }

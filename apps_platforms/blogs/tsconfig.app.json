@@ -35,10 +35,28 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
+      "path": "../../packages/components-store/v-atoms/tsconfig.lib.json"
+    },
+    {
       "path": "../../packages/vx/system-utils/tsconfig.lib.json"
     },
     {
       "path": "../../packages/vx/start/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/common/shared-variants/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/common/shared-types/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/hooks/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/contracts/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/layouts/tsconfig.lib.json"
     }
   ]
 }

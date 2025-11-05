@@ -1,3 +1,21 @@
 {
-  "/api/*": "/$1"
+  "/accounts/people/me": "/people/1X215A22A9QA0ROS",
+  "/business/accounts/me": "/business/1X215B12A9QA0ROS",
+  "/spaces/me": "/spaces/AX215A22A4WAWCLL",
+  "/blogs/me": "/blogs/PX215A22A4WAWCLL",
+  "/blogs/whois?domain=:domain": "/whois",
+
+  "/blogs/preferences": "/preferences",
+  "/blogs/personalizations": "/personalizations",
+
+  "/blogs/discovery/top-trending": "/top_trending",
+
+  "/blogs/collections": "/collections",
+  "/blogs/collections/:api_handle": "/collections/:api_handle",
+  "/blogs/collections/:api_handle/posts": "/post_summary",
+  "/blogs/posts/:slug": "/posts/we-are-with-the-trend",
+  "/blogs/posts/:slug/summary": "/post_summary/community",
+
+  "/blogs/editorials": "/editorials",
+  "/blogs/editorials/:api_handle": "/editorials/:api_handle"
 }

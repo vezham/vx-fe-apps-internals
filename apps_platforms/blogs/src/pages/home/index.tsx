@@ -1,5 +1,7 @@
-const app = () => {
-  return <div>Welcome to Blogs!...</div>
+import { HeroSection } from '../../components/hero-section'
+
+const home = () => {
+  return <HeroSection />
 }
 
-export default app
+export default home

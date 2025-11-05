@@ -147,6 +147,15 @@ importers:
       '@vx-oss/use-theme':
         specifier: ^0.1.7
         version: 0.1.8(react@19.0.0)
+      '@vx/contracts':
+        specifier: workspace:*
+        version: link:packages/contracts
+      '@vx/shared-types':
+        specifier: workspace:*
+        version: link:packages/common/shared-types
+      '@vx/shared-variants':
+        specifier: workspace:*
+        version: link:packages/common/shared-variants
       autoprefixer:
         specifier: 10.4.13
         version: 10.4.13(postcss@8.4.38)
@@ -198,6 +207,9 @@ importers:
       lint-staged:
         specifier: ^16.1.2
         version: 16.2.1
+      lucide-react:
+        specifier: ^0.552.0
+        version: 0.552.0(react@19.0.0)
       nx:
         specifier: 21.5.3
         version: 21.5.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.9.2))(@swc/core@1.5.29(@swc/helpers@0.5.17))
@@ -330,12 +342,30 @@ importers:
 
   apps_platforms/blogs:
     devDependencies:
+      '@vezham/layouts':
+        specifier: workspace:*
+        version: link:../../packages/layouts
+      '@vx/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+      '@vx/hooks':
+        specifier: workspace:*
+        version: link:../../packages/hooks
+      '@vx/shared-types':
+        specifier: workspace:*
+        version: link:../../packages/common/shared-types
+      '@vx/shared-variants':
+        specifier: workspace:*
+        version: link:../../packages/common/shared-variants
       '@vx/start':
         specifier: workspace:*
         version: link:../../packages/vx/start
       '@vx/system-utils':
         specifier: workspace:*
         version: link:../../packages/vx/system-utils
+      '@vx/v-atoms':
+        specifier: workspace:*
+        version: link:../../packages/components-store/v-atoms
 
   apps_platforms/blogs-e2e: {}
 
@@ -396,6 +426,18 @@ importers:
       dotenv:
         specifier: ^16.4.1
         version: 16.6.1
+
+  packages/common/shared-types: {}
+
+  packages/common/shared-variants: {}
+
+  packages/components-store/v-atoms: {}
+
+  packages/contracts: {}
+
+  packages/hooks: {}
+
+  packages/layouts: {}
 
   packages/vx/start:
     devDependencies:
@@ -7437,6 +7479,11 @@ packages:
   lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
+
+  lucide-react@0.552.0:
+    resolution: {integrity: sha512-g9WCjmfwqbexSnZE+2cl21PCfXOcqnGeWeMTNAOGEfpPbm/ZF4YIq77Z8qWrxbu660EKuLB4nSLggoKnCb+isw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   luxon@3.7.2:
     resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
@@ -18932,6 +18979,10 @@ snapshots:
       yallist: 4.0.0
 
   lru-cache@7.18.3: {}
+
+  lucide-react@0.552.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
 
   luxon@3.7.2: {}
 

@@ -1,0 +1,9 @@
+{
+  "name": "v-atoms",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/components-store/v-atoms/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project v-atoms --web",
+  "targets": {}
+}

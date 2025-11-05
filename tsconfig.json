@@ -34,6 +34,24 @@
     },
     {
       "path": "./apps_platforms/blogs"
+    },
+    {
+      "path": "./packages/layouts"
+    },
+    {
+      "path": "./packages/components-store/v-atoms"
+    },
+    {
+      "path": "./packages/common/shared-types"
+    },
+    {
+      "path": "./packages/hooks"
+    },
+    {
+      "path": "./packages/contracts"
+    },
+    {
+      "path": "./packages/common/shared-variants"
     }
   ]
 }

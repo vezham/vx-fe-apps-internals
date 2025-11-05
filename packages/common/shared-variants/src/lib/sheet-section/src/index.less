@@ -1,0 +1,84 @@
+/* wjdlz/TODO: template */
+.vs-section.vgallery.vcv-success {
+  background: linear-gradient(90deg, hsl(164, 100%, 36%), hsl(164, 100%, 25%))
+    border-box;
+}
+
+.vs-section.vgallery.vcv-warning {
+  background: linear-gradient(90deg, hsl(45, 100%, 51%), hsl(36, 100%, 50%))
+    border-box;
+}
+
+.vs-section.vgallery.vcv-danger {
+  background: linear-gradient(90deg, hsl(0, 71%, 74%), hsl(356, 97%, 45%))
+    border-box;
+
+  .vc-text {
+    @apply text-black;
+  }
+}
+
+.vs-section.vgallery.vcv-info {
+  background: linear-gradient(90deg, hsl(194, 97%, 55%), hsl(216, 88%, 53%))
+    border-box;
+
+  .vc-text {
+    @apply text-black;
+  }
+}
+
+.vs-section.vgallery.vcv-default {
+  background: linear-gradient(
+      90deg,
+      hsl(213, 8%, 72%) 0%,
+      hsl(213, 11%, 64%) 100%
+    )
+    border-box;
+
+  .vc-text {
+    @apply text-black;
+  }
+}
+
+.vs-section.vgallery.vcv-primary {
+  background: linear-gradient(
+    90deg,
+    hsl(200, 100%, 70%) 0%,
+    hsl(212, 72%, 56%) 100%
+  );
+
+  .vc-text {
+    @apply text-black;
+  }
+}
+
+/* .vcolor-blue.vmode-light, */
+.vcolor-blue .vs-section.vgallery.vcv-primary {
+  background: linear-gradient(
+    90deg,
+    hsl(200, 100%, 70%) 0%,
+    hsl(212, 72%, 56%) 100%
+  );
+
+  .vc-text {
+    @apply text-black;
+  }
+}
+
+/* wjdlz/NOTE: for header bg color */
+.vcolor-blue.vmode-light,
+.vcolor-purple.vmode-light {
+  .vs-section.vfaded .vc-text {
+    @apply text-black;
+  }
+}
+
+.vcolor-pink.vmode-dark,
+.vcolor-red.vmode-dark,
+.vcolor-orange.vmode-dark,
+.vcolor-yellow.vmode-dark,
+.vcolor-green.vmode-dark {
+  .vs-section.vfaded .vc-text {
+    @apply text-white;
+  }
+}
