@@ -52,6 +52,9 @@
     },
     {
       "path": "./packages/common/shared-variants"
+    },
+    {
+      "path": "./packages/common/shared-utils"
     }
   ]
 }

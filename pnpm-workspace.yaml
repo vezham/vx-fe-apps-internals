@@ -3,3 +3,4 @@ packages:
   - 'apps/**/**'
   - 'apps_*/*'
   - 'apps_platforms'
+  - 'package/common/*'

@@ -1,3 +1,6 @@
 export * from './lib/quick-search/src'
+export * from './lib/card-post-trending/src'
 export * from './lib/card-post-featured/src'
+export * from './lib/card-collection-featured/src'
 export * from './lib/text/src'
+export * from './lib/text-heading/src'

@@ -153,6 +153,9 @@ importers:
       '@vx/shared-types':
         specifier: workspace:*
         version: link:packages/common/shared-types
+      '@vx/shared-utils':
+        specifier: workspace:*
+        version: link:packages/common/shared-utils
       '@vx/shared-variants':
         specifier: workspace:*
         version: link:packages/common/shared-variants
@@ -354,6 +357,9 @@ importers:
       '@vx/shared-types':
         specifier: workspace:*
         version: link:../../packages/common/shared-types
+      '@vx/shared-utils':
+        specifier: workspace:*
+        version: link:../../packages/common/shared-utils
       '@vx/shared-variants':
         specifier: workspace:*
         version: link:../../packages/common/shared-variants
@@ -428,6 +434,8 @@ importers:
         version: 16.6.1
 
   packages/common/shared-types: {}
+
+  packages/common/shared-utils: {}
 
   packages/common/shared-variants: {}
 

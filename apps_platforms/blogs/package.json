@@ -7,6 +7,7 @@
     "@vx/contracts": "workspace:*",
     "@vx/hooks": "workspace:*",
     "@vx/shared-types": "workspace:*",
+    "@vx/shared-utils": "workspace:*",
     "@vx/shared-variants": "workspace:*",
     "@vx/start": "workspace:*",
     "@vx/system-utils": "workspace:*",

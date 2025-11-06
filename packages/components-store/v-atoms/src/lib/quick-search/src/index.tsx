@@ -57,35 +57,43 @@ import { Kbd } from '@vx-oss/react'
 import { Props, useProps } from './types'
 
 const QuickSearch = forwardRef<'div', Props>((props, ref) => {
-  const { Component, getBaseProps, label } = useProps({
+  const {
+    Component,
+    getBaseProps,
+    getButtonProps,
+    getSearchIconProps,
+    getKbdProps,
+    label,
+    onOpen,
+    commandKey
+  } = useProps({
     ...props,
     ref
   })
 
-  const [commandKey, setCommandKey] = useState<'ctrl' | 'command'>('command')
+  const [currentCommandKey, setCurrentCommandKey] = useState<
+    'ctrl' | 'command'
+  >(commandKey || 'command')
+
   const handleOpenCmdk = () => {
-    // cmdkStore.onOpen()
+    if (onOpen) {
+      onOpen()
+    } else {
+      // cmdkStore.onOpen()
+      console.log('Open command palette')
+    }
   }
 
   return (
     <Component {...getBaseProps()}>
       <Button
         aria-label="Quick search"
-        className="text-default-400 bg-default-100 w-full text-sm font-normal sm:w-96"
+        {...getButtonProps()}
         startContent={
-          <Search
-            size={20}
-            className="text-default-400 pointer-events-none flex-shrink-0 text-base"
-          />
+          <Search className={getSearchIconProps().className} size={16} />
         }
         endContent={
-          <Kbd
-            className="text-default-400 gap-1"
-            color="transparent"
-            radius="none"
-            shadow="none"
-            title="Command"
-            keys={['command']}>
+          <Kbd {...getKbdProps()} keys={[currentCommandKey]}>
             K
           </Kbd>
         }
