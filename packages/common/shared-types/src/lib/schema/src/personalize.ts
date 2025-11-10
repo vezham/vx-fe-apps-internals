@@ -2,6 +2,7 @@ import { Platform } from './branding'
 import { Link } from './link'
 
 type avatar = {
+  __type: string
   url?: string
 }
 
@@ -45,6 +46,7 @@ type newsLetterAction = {
 }
 
 export type coverType = {
+  __type: string
   type?: string
   alt_text?: string
   url: string
@@ -87,13 +89,8 @@ export type Personalize = {
   cards: cards
 }
 
-export type Authors = {
-  id: string
-  name: string
-  avatar: avatar
-}
-
 export type Tags = {
+  __type: string
   id: string
   color: string
   name: string
@@ -102,7 +99,14 @@ export type Tags = {
 }
 
 export type Block = {
+  __type: string
   text: string
+}
+
+export type Authors = {
+  id: string
+  name: string
+  avatar: avatar
 }
 
 export type Trends = {
@@ -113,5 +117,5 @@ export type Trends = {
   authors: Authors[]
   published_at: string
   pinned: boolean
-  read_time: string
+  read_time?: number
 }

@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/blocks'
+
+import { StoryStatus } from '@vezham/storybook'
+
+<Meta title="Hooks/useWindowSize/README" />
+
+## useWindowSize
+
+<StoryStatus
+  usecase="completed"
+  dev="review"
+  storybook="completed"
+  tests="completed"
+/>
+
+Easily retrieve window dimensions with this React Hook which also works onResize.
+
+### Usage
+
+```tsx
+import { useWindowSize } from '@vezham/hooks'
+
+export default function Component() {
+  const { width = 0, height = 0 } = useWindowSize()
+
+  return (
+    <div>
+      The current window dimensions are:{' '}
+      <code>{JSON.stringify({ width, height })}</code>
+    </div>
+  )
+}
+```

@@ -11,6 +11,7 @@
     "@vx/shared-variants": "workspace:*",
     "@vx/start": "workspace:*",
     "@vx/system-utils": "workspace:*",
-    "@vx/v-atoms": "workspace:*"
+    "@vx/v-atoms": "workspace:*",
+    "@vx/v-ions": "workspace:*"
   }
 }

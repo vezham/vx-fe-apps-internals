@@ -1,2 +1,7 @@
 export * from './lib/useAxios/src'
 export * from './lib/useLogger/src'
+export * from './lib/useScrollTo/src'
+export * from './lib/useWindowSize/src'
+export * from './lib/useDebounceCallback/src'
+export * from './lib/useEventListener/src'
+export * from './lib/useUnmount/src'

@@ -14,7 +14,9 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@radix-ui/react-aspect-ratio": "^1.1.8",
     "framer-motion": "^12.23.12",
+    "lodash.debounce": "^4.0.8",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-router-dom": "6.29.0"
@@ -66,6 +68,7 @@
     "@vx/shared-types": "workspace:*",
     "@vx/shared-utils": "workspace:*",
     "@vx/shared-variants": "workspace:*",
+    "@vx/v-ions": "workspace:*",
     "autoprefixer": "10.4.13",
     "axios": "^1.11.0",
     "commitlint-plugin-function-rules": "^4.0.2",

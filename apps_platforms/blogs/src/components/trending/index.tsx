@@ -56,9 +56,6 @@ const Trending = forwardRef<'div', Props>((props, ref) => {
     getWrapperProps,
     getScrollProps,
 
-    title,
-    titleVariant,
-    titleVc,
     isMobileView = IsMobView
   } = useProps({
     ...props,
@@ -73,19 +70,22 @@ const Trending = forwardRef<'div', Props>((props, ref) => {
     <Component {...getBaseProps()}>
       <div {...getHeaderProps()}>
         <TrendingUp className="h-5 w-5" />
-        <Text content={title} variant={titleVariant} vc={titleVc} />
+        <Text content="Top Trending" variant="title" vc="secondary" />
       </div>
       <ScrollShadow {...getScrollProps()}>
         <div {...getWrapperProps()}>
-          {trends &&
-            trends?.map((trend, index) => (
+          {trends && trends.length > 0 ? (
+            trends.map((trend, index) => (
               <CardPostTrending
                 key={trend.id || index}
                 {...trend}
                 trend_no={index + 1}
                 orientation={isMobileView ? 'horizontal' : 'vertical'}
               />
-            ))}
+            ))
+          ) : (
+            <div>No trending data available</div>
+          )}
         </div>
       </ScrollShadow>
     </Component>

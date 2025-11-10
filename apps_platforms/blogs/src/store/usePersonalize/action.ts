@@ -1,15 +1,19 @@
-import { IAM } from '@vx/contracts'
-import { useAxios } from '@vx/hooks'
+// import { IAM } from '@vx/contracts'
+// import { useAxios } from '@vx/hooks'
 import { Personalize } from '@vx/shared-types'
-import { defineServerEnv } from '@vx/system-utils'
 
+import { personalizationsData } from './data'
 import { RQPersonalize } from './types'
 
-const getPersonalize = `${defineServerEnv()}/api/blogs/personalizations`
+// const getPersonalize = '/blogs/personalizations'
 
 const Personal = {
+  // list: async (rq: RQPersonalize): Promise<Personalize> => {
+  //   return useAxios.get(getPersonalize, IAM.RQConfigBDC)
+  // }
+
   list: async (rq: RQPersonalize): Promise<Personalize> => {
-    return useAxios.get(getPersonalize, IAM.RQConfigBDC)
+    return Promise.resolve(personalizationsData[0])
   }
 }
 

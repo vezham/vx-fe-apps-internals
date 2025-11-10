@@ -83,6 +83,7 @@
 // })
 // CardPostTrending.displayName = 'CardPostTrending'
 // export { CardPostTrending }
+import { useRouter } from '@tanstack/react-router'
 import { Star } from 'lucide-react'
 
 import { forwardRef } from '@vezham/react-utils'
@@ -109,14 +110,20 @@ const CardPostTrending = forwardRef<'div', Props>((props, ref) => {
     getRightFooterProps,
     getContentProps,
     getHeadingProps,
-    handlePress
+    url
   } = useProps({
     ...props,
     ref
   })
 
+  const router = useRouter()
+
   return (
-    <Card {...getBaseProps()} radius="lg" shadow="none" onPress={handlePress}>
+    <Card
+      {...getBaseProps()}
+      radius="lg"
+      shadow="none"
+      onPress={() => router.navigate({ to: url })}>
       <div {...getLeftWrapperProps()}>
         <Heading {...getHeadingProps()} vc="secondary" />
         {pinned ? (

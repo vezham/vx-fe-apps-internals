@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/blocks'
+
+import { StoryStatus } from '@vezham/storybook'
+
+<Meta title="Hooks/useDebounceCallback/README" />
+
+## useDebounceCallback
+
+<StoryStatus usecase="review" dev="dev" storybook="todo" tests="todo" />
+
+Creates a debounced version of a callback function.
+
+### Parameters
+
+- `func`: The callback function to be debounced.
+- `delay` (optional): The delay in milliseconds before the callback is invoked (default is 500 milliseconds).
+- `options` (optional): Options to control the behavior of the debounced function.
+
+### Returns
+
+A debounced version of the original callback along with control functions.
+
+### Dependency
+
+This hook is built upon [`lodash.debounce`](https://www.npmjs.com/package/lodash.debounce).
+
+### Usage
+
+```tsx
+import { useState } from 'react'
+
+import { useDebounceCallback } from '@vezham/hooks'
+
+export default function Component() {
+  const [value, setValue] = useState('')
+  const debounced = useDebounceCallback(setValue, 500)
+
+  return (
+    <div>
+      <p>Debounced value: {value}</p>
+
+      <input
+        type="text"
+        defaultValue={value}
+        onChange={event => debounced(event.target.value)}
+      />
+    </div>
+  )
+}
+```

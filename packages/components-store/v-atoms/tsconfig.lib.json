@@ -42,6 +42,12 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
+      "path": "../v-ions/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/shared-utils/tsconfig.lib.json"
+    },
+    {
       "path": "../../common/shared-types/tsconfig.lib.json"
     }
   ]

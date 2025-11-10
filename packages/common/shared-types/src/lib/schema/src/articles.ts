@@ -7,7 +7,7 @@ export type singleArticle = {
   title: string
   article_count: number
   published_at: string
-  read_time: string
+  read_time?: number
   author_ids: string[]
 }
 
@@ -23,7 +23,7 @@ export type Article = {
   tags: Tags[]
   authors: Authors[]
   published_at: string
-  read_time: number
+  read_time?: number
   related_article_ids: string[]
 }
 
@@ -40,6 +40,6 @@ export interface Articles {
   articles: singleArticle[]
   section_ids: string[]
   updated_at: string
-  read_time: number
+  read_time?: number
   updated_by: string
 }

@@ -41,6 +41,7 @@ const ByCollections = forwardRef<'div', Props>((props, ref) => {
     getBaseProps,
     getTitleProps,
     getScrollProps,
+    id = 'by-collections',
     title = 'By Collections'
   } = useProps({
     ...props,
@@ -49,11 +50,15 @@ const ByCollections = forwardRef<'div', Props>((props, ref) => {
 
   const { data: collections } = useCollections.list({})
 
+  const featureList = Array.isArray(collections)
+    ? collections
+    : (collections?.collections ?? [])
+
   return (
-    <Component {...getBaseProps()}>
+    <Component id={id} {...getBaseProps()}>
       <Text content={title} {...getTitleProps()} />
       <ScrollShadow {...getScrollProps()}>
-        {collections && <CardCollectionFeatured features={collections} />}
+        {collections && <CardCollectionFeatured features={featureList} />}
       </ScrollShadow>
     </Component>
   )

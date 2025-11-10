@@ -35,6 +35,9 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
+      "path": "../../packages/components-store/v-ions/tsconfig.lib.json"
+    },
+    {
       "path": "../../packages/components-store/v-atoms/tsconfig.lib.json"
     },
     {
@@ -45,6 +48,9 @@
     },
     {
       "path": "../../packages/common/shared-variants/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/common/shared-utils/tsconfig.lib.json"
     },
     {
       "path": "../../packages/common/shared-types/tsconfig.lib.json"

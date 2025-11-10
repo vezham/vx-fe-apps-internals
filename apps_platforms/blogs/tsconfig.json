@@ -3,6 +3,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../packages/components-store/v-ions"
+    },
+    {
       "path": "../../packages/components-store/v-atoms"
     },
     {
@@ -13,6 +16,9 @@
     },
     {
       "path": "../../packages/common/shared-variants"
+    },
+    {
+      "path": "../../packages/common/shared-utils"
     },
     {
       "path": "../../packages/common/shared-types"

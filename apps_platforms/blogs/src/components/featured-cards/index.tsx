@@ -65,26 +65,27 @@ const FeaturedCards = forwardRef<'div', Props>((props, ref) => {
 
   return (
     <Component {...getBaseProps()}>
-      {editorials.map((item, index) => (
-        <section key={item.api_handle || index} {...getSectionProps()}>
-          <div {...getHeaderProps()}>
-            <Text content={item.label} {...getTitleProps()} />
-            {/* Fixed: Use getLinkProps as a function call, not a prop getter */}
-            <Link
-              size={getLinkProps(item).size}
-              color={getLinkProps(item).color}
-              href={getLinkProps(item).href}
-              className={getLinkProps(item).className}>
-              View All
-              <ArrowRight {...getIconProps()} />
-            </Link>
-          </div>
-          <CardPostFeatured
-            posts={item.articles}
-            orientation={cardOrientation}
-          />
-        </section>
-      ))}
+      {Array.isArray(editorials) &&
+        editorials.map((item, index) => (
+          <section key={item.api_handle || index} {...getSectionProps()}>
+            <div {...getHeaderProps()}>
+              <Text content={item.label} {...getTitleProps()} />
+              {/* Fixed: Use getLinkProps as a function call, not a prop getter */}
+              <Link
+                size={getLinkProps(item).size}
+                color={getLinkProps(item).color}
+                href={getLinkProps(item).href}
+                className={getLinkProps(item).className}>
+                View All
+                <ArrowRight {...getIconProps()} />
+              </Link>
+            </div>
+            <CardPostFeatured
+              posts={item.articles}
+              orientation={cardOrientation}
+            />
+          </section>
+        ))}
     </Component>
   )
 })

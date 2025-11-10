@@ -3,6 +3,12 @@
   "include": [],
   "references": [
     {
+      "path": "../v-ions"
+    },
+    {
+      "path": "../../common/shared-utils"
+    },
+    {
       "path": "../../common/shared-types"
     },
     {

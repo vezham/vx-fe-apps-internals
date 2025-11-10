@@ -42,14 +42,14 @@
 // export type { tvProps, tvSlots }
 import { VariantProps, tv } from '@vezham/react-utils'
 
-import { SheetSection } from '@vx/shared-variants'
+// import { SheetSection } from '@vx/shared-variants'
 
 const tva = tv({
-  extend: SheetSection,
+  // extend: SheetSection,
   slots: {
-    base: 'vpwa-hero-section bg-vcontainer-primary m-6 flex h-max flex-col items-center gap-4 rounded-3xl !bg-cover p-20',
-    wrapper: 'vpwa-hero-wrapper flex flex-col sm:text-center',
-    wrapper_super_title: 'mb-4 text-sm leading-6 font-semibold',
+    base: 'm-6 flex flex-col items-center gap-4 rounded-3xl bg-cover p-20',
+    wrapper: 'flex flex-col sm:text-center',
+    wrapper_super_title: 'mb-4 text-3xl leading-6 font-semibold sm:text-4xl',
     wrapper_title: 'tracking-tight',
     wrapper_description: 'text-base md:text-lg md:leading-6'
   },
@@ -59,8 +59,7 @@ const tva = tv({
         wrapper_title: 'mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl'
       },
       md: {
-        wrapper_title:
-          'mt-6 mb-4 text-[clamp(2.125rem,1.142rem+3.659vw,4rem)] leading-none font-bold'
+        wrapper_title: 'mt-6 mb-4 text-4xl leading-none font-bold sm:text-5xl'
       }
     },
     spacer: {
@@ -120,8 +119,8 @@ const tva = tv({
     }
   ],
   defaultVariants: {
-    title_size: 'sm',
-    spacer: 'md',
+    title_size: 'md',
+    spacer: 'lg',
     device_size: 'desk' // Default to desktop
   }
 })

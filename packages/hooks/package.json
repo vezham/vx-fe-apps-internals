@@ -17,5 +17,8 @@
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
-  ]
+  ],
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.9"
+  }
 }

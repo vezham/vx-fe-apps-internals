@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/blocks'
+
+import { StoryStatus } from '@vezham/storybook'
+
+<Meta title="Hooks/useUnmount/README" />
+
+## useUnmount
+
+<StoryStatus usecase="review" dev="dev" storybook="todo" tests="todo" />
+
+Hook that runs a cleanup function when the component is unmounted.
+
+### Parameters
+
+- `func`: The cleanup function to be executed on unmount.
+
+### Usage
+
+```tsx
+import { useUnmount } from '@vezham/hooks'
+
+export default function Component() {
+  useUnmount(() => {
+    // Cleanup logic here
+  })
+
+  return <div>Hello world</div>
+}
+```

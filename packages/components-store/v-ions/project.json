@@ -1,0 +1,9 @@
+{
+  "name": "v-ions",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/components-store/v-ions/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project v-ions --web",
+  "targets": {}
+}

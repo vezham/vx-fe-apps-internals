@@ -11,6 +11,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PostsSlugIndexRouteImport } from './routes/posts/$slug/index'
+import { Route as EditorialsEditorials_idIndexRouteImport } from './routes/editorials/$editorials_id/index'
+import { Route as CollectionsCollection_idIndexRouteImport } from './routes/collections/$collection_id/index'
 
 const IndexLazyRouteImport = createFileRoute('/')()
 
@@ -19,27 +22,69 @@ const IndexLazyRoute = IndexLazyRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+const PostsSlugIndexRoute = PostsSlugIndexRouteImport.update({
+  id: '/posts/$slug/',
+  path: '/posts/$slug/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorialsEditorials_idIndexRoute =
+  EditorialsEditorials_idIndexRouteImport.update({
+    id: '/editorials/$editorials_id/',
+    path: '/editorials/$editorials_id/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CollectionsCollection_idIndexRoute =
+  CollectionsCollection_idIndexRouteImport.update({
+    id: '/collections/$collection_id/',
+    path: '/collections/$collection_id/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
+  '/collections/$collection_id': typeof CollectionsCollection_idIndexRoute
+  '/editorials/$editorials_id': typeof EditorialsEditorials_idIndexRoute
+  '/posts/$slug': typeof PostsSlugIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
+  '/collections/$collection_id': typeof CollectionsCollection_idIndexRoute
+  '/editorials/$editorials_id': typeof EditorialsEditorials_idIndexRoute
+  '/posts/$slug': typeof PostsSlugIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
+  '/collections/$collection_id/': typeof CollectionsCollection_idIndexRoute
+  '/editorials/$editorials_id/': typeof EditorialsEditorials_idIndexRoute
+  '/posts/$slug/': typeof PostsSlugIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/collections/$collection_id'
+    | '/editorials/$editorials_id'
+    | '/posts/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/collections/$collection_id'
+    | '/editorials/$editorials_id'
+    | '/posts/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/collections/$collection_id/'
+    | '/editorials/$editorials_id/'
+    | '/posts/$slug/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
+  CollectionsCollection_idIndexRoute: typeof CollectionsCollection_idIndexRoute
+  EditorialsEditorials_idIndexRoute: typeof EditorialsEditorials_idIndexRoute
+  PostsSlugIndexRoute: typeof PostsSlugIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -51,11 +96,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/posts/$slug/': {
+      id: '/posts/$slug/'
+      path: '/posts/$slug'
+      fullPath: '/posts/$slug'
+      preLoaderRoute: typeof PostsSlugIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editorials/$editorials_id/': {
+      id: '/editorials/$editorials_id/'
+      path: '/editorials/$editorials_id'
+      fullPath: '/editorials/$editorials_id'
+      preLoaderRoute: typeof EditorialsEditorials_idIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections/$collection_id/': {
+      id: '/collections/$collection_id/'
+      path: '/collections/$collection_id'
+      fullPath: '/collections/$collection_id'
+      preLoaderRoute: typeof CollectionsCollection_idIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
+  CollectionsCollection_idIndexRoute: CollectionsCollection_idIndexRoute,
+  EditorialsEditorials_idIndexRoute: EditorialsEditorials_idIndexRoute,
+  PostsSlugIndexRoute: PostsSlugIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

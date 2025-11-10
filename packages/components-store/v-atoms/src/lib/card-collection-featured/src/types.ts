@@ -97,6 +97,8 @@
 // }
 // export { useProps }
 // export type { Collection, Props }
+import { useRouter } from '@tanstack/react-router'
+
 import {
   HTMLHeroUIProps,
   PropGetter,
@@ -135,6 +137,7 @@ interface Props extends tvProps, HTMLHeroUIProps<'div'> {
 
 const useProps = (originalProps: Props) => {
   const [props, variantProps] = mapPropsVariants(originalProps, tva.variantKeys)
+  const router = useRouter()
 
   const {
     as,
@@ -186,22 +189,13 @@ const useProps = (originalProps: Props) => {
     className: slots.description({ class: classNames?.description })
   })
 
-  const handleClick = (
-    api_handle: string,
-    target: string,
-    collection: Collection
-  ) => {
+  const handleClick = (api_handle: string, target: string) => {
     if (!api_handle) return
-
-    if (onItemClick) {
-      onItemClick(collection)
-      return
-    }
-
     if (target !== '') {
       window.open(api_handle, target)
       return
     }
+    router.navigate({ to: `collections/${api_handle}` })
   }
 
   return {

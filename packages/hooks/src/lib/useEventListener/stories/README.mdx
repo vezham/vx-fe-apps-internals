@@ -1,0 +1,82 @@
+import { Meta } from '@storybook/blocks'
+
+import { StoryStatus } from '@vezham/storybook'
+
+<Meta title="Hooks/useEventListener/README" />
+
+## useEventListener
+
+<StoryStatus
+  usecase="completed"
+  dev="completed"
+  storybook="completed"
+  tests="completed"
+/>
+
+Use EventListener with simplicity by React Hook.
+
+Supports `Window`, `Element` and `Document` and custom events with almost the same parameters as the native [`addEventListener` options](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#syntax). See examples below.
+
+If you want to use your CustomEvent using Typescript, you have to declare the event type.
+Find which kind of Event you want to extends:
+
+- `MediaQueryListEventMap`
+- `WindowEventMap`
+- `HTMLElementEventMap`
+- `DocumentEventMap`
+
+Then declare your custom event:
+
+```ts
+declare global {
+  interface DocumentEventMap {
+    'my-custom-event': CustomEvent<{ exampleArg: string }>
+  }
+}
+```
+
+### Usage
+
+```tsx
+import { useRef } from 'react'
+
+import { useEventListener, useLogger } from '@vezham/hooks'
+
+const NAMESPACE = 'useEventListener'
+
+export default function Component() {
+  // Define button ref
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const documentRef = useRef<Document>(document)
+
+  const onScroll = (event: Event) => {
+    useLogger.info(NAMESPACE, 'window scrolled!', event)
+  }
+
+  const onClick = (event: Event) => {
+    useLogger.info(NAMESPACE, 'button clicked!', event)
+  }
+
+  const onVisibilityChange = (event: Event) => {
+    useLogger.info(NAMESPACE, 'doc visibility changed!', {
+      isVisible: !document.hidden,
+      event
+    })
+  }
+
+  // example with window based event
+  useEventListener('scroll', onScroll)
+
+  // example with document based event
+  useEventListener('visibilitychange', onVisibilityChange, documentRef)
+
+  // example with element based event
+  useEventListener('click', onClick, buttonRef)
+
+  return (
+    <div style={{ minHeight: '200vh' }}>
+      <button ref={buttonRef}>Click me</button>
+    </div>
+  )
+}
+```

@@ -55,6 +55,9 @@
     },
     {
       "path": "./packages/common/shared-utils"
+    },
+    {
+      "path": "./packages/components-store/v-ions"
     }
   ]
 }

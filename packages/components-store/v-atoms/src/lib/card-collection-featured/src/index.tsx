@@ -90,9 +90,7 @@ const CardCollectionFeatured = forwardRef<'div', Props>((props, ref) => {
           {...getWrapperProps()}
           key={`${collection.name}_${index}`}
           isPressable={!!collection.api_handle}
-          onPress={() =>
-            handleClick(collection.api_handle, collection.target, collection)
-          }>
+          onPress={() => handleClick(collection.api_handle, collection.target)}>
           <CardBody {...getBodyProps()}>
             <div {...getHeaderProps()}>
               <div {...getIconProps()}>

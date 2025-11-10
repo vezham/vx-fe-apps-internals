@@ -75,6 +75,7 @@ const useProps = (originalProps: Props) => {
     getScrollProps,
 
     // Data props
+    id,
     title,
     titleVariant,
     titleVc,

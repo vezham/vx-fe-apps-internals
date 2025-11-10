@@ -1,31 +1,24 @@
 import {
+  HTMLHeroUIProps,
   PropGetter,
   ReactRef,
   SlotsToClasses,
   cn,
   mapPropsVariants,
-  useDOMRef,
-  v0xdsHTMLProps
+  useDOMRef
 } from '@vezham/react-utils'
+
+import { Trends } from '@vx/shared-types'
 
 import { tvProps, tvSlots, tva } from './variant'
 
-interface TrendItem {
-  id?: string
-  title?: string
-  [key: string]: any
-}
-
-interface Props extends tvProps, v0xdsHTMLProps<'div'> {
+interface Props extends tvProps, HTMLHeroUIProps<'div'> {
   ref?: ReactRef<HTMLDivElement | null>
   classNames?: SlotsToClasses<tvSlots>
 
-  title?: string
-  titleVariant?: 'title' | 'subtitle' | 'caption'
-  titleVc?: 'primary' | 'secondary' | 'tertiary'
   showTrack?: boolean
   isMobileView?: boolean
-  onTrendsLoad?: (trends: TrendItem[]) => void
+  onTrendsLoad?: (trends: Trends[]) => void
 }
 
 const useProps = (originalProps: Props) => {
@@ -38,10 +31,6 @@ const useProps = (originalProps: Props) => {
     children,
     className,
     classNames,
-
-    title = 'Top Trending',
-    titleVariant = 'title',
-    titleVc = 'secondary',
     showTrack = true,
     isMobileView = false,
     onTrendsLoad,
@@ -88,13 +77,10 @@ const useProps = (originalProps: Props) => {
 
     // Data & configuration props
 
-    title,
-    titleVariant,
-    titleVc,
     showTrack,
     isMobileView
   }
 }
 
 export { useProps }
-export type { Props, TrendItem }
+export type { Props }

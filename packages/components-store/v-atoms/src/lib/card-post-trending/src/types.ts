@@ -123,7 +123,8 @@ import {
 import { tvProps, tvSlots, tva } from './variant'
 
 type Avatar = {
-  url: string
+  __type: string
+  url?: string
 }
 
 type Authors = {
@@ -139,12 +140,11 @@ type BaseProps = Omit<HTMLHeroUIProps<'div'>, 'orientation'> & {
   orientation: 'horizontal' | 'vertical'
   id: string
   pinned?: boolean
-  read_time: number
+  read_time?: number
   title: string
   url: string
   published_at: string
   authors: Authors[]
-  onPress?: (url: string) => void
 }
 
 // Combine BaseProps with variant props
@@ -173,7 +173,7 @@ const useProps = (originalProps: Props) => {
     authors,
     published_at,
     pinned,
-    onPress,
+
     ...otherProps
   } = props
 
@@ -235,12 +235,6 @@ const useProps = (originalProps: Props) => {
     content: trend_no < 10 ? `0${trend_no}` : trend_no.toString()
   })
 
-  const handlePress = () => {
-    if (onPress) {
-      onPress(url)
-    }
-  }
-
   return {
     Component,
     id,
@@ -254,7 +248,6 @@ const useProps = (originalProps: Props) => {
     getContentProps,
     getRightFooterProps,
     getHeadingProps,
-    handlePress,
 
     // Data props
     read_time,
@@ -264,8 +257,7 @@ const useProps = (originalProps: Props) => {
     url,
     authors,
     published_at,
-    pinned,
-    onPress
+    pinned
   }
 }
 
