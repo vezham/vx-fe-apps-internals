@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'vplatform-layout relative flex h-screen w-full grow flex-col'
+    base: 'relative flex h-screen w-full grow flex-col'
   },
   variants: {}
 })

@@ -67,7 +67,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'mb-10 items-start justify-start gap-10 p-2',
+    base: 'mb-10 grid items-start justify-start gap-10 p-2 sm:grid-cols-2 lg:grid-cols-4',
     wrapper: 'relative p-0',
     card: 'h-full w-full shadow-lg',
     content: 'prose prose-slate prose-sm dark:prose-dark text-default-500',

@@ -58,6 +58,12 @@
     },
     {
       "path": "./packages/components-store/v-ions"
+    },
+    {
+      "path": "./apps_platforms/whats-new-e2e"
+    },
+    {
+      "path": "./apps_platforms/whats-new"
     }
   ]
 }

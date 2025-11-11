@@ -1,6 +1,6 @@
 import { forwardRef } from '@vezham/react-utils'
 
-import { ScrollShadow } from '@vx-oss/scroll-shadow'
+import { ScrollShadow } from '@vx-oss/react'
 
 import { Props, useProps } from './types'
 

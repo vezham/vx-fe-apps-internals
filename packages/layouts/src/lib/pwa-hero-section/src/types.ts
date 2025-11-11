@@ -58,6 +58,28 @@ const useProps = (originalProps: Props) => {
     ...otherProps
   })
 
+  const getWrapperProps: PropGetter = () => ({
+    className: slots.wrapper({ class: cn(classNames?.wrapper, className) })
+  })
+
+  const getSuperTitleProps: PropGetter = () => ({
+    className: slots.wrapper_super_title({
+      class: cn(classNames?.wrapper_super_title, className)
+    })
+  })
+
+  const getTitleProps: PropGetter = () => ({
+    className: slots.wrapper_title({
+      class: cn(classNames?.wrapper_title, className)
+    })
+  })
+
+  const getDescriptionProps: PropGetter = () => ({
+    className: slots.wrapper_description({
+      class: cn(classNames?.wrapper_description, className)
+    })
+  })
+
   return {
     Component,
     domRef,
@@ -65,6 +87,10 @@ const useProps = (originalProps: Props) => {
     classNames,
     children,
     getBaseProps,
+    getSuperTitleProps,
+    getTitleProps,
+    getDescriptionProps,
+    getWrapperProps,
 
     // otherProps
     label,

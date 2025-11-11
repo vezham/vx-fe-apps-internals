@@ -71,8 +71,10 @@ const PwaHeroSection = forwardRef<'div', Props>((props, ref) => {
   const {
     Component,
     getBaseProps,
-    classNames,
-    slots,
+    getTitleProps,
+    getSuperTitleProps,
+    getWrapperProps,
+    getDescriptionProps,
     children,
     super_title,
     title,
@@ -91,39 +93,24 @@ const PwaHeroSection = forwardRef<'div', Props>((props, ref) => {
           ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${cover.url}")`
           : undefined
       }}>
-      <header className={slots.wrapper({ class: classNames?.wrapper })}>
+      <header {...getWrapperProps()}>
         {super_title ? (
           typeof super_title === 'string' ? (
-            <h1
-              className={slots.wrapper_super_title({
-                class: classNames?.wrapper_super_title
-              })}>
-              {super_title}
-            </h1>
+            <h1 {...getSuperTitleProps()}>{super_title}</h1>
           ) : (
             super_title
           )
         ) : null}
-        <h1
-          className={slots.wrapper_title({
-            class: classNames?.wrapper_title
-          })}>
-          {title}
-        </h1>
+        <h1 {...getTitleProps()}>{title}</h1>
         {description ? (
           typeof description === 'string' ? (
-            <p
-              className={slots.wrapper_description({
-                class: classNames?.wrapper_description
-              })}>
-              {description}
-            </p>
+            <p {...getDescriptionProps()}>{description}</p>
           ) : (
             description
           )
         ) : null}
       </header>
-      <div className="mt-2 flex flex-wrap gap-4">{children}</div>
+      <div>{children}</div>
     </Component>
   )
 })

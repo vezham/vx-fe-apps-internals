@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@vezham/layouts": "workspace:*",
+    "@vezham/react-utils": "^0.3.3",
     "@vx/contracts": "workspace:*",
     "@vx/hooks": "workspace:*",
     "@vx/shared-types": "workspace:*",

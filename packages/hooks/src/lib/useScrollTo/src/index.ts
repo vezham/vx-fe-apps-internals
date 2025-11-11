@@ -28,6 +28,8 @@ function useScrollTo(): useOutput {
     const el = document.getElementById(id) as HTMLElement
     let block: ScrollLogicalPosition = 'start'
 
+    console.log('Scrolling to element with id:', id, 'Element:', el)
+
     // wjdlz/NOTE: PATCH for static header offset
     if (offset) {
       const device = GetDevice()

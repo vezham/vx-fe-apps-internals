@@ -17,5 +17,8 @@
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
-  ]
+  ],
+  "devDependencies": {
+    "@vx/shared-utils": "workspace:*"
+  }
 }
