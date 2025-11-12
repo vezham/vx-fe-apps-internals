@@ -93,15 +93,15 @@ const PwaHeroSection = forwardRef<'div', Props>((props, ref) => {
           ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${cover.url}")`
           : undefined
       }}>
-      <header {...getWrapperProps()}>
+      <div {...getWrapperProps()}>
         {super_title ? (
           typeof super_title === 'string' ? (
-            <h1 {...getSuperTitleProps()}>{super_title}</h1>
+            <p {...getSuperTitleProps()}>{super_title}</p>
           ) : (
             super_title
           )
         ) : null}
-        <h1 {...getTitleProps()}>{title}</h1>
+        <p {...getTitleProps()}>{title}</p>
         {description ? (
           typeof description === 'string' ? (
             <p {...getDescriptionProps()}>{description}</p>
@@ -109,7 +109,7 @@ const PwaHeroSection = forwardRef<'div', Props>((props, ref) => {
             description
           )
         ) : null}
-      </header>
+      </div>
       <div>{children}</div>
     </Component>
   )

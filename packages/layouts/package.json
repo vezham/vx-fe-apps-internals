@@ -20,6 +20,7 @@
   ],
   "devDependencies": {
     "@vezham/react-utils": "^0.3.3",
-    "@vx-oss/react": "^0.1.7"
+    "@vx-oss/react": "^0.1.7",
+    "@vx/shared-variants": "workspace:*"
   }
 }

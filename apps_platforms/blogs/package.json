@@ -5,6 +5,8 @@
   "devDependencies": {
     "@vezham/layouts": "workspace:*",
     "@vezham/react-utils": "^0.3.3",
+    "@vezham/system-utils": "workspace:*",
+    "@vx-oss/use-theme": "^0.1.7",
     "@vx/contracts": "workspace:*",
     "@vx/hooks": "workspace:*",
     "@vx/shared-types": "workspace:*",

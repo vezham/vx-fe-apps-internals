@@ -9,6 +9,9 @@
       "path": "../../packages/components-store/v-atoms"
     },
     {
+      "path": "../../packages/utilities/system-utils"
+    },
+    {
       "path": "../../packages/vx/system-utils"
     },
     {

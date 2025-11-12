@@ -1,5 +1,5 @@
 {
-  "name": "@vx/v-atoms",
+  "name": "@vezham/system-utils",
   "version": "0.0.1",
   "type": "module",
   "exports": {
@@ -17,11 +17,5 @@
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
-  ],
-  "devDependencies": {
-    "@vezham/react-utils": "^0.3.3",
-    "@vx/shared-types": "workspace:*",
-    "@vx/shared-utils": "workspace:*",
-    "@vx/v-ions": "workspace:*"
-  }
+  ]
 }

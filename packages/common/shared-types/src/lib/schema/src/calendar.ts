@@ -16,4 +16,4 @@ type SupportedCalendars =
   | 'roc'
   | 'gregory'
 
-export { SupportedCalendars }
+export type { SupportedCalendars }

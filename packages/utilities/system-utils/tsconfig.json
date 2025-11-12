@@ -3,14 +3,11 @@
   "include": [],
   "references": [
     {
-      "path": "../common/shared-variants"
-    },
-    {
       "path": "./tsconfig.lib.json"
     },
     {
       "path": "./tsconfig.spec.json"
     }
   ],
-  "extends": "../../tsconfig.base.json"
+  "extends": "../../../tsconfig.base.json"
 }

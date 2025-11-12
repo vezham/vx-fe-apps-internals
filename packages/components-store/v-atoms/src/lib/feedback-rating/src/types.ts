@@ -99,7 +99,7 @@ const useProps = (originalProps: Props) => {
     classNames,
     icon = { className: 'transition-all duration-200 hover:scale-110' },
     type = 'emoji',
-    scale = 3,
+    scale = 5,
     title = 'Was this helpful?',
     ...otherProps
   } = props

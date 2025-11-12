@@ -46,19 +46,19 @@ import { VariantProps, tv } from '@vezham/react-utils'
 const tva = tv({
   // extend: SheetSection,
   slots: {
-    base: 'm-10 flex flex-col items-center gap-6 rounded-4xl bg-cover p-24',
+    base: 'm-10 flex flex-col items-center gap-6 rounded-4xl bg-cover',
     wrapper: 'flex flex-col sm:text-center',
-    wrapper_super_title: 'mb-4 text-3xl leading-6 font-semibold sm:text-4xl',
+    wrapper_super_title: 'text-3xl leading-6 font-semibold sm:text-4xl',
     wrapper_title: 'tracking-tight',
     wrapper_description: 'text-base md:text-lg md:leading-6'
   },
   variants: {
     title_size: {
       sm: {
-        wrapper_title: 'mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl'
+        wrapper_title: 'text-3xl sm:text-4xl'
       },
       md: {
-        wrapper_title: 'mt-6 mb-4 text-4xl leading-none font-bold sm:text-5xl'
+        wrapper_title: 'text-4xl leading-none font-bold sm:text-5xl'
       }
     },
     spacer: {
@@ -69,7 +69,7 @@ const tva = tv({
         wrapper: 'py-10'
       },
       lg: {
-        wrapper: 'py-16'
+        wrapper: 'py-8'
       }
     }
   },

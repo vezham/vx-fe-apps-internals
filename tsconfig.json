@@ -64,6 +64,9 @@
     },
     {
       "path": "./apps_platforms/whats-new"
+    },
+    {
+      "path": "./packages/utilities/system-utils"
     }
   ]
 }

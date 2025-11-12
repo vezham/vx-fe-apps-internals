@@ -17,5 +17,10 @@
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
-  ]
+  ],
+  "devDependencies": {
+    "@radix-ui/react-aspect-ratio": "^1.1.8",
+    "@vezham/react-utils": "^0.3.3",
+    "@vx/shared-types": "workspace:*"
+  }
 }
