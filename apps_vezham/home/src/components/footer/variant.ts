@@ -25,7 +25,7 @@ const tva = tv({
     gridInner: 'md:grid md:grid-cols-2 md:gap-8',
     colSpacing: 'mt-10 md:mt-0',
     form: 'mt-6 sm:flex sm:max-w-md lg:mt-0',
-    inputWrapper: 'mt-4 sm:mt-0 sm:ml-4 sm:flex-shrink-0'
+    inputWrapper: 'mt-4 sm:mt-0 sm:ml-4 sm:shrink-0'
   },
   variants: {
     theme: {

@@ -90,7 +90,7 @@ const Banner: React.FC<BannerProps> = ({
                   </span>
                 </div>
               </div>
-              <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+              <div className="order-2 shrink-0 sm:order-3 sm:ml-3">
                 <Button
                   as="a"
                   href={currentItem.ctaLink}

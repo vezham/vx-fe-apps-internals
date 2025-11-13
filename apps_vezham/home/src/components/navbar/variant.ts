@@ -165,7 +165,7 @@ const navbarVariants = {
   base: {
     wrapper: 'fixed inset-x-0 z-50 w-full transition-all duration-300',
     navBody:
-      'max-w-8xl z-[60] mx-auto hidden flex-row items-center justify-between self-start rounded-full px-2 py-2 backdrop-blur-md  sm:px-4 lg:flex',
+      'max-w-8xl z-60 mx-auto hidden flex-row items-center justify-between self-start rounded-full px-2 py-2 backdrop-blur-md  sm:px-4 lg:flex',
     navItems:
       'text-foreground-500 hover:text-foreground inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2',
     navItem: 'text-foreground-600 dark:text-foreground-400 relative px-4 py-2',
@@ -182,7 +182,7 @@ const navbarVariants = {
   },
   variants: {
     navBody: {
-      visible: 'bg-background dark:bg-content1/100'
+      visible: 'bg-background dark:bg-content1'
     },
     mobileNav: {
       visible: 'bg-background dark:bg-content1'
@@ -201,7 +201,7 @@ const navbarVariants = {
           'bg-transparent text-foreground-500 hover:text-foreground dark:text-foreground-400 dark:hover:text-foreground',
         dark: 'bg-foreground text-background shadow-sm hover:bg-foreground-800',
         gradient:
-          'bg-gradient-to-b from-primary-400 to-primary-600 text-white shadow-sm'
+          'bg-linear-to-b from-primary-400 to-primary-600 text-white shadow-sm'
       }
     },
     navbarLogoHeight: {

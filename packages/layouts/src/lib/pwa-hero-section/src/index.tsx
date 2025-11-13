@@ -89,9 +89,10 @@ const PwaHeroSection = forwardRef<'div', Props>((props, ref) => {
     <Component
       {...getBaseProps()}
       style={{
-        background: cover?.url
-          ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${cover.url}")`
-          : undefined
+        background: `linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url("${cover?.url}")`
       }}>
       <div {...getWrapperProps()}>
         {super_title ? (

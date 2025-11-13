@@ -15,19 +15,19 @@
 //     },
 //     color: {
 //       none: '',
-//       default: '!text-default-foreground',
-//       primary: '!text-primary-foreground',
-//       success: '!text-success-foreground',
-//       warning: '!text-warning-foreground',
-//       danger: '!text-danger-foreground',
+//       default: 'text-default-foreground!',
+//       primary: 'text-primary-foreground!',
+//       success: 'text-success-foreground!',
+//       warning: 'text-warning-foreground!',
+//       danger: 'text-danger-foreground!',
 //       info: '!text-info-foreground'
 //     },
 //     vc: {
 //       none: '',
-//       black: '!text-black',
-//       white: '!text-white',
-//       secondary: '!text-default-400',
-//       mode: '!text-black dark:!text-white'
+//       black: 'text-black!',
+//       white: 'text-white!',
+//       secondary: 'text-default-400!',
+//       mode: 'text-black! dark:text-white!'
 //     },
 //     size: {
 //       sm: 'v-sm',

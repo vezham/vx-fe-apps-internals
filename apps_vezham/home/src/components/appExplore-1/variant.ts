@@ -68,14 +68,14 @@ export const tva = tv({
     resultsTitle: 'mb-4 text-xl font-bold',
     resultsWrapper: 'space-y-6',
     resultsItem: 'flex gap-4',
-    resultCircle: 'relative h-16 w-16 flex-shrink-0',
+    resultCircle: 'relative h-16 w-16 shrink-0',
     resultText: 'fill-foreground text-xs font-bold',
 
     supportHead: 'mb-4 text-xl font-bold',
     supportWrapper: 'space-y-6',
     supportItem: 'flex gap-4',
     supportIconWrapper:
-      'bg-primary/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md',
+      'bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-md',
     supportTitle: 'text-foreground mb-1 font-semibold',
     supportDescription: 'text-default-500 text-sm',
     supportButton: 'mt-6',

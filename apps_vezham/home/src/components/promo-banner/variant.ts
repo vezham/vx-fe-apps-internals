@@ -12,13 +12,13 @@ const tva = tv({
   variants: {
     variant: {
       primary: {
-        base: `from-primary-100 to-primary-50 bg-gradient-to-r`
+        base: `from-primary-100 to-primary-50 bg-linear-to-r`
       },
       secondary: {
-        base: `from-secondary-100 to-secondary-50 bg-gradient-to-r`
+        base: `from-secondary-100 to-secondary-50 bg-linear-to-r`
       },
       danger: {
-        base: `from-danger-100 to-danger-50 bg-gradient-to-r`
+        base: `from-danger-100 to-danger-50 bg-linear-to-r`
       }
     }
   },

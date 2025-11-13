@@ -5,9 +5,9 @@ const tva = tv({
     base: 'relative w-full',
     scrollContainer:
       'flex w-full cursor-pointer snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6',
-    card: 'group relative z-10 flex h-[30rem] w-[18rem] flex-none snap-start flex-col items-start justify-start overflow-hidden rounded-3xl transition-transform duration-300 lg:h-[40rem] lg:w-96',
+    card: 'group relative z-10 flex h-120 w-[18rem] flex-none snap-start flex-col items-start justify-start overflow-hidden rounded-3xl transition-transform duration-300 lg:h-160 lg:w-96',
     overlay:
-      'pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/90 via-black/25 to-transparent',
+      'pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-linear-to-b from-black/90 via-black/25 to-transparent',
     contentWrapper:
       'relative z-40 flex h-full w-full flex-col pt-[25px] pr-[19px] pb-[435px] pl-[25px]',
     headerWrapper: 'ml-[-11px] flex items-center',
@@ -30,7 +30,7 @@ const tva = tv({
     variant: {
       default: {},
       compact: {
-        card: 'h-[25rem] w-[16rem] lg:h-[30rem] lg:w-[20rem]'
+        card: 'h-100 w-[16rem] lg:h-120 lg:w-[20rem]'
       }
     }
   },

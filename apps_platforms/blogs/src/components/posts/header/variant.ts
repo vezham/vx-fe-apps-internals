@@ -16,7 +16,7 @@ const tva = tv({
     ],
     userContainer: '',
     userDescription: 'flex h-4 flex-row items-center justify-center gap-2',
-    dot: 'text-foreground-400 !mb-4 text-xl',
+    dot: 'text-foreground-400 mb-4! text-xl',
     readTime: 'text-foreground-400 text-xs'
   },
   variants: {

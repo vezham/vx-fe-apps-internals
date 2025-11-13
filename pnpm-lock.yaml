@@ -11,9 +11,6 @@ importers:
       framer-motion:
         specifier: ^12.23.12
         version: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      lodash.debounce:
-        specifier: ^4.0.8
-        version: 4.0.8
       react:
         specifier: 19.0.0
         version: 19.0.0
@@ -85,8 +82,8 @@ importers:
         specifier: ^4.1.17
         version: 4.1.17(babel-plugin-macros@3.1.0)
       '@tailwindcss/vite':
-        specifier: ^4.1.13
-        version: 4.1.13(vite@7.1.7(@types/node@20.19.9)(jiti@2.4.2)(lightningcss@1.30.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1))
+        specifier: ^4.1.17
+        version: 4.1.17(vite@7.1.7(@types/node@20.19.9)(jiti@2.4.2)(lightningcss@1.30.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1))
       '@tanstack/eslint-plugin-query':
         specifier: ^5.83.1
         version: 5.90.1(eslint@9.36.0(jiti@2.4.2))(typescript@5.9.2)
@@ -149,10 +146,10 @@ importers:
         version: 0.1.2(nx@21.5.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.9.2))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
       '@vx-oss/react':
         specifier: ^0.1.7
-        version: 0.1.8(@types/react@19.0.0)(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.1.13)
+        version: 0.1.8(@types/react@19.0.0)(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.1.17)
       autoprefixer:
-        specifier: 10.4.13
-        version: 10.4.13(postcss@8.4.38)
+        specifier: 10.4.22
+        version: 10.4.22(postcss@8.5.6)
       axios:
         specifier: ^1.11.0
         version: 1.12.2
@@ -208,8 +205,8 @@ importers:
         specifier: 21.5.3
         version: 21.5.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.9.2))(@swc/core@1.5.29(@swc/helpers@0.5.17))
       postcss:
-        specifier: 8.4.38
-        version: 8.4.38
+        specifier: 8.5.6
+        version: 8.5.6
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -217,8 +214,8 @@ importers:
         specifier: ^4.2.0
         version: 4.3.0(prettier@3.6.2)(typescript@5.9.2)
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.14
-        version: 0.6.14(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.6.2))(prettier-plugin-organize-imports@4.3.0(prettier@3.6.2)(typescript@5.9.2))(prettier@3.6.2)
+        specifier: ^0.7.1
+        version: 0.7.1(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.6.2))(prettier-plugin-organize-imports@4.3.0(prettier@3.6.2)(typescript@5.9.2))(prettier@3.6.2)
       sort-package-json:
         specifier: ^3.4.0
         version: 3.4.0
@@ -236,10 +233,10 @@ importers:
         version: 5.0.3(prettier@3.6.2)(stylelint@16.24.0(typescript@5.9.2))
       tailwind-variants:
         specifier: ^3.1.1
-        version: 3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.13)
+        version: 3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.17)
       tailwindcss:
-        specifier: 4.1.13
-        version: 4.1.13
+        specifier: 4.1.17
+        version: 4.1.17
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
@@ -400,66 +397,6 @@ importers:
         specifier: ^16.4.1
         version: 16.6.1
 
-  apps_platforms/whats-new:
-    devDependencies:
-      '@vezham/layouts':
-        specifier: workspace:*
-        version: link:../../packages/layouts
-      '@vezham/react-utils':
-        specifier: ^0.3.3
-        version: 0.3.3(react@19.0.0)(tailwindcss@4.1.17)
-      '@vx/contracts':
-        specifier: workspace:*
-        version: link:../../packages/contracts
-      '@vx/hooks':
-        specifier: workspace:*
-        version: link:../../packages/hooks
-      '@vx/shared-types':
-        specifier: workspace:*
-        version: link:../../packages/common/shared-types
-      '@vx/shared-utils':
-        specifier: workspace:*
-        version: link:../../packages/common/shared-utils
-      '@vx/shared-variants':
-        specifier: workspace:*
-        version: link:../../packages/common/shared-variants
-      '@vx/start':
-        specifier: workspace:*
-        version: link:../../packages/vx/start
-      '@vx/system-utils':
-        specifier: workspace:*
-        version: link:../../packages/vx/system-utils
-      '@vx/v-atoms':
-        specifier: workspace:*
-        version: link:../../packages/components-store/v-atoms
-      '@vx/v-ions':
-        specifier: workspace:*
-        version: link:../../packages/components-store/v-ions
-
-  apps_platforms/whats-new-e2e: {}
-
-  apps_platforms/whats-new-mock:
-    dependencies:
-      '@faker-js/faker':
-        specifier: ^8.4.1
-        version: 8.4.1
-      json-server:
-        specifier: ^0.17.4
-        version: 0.17.4
-    devDependencies:
-      '@types/json-server':
-        specifier: ^0.14.8
-        version: 0.14.8
-      '@types/node':
-        specifier: ^20.0.0
-        version: 20.19.9
-      '@vezham/use-logger':
-        specifier: ^0.3.3
-        version: 0.3.3
-      dotenv:
-        specifier: ^16.4.1
-        version: 16.6.1
-
   apps_vezham/home:
     devDependencies:
       '@vezham/react-utils':
@@ -547,6 +484,9 @@ importers:
       '@vx/contracts':
         specifier: workspace:*
         version: link:../contracts
+      lodash.debounce:
+        specifier: ^4.0.8
+        version: 4.0.8
 
   packages/layouts:
     devDependencies:
@@ -1774,10 +1714,6 @@ packages:
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
-
-  '@isaacs/fs-minipass@4.0.1':
-    resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
-    engines: {node: '>=18.0.0'}
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -3448,17 +3384,8 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tailwindcss/node@4.1.13':
-    resolution: {integrity: sha512-eq3ouolC1oEFOAvOMOBAmfCIqZBJuvWvvYWh5h5iOYfe1HFC6+GZ6EIL0JdM3/niGRJmnrOc+8gl9/HGUaaptw==}
-
   '@tailwindcss/node@4.1.17':
     resolution: {integrity: sha512-csIkHIgLb3JisEFQ0vxr2Y57GUNYh447C8xzwj89U/8fdW8LhProdxvnVH6U8M2Y73QKiTIH+LWbK3V2BBZsAg==}
-
-  '@tailwindcss/oxide-android-arm64@4.1.13':
-    resolution: {integrity: sha512-BrpTrVYyejbgGo57yc8ieE+D6VT9GOgnNdmh5Sac6+t0m+v+sKQevpFVpwX3pBrM2qKrQwJ0c5eDbtjouY/+ew==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [android]
 
   '@tailwindcss/oxide-android-arm64@4.1.17':
     resolution: {integrity: sha512-BMqpkJHgOZ5z78qqiGE6ZIRExyaHyuxjgrJ6eBO5+hfrfGkuya0lYfw8fRHG77gdTjWkNWEEm+qeG2cDMxArLQ==}
@@ -3466,22 +3393,10 @@ packages:
     cpu: [arm64]
     os: [android]
 
-  '@tailwindcss/oxide-darwin-arm64@4.1.13':
-    resolution: {integrity: sha512-YP+Jksc4U0KHcu76UhRDHq9bx4qtBftp9ShK/7UGfq0wpaP96YVnnjFnj3ZFrUAjc5iECzODl/Ts0AN7ZPOANQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [darwin]
-
   '@tailwindcss/oxide-darwin-arm64@4.1.17':
     resolution: {integrity: sha512-EquyumkQweUBNk1zGEU/wfZo2qkp/nQKRZM8bUYO0J+Lums5+wl2CcG1f9BgAjn/u9pJzdYddHWBiFXJTcxmOg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
-    os: [darwin]
-
-  '@tailwindcss/oxide-darwin-x64@4.1.13':
-    resolution: {integrity: sha512-aAJ3bbwrn/PQHDxCto9sxwQfT30PzyYJFG0u/BWZGeVXi5Hx6uuUOQEI2Fa43qvmUjTRQNZnGqe9t0Zntexeuw==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
     os: [darwin]
 
   '@tailwindcss/oxide-darwin-x64@4.1.17':
@@ -3490,23 +3405,11 @@ packages:
     cpu: [x64]
     os: [darwin]
 
-  '@tailwindcss/oxide-freebsd-x64@4.1.13':
-    resolution: {integrity: sha512-Wt8KvASHwSXhKE/dJLCCWcTSVmBj3xhVhp/aF3RpAhGeZ3sVo7+NTfgiN8Vey/Fi8prRClDs6/f0KXPDTZE6nQ==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [freebsd]
-
   '@tailwindcss/oxide-freebsd-x64@4.1.17':
     resolution: {integrity: sha512-hxGS81KskMxML9DXsaXT1H0DyA+ZBIbyG/sSAjWNe2EDl7TkPOBI42GBV3u38itzGUOmFfCzk1iAjDXds8Oh0g==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
-
-  '@tailwindcss/oxide-linux-arm-gnueabihf@4.1.13':
-    resolution: {integrity: sha512-mbVbcAsW3Gkm2MGwA93eLtWrwajz91aXZCNSkGTx/R5eb6KpKD5q8Ueckkh9YNboU8RH7jiv+ol/I7ZyQ9H7Bw==}
-    engines: {node: '>= 10'}
-    cpu: [arm]
-    os: [linux]
 
   '@tailwindcss/oxide-linux-arm-gnueabihf@4.1.17':
     resolution: {integrity: sha512-k7jWk5E3ldAdw0cNglhjSgv501u7yrMf8oeZ0cElhxU6Y2o7f8yqelOp3fhf7evjIS6ujTI3U8pKUXV2I4iXHQ==}
@@ -3514,20 +3417,8 @@ packages:
     cpu: [arm]
     os: [linux]
 
-  '@tailwindcss/oxide-linux-arm64-gnu@4.1.13':
-    resolution: {integrity: sha512-wdtfkmpXiwej/yoAkrCP2DNzRXCALq9NVLgLELgLim1QpSfhQM5+ZxQQF8fkOiEpuNoKLp4nKZ6RC4kmeFH0HQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
   '@tailwindcss/oxide-linux-arm64-gnu@4.1.17':
     resolution: {integrity: sha512-HVDOm/mxK6+TbARwdW17WrgDYEGzmoYayrCgmLEw7FxTPLcp/glBisuyWkFz/jb7ZfiAXAXUACfyItn+nTgsdQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@tailwindcss/oxide-linux-arm64-musl@4.1.13':
-    resolution: {integrity: sha512-hZQrmtLdhyqzXHB7mkXfq0IYbxegaqTmfa1p9MBj72WPoDD3oNOh1Lnxf6xZLY9C3OV6qiCYkO1i/LrzEdW2mg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -3538,20 +3429,8 @@ packages:
     cpu: [arm64]
     os: [linux]
 
-  '@tailwindcss/oxide-linux-x64-gnu@4.1.13':
-    resolution: {integrity: sha512-uaZTYWxSXyMWDJZNY1Ul7XkJTCBRFZ5Fo6wtjrgBKzZLoJNrG+WderJwAjPzuNZOnmdrVg260DKwXCFtJ/hWRQ==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
   '@tailwindcss/oxide-linux-x64-gnu@4.1.17':
     resolution: {integrity: sha512-M3XZuORCGB7VPOEDH+nzpJ21XPvK5PyjlkSFkFziNHGLc5d6g3di2McAAblmaSUNl8IOmzYwLx9NsE7bplNkwQ==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@tailwindcss/oxide-linux-x64-musl@4.1.13':
-    resolution: {integrity: sha512-oXiPj5mi4Hdn50v5RdnuuIms0PVPI/EG4fxAfFiIKQh5TgQgX7oSuDWntHW7WNIi/yVLAiS+CRGW4RkoGSSgVQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -3561,18 +3440,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-
-  '@tailwindcss/oxide-wasm32-wasi@4.1.13':
-    resolution: {integrity: sha512-+LC2nNtPovtrDwBc/nqnIKYh/W2+R69FA0hgoeOn64BdCX522u19ryLh3Vf3F8W49XBcMIxSe665kwy21FkhvA==}
-    engines: {node: '>=14.0.0'}
-    cpu: [wasm32]
-    bundledDependencies:
-      - '@napi-rs/wasm-runtime'
-      - '@emnapi/core'
-      - '@emnapi/runtime'
-      - '@tybys/wasm-util'
-      - '@emnapi/wasi-threads'
-      - tslib
 
   '@tailwindcss/oxide-wasm32-wasi@4.1.17':
     resolution: {integrity: sha512-cEytGqSSoy7zK4JRWiTCx43FsKP/zGr0CsuMawhH67ONlH+T79VteQeJQRO/X7L0juEUA8ZyuYikcRBf0vsxhg==}
@@ -3586,22 +3453,10 @@ packages:
       - '@emnapi/wasi-threads'
       - tslib
 
-  '@tailwindcss/oxide-win32-arm64-msvc@4.1.13':
-    resolution: {integrity: sha512-dziTNeQXtoQ2KBXmrjCxsuPk3F3CQ/yb7ZNZNA+UkNTeiTGgfeh+gH5Pi7mRncVgcPD2xgHvkFCh/MhZWSgyQg==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [win32]
-
   '@tailwindcss/oxide-win32-arm64-msvc@4.1.17':
     resolution: {integrity: sha512-JU5AHr7gKbZlOGvMdb4722/0aYbU+tN6lv1kONx0JK2cGsh7g148zVWLM0IKR3NeKLv+L90chBVYcJ8uJWbC9A==}
     engines: {node: '>= 10'}
     cpu: [arm64]
-    os: [win32]
-
-  '@tailwindcss/oxide-win32-x64-msvc@4.1.13':
-    resolution: {integrity: sha512-3+LKesjXydTkHk5zXX01b5KMzLV1xl2mcktBJkje7rhFUpUlYJy7IMOLqjIRQncLTa1WZZiFY/foAeB5nmaiTw==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
     os: [win32]
 
   '@tailwindcss/oxide-win32-x64-msvc@4.1.17':
@@ -3609,10 +3464,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
-
-  '@tailwindcss/oxide@4.1.13':
-    resolution: {integrity: sha512-CPgsM1IpGRa880sMbYmG1s4xhAy3xEt1QULgTJGQmZUeNgXFR7s1YxYygmJyBGtou4SyEosGAGEeYqY7R53bIA==}
-    engines: {node: '>= 10'}
 
   '@tailwindcss/oxide@4.1.17':
     resolution: {integrity: sha512-F0F7d01fmkQhsTjXezGBLdrl1KresJTcI3DB8EkScCldyKp3Msz4hub4uyYaVnk88BAS1g5DQjjF6F5qczheLA==}
@@ -3622,8 +3473,8 @@ packages:
     resolution: {integrity: sha512-c/BqCcnYSZ1XTpdsq/JCgP5jmTJ5F66JTUiwvvbtjx267FwAhRPqKDlhlbmMzC/DJ4Afri3cOeiarvumU+PkKQ==}
     hasBin: true
 
-  '@tailwindcss/vite@4.1.13':
-    resolution: {integrity: sha512-0PmqLQ010N58SbMTJ7BVJ4I2xopiQn/5i6nlb4JmxzQf8zcS5+m2Cv6tqh+sfDwtIdjoEnOvwsGQ1hkUi8QEHQ==}
+  '@tailwindcss/vite@4.1.17':
+    resolution: {integrity: sha512-4+9w8ZHOiGnpcGI6z1TVVfWaX/koK7fKeSYF3qlYg2xpBtbteP2ddBxiarL+HVgfSJGeK5RIxRQmKm4rTJJAwA==}
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
@@ -5181,8 +5032,8 @@ packages:
     resolution: {integrity: sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==}
     engines: {node: '>=8.0.0'}
 
-  autoprefixer@10.4.13:
-    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
+  autoprefixer@10.4.22:
+    resolution: {integrity: sha512-ARe0v/t9gO28Bznv6GgqARmVqcWOV3mfgUPn9becPHMiD3o9BwlRgaeccZnwTpZ7Zwqrm+c1sUSsMxIzQzc8Xg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -5290,6 +5141,10 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
+  baseline-browser-mapping@2.8.27:
+    resolution: {integrity: sha512-2CXFpkjVnY2FT+B6GrSYxzYf65BJWEqz5tIRHCvNsZZ2F3CmsCB37h8SpYgKG7y9C4YAeTipIPWG7EmFmhAeXA==}
+    hasBin: true
+
   baseline-browser-mapping@2.8.7:
     resolution: {integrity: sha512-bxxN2M3a4d1CRoQC//IqsR5XrLh0IJ8TCv2x6Y9N0nckNz/rTjZB3//GGscZziZOxmjP55rzxg/ze7usFI9FqQ==}
     hasBin: true
@@ -5344,6 +5199,11 @@ packages:
 
   browserslist@4.26.2:
     resolution: {integrity: sha512-ECFzp6uFOSB+dcZ5BK/IBaGWssbSYBHvuMeMt3MMFyhI0Z8SqGgEkBLARgpRH3hutIgPVsALcMwbDrJqPxQ65A==}
+    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
+    hasBin: true
+
+  browserslist@4.28.0:
+    resolution: {integrity: sha512-tbydkR/CxfMwelN0vwdP/pLkDwyAASZ+VfWm4EOwlB6SWhx1sYnWLqo8N5j0rAzPfzfRaxt0mM/4wPU/Su84RQ==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
@@ -5419,6 +5279,9 @@ packages:
   caniuse-lite@1.0.30001745:
     resolution: {integrity: sha512-ywt6i8FzvdgrrrGbr1jZVObnVv6adj+0if2/omv9cmR2oiZs30zL4DIyaptKcbOrBdOIc74QTMoJvSE2QHh5UQ==}
 
+  caniuse-lite@1.0.30001754:
+    resolution: {integrity: sha512-x6OeBXueoAceOmotzx3PO4Zpt4rzpeIFsSr6AAePTZxSkXiYDUmpypEl7e2+8NCd9bD7bXjqyef8CJYPC1jfxg==}
+
   caseless@0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
 
@@ -5449,10 +5312,6 @@ packages:
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
-
-  chownr@3.0.0:
-    resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
-    engines: {node: '>=18'}
 
   chrome-trace-event@1.0.4:
     resolution: {integrity: sha512-rNjApaLzuwaOTjCiT8lSDdGN1APCiqkChLMJxJPWLunPAt5fy8xgU9/jNOchV84wfIxrA0lRQB7oCT8jrn/wrQ==}
@@ -6060,6 +5919,9 @@ packages:
   electron-to-chromium@1.5.224:
     resolution: {integrity: sha512-kWAoUu/bwzvnhpdZSIc6KUyvkI1rbRXMT0Eq8pKReyOyaPZcctMli+EgvcN1PAvwVc7Tdo4Fxi2PsLNDU05mdg==}
 
+  electron-to-chromium@1.5.250:
+    resolution: {integrity: sha512-/5UMj9IiGDMOFBnN4i7/Ry5onJrAGSbOGo3s9FEKmwobGq6xw832ccET0CE3CkkMBZ8GJSlUIesZofpyurqDXw==}
+
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
     engines: {node: '>=12'}
@@ -6575,8 +6437,8 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
 
-  fraction.js@4.3.7:
-    resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
+  fraction.js@5.3.4:
+    resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
 
   framer-motion@12.23.22:
     resolution: {integrity: sha512-ZgGvdxXCw55ZYvhoZChTlG6pUuehecgvEAJz0BHoC5pQKW1EC5xf1Mul1ej5+ai+pVY0pylyFfdl45qnM1/GsA==}
@@ -7368,10 +7230,6 @@ packages:
     resolution: {integrity: sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==}
     hasBin: true
 
-  jiti@2.6.0:
-    resolution: {integrity: sha512-VXe6RjJkBPj0ohtqaO8vSWP3ZhAKo66fKrFNCll4BTcwljPLz03pCbaNKfzGP5MbrCYcbJ7v0nOYYwUzTEIdXQ==}
-    hasBin: true
-
   jiti@2.6.1:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
     hasBin: true
@@ -7531,22 +7389,10 @@ packages:
     cpu: [arm64]
     os: [android]
 
-  lightningcss-darwin-arm64@1.30.1:
-    resolution: {integrity: sha512-c8JK7hyE65X1MHMN+Viq9n11RRC7hgin3HhYKhrMyaXflk5GVplZ60IxyoVtzILeKr+xAJwg6zK6sjTBJ0FKYQ==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [arm64]
-    os: [darwin]
-
   lightningcss-darwin-arm64@1.30.2:
     resolution: {integrity: sha512-ylTcDJBN3Hp21TdhRT5zBOIi73P6/W0qwvlFEk22fkdXchtNTOU4Qc37SkzV+EKYxLouZ6M4LG9NfZ1qkhhBWA==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
-    os: [darwin]
-
-  lightningcss-darwin-x64@1.30.1:
-    resolution: {integrity: sha512-k1EvjakfumAQoTfcXUcHQZhSpLlkAuEkdMBsI/ivWw9hL+7FtilQc0Cy3hrx0AAQrVtQAbMI7YjCgYgvn37PzA==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [x64]
     os: [darwin]
 
   lightningcss-darwin-x64@1.30.2:
@@ -7555,23 +7401,11 @@ packages:
     cpu: [x64]
     os: [darwin]
 
-  lightningcss-freebsd-x64@1.30.1:
-    resolution: {integrity: sha512-kmW6UGCGg2PcyUE59K5r0kWfKPAVy4SltVeut+umLCFoJ53RdCUWxcRDzO1eTaxf/7Q2H7LTquFHPL5R+Gjyig==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [x64]
-    os: [freebsd]
-
   lightningcss-freebsd-x64@1.30.2:
     resolution: {integrity: sha512-c2bH6xTrf4BDpK8MoGG4Bd6zAMZDAXS569UxCAGcA7IKbHNMlhGQ89eRmvpIUGfKWNVdbhSbkQaWhEoMGmGslA==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [freebsd]
-
-  lightningcss-linux-arm-gnueabihf@1.30.1:
-    resolution: {integrity: sha512-MjxUShl1v8pit+6D/zSPq9S9dQ2NPFSQwGvxBCYaBYLPlCWuPh9/t1MRS8iUaR8i+a6w7aps+B4N0S1TYP/R+Q==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [arm]
-    os: [linux]
 
   lightningcss-linux-arm-gnueabihf@1.30.2:
     resolution: {integrity: sha512-eVdpxh4wYcm0PofJIZVuYuLiqBIakQ9uFZmipf6LF/HRj5Bgm0eb3qL/mr1smyXIS1twwOxNWndd8z0E374hiA==}
@@ -7579,20 +7413,8 @@ packages:
     cpu: [arm]
     os: [linux]
 
-  lightningcss-linux-arm64-gnu@1.30.1:
-    resolution: {integrity: sha512-gB72maP8rmrKsnKYy8XUuXi/4OctJiuQjcuqWNlJQ6jZiWqtPvqFziskH3hnajfvKB27ynbVCucKSm2rkQp4Bw==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [arm64]
-    os: [linux]
-
   lightningcss-linux-arm64-gnu@1.30.2:
     resolution: {integrity: sha512-UK65WJAbwIJbiBFXpxrbTNArtfuznvxAJw4Q2ZGlU8kPeDIWEX1dg3rn2veBVUylA2Ezg89ktszWbaQnxD/e3A==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [arm64]
-    os: [linux]
-
-  lightningcss-linux-arm64-musl@1.30.1:
-    resolution: {integrity: sha512-jmUQVx4331m6LIX+0wUhBbmMX7TCfjF5FoOH6SD1CttzuYlGNVpA7QnrmLxrsub43ClTINfGSYyHe2HWeLl5CQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
@@ -7603,20 +7425,8 @@ packages:
     cpu: [arm64]
     os: [linux]
 
-  lightningcss-linux-x64-gnu@1.30.1:
-    resolution: {integrity: sha512-piWx3z4wN8J8z3+O5kO74+yr6ze/dKmPnI7vLqfSqI8bccaTGY5xiSGVIJBDd5K5BHlvVLpUB3S2YCfelyJ1bw==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [x64]
-    os: [linux]
-
   lightningcss-linux-x64-gnu@1.30.2:
     resolution: {integrity: sha512-Cfd46gdmj1vQ+lR6VRTTadNHu6ALuw2pKR9lYq4FnhvgBc4zWY1EtZcAc6EffShbb1MFrIPfLDXD6Xprbnni4w==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [x64]
-    os: [linux]
-
-  lightningcss-linux-x64-musl@1.30.1:
-    resolution: {integrity: sha512-rRomAK7eIkL+tHY0YPxbc5Dra2gXlI63HL+v1Pdi1a3sC+tJTcFrHX+E86sulgAXeI7rSzDYhPSeHHjqFhqfeQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
@@ -7627,22 +7437,10 @@ packages:
     cpu: [x64]
     os: [linux]
 
-  lightningcss-win32-arm64-msvc@1.30.1:
-    resolution: {integrity: sha512-mSL4rqPi4iXq5YVqzSsJgMVFENoa4nGTT/GjO2c0Yl9OuQfPsIfncvLrEW6RbbB24WtZ3xP/2CCmI3tNkNV4oA==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [arm64]
-    os: [win32]
-
   lightningcss-win32-arm64-msvc@1.30.2:
     resolution: {integrity: sha512-FZn+vaj7zLv//D/192WFFVA0RgHawIcHqLX9xuWiQt7P0PtdFEVaxgF9rjM/IRYHQXNnk61/H/gb2Ei+kUQ4xQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
-    os: [win32]
-
-  lightningcss-win32-x64-msvc@1.30.1:
-    resolution: {integrity: sha512-PVqXh48wh4T53F/1CCu8PIPCxLzWyCnn/9T5W1Jpmdy5h9Cwd+0YQS6/LwhHXSafuc61/xg9Lv5OrCby6a++jg==}
-    engines: {node: '>= 12.0.0'}
-    cpu: [x64]
     os: [win32]
 
   lightningcss-win32-x64-msvc@1.30.2:
@@ -7650,10 +7448,6 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [win32]
-
-  lightningcss@1.30.1:
-    resolution: {integrity: sha512-xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==}
-    engines: {node: '>= 12.0.0'}
 
   lightningcss@1.30.2:
     resolution: {integrity: sha512-utfs7Pr5uJyyvDETitgsaqSyjCb2qNRAtuqUeWIAKztsOYdcACf2KtARYXg2pSvhkt+9NfoaNY7fxjl6nuMjIQ==}
@@ -8000,10 +7794,6 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  minizlib@3.1.0:
-    resolution: {integrity: sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==}
-    engines: {node: '>= 18'}
-
   mkdirp@1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
@@ -8107,6 +7897,9 @@ packages:
 
   node-releases@2.0.21:
     resolution: {integrity: sha512-5b0pgg78U3hwXkCM8Z9b2FJdPZlr9Psr9V2gQPESdGHqbntyFJKFW4r5TeWGFzafGY3hzs1JC62VEQMbl1JFkw==}
+
+  node-releases@2.0.27:
+    resolution: {integrity: sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA==}
 
   node-schedule@2.1.1:
     resolution: {integrity: sha512-OXdegQq03OmXEjt2hZP33W2YPs/E5BcFQks46+G2gAxs4gHOIVD1u7EqlYLYSKsaIpyKCK9Gbk0ta1/gjRSMRQ==}
@@ -8703,9 +8496,9 @@ packages:
       vue-tsc:
         optional: true
 
-  prettier-plugin-tailwindcss@0.6.14:
-    resolution: {integrity: sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==}
-    engines: {node: '>=14.21.3'}
+  prettier-plugin-tailwindcss@0.7.1:
+    resolution: {integrity: sha512-Bzv1LZcuiR1Sk02iJTS1QzlFNp/o5l2p3xkopwOrbPmtMeh3fK9rVW5M3neBQzHq+kGKj/4LGQMTNcTH4NGPtQ==}
+    engines: {node: '>=20.19'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
       '@prettier/plugin-hermes': '*'
@@ -8717,14 +8510,12 @@ packages:
       prettier: ^3.0
       prettier-plugin-astro: '*'
       prettier-plugin-css-order: '*'
-      prettier-plugin-import-sort: '*'
       prettier-plugin-jsdoc: '*'
       prettier-plugin-marko: '*'
       prettier-plugin-multiline-arrays: '*'
       prettier-plugin-organize-attributes: '*'
       prettier-plugin-organize-imports: '*'
       prettier-plugin-sort-imports: '*'
-      prettier-plugin-style-order: '*'
       prettier-plugin-svelte: '*'
     peerDependenciesMeta:
       '@ianvs/prettier-plugin-sort-imports':
@@ -8745,8 +8536,6 @@ packages:
         optional: true
       prettier-plugin-css-order:
         optional: true
-      prettier-plugin-import-sort:
-        optional: true
       prettier-plugin-jsdoc:
         optional: true
       prettier-plugin-marko:
@@ -8758,8 +8547,6 @@ packages:
       prettier-plugin-organize-imports:
         optional: true
       prettier-plugin-sort-imports:
-        optional: true
-      prettier-plugin-style-order:
         optional: true
       prettier-plugin-svelte:
         optional: true
@@ -9553,9 +9340,6 @@ packages:
       tailwind-merge:
         optional: true
 
-  tailwindcss@4.1.13:
-    resolution: {integrity: sha512-i+zidfmTqtwquj4hMEwdjshYYgMbOrPzb9a0M3ZgNa0JMoZeFC6bxZvO8yr8ozS6ix2SDz0+mvryPeBs2TFE+w==}
-
   tailwindcss@4.1.17:
     resolution: {integrity: sha512-j9Ee2YjuQqYT9bbRTfTZht9W/ytp5H+jJpZKiYdP/bpnXARAuELt9ofP0lPnmHjbga7SNQIxdTAXCmtKVYjN+Q==}
 
@@ -9569,10 +9353,6 @@ packages:
 
   tar-stream@3.1.7:
     resolution: {integrity: sha512-qJj60CXt7IU1Ffyc3NJMjh6EkuCFej46zUqJ4J7pqYlThyd9bO0XBTmcOIhSzZJVWfsLks0+nle/j538YAW9RQ==}
-
-  tar@7.5.1:
-    resolution: {integrity: sha512-nlGpxf+hv0v7GkWBK2V9spgactGOp0qvfWRxUMjqHyzrt3SgwE48DIv/FhqPHJYLHpgW1opq3nERbz5Anq7n1g==}
-    engines: {node: '>=18'}
 
   terser-webpack-plugin@5.3.14:
     resolution: {integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==}
@@ -9901,6 +9681,12 @@ packages:
 
   update-browserslist-db@1.1.3:
     resolution: {integrity: sha512-UxhIZQ+QInVdunkDAaiazvvT/+fXL5Osr0JZlJulepYu6Jd7qJtDZjlur0emRlT71EN3ScPoE7gvsuIKKNavKw==}
+    hasBin: true
+    peerDependencies:
+      browserslist: '>= 4.21.0'
+
+  update-browserslist-db@1.1.4:
+    resolution: {integrity: sha512-q0SPT4xyU84saUX+tomz1WLkxUbuaJnR1xWt17M7fJtEJigJeWUNGUqrauFXsHnqev9y9JTRGwk13tFBuKby4A==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
@@ -10236,10 +10022,6 @@ packages:
 
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
-
-  yallist@5.0.0:
-    resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
-    engines: {node: '>=18'}
 
   yaml@1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
@@ -11576,10 +11358,6 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@isaacs/fs-minipass@4.0.1':
-    dependencies:
-      minipass: 7.1.2
-
   '@istanbuljs/load-nyc-config@1.1.0':
     dependencies:
       camelcase: 5.3.1
@@ -12588,7 +12366,7 @@ snapshots:
       '@rollup/plugin-json': 6.1.0(rollup@4.52.2)
       '@rollup/plugin-node-resolve': 15.3.1(rollup@4.52.2)
       '@rollup/plugin-typescript': 12.1.4(rollup@4.52.2)(tslib@2.8.1)(typescript@5.9.2)
-      autoprefixer: 10.4.13(postcss@8.4.38)
+      autoprefixer: 10.4.22(postcss@8.4.38)
       picocolors: 1.1.1
       picomatch: 4.0.2
       postcss: 8.4.38
@@ -13562,7 +13340,7 @@ snapshots:
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
-      magic-string: 0.30.19
+      magic-string: 0.30.21
     optionalDependencies:
       rollup: 4.52.2
 
@@ -14023,16 +13801,6 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tailwindcss/node@4.1.13':
-    dependencies:
-      '@jridgewell/remapping': 2.3.5
-      enhanced-resolve: 5.18.3
-      jiti: 2.6.0
-      lightningcss: 1.30.1
-      magic-string: 0.30.19
-      source-map-js: 1.2.1
-      tailwindcss: 4.1.13
-
   '@tailwindcss/node@4.1.17':
     dependencies:
       '@jridgewell/remapping': 2.3.5
@@ -14043,95 +13811,41 @@ snapshots:
       source-map-js: 1.2.1
       tailwindcss: 4.1.17
 
-  '@tailwindcss/oxide-android-arm64@4.1.13':
-    optional: true
-
   '@tailwindcss/oxide-android-arm64@4.1.17':
-    optional: true
-
-  '@tailwindcss/oxide-darwin-arm64@4.1.13':
     optional: true
 
   '@tailwindcss/oxide-darwin-arm64@4.1.17':
     optional: true
 
-  '@tailwindcss/oxide-darwin-x64@4.1.13':
-    optional: true
-
   '@tailwindcss/oxide-darwin-x64@4.1.17':
-    optional: true
-
-  '@tailwindcss/oxide-freebsd-x64@4.1.13':
     optional: true
 
   '@tailwindcss/oxide-freebsd-x64@4.1.17':
     optional: true
 
-  '@tailwindcss/oxide-linux-arm-gnueabihf@4.1.13':
-    optional: true
-
   '@tailwindcss/oxide-linux-arm-gnueabihf@4.1.17':
-    optional: true
-
-  '@tailwindcss/oxide-linux-arm64-gnu@4.1.13':
     optional: true
 
   '@tailwindcss/oxide-linux-arm64-gnu@4.1.17':
     optional: true
 
-  '@tailwindcss/oxide-linux-arm64-musl@4.1.13':
-    optional: true
-
   '@tailwindcss/oxide-linux-arm64-musl@4.1.17':
-    optional: true
-
-  '@tailwindcss/oxide-linux-x64-gnu@4.1.13':
     optional: true
 
   '@tailwindcss/oxide-linux-x64-gnu@4.1.17':
     optional: true
 
-  '@tailwindcss/oxide-linux-x64-musl@4.1.13':
-    optional: true
-
   '@tailwindcss/oxide-linux-x64-musl@4.1.17':
-    optional: true
-
-  '@tailwindcss/oxide-wasm32-wasi@4.1.13':
     optional: true
 
   '@tailwindcss/oxide-wasm32-wasi@4.1.17':
     optional: true
 
-  '@tailwindcss/oxide-win32-arm64-msvc@4.1.13':
-    optional: true
-
   '@tailwindcss/oxide-win32-arm64-msvc@4.1.17':
-    optional: true
-
-  '@tailwindcss/oxide-win32-x64-msvc@4.1.13':
     optional: true
 
   '@tailwindcss/oxide-win32-x64-msvc@4.1.17':
     optional: true
-
-  '@tailwindcss/oxide@4.1.13':
-    dependencies:
-      detect-libc: 2.1.1
-      tar: 7.5.1
-    optionalDependencies:
-      '@tailwindcss/oxide-android-arm64': 4.1.13
-      '@tailwindcss/oxide-darwin-arm64': 4.1.13
-      '@tailwindcss/oxide-darwin-x64': 4.1.13
-      '@tailwindcss/oxide-freebsd-x64': 4.1.13
-      '@tailwindcss/oxide-linux-arm-gnueabihf': 4.1.13
-      '@tailwindcss/oxide-linux-arm64-gnu': 4.1.13
-      '@tailwindcss/oxide-linux-arm64-musl': 4.1.13
-      '@tailwindcss/oxide-linux-x64-gnu': 4.1.13
-      '@tailwindcss/oxide-linux-x64-musl': 4.1.13
-      '@tailwindcss/oxide-wasm32-wasi': 4.1.13
-      '@tailwindcss/oxide-win32-arm64-msvc': 4.1.13
-      '@tailwindcss/oxide-win32-x64-msvc': 4.1.13
 
   '@tailwindcss/oxide@4.1.17':
     optionalDependencies:
@@ -14170,11 +13884,11 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
 
-  '@tailwindcss/vite@4.1.13(vite@7.1.7(@types/node@20.19.9)(jiti@2.4.2)(lightningcss@1.30.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1))':
+  '@tailwindcss/vite@4.1.17(vite@7.1.7(@types/node@20.19.9)(jiti@2.4.2)(lightningcss@1.30.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1))':
     dependencies:
-      '@tailwindcss/node': 4.1.13
-      '@tailwindcss/oxide': 4.1.13
-      tailwindcss: 4.1.13
+      '@tailwindcss/node': 4.1.17
+      '@tailwindcss/oxide': 4.1.17
+      tailwindcss: 4.1.17
       vite: 7.1.7(@types/node@20.19.9)(jiti@2.4.2)(lightningcss@1.30.2)(terser@5.44.0)(tsx@4.20.6)(yaml@2.8.1)
 
   '@tanstack/eslint-plugin-query@5.90.1(eslint@9.36.0(jiti@2.4.2))(typescript@5.9.2)':
@@ -15051,27 +14765,6 @@ snapshots:
     transitivePeerDependencies:
       - nx
 
-  '@vx-oss/accordion@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/tree': 3.9.2(react@19.0.0)
-      '@react-types/accordion': 3.0.0-alpha.26(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/divider': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-accordion': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/accordion@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15093,20 +14786,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/alert@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-stately/utils': 3.10.8(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - framer-motion
-
   '@vx-oss/alert@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-stately/utils': 3.10.8(react@19.0.0)
@@ -15121,19 +14800,6 @@ snapshots:
     transitivePeerDependencies:
       - framer-motion
 
-  '@vx-oss/aria-utils@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/utils': 3.30.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/collections': 3.12.7(react@19.0.0)
-      '@react-types/overlays': 3.9.1(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - '@vx-oss/theme'
-      - framer-motion
-
   '@vx-oss/aria-utils@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/utils': 3.30.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15146,32 +14812,6 @@ snapshots:
     transitivePeerDependencies:
       - '@vx-oss/theme'
       - framer-motion
-
-  '@vx-oss/autocomplete@0.1.8(@types/react@19.0.0)(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/combobox': 3.13.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/combobox': 3.11.1(react@19.0.0)
-      '@react-types/combobox': 3.13.8(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/input': 0.1.8(@types/react@19.0.0)(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/listbox': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/popover': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/scroll-shadow': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - '@types/react'
 
   '@vx-oss/autocomplete@0.1.8(@types/react@19.0.0)(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -15199,18 +14839,6 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@vx-oss/avatar@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-image': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/avatar@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15223,34 +14851,12 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/badge@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/badge@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/react-utils': 0.1.8(react@19.0.0)
       '@vx-oss/shared-utils': 0.1.8
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/breadcrumbs@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/breadcrumbs': 3.5.28(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/breadcrumbs': 3.7.16(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -15264,22 +14870,6 @@ snapshots:
       '@vx-oss/shared-utils': 0.1.8
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/button@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/ripple': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/spinner': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-button': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -15298,33 +14888,6 @@ snapshots:
       framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/calendar@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@internationalized/date': 3.9.0
-      '@react-aria/calendar': 3.9.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/visually-hidden': 3.8.27(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/calendar': 3.8.4(react@19.0.0)
-      '@react-stately/utils': 3.10.8(react@19.0.0)
-      '@react-types/button': 3.14.0(react@19.0.0)
-      '@react-types/calendar': 3.7.4(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-button': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      scroll-into-view-if-needed: 3.0.10
 
   '@vx-oss/calendar@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -15353,21 +14916,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
       scroll-into-view-if-needed: 3.0.10
 
-  '@vx-oss/card@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/ripple': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-button': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/card@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15380,25 +14928,6 @@ snapshots:
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       '@vx-oss/use-aria-button': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/checkbox@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/checkbox': 3.16.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/checkbox': 3.7.1(react@19.0.0)
-      '@react-stately/toggle': 3.9.1(react@19.0.0)
-      '@react-types/checkbox': 3.10.1(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-callback-ref': 0.1.8(react@19.0.0)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -15421,18 +14950,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/chip@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/chip@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15445,37 +14962,12 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/code@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/code@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/react-utils': 0.1.8(react@19.0.0)
       '@vx-oss/shared-utils': 0.1.8
       '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/date-input@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@internationalized/date': 3.9.0
-      '@react-aria/datepicker': 3.15.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/datepicker': 3.15.1(react@19.0.0)
-      '@react-types/datepicker': 3.13.1(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -15492,30 +14984,6 @@ snapshots:
       '@vx-oss/shared-utils': 0.1.8
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/date-picker@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@internationalized/date': 3.9.0
-      '@react-aria/datepicker': 3.15.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/datepicker': 3.15.1(react@19.0.0)
-      '@react-stately/utils': 3.10.8(react@19.0.0)
-      '@react-types/datepicker': 3.13.1(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/calendar': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/date-input': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/popover': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -15543,15 +15011,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/divider@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/react-rsc-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/divider@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-types/shared': 3.32.0(react@19.0.0)
@@ -15565,19 +15024,6 @@ snapshots:
     dependencies:
       framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
-  '@vx-oss/drawer@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/modal': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - framer-motion
-
   '@vx-oss/drawer@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15590,23 +15036,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
     transitivePeerDependencies:
       - framer-motion
-
-  '@vx-oss/dropdown@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/menu': 3.19.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/menu': 3.9.7(react@19.0.0)
-      '@react-types/menu': 3.10.4(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/menu': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/popover': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@vx-oss/dropdown@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -15625,17 +15054,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/form@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-stately/form': 3.2.1(react@19.0.0)
-      '@react-types/form': 3.7.15(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/form@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-stately/form': 3.2.1(react@19.0.0)
@@ -15647,16 +15065,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/framer-utils@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-measure': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - '@vx-oss/theme'
-
   '@vx-oss/framer-utils@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15667,16 +15075,6 @@ snapshots:
     transitivePeerDependencies:
       - '@vx-oss/theme'
 
-  '@vx-oss/image@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-image': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/image@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/react-utils': 0.1.8(react@19.0.0)
@@ -15684,23 +15082,6 @@ snapshots:
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       '@vx-oss/use-image': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/input-otp@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/form': 3.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/form': 3.2.1(react@19.0.0)
-      '@react-stately/utils': 3.10.8(react@19.0.0)
-      '@react-types/textfield': 3.12.5(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-form-reset': 0.1.8(react@19.0.0)
-      input-otp: 1.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -15720,27 +15101,6 @@ snapshots:
       input-otp: 1.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/input@0.1.8(@types/react@19.0.0)(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/textfield': 3.18.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/utils': 3.10.8(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@react-types/textfield': 3.12.5(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      react-textarea-autosize: 8.5.9(@types/react@19.0.0)(react@19.0.0)
-    transitivePeerDependencies:
-      - '@types/react'
 
   '@vx-oss/input@0.1.8(@types/react@19.0.0)(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -15763,34 +15123,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@vx-oss/kbd@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/kbd@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/react-utils': 0.1.8(react@19.0.0)
       '@vx-oss/shared-utils': 0.1.8
       '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/link@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/link': 3.6.4(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-link': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -15807,26 +15145,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/listbox@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/listbox': 3.14.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/list': 3.13.0(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@tanstack/react-virtual': 3.11.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/divider': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-is-mobile': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - framer-motion
-
   '@vx-oss/listbox@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15841,26 +15159,6 @@ snapshots:
       '@vx-oss/shared-utils': 0.1.8
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
-      '@vx-oss/use-is-mobile': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - framer-motion
-
-  '@vx-oss/menu@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/menu': 3.19.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/tree': 3.9.2(react@19.0.0)
-      '@react-types/menu': 3.10.4(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/divider': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
       '@vx-oss/use-is-mobile': 0.1.8(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
@@ -15887,28 +15185,6 @@ snapshots:
     transitivePeerDependencies:
       - framer-motion
 
-  '@vx-oss/modal@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/dialog': 3.5.29(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/overlays': 3.29.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/overlays': 3.6.19(react@19.0.0)
-      '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-button': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-aria-modal-overlay': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-disclosure': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-draggable': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-viewport-size': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/modal@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/dialog': 3.5.29(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -15927,26 +15203,6 @@ snapshots:
       '@vx-oss/use-disclosure': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/use-draggable': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/use-viewport-size': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/navbar@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/button': 3.14.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/overlays': 3.29.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/toggle': 3.9.1(react@19.0.0)
-      '@react-stately/utils': 3.10.8(react@19.0.0)
-      '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-resize': 0.1.8(react@19.0.0)
-      '@vx-oss/use-scroll-position': 0.1.8(react@19.0.0)
       framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
@@ -15971,29 +15227,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/number-input@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/numberfield': 3.12.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/numberfield': 3.10.1(react@19.0.0)
-      '@react-types/button': 3.14.0(react@19.0.0)
-      '@react-types/numberfield': 3.8.14(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - framer-motion
-
   '@vx-oss/number-input@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -16017,23 +15250,6 @@ snapshots:
     transitivePeerDependencies:
       - framer-motion
 
-  '@vx-oss/pagination@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/utils': 3.30.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-intersection-observer': 0.1.8(react@19.0.0)
-      '@vx-oss/use-pagination': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      scroll-into-view-if-needed: 3.0.10
-
   '@vx-oss/pagination@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -16050,28 +15266,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       scroll-into-view-if-needed: 3.0.10
-
-  '@vx-oss/popover@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/dialog': 3.5.29(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/overlays': 3.29.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/overlays': 3.6.19(react@19.0.0)
-      '@react-types/overlays': 3.9.1(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-button': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-aria-overlay': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@vx-oss/popover@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -16095,18 +15289,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/progress@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/progress': 3.4.26(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/progress': 3.5.15(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-is-mounted': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/progress@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/progress': 3.4.26(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -16116,23 +15298,6 @@ snapshots:
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       '@vx-oss/use-is-mounted': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/radio@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/radio': 3.12.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/visually-hidden': 3.8.27(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/radio': 3.11.1(react@19.0.0)
-      '@react-types/radio': 3.9.1(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -16162,65 +15327,6 @@ snapshots:
       '@vx-oss/react-rsc-utils': 0.1.8(react@19.0.0)
       '@vx-oss/shared-utils': 0.1.8
       react: 19.0.0
-
-  '@vx-oss/react@0.1.8(@types/react@19.0.0)(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.1.13)':
-    dependencies:
-      '@react-aria/visually-hidden': 3.8.27(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/accordion': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/alert': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/autocomplete': 0.1.8(@types/react@19.0.0)(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/avatar': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/badge': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/breadcrumbs': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/calendar': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/card': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/checkbox': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/chip': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/code': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/date-input': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/date-picker': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/divider': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/drawer': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/dropdown': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/image': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/input': 0.1.8(@types/react@19.0.0)(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/input-otp': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/kbd': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/link': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/listbox': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/menu': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/modal': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/navbar': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/number-input': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/pagination': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/popover': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/progress': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/radio': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/ripple': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/scroll-shadow': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/select': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/skeleton': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/slider': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/snippet': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/spacer': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/spinner': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/switch': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/table': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/tabs': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/toast': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/tooltip': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/user': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - '@types/react'
-      - tailwindcss
 
   '@vx-oss/react@0.1.8(@types/react@19.0.0)(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.1.17)':
     dependencies:
@@ -16281,16 +15387,6 @@ snapshots:
       - '@types/react'
       - tailwindcss
 
-  '@vx-oss/ripple@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/ripple@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -16301,16 +15397,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/scroll-shadow@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-data-scroll-overflow': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/scroll-shadow@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/react-utils': 0.1.8(react@19.0.0)
@@ -16318,33 +15404,6 @@ snapshots:
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       '@vx-oss/use-data-scroll-overflow': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/select@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/form': 3.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/overlays': 3.29.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/visually-hidden': 3.8.27(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/form': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/listbox': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/popover': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/scroll-shadow': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/spinner': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-button': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-aria-multiselect': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-form-reset': 0.1.8(react@19.0.0)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -16381,14 +15440,6 @@ snapshots:
 
   '@vx-oss/shared-utils@0.1.8': {}
 
-  '@vx-oss/skeleton@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/skeleton@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/shared-utils': 0.1.8
@@ -16396,24 +15447,6 @@ snapshots:
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/slider@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/slider': 3.8.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/visually-hidden': 3.8.27(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/slider': 3.7.1(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/tooltip': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - framer-motion
 
   '@vx-oss/slider@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -16433,21 +15466,6 @@ snapshots:
     transitivePeerDependencies:
       - framer-motion
 
-  '@vx-oss/snippet@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/button': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/tooltip': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-clipboard': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/snippet@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -16463,15 +15481,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/spacer@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@vx-oss/spacer@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@vx-oss/react-utils': 0.1.8(react@19.0.0)
@@ -16480,17 +15489,6 @@ snapshots:
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/spinner@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - framer-motion
 
   '@vx-oss/spinner@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -16502,21 +15500,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
     transitivePeerDependencies:
       - framer-motion
-
-  '@vx-oss/switch@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/switch': 3.7.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/visually-hidden': 3.8.27(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/toggle': 3.9.1(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@vx-oss/switch@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -16533,32 +15516,12 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/system-rsc@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react@19.0.0)':
-    dependencies:
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      clsx: 1.2.1
-      react: 19.0.0
-
   '@vx-oss/system-rsc@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react@19.0.0)':
     dependencies:
       '@react-types/shared': 3.32.0(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       clsx: 1.2.1
       react: 19.0.0
-
-  '@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/i18n': 3.12.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/overlays': 3.29.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/utils': 3.30.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/system-rsc': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - '@vx-oss/theme'
 
   '@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -16572,27 +15535,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
     transitivePeerDependencies:
       - '@vx-oss/theme'
-
-  '@vx-oss/table@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/table': 3.17.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/visually-hidden': 3.8.27(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/table': 3.15.0(react@19.0.0)
-      '@react-stately/virtualizer': 4.4.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/grid': 3.3.5(react@19.0.0)
-      '@react-types/table': 3.13.3(react@19.0.0)
-      '@tanstack/react-virtual': 3.11.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/checkbox': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/spacer': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@vx-oss/table@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -16615,24 +15557,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@vx-oss/tabs@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/tabs': 3.10.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/tabs': 3.8.5(react@19.0.0)
-      '@react-types/shared': 3.32.0(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-is-mounted': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      scroll-into-view-if-needed: 3.0.10
-
   '@vx-oss/tabs@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -16651,18 +15575,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
       scroll-into-view-if-needed: 3.0.10
 
-  '@vx-oss/theme@0.1.8(tailwindcss@4.1.13)':
-    dependencies:
-      '@vx-oss/shared-utils': 0.1.8
-      clsx: 1.2.1
-      color: 4.2.3
-      color2k: 2.0.3
-      deepmerge: 4.3.1
-      flat: 5.0.2
-      tailwind-merge: 3.3.1
-      tailwind-variants: 3.1.0(tailwind-merge@3.3.1)(tailwindcss@4.1.13)
-      tailwindcss: 4.1.13
-
   '@vx-oss/theme@0.1.8(tailwindcss@4.1.17)':
     dependencies:
       '@vx-oss/shared-utils': 0.1.8
@@ -16674,22 +15586,6 @@ snapshots:
       tailwind-merge: 3.3.1
       tailwind-variants: 3.1.0(tailwind-merge@3.3.1)(tailwindcss@4.1.17)
       tailwindcss: 4.1.17
-
-  '@vx-oss/toast@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/interactions': 3.25.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/toast': 3.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/toast': 3.1.2(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-icons': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/spinner': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-is-mobile': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@vx-oss/toast@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -16703,26 +15599,6 @@ snapshots:
       '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@vx-oss/theme': 0.1.8(tailwindcss@4.1.17)
       '@vx-oss/use-is-mobile': 0.1.8(react@19.0.0)
-      framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@vx-oss/tooltip@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/overlays': 3.29.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/tooltip': 3.8.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/tooltip': 3.5.7(react@19.0.0)
-      '@react-types/overlays': 3.9.1(react@19.0.0)
-      '@react-types/tooltip': 3.4.20(react@19.0.0)
-      '@vx-oss/aria-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/dom-animation': 0.1.8(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@vx-oss/framer-utils': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      '@vx-oss/use-aria-overlay': 0.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/use-safe-layout-effect': 0.1.8(react@19.0.0)
       framer-motion: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
@@ -16901,17 +15777,6 @@ snapshots:
   '@vx-oss/use-viewport-size@0.1.8(react@19.0.0)':
     dependencies:
       react: 19.0.0
-
-  '@vx-oss/user@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/focus': 3.21.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/avatar': 0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/react-utils': 0.1.8(react@19.0.0)
-      '@vx-oss/shared-utils': 0.1.8
-      '@vx-oss/system': 0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.13))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@vx-oss/theme': 0.1.8(tailwindcss@4.1.13)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@vx-oss/user@0.1.8(@vx-oss/system@0.1.8(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@vx-oss/theme@0.1.8(tailwindcss@4.1.17))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -17343,14 +16208,24 @@ snapshots:
 
   atomic-sleep@1.0.0: {}
 
-  autoprefixer@10.4.13(postcss@8.4.38):
+  autoprefixer@10.4.22(postcss@8.4.38):
     dependencies:
-      browserslist: 4.26.2
-      caniuse-lite: 1.0.30001745
-      fraction.js: 4.3.7
+      browserslist: 4.28.0
+      caniuse-lite: 1.0.30001754
+      fraction.js: 5.3.4
       normalize-range: 0.1.2
       picocolors: 1.1.1
       postcss: 8.4.38
+      postcss-value-parser: 4.2.0
+
+  autoprefixer@10.4.22(postcss@8.5.6):
+    dependencies:
+      browserslist: 4.28.0
+      caniuse-lite: 1.0.30001754
+      fraction.js: 5.3.4
+      normalize-range: 0.1.2
+      picocolors: 1.1.1
+      postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -17492,6 +16367,8 @@ snapshots:
 
   base64-js@1.5.1: {}
 
+  baseline-browser-mapping@2.8.27: {}
+
   baseline-browser-mapping@2.8.7: {}
 
   basic-auth@2.0.1:
@@ -17568,6 +16445,14 @@ snapshots:
       electron-to-chromium: 1.5.224
       node-releases: 2.0.21
       update-browserslist-db: 1.1.3(browserslist@4.26.2)
+
+  browserslist@4.28.0:
+    dependencies:
+      baseline-browser-mapping: 2.8.27
+      caniuse-lite: 1.0.30001754
+      electron-to-chromium: 1.5.250
+      node-releases: 2.0.27
+      update-browserslist-db: 1.1.4(browserslist@4.28.0)
 
   bser@2.1.1:
     dependencies:
@@ -17647,6 +16532,8 @@ snapshots:
 
   caniuse-lite@1.0.30001745: {}
 
+  caniuse-lite@1.0.30001754: {}
+
   caseless@0.12.0: {}
 
   chai@5.3.3:
@@ -17684,8 +16571,6 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
-
-  chownr@3.0.0: {}
 
   chrome-trace-event@1.0.4: {}
 
@@ -18247,6 +17132,8 @@ snapshots:
       jake: 10.9.4
 
   electron-to-chromium@1.5.224: {}
+
+  electron-to-chromium@1.5.250: {}
 
   emittery@0.13.1: {}
 
@@ -18944,7 +17831,7 @@ snapshots:
 
   forwarded@0.2.0: {}
 
-  fraction.js@4.3.7: {}
+  fraction.js@5.3.4: {}
 
   framer-motion@12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
@@ -19953,8 +18840,6 @@ snapshots:
 
   jiti@2.4.2: {}
 
-  jiti@2.6.0: {}
-
   jiti@2.6.1: {}
 
   jju@1.4.0: {}
@@ -20170,80 +19055,35 @@ snapshots:
   lightningcss-android-arm64@1.30.2:
     optional: true
 
-  lightningcss-darwin-arm64@1.30.1:
-    optional: true
-
   lightningcss-darwin-arm64@1.30.2:
-    optional: true
-
-  lightningcss-darwin-x64@1.30.1:
     optional: true
 
   lightningcss-darwin-x64@1.30.2:
     optional: true
 
-  lightningcss-freebsd-x64@1.30.1:
-    optional: true
-
   lightningcss-freebsd-x64@1.30.2:
-    optional: true
-
-  lightningcss-linux-arm-gnueabihf@1.30.1:
     optional: true
 
   lightningcss-linux-arm-gnueabihf@1.30.2:
     optional: true
 
-  lightningcss-linux-arm64-gnu@1.30.1:
-    optional: true
-
   lightningcss-linux-arm64-gnu@1.30.2:
-    optional: true
-
-  lightningcss-linux-arm64-musl@1.30.1:
     optional: true
 
   lightningcss-linux-arm64-musl@1.30.2:
     optional: true
 
-  lightningcss-linux-x64-gnu@1.30.1:
-    optional: true
-
   lightningcss-linux-x64-gnu@1.30.2:
-    optional: true
-
-  lightningcss-linux-x64-musl@1.30.1:
     optional: true
 
   lightningcss-linux-x64-musl@1.30.2:
     optional: true
 
-  lightningcss-win32-arm64-msvc@1.30.1:
-    optional: true
-
   lightningcss-win32-arm64-msvc@1.30.2:
-    optional: true
-
-  lightningcss-win32-x64-msvc@1.30.1:
     optional: true
 
   lightningcss-win32-x64-msvc@1.30.2:
     optional: true
-
-  lightningcss@1.30.1:
-    dependencies:
-      detect-libc: 2.1.1
-    optionalDependencies:
-      lightningcss-darwin-arm64: 1.30.1
-      lightningcss-darwin-x64: 1.30.1
-      lightningcss-freebsd-x64: 1.30.1
-      lightningcss-linux-arm-gnueabihf: 1.30.1
-      lightningcss-linux-arm64-gnu: 1.30.1
-      lightningcss-linux-arm64-musl: 1.30.1
-      lightningcss-linux-x64-gnu: 1.30.1
-      lightningcss-linux-x64-musl: 1.30.1
-      lightningcss-win32-arm64-msvc: 1.30.1
-      lightningcss-win32-x64-msvc: 1.30.1
 
   lightningcss@1.30.2:
     dependencies:
@@ -20555,10 +19395,6 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  minizlib@3.1.0:
-    dependencies:
-      minipass: 7.1.2
-
   mkdirp@1.0.4: {}
 
   mlly@1.8.0:
@@ -20636,6 +19472,8 @@ snapshots:
   node-machine-id@1.1.12: {}
 
   node-releases@2.0.21: {}
+
+  node-releases@2.0.27: {}
 
   node-schedule@2.1.1:
     dependencies:
@@ -21248,7 +20086,7 @@ snapshots:
       prettier: 3.6.2
       typescript: 5.9.2
 
-  prettier-plugin-tailwindcss@0.6.14(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.6.2))(prettier-plugin-organize-imports@4.3.0(prettier@3.6.2)(typescript@5.9.2))(prettier@3.6.2):
+  prettier-plugin-tailwindcss@0.7.1(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.6.2))(prettier-plugin-organize-imports@4.3.0(prettier@3.6.2)(typescript@5.9.2))(prettier@3.6.2):
     dependencies:
       prettier: 3.6.2
     optionalDependencies:
@@ -22187,25 +21025,17 @@ snapshots:
       tailwind-merge: 2.5.4
       tailwindcss: 4.1.17
 
-  tailwind-variants@3.1.0(tailwind-merge@3.3.1)(tailwindcss@4.1.13):
-    dependencies:
-      tailwindcss: 4.1.13
-    optionalDependencies:
-      tailwind-merge: 3.3.1
-
   tailwind-variants@3.1.0(tailwind-merge@3.3.1)(tailwindcss@4.1.17):
     dependencies:
       tailwindcss: 4.1.17
     optionalDependencies:
       tailwind-merge: 3.3.1
 
-  tailwind-variants@3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.13):
+  tailwind-variants@3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.17):
     dependencies:
-      tailwindcss: 4.1.13
+      tailwindcss: 4.1.17
     optionalDependencies:
       tailwind-merge: 3.3.1
-
-  tailwindcss@4.1.13: {}
 
   tailwindcss@4.1.17: {}
 
@@ -22226,14 +21056,6 @@ snapshots:
       streamx: 2.23.0
     transitivePeerDependencies:
       - react-native-b4a
-
-  tar@7.5.1:
-    dependencies:
-      '@isaacs/fs-minipass': 4.0.1
-      chownr: 3.0.0
-      minipass: 7.1.2
-      minizlib: 3.1.0
-      yallist: 5.0.0
 
   terser-webpack-plugin@5.3.14(@swc/core@1.5.29(@swc/helpers@0.5.17))(webpack@5.101.3(@swc/core@1.5.29(@swc/helpers@0.5.17))):
     dependencies:
@@ -22563,6 +21385,12 @@ snapshots:
   update-browserslist-db@1.1.3(browserslist@4.26.2):
     dependencies:
       browserslist: 4.26.2
+      escalade: 3.2.0
+      picocolors: 1.1.1
+
+  update-browserslist-db@1.1.4(browserslist@4.28.0):
+    dependencies:
+      browserslist: 4.28.0
       escalade: 3.2.0
       picocolors: 1.1.1
 
@@ -22971,8 +21799,6 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@4.0.0: {}
-
-  yallist@5.0.0: {}
 
   yaml@1.10.2: {}
 

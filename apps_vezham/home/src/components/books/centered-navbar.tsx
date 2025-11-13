@@ -279,7 +279,7 @@ const CenteredNavbar = React.forwardRef<HTMLElement, NavbarProps>(
         ref={ref}
         classNames={{
           base: cn(
-            'bg-default-foreground top-12 mx-auto max-w-xs rounded-full px-1.5 py-[5px] pr-[18px] shadow-[0_4px_15px_0_rgba(0,0,0,0.25)] sm:max-w-md md:max-w-screen-sm md:pr-1.5',
+            'bg-default-foreground top-12 mx-auto max-w-xs rounded-full px-1.5 py-[5px] pr-[18px] shadow-[0_4px_15px_0_rgba(0,0,0,0.25)] sm:max-w-md md:max-w-(--breakpoint-sm) md:pr-1.5',
             base
           ),
           wrapper: cn('px-0', wrapper),

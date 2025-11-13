@@ -22,8 +22,8 @@
 //           <SearchIcon
 //             size="md"
 //             classNames={{
-//               base: 'pointer-events-none flex-shrink-0 text-base',
-//               icon: '!fill-default-400'
+//               base: 'pointer-events-none shrink-0 text-base',
+//               icon: 'fill-default-400!'
 //             }}
 //           />
 //         }

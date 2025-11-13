@@ -82,7 +82,7 @@
 //     className: slots.right_footer({ class: classNames?.right_footer })
 //   })
 //   const getHeadingProps = () => ({
-//     className: '!text-3xl',
+//     className: 'text-3xl!',
 //     content: trend_no < 10 ? `0${trend_no}` : trend_no
 //   })
 //   return {
@@ -231,7 +231,7 @@ const useProps = (originalProps: Props) => {
   })
 
   const getHeadingProps = () => ({
-    className: '!text-3xl',
+    className: 'text-3xl!',
     content: trend_no < 10 ? `0${trend_no}` : trend_no.toString()
   })
 

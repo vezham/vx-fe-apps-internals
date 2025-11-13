@@ -14,7 +14,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'flex flex-col gap-2',
+    base: 'md:1/6 flex flex-col gap-2',
     header: 'flex items-center gap-2',
     wrapper: 'vtrending-wrapper grid h-full w-full gap-4 p-4',
     scroll: 'h-full w-full'

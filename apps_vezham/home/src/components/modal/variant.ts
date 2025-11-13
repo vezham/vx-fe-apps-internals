@@ -36,7 +36,7 @@ const tva = tv({
     featureIcon: 'text-primary',
     featureTitle: 'text-foreground text-md mb-1 font-semibold',
     featureDescription: 'text-foreground-500 text-xs',
-    metricWrapper: 'relative h-16 w-16 flex-shrink-0 p-2',
+    metricWrapper: 'relative h-16 w-16 shrink-0 p-2',
     metricSvg: 'h-full w-full',
     metricBg: 'stroke-default-200',
     metricFg: 'stroke-primary',

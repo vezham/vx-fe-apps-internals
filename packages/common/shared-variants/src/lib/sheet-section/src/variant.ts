@@ -69,28 +69,28 @@
 //       bg_effect: ['flat', 'faded'],
 //       dir_effect: 'top',
 //       class: {
-//         base: 'bg-gradient-to-t'
+//         base: 'bg-linear-to-t'
 //       }
 //     },
 //     {
 //       bg_effect: ['flat', 'faded'],
 //       dir_effect: 'bottom',
 //       class: {
-//         base: 'bg-gradient-to-b'
+//         base: 'bg-linear-to-b'
 //       }
 //     },
 //     {
 //       bg_effect: ['flat', 'faded'],
 //       dir_effect: 'left',
 //       class: {
-//         base: 'bg-gradient-to-l'
+//         base: 'bg-linear-to-l'
 //       }
 //     },
 //     {
 //       bg_effect: ['flat', 'faded'],
 //       dir_effect: 'right',
 //       class: {
-//         base: 'bg-gradient-to-r'
+//         base: 'bg-linear-to-r'
 //       }
 //     },
 //     // wjdlz/NOTE: for bg_effect - solid
@@ -360,28 +360,28 @@ const tva = tv({
       bg_effect: ['flat', 'faded'],
       dir_effect: 'top',
       class: {
-        base: 'bg-gradient-to-t'
+        base: 'bg-linear-to-t'
       }
     },
     {
       bg_effect: ['flat', 'faded'],
       dir_effect: 'bottom',
       class: {
-        base: 'bg-gradient-to-b'
+        base: 'bg-linear-to-b'
       }
     },
     {
       bg_effect: ['flat', 'faded'],
       dir_effect: 'left',
       class: {
-        base: 'bg-gradient-to-l'
+        base: 'bg-linear-to-l'
       }
     },
     {
       bg_effect: ['flat', 'faded'],
       dir_effect: 'right',
       class: {
-        base: 'bg-gradient-to-r'
+        base: 'bg-linear-to-r'
       }
     },
 
@@ -534,7 +534,7 @@ const tva = tv({
       color: 'success',
       bg_effect: 'gallery',
       class: {
-        base: 'border-box bg-gradient-to-r from-green-400 to-green-700',
+        base: 'border-box bg-linear-to-r from-green-400 to-green-700',
         wrapper_cta_hint: 'text-black'
       }
     },
@@ -542,7 +542,7 @@ const tva = tv({
       color: 'warning',
       bg_effect: 'gallery',
       class: {
-        base: 'border-box bg-gradient-to-r from-amber-400 to-orange-500',
+        base: 'border-box bg-linear-to-r from-amber-400 to-orange-500',
         wrapper_cta_hint: 'text-black'
       }
     },
@@ -550,7 +550,7 @@ const tva = tv({
       color: 'danger',
       bg_effect: 'gallery',
       class: {
-        base: 'border-box bg-gradient-to-r from-red-300 to-red-600',
+        base: 'border-box bg-linear-to-r from-red-300 to-red-600',
         wrapper_cta_hint: 'text-black'
       }
     },
@@ -558,7 +558,7 @@ const tva = tv({
       color: 'info',
       bg_effect: 'gallery',
       class: {
-        base: 'border-box bg-gradient-to-r from-sky-400 to-blue-500',
+        base: 'border-box bg-linear-to-r from-sky-400 to-blue-500',
         wrapper_cta_hint: 'text-black'
       }
     },
@@ -566,7 +566,7 @@ const tva = tv({
       color: 'default',
       bg_effect: 'gallery',
       class: {
-        base: 'border-box bg-gradient-to-r from-gray-400 to-gray-500',
+        base: 'border-box bg-linear-to-r from-gray-400 to-gray-500',
         wrapper_cta_hint: 'text-black'
       }
     },
@@ -574,7 +574,7 @@ const tva = tv({
       color: 'primary',
       bg_effect: 'gallery',
       class: {
-        base: 'border-box bg-gradient-to-r from-blue-300 to-blue-500',
+        base: 'border-box bg-linear-to-r from-blue-300 to-blue-500',
         wrapper_cta_hint: 'text-black'
       }
     }

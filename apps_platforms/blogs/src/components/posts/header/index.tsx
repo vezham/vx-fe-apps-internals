@@ -61,7 +61,7 @@
 //                   <Text
 //                     content={'.'}
 //                     variant="paragraph"
-//                     className="text-foreground-400 !mb-4 text-xl"
+//                     className="text-foreground-400 mb-4! text-xl"
 //                   />
 //                   <Text
 //                     content={`${toEstimateTime(article.read_time)} read`}

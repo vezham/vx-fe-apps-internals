@@ -78,7 +78,7 @@
 //             'w-full': !isVertical,
 //             'overflow-y-hidden': isVertical,
 //             'overflow-x-hidden': !isVertical,
-//             'max-h-[calc(100vh_-_200px)]': isVertical
+//             'max-h-[calc(100vh-200px)]': isVertical
 //           },
 //           className
 //         )}
@@ -89,7 +89,7 @@
 //           ...style
 //         }}>
 //         <div
-//           className={cn('flex w-max items-stretch gap-[--gap]', {
+//           className={cn('flex w-max items-stretch gap-(--gap)', {
 //             'flex-col': isVertical,
 //             'h-full': isVertical,
 //             'animate-scrolling-banner': !isVertical,

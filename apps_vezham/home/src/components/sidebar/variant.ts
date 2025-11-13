@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'text-foreground h-full w-full flex-shrink-0',
+    base: 'text-foreground h-full w-full shrink-0',
     container: 'pt-20 pb-5 lg:py-2 lg:pb-0',
     categoryWrapper: 'mb-1',
     categoryHeader:

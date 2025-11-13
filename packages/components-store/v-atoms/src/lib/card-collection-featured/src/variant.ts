@@ -5,7 +5,7 @@
 //     wrapper: 'border-small border-default-100 p-2',
 //     header: 'flex items-center justify-between gap-2',
 //     body: 'px-2 pb-1',
-//     icon: 'flex max-w-[100%] items-center gap-2',
+//     icon: 'flex max-w-full items-center gap-2',
 //     title: 'text-base font-semibold',
 //     description: 'text-small text-default-500 pt-4 text-left rtl:text-right'
 //   },
@@ -19,11 +19,11 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'grid gap-6 sm:grid-cols-2 lg:grid-cols-4',
+    base: 'grid gap-6 sm:grid-cols-2',
     wrapper: 'border-small border-default-100 p-2',
     header: 'flex items-center justify-between gap-2',
     body: 'px-2 pb-1',
-    icon: 'flex max-w-[100%] items-center gap-2',
+    icon: 'flex max-w-full items-center gap-2',
     title: 'text-base font-semibold',
     description: 'text-small text-default-500 pt-4 text-left rtl:text-right'
   },
@@ -84,8 +84,8 @@ const tva = tv({
   ],
   defaultVariants: {
     spacing: 'md',
-    shadow: 'sm',
-    device: 'desktop'
+    shadow: 'sm'
+    // device: 'desktop'
   }
 })
 

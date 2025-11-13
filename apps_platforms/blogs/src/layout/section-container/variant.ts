@@ -13,11 +13,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: [
-      'vsection-container',
-      'mx-auto px-8 pt-10 pb-20',
-      'w-full md:w-9/12'
-    ].join(' ')
+    base: ['section-container', 'mx-auto px-8 pt-10 pb-20', 'w-full'].join(' ')
   },
   variants: {}
 })

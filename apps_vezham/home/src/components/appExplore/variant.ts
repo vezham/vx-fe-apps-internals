@@ -37,12 +37,12 @@ const tva = tv({
     cardBase: 'p-6',
     resultsWrapper: 'mb-4 space-y-6 text-xl font-bold',
     resultsItem: 'mb-6 flex gap-4',
-    resultCircle: 'relative h-16 w-16 flex-shrink-0',
+    resultCircle: 'relative h-16 w-16 shrink-0',
     resultText: 'fill-foreground text-xs font-bold',
     supportWrapper: 'mb-4 space-y-6 text-xl font-bold',
     supportItem: 'mb-6 flex gap-4',
     supportIconWrapper:
-      'bg-primary/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md',
+      'bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-md',
     supportTitle: 'text-foreground mb-1 font-semibold',
     supportDescription: 'text-default-500 text-sm',
     supportButton: 'mt-6',
@@ -54,7 +54,7 @@ const tva = tv({
     grid: 'grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3',
     subGrid:
       'grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 md:pb-0 lg:grid-cols-3',
-    categoryWrapper: 'min-h-[auto] scroll-mt-20 pb-5',
+    categoryWrapper: 'min-h-auto scroll-mt-20 pb-5',
     sidebarButton:
       'text-foreground-500 hover:text-foreground transition-all duration-200 lg:hidden',
     sidebarWrapper: 'mb-4 flex items-center gap-3',

@@ -4,7 +4,7 @@ const tva = tv({
   slots: {
     base: 'flex items-center',
     button: 'text-default-400 bg-default-100 w-full text-sm font-normal',
-    searchIcon: 'pointer-events-none flex-shrink-0 text-base',
+    searchIcon: 'pointer-events-none shrink-0 text-base',
     kbd: 'text-default-400 gap-1'
   },
   variants: {
@@ -18,7 +18,7 @@ const tva = tv({
         kbd: 'text-sm'
       },
       lg: {
-        button: 'text-base sm:w-112',
+        button: 'text-base sm:w-md',
         kbd: 'text-base'
       }
     },

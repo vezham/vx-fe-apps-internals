@@ -2,7 +2,7 @@ import { VariantProps, tv } from 'tailwind-variants'
 
 const tva = tv({
   slots: {
-    wrapper: 'relative w-full bg-gradient-to-br py-30 text-white',
+    wrapper: 'relative w-full bg-linear-to-br py-30 text-white',
     content: 'flex flex-col items-center justify-center px-4 text-center',
     title: 'mx-auto max-w-4xl text-3xl leading-tight font-bold md:text-5xl',
     inputContainer: 'right-0 bottom-0 left-0 z-10 translate-y-1/2 px-4',

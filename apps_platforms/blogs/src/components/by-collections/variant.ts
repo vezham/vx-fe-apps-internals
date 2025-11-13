@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'flex w-full flex-col',
+    base: 'flex flex-col md:w-5/6',
     title: 'my-4 px-4',
     scroll: 'h-full w-full p-4'
   },

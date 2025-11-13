@@ -73,7 +73,7 @@ const BookSection = () => {
         },
         ```
       */}
-      <main className="bg-hero-section-centered-navbar dark:from-default-900 dark:via-default-800 dark:to-primary-900 flex flex-col items-center rounded-2xl px-3 md:rounded-3xl md:px-0 lg:pt-20 dark:bg-gradient-to-br">
+      <main className="bg-hero-section-centered-navbar dark:from-default-900 dark:via-default-800 dark:to-primary-900 flex flex-col items-center rounded-2xl px-3 md:rounded-3xl md:px-0 lg:pt-20 dark:bg-linear-to-br">
         <section className="my-14 mt-16 flex flex-col items-center justify-center gap-6">
           <Button
             className="bg-background dark:bg-default-100 text-default-500 h-9 px-[18px] shadow-[0_2px_15px_0_rgba(0,0,0,0.05)]"
@@ -117,7 +117,7 @@ const BookSection = () => {
             </Button>
           </div>
         </section>
-        <div className="dark:border-default-800 dark:bg-default-900/40 mt-auto w-[calc(100%-calc(theme(spacing.4)*2))] max-w-6xl overflow-hidden rounded-tl-2xl rounded-tr-2xl border-1 border-white/25 bg-white/40 px-2 pt-3 md:px-4 md:pt-6">
+        <div className="dark:border-default-800 dark:bg-default-900/40 mt-auto w-[calc(100%-calc(--spacing(4)*2))] max-w-6xl overflow-hidden rounded-tl-2xl rounded-tr-2xl border-1 border-white/25 bg-white/40 px-2 pt-3 md:px-4 md:pt-6">
           <AppScreenshotLight />
         </div>
       </main>

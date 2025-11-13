@@ -3,7 +3,7 @@
 // const tva = tv({
 //   extend: SheetSection,
 //   slots: {
-//     base: 'vpwa-hero-section bg-vcontainer-primary m-6 flex h-max flex-col items-center gap-4 rounded-3xl !bg-cover p-20',
+//     base: 'vpwa-hero-section bg-vcontainer-primary m-6 flex h-max flex-col items-center gap-4 rounded-3xl bg-cover! p-20',
 //     wrapper: 'vpwa-hero-wrapper flex flex-col sm:text-center',
 //     wrapper_super_title: 'mb-4 text-sm leading-6 font-semibold',
 //     wrapper_title: 'tracking-tight',
@@ -42,39 +42,31 @@
 // export type { tvProps, tvSlots }
 import { VariantProps, tv } from '@vezham/react-utils'
 
-// import { SheetSection } from '@vx/shared-variants'
+import { SheetSection } from '@vx/shared-variants'
+
 const tva = tv({
-  // extend: SheetSection,
+  extend: SheetSection,
   slots: {
-    base: 'm-10 flex flex-col items-center gap-6 rounded-4xl bg-cover',
-    wrapper: 'flex flex-col sm:text-center',
+    base: 'm-10 flex flex-col items-center gap-6 rounded-4xl bg-cover!',
+    wrapper: 'flex flex-col text-center',
     wrapper_super_title: 'text-3xl leading-6 font-semibold sm:text-4xl',
     wrapper_title: 'tracking-tight',
     wrapper_description: 'text-base md:text-lg md:leading-6'
   },
   variants: {
-    title_size: {
-      sm: {
-        wrapper_title: 'text-3xl sm:text-4xl'
-      },
-      md: {
-        wrapper_title: 'text-4xl leading-none font-bold sm:text-5xl'
-      }
-    },
     spacer: {
       sm: {
-        wrapper: 'py-5'
+        wrapper: 'py-6'
       },
       md: {
-        wrapper: 'py-10'
+        wrapper: 'py-12'
       },
       lg: {
-        wrapper: 'py-8'
+        wrapper: 'py-16'
       }
     }
   },
   defaultVariants: {
-    title_size: 'md',
     spacer: 'lg'
   }
 })

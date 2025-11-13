@@ -68,7 +68,7 @@
 //           <Text
 //             content={'.'}
 //             variant="title"
-//             className="!mb-3"
+//             className="mb-3!"
 //             vc="secondary"
 //           />
 //           <Text
@@ -160,7 +160,7 @@ const CardPostTrending = forwardRef<'div', Props>((props, ref) => {
           <Text
             content={'.'}
             variant="title"
-            className="!mb-3"
+            className="mb-3!"
             vc="secondary"
           />
           <Text
