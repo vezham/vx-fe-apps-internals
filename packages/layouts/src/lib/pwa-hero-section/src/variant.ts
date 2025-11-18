@@ -42,12 +42,12 @@
 // export type { tvProps, tvSlots }
 import { VariantProps, tv } from '@vezham/react-utils'
 
-import { SheetSection } from '@vx/shared-variants'
+// import { SheetSection } from '@vx/shared-variants'
 
 const tva = tv({
-  extend: SheetSection,
+  // extend: SheetSection,
   slots: {
-    base: 'm-10 flex flex-col items-center gap-6 rounded-4xl bg-cover!',
+    base: 'm-8 flex flex-col items-center gap-6 rounded-4xl bg-cover',
     wrapper: 'flex flex-col text-center',
     wrapper_super_title: 'text-3xl leading-6 font-semibold sm:text-4xl',
     wrapper_title: 'tracking-tight',

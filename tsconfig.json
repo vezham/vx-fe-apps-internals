@@ -61,6 +61,12 @@
     },
     {
       "path": "./packages/utilities/system-utils"
+    },
+    {
+      "path": "./apps_vezham/land-e2e"
+    },
+    {
+      "path": "./apps_vezham/land"
     }
   ]
 }
