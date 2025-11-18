@@ -1,14 +1,39 @@
 import React from 'react'
 
+import { Button } from '@vx-oss/react'
+
+import { HomeSection } from '../../components/herosection'
 import { AppNavbar } from '../../components/navbar'
-import { items, navItems } from '../../components/navbar/data'
+import { usePersonalize } from '../../store/useHomeSection'
 
 const Herosection = () => {
+  const { data: personal } = usePersonalize.list({})
+
+  const navItems = personal?.navItems ?? []
+  const items = personal?.tabItems ?? []
+
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
-  const [activeNavbarItem, setActiveNavbarItem] = React.useState('features')
-  const [selectedTab, setSelectedTab] = React.useState(items[2].key)
-  const [activeItem, setActiveItem] = React.useState(items[2])
+
+  const [activeNavbarItem, setActiveNavbarItem] = React.useState<string>('')
+
+  const [selectedTab, setSelectedTab] = React.useState<string>('')
+  const [activeItem, setActiveItem] = React.useState<any>(null)
+
+  React.useEffect(() => {
+    if (navItems.length > 0) {
+      setActiveNavbarItem(navItems[0].key)
+    }
+
+    if (items.length > 0) {
+      setSelectedTab(items[2].key)
+      setActiveItem(items[2])
+    }
+  }, [navItems.length, items.length])
+
+  const handleNavbarClick = (key: string) => {
+    setActiveNavbarItem(key)
+  }
 
   const handleTabClick = (item: any) => {
     setSelectedTab(item.key)
@@ -16,21 +41,13 @@ const Herosection = () => {
     setIsDrawerOpen(true)
   }
 
-  const handleNavbarClick = (key: string) => {
-    setActiveNavbarItem(key)
-  }
-
   const handleSelectionChange = (key: string) => {
     setSelectedTab(key)
-    const item = items.find(item => item.key === key)
-    if (item) {
-      setActiveItem(item)
+    const found = items.find(i => i.key === key)
+    if (found) {
+      setActiveItem(found)
       setIsDrawerOpen(true)
     }
-  }
-
-  const handleDrawerClose = () => {
-    setIsDrawerOpen(false)
   }
 
   return (
@@ -39,7 +56,7 @@ const Herosection = () => {
       tabItems={items}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      activeNavbarItem={activeNavbarItem}
+      activeNavbarItem={activeNavbarItem} // ✔ string
       selectedTab={selectedTab}
       activeItem={activeItem}
       isDrawerOpen={isDrawerOpen}
@@ -47,8 +64,9 @@ const Herosection = () => {
       onTabClick={handleTabClick}
       onSelectionChange={handleSelectionChange}
       onDrawerOpenChange={setIsDrawerOpen}
-      onDrawerClose={handleDrawerClose}
-    />
+      onDrawerClose={() => setIsDrawerOpen(false)}>
+      <HomeSection {...personal?.cards?.welcome_message}></HomeSection>
+    </AppNavbar>
   )
 }
 

@@ -1,13 +1,14 @@
-import { ReactRef, useDOMRef } from '@vezham/react-utils'
 import {
   HTMLHeroUIProps,
   PropGetter,
-  mapPropsVariants
+  ReactRef,
+  SlotsToClasses,
+  cn,
+  mapPropsVariants,
+  useDOMRef
 } from '@vezham/react-utils'
-import { cn } from '@vezham/react-utils'
-import { SlotsToClasses } from '@vezham/react-utils'
 
-import { DropdownItem } from '../drawer/types'
+import { DropdownItem } from '../tabDrawer/types'
 import { TabItem } from '../tabs/types'
 import { tvProps, tvSlots, tva } from './variant'
 
@@ -97,7 +98,7 @@ const useProps = (originalProps: Props) => {
   })
 
   const getNavbarMenuEndItemProps: PropGetter = () => ({
-    className: slots.navbarContent({ class: classNames?.navbarMenuEnd })
+    className: slots.navbarMenuEnd({ class: classNames?.navbarMenuEnd })
   })
 
   const getNavbarItemProps = (isActive: boolean): PropGetter => {
@@ -148,4 +149,4 @@ const useProps = (originalProps: Props) => {
 
 export { useProps }
 
-export type { Props, NavbarItem, NavbarLogoProps, TabItem }
+export type { NavbarItem, NavbarLogoProps, Props, TabItem }

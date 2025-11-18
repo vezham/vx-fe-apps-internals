@@ -53,12 +53,14 @@ export type coverType = {
 }
 
 type welcomeData = {
+  __type: string
   title?: string
   description?: string
   cover?: coverType
 }
 
 type newsletterData = {
+  __type: string
   title: string
   description: string
   actions: newsLetterAction

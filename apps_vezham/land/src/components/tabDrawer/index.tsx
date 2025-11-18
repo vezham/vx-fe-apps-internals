@@ -4,7 +4,7 @@ import { Drawer, DrawerBody, DrawerContent, DrawerHeader } from '@vx-oss/react'
 
 import { Props, useProps } from './types'
 
-const NavbarDrawer = forwardRef<'div', Props>((props, ref) => {
+const TabDrawer = forwardRef<'div', Props>((props, ref) => {
   const {
     getBaseProps,
     getDrawerContentProps,
@@ -27,6 +27,7 @@ const NavbarDrawer = forwardRef<'div', Props>((props, ref) => {
     <Drawer
       isOpen={isOpen}
       placement={placement}
+      backdrop="opaque"
       size="xs"
       {...getBaseProps()}
       onOpenChange={onOpenChange}>
@@ -54,6 +55,6 @@ const NavbarDrawer = forwardRef<'div', Props>((props, ref) => {
   )
 })
 
-NavbarDrawer.displayName = 'NavbarDrawer'
+TabDrawer.displayName = 'TabDrawer'
 
-export { NavbarDrawer }
+export { TabDrawer }

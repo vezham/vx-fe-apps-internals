@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'bg-white backdrop-blur-md dark:bg-white/5',
+    base: 'bottom-20 left-1/2 mx-auto max-w-[580px] -translate-x-1/2 rounded-t-lg bg-white/75 backdrop-blur-md dark:bg-black/50',
     drawerContent: 'mb-5 w-full',
     drawerHeader: 'text-lg font-semibold',
     drawerBody: '',

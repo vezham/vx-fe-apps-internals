@@ -3,15 +3,17 @@ import { VariantProps, tv } from '@vezham/react-utils'
 const tva = tv({
   slots: {
     base: 'h-screen',
-    navbar: '[&>header]:w-full [&>header]:max-w-full',
+    navbar:
+      'fixed border-b border-black/10 bg-white dark:bg-neutral-900 [&>header]:w-full [&>header]:max-w-full',
     navbarContent: 'hidden gap-8 lg:flex',
     navbarItem: 'cursor-pointer transition',
     navbarEnd: 'hidden lg:flex',
-    navbarMenuEnd: 'mt-5 flex justify-center gap-4',
-    activeNavbarItem: 'text-primary font-semibold',
-    inactiveNavbarItem: 'opacity-70',
+    navbarMenuEnd:
+      'mt-5 flex w-full flex-col gap-4 sm:flex-row sm:justify-center',
+    activeNavbarItem: 'text-primary text-base font-bold',
+    inactiveNavbarItem: 'opacity-50',
     floatingTabs:
-      'fixed right-0 bottom-10 left-0 flex items-center justify-center gap-2 px-3'
+      'fixed right-0 left-0 flex items-center justify-center gap-2 px-3'
   },
   variants: {
     size: {

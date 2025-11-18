@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import { forwardRef } from '@vezham/react-utils'
 
@@ -16,13 +16,15 @@ import {
   NavbarMenuToggle
 } from '@vx-oss/react'
 
-import { NavbarDrawer } from '../drawer'
+import { NavDrawer } from '../navDrawer'
+import { MegaSection } from '../navDrawer/types'
+import { TabDrawer } from '../tabDrawer'
 import { NavbarTabs } from '../tabs'
 import { ThemeSwitcher } from '../toggle'
 import { NavbarLogo } from './navbar-logo'
 import { Props, useProps } from './types'
 
-const AppsIcon = ({ width = 18 }) => (
+const AppsIcon = ({ width = 18 }: { width?: number }) => (
   <svg width={width} height={width} viewBox="0 0 20 20" fill="currentColor">
     {[4, 10, 16].map(x =>
       [4, 10, 16].map(y => <circle key={`${x}-${y}`} cx={x} cy={y} r="2" />)
@@ -30,7 +32,7 @@ const AppsIcon = ({ width = 18 }) => (
   </svg>
 )
 
-const SearchIcon = ({ size = 18 }) => (
+const SearchIcon = ({ size = 18 }: { size?: number }) => (
   <svg
     aria-hidden="true"
     fill="none"
@@ -42,6 +44,25 @@ const SearchIcon = ({ size = 18 }) => (
     <circle cx="11.5" cy="11.5" r="9.5" />
     <line x1="22" y1="22" x2="20" y2="20" strokeWidth="1.5" />
   </svg>
+)
+
+const Chevron = ({ open }: { open: boolean }) => (
+  <motion.svg
+    initial={false}
+    animate={{ rotate: open ? 180 : 0 }}
+    transition={{ duration: 0.18 }}
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-4 w-4"
+    viewBox="0 0 20 20"
+    fill="none"
+    stroke="currentColor">
+    <path
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6 8l4 4 4-4"
+    />
+  </motion.svg>
 )
 
 const AppNavbar = forwardRef<'div', Props>((props, ref) => {
@@ -65,7 +86,8 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
     onTabClick,
     onSelectionChange,
     onDrawerOpenChange,
-    onDrawerClose
+    onDrawerClose,
+    children
   } = useProps({ ...props, ref })
 
   const [isSearchExpanded, setIsSearchExpanded] = useState(false)
@@ -73,6 +95,13 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   const [areTabsCollapsed, setAreTabsCollapsed] = useState(false)
+
+  // drawer state (for any navItem with subItems)
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [drawerSections, setDrawerSections] = useState<MegaSection[]>([])
+  const [activeDropdownKey, setActiveDropdownKey] = useState<string | null>(
+    null
+  )
 
   const toggleSearch = useCallback(() => {
     setIsSearchExpanded(true)
@@ -104,6 +133,33 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
 
+  // Called when clicking a nav item
+  const handleNavItemClick = (item: any) => {
+    if (item.subItems && Array.isArray(item.subItems)) {
+      if (activeDropdownKey === item.key) {
+        setActiveDropdownKey(null)
+        setDrawerOpen(false)
+        setDrawerSections([])
+      } else {
+        setActiveDropdownKey(item.key)
+        setDrawerSections(item.subItems as MegaSection[])
+        setDrawerOpen(true)
+      }
+    } else {
+      // Normal nav item
+      onNavbarItemClick?.(item.key)
+    }
+  }
+
+  // When drawer requests close
+  const handleDrawerOpenChange = (open: boolean) => {
+    setDrawerOpen(open)
+    if (!open) {
+      setActiveDropdownKey(null)
+      setDrawerSections([])
+    }
+  }
+
   return (
     <div {...getBaseProps()} className="relative w-full">
       <Navbar {...getNavbarProps()}>
@@ -121,14 +177,25 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
         </NavbarContent>
 
         <NavbarContent justify="center" {...getNavbarContentProps()}>
-          {navItems.map(item => (
-            <NavbarItem
-              key={item.key}
-              onClick={() => onNavbarItemClick?.(item.key)}
-              {...getNavbarItemProps(activeNavbarItem === item.key)()}>
-              <span>{item.label}</span>
-            </NavbarItem>
-          ))}
+          {navItems.map((item: any) => {
+            const hasSub = !!item.subItems && Array.isArray(item.subItems)
+            const isActive =
+              activeNavbarItem === item.key || activeDropdownKey === item.key
+            return (
+              <NavbarItem
+                key={item.key}
+                onClick={() => handleNavItemClick(item)}
+                {...getNavbarItemProps(isActive)()}
+                className="flex items-center gap-2">
+                <span>{item.label}</span>
+                {hasSub && (
+                  <span className="flex items-center">
+                    <Chevron open={activeDropdownKey === item.key} />
+                  </span>
+                )}
+              </NavbarItem>
+            )
+          })}
         </NavbarContent>
 
         <NavbarContent justify="end" className="gap-1">
@@ -137,50 +204,73 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
           <div {...getNavbarEndItemProps()}>
             <NavbarItem>
               <Button as={Link} href="#" variant="light" size="sm">
-                Login
+                Sign In
               </Button>
 
-              <Button as={Link} href="#" variant="flat" size="sm">
-                Sign Up
+              <Button
+                as={Link}
+                href="#"
+                variant="solid"
+                color="primary"
+                size="sm">
+                SignUp Now
               </Button>
             </NavbarItem>
           </div>
         </NavbarContent>
 
-        {/* MOBILE MENU */}
         <NavbarMenu>
-          {navItems.map(item => (
+          {navItems.map((item: any) => (
             <NavbarMenuItem
               key={item.key}
-              onClick={() => onNavbarItemClick?.(item.key)}
+              onClick={() => handleNavItemClick(item)}
               {...getNavbarItemProps(activeNavbarItem === item.key)()}>
               {item.label}
             </NavbarMenuItem>
           ))}
 
           <NavbarItem {...getNavbarMenuEndItemProps()}>
-            <Button as={Link} href="#" variant="flat" size="sm">
-              Login
+            <Button
+              className="sm:w-1/2"
+              as={Link}
+              href="#"
+              variant="flat"
+              size="sm">
+              Sign In
             </Button>
 
-            <Button as={Link} href="#" variant="solid" size="sm">
-              Sign Up
+            <Button
+              className="sm:w-1/2"
+              as={Link}
+              href="#"
+              variant="solid"
+              color="primary"
+              size="sm">
+              SignUp Now
             </Button>
           </NavbarItem>
         </NavbarMenu>
       </Navbar>
 
-      <NavbarDrawer
+      <TabDrawer
         isOpen={isDrawerOpen}
         onOpenChange={onDrawerOpenChange}
         activeItem={activeItem}
         onClose={onDrawerClose}
       />
 
+      <NavDrawer
+        isOpen={drawerOpen}
+        onOpenChange={handleDrawerOpenChange}
+        sections={drawerSections}
+      />
+
+      <div>{children}</div>
+
       <div {...getFloatingTabsProps()}>
         <motion.div
           animate={{
-            width: areTabsCollapsed ? 40 : isMobile ? 450 : 450
+            width: areTabsCollapsed ? 40 : isMobile ? 550 : 550
           }}
           className={
             areTabsCollapsed
@@ -188,11 +278,13 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               : 'no-scrollbar scrollbar-hide overflow-x-auto overflow-y-hidden rounded-full whitespace-nowrap'
           }>
           {areTabsCollapsed ? (
-            <button
-              onClick={toggleTabs}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 dark:bg-white/10">
+            <Button
+              isIconOnly
+              variant="flat"
+              onPress={toggleTabs}
+              className="flex h-10 w-10 items-center justify-center rounded-full dark:bg-neutral-800">
               <AppsIcon width={18} />
-            </button>
+            </Button>
           ) : (
             <div>
               <NavbarTabs
@@ -208,7 +300,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
 
         <motion.div
           animate={{
-            width: isSearchExpanded ? (isMobile ? '100%' : 400) : 40
+            width: isSearchExpanded ? (isMobile ? '100%' : 550) : 40
           }}>
           {isSearchExpanded ? (
             <Input
@@ -217,6 +309,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               radius="full"
               placeholder="Search"
               value={filterValue}
+              variant="flat"
               onValueChange={setFilterValue}
               endContent={
                 <button onClick={closeSearch} className="focus:outline-none">
@@ -240,8 +333,9 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
             <Button
               isIconOnly
               radius="full"
+              variant="flat"
               onPress={toggleSearch}
-              className="h-10 w-10 rounded-full bg-black/10 dark:bg-white/10">
+              className="h-10 w-10 rounded-full dark:bg-neutral-800">
               <SearchIcon size={16} />
             </Button>
           )}

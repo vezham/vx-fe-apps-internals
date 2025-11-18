@@ -86,7 +86,14 @@ const PwaHeroSection = forwardRef<'div', Props>((props, ref) => {
   })
 
   return (
-    <Component {...getBaseProps()}>
+    <Component
+      {...getBaseProps()}
+      style={{
+        background: `linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url("${cover?.url}")`
+      }}>
       <div {...getWrapperProps()}>
         {super_title ? (
           typeof super_title === 'string' ? (
