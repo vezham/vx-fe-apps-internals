@@ -1,6 +1,14 @@
+import { useRouter } from '@tanstack/react-router'
+
 import { forwardRef } from '@vezham/react-utils'
 
-import { Drawer, DrawerBody, DrawerContent, DrawerHeader } from '@vx-oss/react'
+import {
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  Link
+} from '@vx-oss/react'
 
 import { Props, useProps } from './types'
 
@@ -23,6 +31,8 @@ const TabDrawer = forwardRef<'div', Props>((props, ref) => {
     ref
   })
 
+  const router = useRouter()
+
   return (
     <Drawer
       isOpen={isOpen}
@@ -37,7 +47,13 @@ const TabDrawer = forwardRef<'div', Props>((props, ref) => {
             {...getDrawerContentProps()}
             onMouseLeave={() => onClose?.() || close()}>
             <DrawerHeader {...getDrawerHeaderProps()}>
-              {activeItem?.label}
+              <Link
+                isExternal
+                showAnchorIcon
+                color="foreground"
+                onPress={() => router.navigate({ to: activeItem?.href })}>
+                {activeItem?.label}
+              </Link>
             </DrawerHeader>
 
             <DrawerBody {...getDrawerBodyProps()}>

@@ -21,7 +21,9 @@ interface Props extends tvProps, HTMLHeroUIProps<'div'> {
   ref?: ReactRef<HTMLDivElement | null>
   classNames?: SlotsToClasses<tvSlots>
   label?: string
+  title?: string
   super_title?: string | ReactNode
+  subtitle?: string
   name?: string
   chip_label?: string
   icon?: React.ReactNode | string
@@ -51,6 +53,7 @@ const useProps = (originalProps: Props) => {
     label,
     super_title,
     title,
+    subtitle,
     description,
     chip_label,
     actions,
@@ -85,6 +88,12 @@ const useProps = (originalProps: Props) => {
     })
   })
 
+  const getSubTitleProps: PropGetter = () => ({
+    className: slots.wrapper_subtitle({
+      class: cn(classNames?.wrapper_subtitle, className)
+    })
+  })
+
   const getTitleProps: PropGetter = () => ({
     className: slots.wrapper_title({
       class: cn(classNames?.wrapper_title, className)
@@ -112,6 +121,7 @@ const useProps = (originalProps: Props) => {
     getBaseProps,
     getSuperTitleProps,
     getTitleProps,
+    getSubTitleProps,
     getDescriptionProps,
     getWrapperProps,
     getFooterProps,
@@ -119,6 +129,7 @@ const useProps = (originalProps: Props) => {
     // otherProps
     label,
     super_title,
+    subtitle,
     title,
     chip_label,
     description,

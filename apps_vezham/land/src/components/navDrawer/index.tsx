@@ -81,7 +81,15 @@
 import { Icon } from '@iconify/react'
 import { forwardRef, useState } from 'react'
 
-import { Drawer, DrawerBody, DrawerContent, DrawerHeader } from '@vx-oss/react'
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader
+} from '@vx-oss/react'
 
 import { Props, useProps } from './types'
 
@@ -286,29 +294,26 @@ const NavDrawer = forwardRef<'div', Props>((props, ref) => {
                   {currentSection && (
                     <div {...getSectionProps()}>
                       <div {...getGridProps()}>
-                        {currentSection.Items.map(item => (
-                          <a
-                            key={item.name}
-                            href={item.link}
-                            {...getItemProps()}
-                            onClick={onClose}>
-                            {item.icon ? (
-                              <span {...getItemIconProps()}>
-                                <Icon icon={item.icon} width="20" height="20" />
-                              </span>
-                            ) : (
-                              <span className="w-5" />
-                            )}
-
-                            <div {...getItemContentProps()}>
-                              <div {...getItemNameProps()}>{item.name}</div>
-                              {item.description && (
-                                <div {...getItemDescriptionProps()}>
-                                  {item.description}
-                                </div>
-                              )}
-                            </div>
-                          </a>
+                        {currentSection.Items.map(category => (
+                          <Card
+                            key={category.name}
+                            isPressable
+                            className="bg-default-100 flex flex-col justify-between p-[28px]"
+                            shadow="none">
+                            <CardHeader className="flex flex-col gap-2 p-0">
+                              <p className="text-foreground-700 text-left text-2xl leading-9 font-medium">
+                                {category.name}
+                              </p>
+                              <p>{category.description}</p>
+                            </CardHeader>
+                            <CardBody className="text-default-500 flex flex-col items-end justify-end gap-2 p-0">
+                              <Icon
+                                icon={category.icon}
+                                width="20"
+                                height="20"
+                              />
+                            </CardBody>
+                          </Card>
                         ))}
                       </div>
                     </div>

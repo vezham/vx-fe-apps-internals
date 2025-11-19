@@ -16,6 +16,7 @@ export type NavbarItem = {
 export interface TabItem {
   key?: string
   label?: string
+  href?: string
   icon?: string
   subItems?: Array<{
     key: string
@@ -34,6 +35,7 @@ export type welcomeData = {
   __type: string
   icon?: React.ReactNode
   chip_label?: string
+  super_title?: string
   title?: string
   description?: string
   cover?: coverType

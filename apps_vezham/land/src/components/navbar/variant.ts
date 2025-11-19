@@ -3,8 +3,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 const tva = tv({
   slots: {
     base: 'h-screen',
-    navbar:
-      'fixed border-b border-black/10 bg-white dark:bg-neutral-900 [&>header]:w-full [&>header]:max-w-full',
+    navbar: 'fixed bg-transparent [&>header]:w-full [&>header]:max-w-full',
     navbarContent: 'hidden gap-8 lg:flex',
     navbarItem: 'cursor-pointer transition',
     navbarEnd: 'hidden lg:flex',

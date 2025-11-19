@@ -1,13 +1,14 @@
 import React from 'react'
 
-import { Button } from '@vx-oss/react'
-
-import { HomeSection } from '../../components/herosection'
+import { HomeSection } from '../../components/herosection-II'
 import { AppNavbar } from '../../components/navbar'
+import { AppContent } from '../../layouts/features'
+import { useFeatures } from '../../store/useFeatures'
 import { usePersonalize } from '../../store/useHomeSection'
 
-const Herosection = () => {
+const Features = () => {
   const { data: personal } = usePersonalize.list({})
+  const { data: features } = useFeatures.list({})
 
   const navItems = personal?.navItems ?? []
   const items = personal?.tabItems ?? []
@@ -65,9 +66,10 @@ const Herosection = () => {
       onSelectionChange={handleSelectionChange}
       onDrawerOpenChange={setIsDrawerOpen}
       onDrawerClose={() => setIsDrawerOpen(false)}>
-      <HomeSection {...personal?.cards?.welcome_message}></HomeSection>
+      <HomeSection {...features?.cards?.welcome_message} />
+      <AppContent />
     </AppNavbar>
   )
 }
 
-export { Herosection }
+export { Features }

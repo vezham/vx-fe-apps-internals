@@ -198,18 +198,19 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
           })}
         </NavbarContent>
 
-        <NavbarContent justify="end" className="gap-1">
+        <NavbarContent justify="end" className="gap-2">
           <ThemeSwitcher />
 
           <div {...getNavbarEndItemProps()}>
             <NavbarItem>
-              <Button as={Link} href="#" variant="light" size="sm">
+              <Button as={Link} href="/login" variant="light" size="sm">
                 Sign In
               </Button>
 
               <Button
+                className="ml-2"
                 as={Link}
-                href="#"
+                href="/signup"
                 variant="solid"
                 color="primary"
                 size="sm">
@@ -233,7 +234,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
             <Button
               className="sm:w-1/2"
               as={Link}
-              href="#"
+              href="/login"
               variant="flat"
               size="sm">
               Sign In
@@ -242,7 +243,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
             <Button
               className="sm:w-1/2"
               as={Link}
-              href="#"
+              href="/signup"
               variant="solid"
               color="primary"
               size="sm">
@@ -270,7 +271,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
       <div {...getFloatingTabsProps()}>
         <motion.div
           animate={{
-            width: areTabsCollapsed ? 40 : isMobile ? 550 : 550
+            width: areTabsCollapsed ? 40 : isMobile ? 450 : 450
           }}
           className={
             areTabsCollapsed
@@ -282,7 +283,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               isIconOnly
               variant="flat"
               onPress={toggleTabs}
-              className="flex h-10 w-10 items-center justify-center rounded-full dark:bg-neutral-800">
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-neutral-800">
               <AppsIcon width={18} />
             </Button>
           ) : (
@@ -300,7 +301,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
 
         <motion.div
           animate={{
-            width: isSearchExpanded ? (isMobile ? '100%' : 550) : 40
+            width: isSearchExpanded ? (isMobile ? '100%' : 450) : 40
           }}>
           {isSearchExpanded ? (
             <Input
@@ -335,7 +336,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               radius="full"
               variant="flat"
               onPress={toggleSearch}
-              className="h-10 w-10 rounded-full dark:bg-neutral-800">
+              className="h-10 w-10 rounded-full bg-white dark:bg-neutral-800">
               <SearchIcon size={16} />
             </Button>
           )}

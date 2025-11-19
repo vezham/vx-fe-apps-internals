@@ -11,6 +11,7 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
     Component,
     getBaseProps,
     getTitleProps,
+    getSubTitleProps,
     getSuperTitleProps,
     getWrapperProps,
     getDescriptionProps,
@@ -20,6 +21,7 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
     actions,
     super_title,
     title,
+    subtitle,
     chip_label,
     description,
     cover
@@ -48,41 +50,38 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
     <Component
       {...getBaseProps()}
       style={{
-        backgroundImage: `url("${cover?.url}")`,
+        backgroundImage: `linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.8)
+    ), url("${cover?.url}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}>
       <div {...getWrapperProps()}>
-        <div>
-          <Chip
-            color="default"
-            variant="solid"
-            startContent={
-              <div className="text-warning">
-                <CheckIcon />
-              </div>
-            }>
-            {chip_label}
-          </Chip>
-        </div>
-
         <div {...getContentProps()}>
           <p {...getSuperTitleProps()}>{super_title}</p>
 
           <p {...getTitleProps()}>{title}</p>
+          <p {...getSubTitleProps()}>{subtitle}</p>
 
           <p {...getDescriptionProps()}>{description}</p>
         </div>
 
         <div {...getFooterProps()}>
-          <Button as={Link} href="/signup" color="warning">
-            {actions?.trial?.placeholder}
-          </Button>
+          {/* Show only if placeholder exists */}
+          {actions?.trial?.placeholder && (
+            <Button as={Link} href="/signup" color="warning">
+              {actions.trial.placeholder}
+            </Button>
+          )}
 
-          <Button color="default" variant="bordered">
-            {actions?.submit?.label}
-          </Button>
+          {/* Show only if label exists */}
+          {actions?.submit?.label && (
+            <Button color="default" variant="faded">
+              {actions.submit.label}
+            </Button>
+          )}
         </div>
       </div>
     </Component>

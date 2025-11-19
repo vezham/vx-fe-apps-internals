@@ -21,14 +21,15 @@ export const personalizationsData: Personalize[] = [
       },
       welcome_message: {
         __type: 'welcome_message',
-        title: 'Comprehensive accounting platform for growing businesses',
+        super_title: 'Comprehensive',
+        title: ' accounting platform for growing businesses',
         description:
           'Manage end-to-end accounting—from banking & e-invoicing to inventory & payroll with the best accounting software in India.',
         cover: {
           __type: 'cover',
           type: 'image',
           alt_text: 'Paper bag poster',
-          url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80'
+          url: 'https://nextuipro.nyc3.cdn.digitaloceanspaces.com/components-images/backgrounds/bg-gradient.png'
         },
         chip_label: 'GST compliant accounting software',
         actions: {
@@ -36,41 +37,21 @@ export const personalizationsData: Personalize[] = [
             label: 'Request a demo'
           },
           trial: {
-            placeholder: 'Start my free trial'
+            placeholder: 'Book your trial'
           }
         }
       }
     },
     navItems: [
       {
-        label: 'Inventory',
-        key: 'inventory',
-        href: '/vezham/inventory'
+        label: 'Blogs',
+        key: 'blogs',
+        href: '/vezham/blogs'
       },
       {
-        label: 'CRM',
-        key: 'crm',
-        href: '/vezham/crm'
-      },
-      {
-        label: 'Payroll',
-        key: 'payroll',
-        href: '/vezham/payroll'
-      },
-      {
-        label: 'Mail',
-        key: 'mail',
-        href: '/vezham/mail'
-      },
-      {
-        label: 'Expense',
-        key: 'expense',
-        href: '/vezham/expense'
-      },
-      {
-        label: 'Billing',
-        key: 'billing',
-        href: 'vezham/billing'
+        label: 'Company',
+        key: 'company',
+        href: '/vezham/company'
       },
       {
         label: 'All Products',
@@ -286,6 +267,7 @@ export const personalizationsData: Personalize[] = [
       {
         label: 'Features',
         key: 'features',
+        href: '/vezham/features',
         subItems: [
           {
             key: 'autoscaling',
@@ -323,6 +305,7 @@ export const personalizationsData: Personalize[] = [
       {
         label: 'Pricing',
         key: 'pricing',
+        href: '/vezham/pricing',
         subItems: [
           {
             key: 'api_docs',
@@ -340,8 +323,8 @@ export const personalizationsData: Personalize[] = [
         icon: 'mdi:connection' // Example icon
       },
       {
-        label: 'Customers',
-        key: 'customers',
+        label: 'Solutions',
+        key: 'solutions',
         subItems: [
           {
             key: 'customer_stories',
@@ -360,8 +343,8 @@ export const personalizationsData: Personalize[] = [
       },
 
       {
-        label: 'Solution',
-        key: 'solution',
+        label: 'Developers',
+        key: 'developers',
         subItems: [
           {
             key: 'account_settings',
@@ -377,25 +360,6 @@ export const personalizationsData: Personalize[] = [
           }
         ],
         icon: 'mdi:account' // Example icon
-      },
-      {
-        label: 'Partner with us',
-        key: 'partnerwithus',
-        subItems: [
-          {
-            key: 'support',
-            label: 'Support',
-            description: 'Get help from our support team',
-            href: '#'
-          },
-          {
-            key: 'sales',
-            label: 'Sales',
-            description: 'Talk to our sales team',
-            href: '#'
-          }
-        ],
-        icon: 'mdi:email' // Example icon
       },
       {
         label: 'Resources',

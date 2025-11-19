@@ -1,11 +1,14 @@
 import React from 'react'
 
-import { HomeSection } from '../../components/herosection'
+import { HomeSection } from '../../components/herosection-II'
 import { AppNavbar } from '../../components/navbar'
+import { AppContent } from '../../layouts/features'
 import { usePersonalize } from '../../store/useHomeSection'
+import { usePricing } from '../../store/usePricing'
 
-const Home = () => {
+const Pricing = () => {
   const { data: personal } = usePersonalize.list({})
+  const { data: pricing } = usePricing.list({})
 
   const navItems = personal?.navItems ?? []
   const items = personal?.tabItems ?? []
@@ -63,9 +66,9 @@ const Home = () => {
       onSelectionChange={handleSelectionChange}
       onDrawerOpenChange={setIsDrawerOpen}
       onDrawerClose={() => setIsDrawerOpen(false)}>
-      <HomeSection {...personal?.cards?.welcome_message} />
+      <HomeSection {...pricing?.cards?.welcome_message} />
     </AppNavbar>
   )
 }
 
-export { Home }
+export { Pricing }
