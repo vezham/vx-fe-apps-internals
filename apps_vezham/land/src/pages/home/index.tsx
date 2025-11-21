@@ -2,6 +2,7 @@ import React from 'react'
 
 import { HomeSection } from '../../components/herosection'
 import { AppNavbar } from '../../components/navbar'
+import { Footer } from '../../layouts/footers'
 import { usePersonalize } from '../../store/useHomeSection'
 
 const Home = () => {
@@ -64,6 +65,7 @@ const Home = () => {
       onDrawerOpenChange={setIsDrawerOpen}
       onDrawerClose={() => setIsDrawerOpen(false)}>
       <HomeSection {...personal?.cards?.welcome_message} />
+      <Footer />
     </AppNavbar>
   )
 }

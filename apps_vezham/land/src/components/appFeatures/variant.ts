@@ -2,14 +2,14 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'bg-background text-foreground min-h-screen w-full pb-40',
+    base: 'bg-background text-foreground min-h-screen w-full',
 
     notFoundContainer: 'flex min-h-screen items-center justify-center',
     notFoundText: 'text-center',
     backButton: 'mt-4',
 
     headerInner:
-      'border-divider bg-content1 mx-auto mt-24 flex items-center justify-between border-b px-2 py-4 md:px-6',
+      'border-divider bg-content1 mx-auto mt-15 flex items-center justify-between border-b px-2 py-4 md:px-6',
     headerTitle: 'text-md ml-2 font-bold md:text-xl',
     mainContainer: 'container mx-auto px-4 py-8',
     section: 'mb-12 p-6',
@@ -61,7 +61,7 @@ const tva = tv({
       'text-foreground-500 hover:text-foreground mt-1.25 text-sm font-medium transition-all duration-200',
     seeAllSingleButton:
       'text-foreground-500 hover:text-foreground mt-1.25 text-sm font-medium transition-all duration-200 lg:hidden',
-    scrollSection: 'scroll-mt-20 p-6',
+    scrollSection: 'scroll-mt-20 p-6 lg:pb-30',
     headerGap: 'mb-6',
     headerSection: ' ',
     headerMenuSection: 'mb-4 flex items-center gap-3'

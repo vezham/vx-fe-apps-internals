@@ -44,6 +44,11 @@ export const personalizationsData: Personalize[] = [
     },
     navItems: [
       {
+        label: 'Home',
+        key: 'home',
+        href: '/'
+      },
+      {
         label: 'Blogs',
         key: 'blogs',
         href: '/vezham/blogs'
@@ -56,7 +61,7 @@ export const personalizationsData: Personalize[] = [
       {
         label: 'All Products',
         key: 'allproducts',
-        href: '#',
+        href: '/vezham/all_products',
         subItems: [
           {
             title: 'Apps',
@@ -270,33 +275,63 @@ export const personalizationsData: Personalize[] = [
         href: '/vezham/features',
         subItems: [
           {
-            key: 'autoscaling',
-            label: 'Autoscaling',
-            description: 'ACME scales apps based on demand and load',
+            key: 'popular',
+            label: 'Popular',
+            description:
+              'Our solution empowers popular teams to streamline operations',
             href: '#'
           },
           {
-            key: 'usage_metrics',
-            label: 'Usage Metrics',
-            description: 'Real-time metrics to debug issues',
+            key: 'new',
+            label: 'New',
+            description: 'Automated processes to new manual interventions',
             href: '#'
           },
           {
-            key: 'production_ready',
-            label: 'Production Ready',
-            description: 'ACME runs on ACME, join us at web scale',
+            key: 'free-install',
+            label: 'Free Install',
+            description: 'Easily receive and reply to apps from store',
             href: '#'
           },
           {
-            key: '99_uptime',
-            label: '+99% Uptime',
-            description: 'High availability and uptime guarantees',
+            key: 'support-teams',
+            label: 'Support Teams',
+            description:
+              'Our solution empowers support teams to streamline operations',
             href: '#'
           },
           {
-            key: 'supreme_support',
-            label: 'Supreme Support',
-            description: 'Support team ready to respond',
+            key: 'sales',
+            label: 'Sales',
+            description: 'Integrated systems and platforms for sales',
+            href: '#'
+          },
+          {
+            key: 'marketing',
+            label: 'Marketing',
+            description:
+              'Streamlined process and reduced processing times to improve sales ',
+            href: '#'
+          },
+          {
+            key: 'e-commerce',
+            label: 'E-Commerce',
+            description:
+              'Connect your Shopify store for better customer suppor',
+            href: '#'
+          },
+          {
+            key: 'service',
+            label: 'Service',
+            description:
+              'Customer service software for exceptional customer support',
+            href: '#'
+          },
+          {
+            key: 'finance',
+            label: 'Finance',
+            description:
+              'View customer payment details and subscription status',
             href: '#'
           }
         ],
@@ -306,20 +341,7 @@ export const personalizationsData: Personalize[] = [
         label: 'Pricing',
         key: 'pricing',
         href: '/vezham/pricing',
-        subItems: [
-          {
-            key: 'api_docs',
-            label: 'API Documentation',
-            description: 'Integrate with our API',
-            href: '#'
-          },
-          {
-            key: 'webhooks',
-            label: 'Webhooks',
-            description: 'Set up webhook integrations',
-            href: '#'
-          }
-        ],
+        subItems: [],
         icon: 'mdi:connection' // Example icon
       },
       {
@@ -327,15 +349,15 @@ export const personalizationsData: Personalize[] = [
         key: 'solutions',
         subItems: [
           {
-            key: 'customer_stories',
-            label: 'Customer Stories',
-            description: 'See how companies use ACME',
+            key: 'enterprises',
+            label: 'Enterprises',
+            description: 'See how For large organizations',
             href: '#'
           },
           {
-            key: 'testimonials',
-            label: 'Testimonials',
-            description: 'What our customers say about us',
+            key: 'startups',
+            label: 'Startups',
+            description: 'For growing businesses',
             href: '#'
           }
         ],
@@ -347,15 +369,15 @@ export const personalizationsData: Personalize[] = [
         key: 'developers',
         subItems: [
           {
-            key: 'account_settings',
-            label: 'Account Settings',
-            description: 'Manage your account preferences',
+            key: 'documentation',
+            label: 'Documentation',
+            description: 'Start integrating Vezham products and tools',
             href: '#'
           },
           {
-            key: 'billing',
-            label: 'Billing',
-            description: 'View and manage your billing',
+            key: 'api-intergrations',
+            label: 'Api Integrations',
+            description: 'Connect with other services',
             href: '#'
           }
         ],
@@ -366,15 +388,15 @@ export const personalizationsData: Personalize[] = [
         key: 'resources',
         subItems: [
           {
-            key: 'account_settings',
-            label: 'Account Settings',
-            description: 'Manage your account preferences',
+            key: 'brand-resource-center',
+            label: 'Brand Resource Center',
+            description: 'To use our brand assets',
             href: '#'
           },
           {
-            key: 'billing',
-            label: 'Billing',
-            description: 'View and manage your billing',
+            key: 'support',
+            label: 'Support',
+            description: 'View and manage your helpsupport',
             href: '#'
           }
         ],

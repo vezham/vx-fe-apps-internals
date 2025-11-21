@@ -1,5 +1,6 @@
+import { useRouter } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { forwardRef } from '@vezham/react-utils'
 
@@ -16,6 +17,7 @@ import {
   NavbarMenuToggle
 } from '@vx-oss/react'
 
+import { usePersonalize } from '../../store/useHomeSection'
 import { NavDrawer } from '../navDrawer'
 import { MegaSection } from '../navDrawer/types'
 import { TabDrawer } from '../tabDrawer'
@@ -66,6 +68,10 @@ const Chevron = ({ open }: { open: boolean }) => (
 )
 
 const AppNavbar = forwardRef<'div', Props>((props, ref) => {
+  const { data: personal } = usePersonalize.list({})
+  const router = useRouter()
+  const Items = personal?.navItems ?? []
+
   const [isMenuOpen] = useState(false)
 
   const {
@@ -102,6 +108,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
   const [activeDropdownKey, setActiveDropdownKey] = useState<string | null>(
     null
   )
+  const [activeNavItemKey, setActiveNavItemKey] = useState<string | null>(null)
 
   const toggleSearch = useCallback(() => {
     setIsSearchExpanded(true)
@@ -133,25 +140,35 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
 
-  // Called when clicking a nav item
   const handleNavItemClick = (item: any) => {
-    if (item.subItems && Array.isArray(item.subItems)) {
+    const hasSub = Array.isArray(item.subItems) && item.subItems.length > 0
+
+    if (hasSub) {
       if (activeDropdownKey === item.key) {
         setActiveDropdownKey(null)
         setDrawerOpen(false)
         setDrawerSections([])
+        setActiveNavItemKey(null)
       } else {
         setActiveDropdownKey(item.key)
         setDrawerSections(item.subItems as MegaSection[])
         setDrawerOpen(true)
+        setActiveNavItemKey(item.key)
       }
     } else {
-      // Normal nav item
+      if (item.href) {
+        router.navigate({ to: item.href })
+      }
+
       onNavbarItemClick?.(item.key)
+
+      setActiveDropdownKey(null)
+      setDrawerOpen(false)
+      setDrawerSections([])
+      setActiveNavItemKey(null)
     }
   }
 
-  // When drawer requests close
   const handleDrawerOpenChange = (open: boolean) => {
     setDrawerOpen(open)
     if (!open) {
@@ -185,9 +202,16 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               <NavbarItem
                 key={item.key}
                 onClick={() => handleNavItemClick(item)}
-                {...getNavbarItemProps(isActive)()}
+                {...getNavbarItemProps(activeNavbarItem === item.key)()}
                 className="flex items-center gap-2">
-                <span>{item.label}</span>
+                <span
+                  className={
+                    isActive
+                      ? 'text-primary scale-115 cursor-pointer font-bold'
+                      : 'cursor-pointer'
+                  }>
+                  {item.label}
+                </span>
                 {hasSub && (
                   <span className="flex items-center">
                     <Chevron open={activeDropdownKey === item.key} />
@@ -264,6 +288,8 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
         isOpen={drawerOpen}
         onOpenChange={handleDrawerOpenChange}
         sections={drawerSections}
+        navitems={Items}
+        activeItemKey={activeNavItemKey}
       />
 
       <div>{children}</div>
@@ -271,7 +297,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
       <div {...getFloatingTabsProps()}>
         <motion.div
           animate={{
-            width: areTabsCollapsed ? 40 : isMobile ? 450 : 450
+            width: areTabsCollapsed ? 40 : isMobile ? 435 : 435
           }}
           className={
             areTabsCollapsed
@@ -284,7 +310,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               variant="flat"
               onPress={toggleTabs}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-neutral-800">
-              <AppsIcon width={18} />
+              <AppsIcon width={16} />
             </Button>
           ) : (
             <div>
@@ -301,7 +327,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
 
         <motion.div
           animate={{
-            width: isSearchExpanded ? (isMobile ? '100%' : 450) : 40
+            width: isSearchExpanded ? (isMobile ? '100%' : 435) : 40
           }}>
           {isSearchExpanded ? (
             <Input

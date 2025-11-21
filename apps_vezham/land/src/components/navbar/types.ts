@@ -13,9 +13,18 @@ import { TabItem } from '../tabs/types'
 import { tvProps, tvSlots, tva } from './variant'
 
 interface NavbarItem {
-  key: string
-  label: string
-  href: string
+  key?: string
+  label?: string
+  href?: string
+  subItems?: Array<{
+    title?: string
+    Items?: Array<{
+      icon: string
+      name: string
+      description: string
+      link: string
+    }>
+  }>
 }
 
 interface NavbarLogoProps {
@@ -30,8 +39,10 @@ interface Props extends tvProps, HTMLHeroUIProps<'div'> {
   isMenuOpen?: boolean
   onMenuOpenChange?: (open: boolean) => void
   activeNavbarItem?: string
+
   selectedTab?: string
   activeItem?: {
+    href?: string
     label: string
     subItems?: DropdownItem[]
   }

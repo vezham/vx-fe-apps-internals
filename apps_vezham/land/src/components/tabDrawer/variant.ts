@@ -2,9 +2,9 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'bottom-20 left-1/2 mx-auto max-w-[580px] -translate-x-1/2 rounded-t-lg bg-white/75 backdrop-blur-md dark:bg-black/50',
+    base: 'bottom-20 left-1/2 max-w-[460px] -translate-x-1/2 rounded-t-lg bg-white/75 backdrop-blur-md dark:bg-black/50',
     drawerContent: 'mb-5 w-full',
-    drawerHeader: 'text-lg font-semibold',
+    drawerHeader: 'cursor-pointer text-lg font-semibold',
     drawerBody: '',
     subItem:
       'cursor-pointer rounded-lg p-4 transition hover:bg-black/5 dark:hover:bg-white/5',
@@ -16,17 +16,17 @@ const tva = tv({
       sm: {
         drawerContent: 'mb-3',
         drawerHeader: 'text-base',
-        subItem: 'p-3'
+        subItem: 'p-2'
       },
       md: {
         drawerContent: 'mb-5',
         drawerHeader: 'text-lg',
-        subItem: 'p-4'
+        subItem: 'p-3'
       },
       lg: {
         drawerContent: 'mb-6',
         drawerHeader: 'text-xl',
-        subItem: 'p-5'
+        subItem: 'p-4'
       }
     }
   },

@@ -24,7 +24,7 @@ interface Props extends tvProps, HTMLHeroUIProps<'div'> {
   placement?: 'top' | 'bottom' | 'left' | 'right'
   activeItem?: {
     label: string
-    href: string
+    href?: string
     subItems?: DropdownItem[]
   }
   onClose?: () => void

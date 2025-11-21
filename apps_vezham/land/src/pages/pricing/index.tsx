@@ -3,6 +3,7 @@ import React from 'react'
 import { HomeSection } from '../../components/herosection-II'
 import { AppNavbar } from '../../components/navbar'
 import { AppContent } from '../../layouts/features'
+import { Footer } from '../../layouts/footers'
 import { usePersonalize } from '../../store/useHomeSection'
 import { usePricing } from '../../store/usePricing'
 
@@ -67,6 +68,7 @@ const Pricing = () => {
       onDrawerOpenChange={setIsDrawerOpen}
       onDrawerClose={() => setIsDrawerOpen(false)}>
       <HomeSection {...pricing?.cards?.welcome_message} />
+      <Footer />
     </AppNavbar>
   )
 }

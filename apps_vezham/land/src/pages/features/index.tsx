@@ -3,6 +3,7 @@ import React from 'react'
 import { HomeSection } from '../../components/herosection-II'
 import { AppNavbar } from '../../components/navbar'
 import { AppContent } from '../../layouts/features'
+import { Footer } from '../../layouts/footers'
 import { useFeatures } from '../../store/useFeatures'
 import { usePersonalize } from '../../store/useHomeSection'
 
@@ -68,6 +69,7 @@ const Features = () => {
       onDrawerClose={() => setIsDrawerOpen(false)}>
       <HomeSection {...features?.cards?.welcome_message} />
       <AppContent />
+      <Footer />
     </AppNavbar>
   )
 }
