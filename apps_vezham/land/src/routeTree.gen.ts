@@ -15,10 +15,19 @@ import { Route as rootRouteImport } from './routes/__root'
 const SignupLazyRouteImport = createFileRoute('/signup')()
 const LoginLazyRouteImport = createFileRoute('/login')()
 const IndexLazyRouteImport = createFileRoute('/')()
+const VezhamResourcesLazyRouteImport = createFileRoute('/vezham/resources')()
 const VezhamPricingLazyRouteImport = createFileRoute('/vezham/pricing')()
 const VezhamFeaturesLazyRouteImport = createFileRoute('/vezham/features')()
+const VezhamResourcesIndexLazyRouteImport =
+  createFileRoute('/vezham/resources/')()
 const VezhamFeaturesIndexLazyRouteImport =
   createFileRoute('/vezham/features/')()
+const VezhamResourcesSupportLazyRouteImport = createFileRoute(
+  '/vezham/resources/support',
+)()
+const VezhamResourcesHelpCenterLazyRouteImport = createFileRoute(
+  '/vezham/resources/help-center',
+)()
 const VezhamFeaturesFeatureIdLazyRouteImport = createFileRoute(
   '/vezham/features/$featureId',
 )()
@@ -38,6 +47,13 @@ const IndexLazyRoute = IndexLazyRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+const VezhamResourcesLazyRoute = VezhamResourcesLazyRouteImport.update({
+  id: '/vezham/resources',
+  path: '/vezham/resources',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/vezham/resources.lazy').then((d) => d.Route),
+)
 const VezhamPricingLazyRoute = VezhamPricingLazyRouteImport.update({
   id: '/vezham/pricing',
   path: '/vezham/pricing',
@@ -52,6 +68,14 @@ const VezhamFeaturesLazyRoute = VezhamFeaturesLazyRouteImport.update({
 } as any).lazy(() =>
   import('./routes/vezham/features.lazy').then((d) => d.Route),
 )
+const VezhamResourcesIndexLazyRoute =
+  VezhamResourcesIndexLazyRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => VezhamResourcesLazyRoute,
+  } as any).lazy(() =>
+    import('./routes/vezham/resources/index.lazy').then((d) => d.Route),
+  )
 const VezhamFeaturesIndexLazyRoute = VezhamFeaturesIndexLazyRouteImport.update({
   id: '/',
   path: '/',
@@ -59,6 +83,22 @@ const VezhamFeaturesIndexLazyRoute = VezhamFeaturesIndexLazyRouteImport.update({
 } as any).lazy(() =>
   import('./routes/vezham/features/index.lazy').then((d) => d.Route),
 )
+const VezhamResourcesSupportLazyRoute =
+  VezhamResourcesSupportLazyRouteImport.update({
+    id: '/support',
+    path: '/support',
+    getParentRoute: () => VezhamResourcesLazyRoute,
+  } as any).lazy(() =>
+    import('./routes/vezham/resources/support.lazy').then((d) => d.Route),
+  )
+const VezhamResourcesHelpCenterLazyRoute =
+  VezhamResourcesHelpCenterLazyRouteImport.update({
+    id: '/help-center',
+    path: '/help-center',
+    getParentRoute: () => VezhamResourcesLazyRoute,
+  } as any).lazy(() =>
+    import('./routes/vezham/resources/help-center.lazy').then((d) => d.Route),
+  )
 const VezhamFeaturesFeatureIdLazyRoute =
   VezhamFeaturesFeatureIdLazyRouteImport.update({
     id: '/$featureId',
@@ -74,8 +114,12 @@ export interface FileRoutesByFullPath {
   '/signup': typeof SignupLazyRoute
   '/vezham/features': typeof VezhamFeaturesLazyRouteWithChildren
   '/vezham/pricing': typeof VezhamPricingLazyRoute
+  '/vezham/resources': typeof VezhamResourcesLazyRouteWithChildren
   '/vezham/features/$featureId': typeof VezhamFeaturesFeatureIdLazyRoute
+  '/vezham/resources/help-center': typeof VezhamResourcesHelpCenterLazyRoute
+  '/vezham/resources/support': typeof VezhamResourcesSupportLazyRoute
   '/vezham/features/': typeof VezhamFeaturesIndexLazyRoute
+  '/vezham/resources/': typeof VezhamResourcesIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
@@ -83,7 +127,10 @@ export interface FileRoutesByTo {
   '/signup': typeof SignupLazyRoute
   '/vezham/pricing': typeof VezhamPricingLazyRoute
   '/vezham/features/$featureId': typeof VezhamFeaturesFeatureIdLazyRoute
+  '/vezham/resources/help-center': typeof VezhamResourcesHelpCenterLazyRoute
+  '/vezham/resources/support': typeof VezhamResourcesSupportLazyRoute
   '/vezham/features': typeof VezhamFeaturesIndexLazyRoute
+  '/vezham/resources': typeof VezhamResourcesIndexLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -92,8 +139,12 @@ export interface FileRoutesById {
   '/signup': typeof SignupLazyRoute
   '/vezham/features': typeof VezhamFeaturesLazyRouteWithChildren
   '/vezham/pricing': typeof VezhamPricingLazyRoute
+  '/vezham/resources': typeof VezhamResourcesLazyRouteWithChildren
   '/vezham/features/$featureId': typeof VezhamFeaturesFeatureIdLazyRoute
+  '/vezham/resources/help-center': typeof VezhamResourcesHelpCenterLazyRoute
+  '/vezham/resources/support': typeof VezhamResourcesSupportLazyRoute
   '/vezham/features/': typeof VezhamFeaturesIndexLazyRoute
+  '/vezham/resources/': typeof VezhamResourcesIndexLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -103,8 +154,12 @@ export interface FileRouteTypes {
     | '/signup'
     | '/vezham/features'
     | '/vezham/pricing'
+    | '/vezham/resources'
     | '/vezham/features/$featureId'
+    | '/vezham/resources/help-center'
+    | '/vezham/resources/support'
     | '/vezham/features/'
+    | '/vezham/resources/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -112,7 +167,10 @@ export interface FileRouteTypes {
     | '/signup'
     | '/vezham/pricing'
     | '/vezham/features/$featureId'
+    | '/vezham/resources/help-center'
+    | '/vezham/resources/support'
     | '/vezham/features'
+    | '/vezham/resources'
   id:
     | '__root__'
     | '/'
@@ -120,8 +178,12 @@ export interface FileRouteTypes {
     | '/signup'
     | '/vezham/features'
     | '/vezham/pricing'
+    | '/vezham/resources'
     | '/vezham/features/$featureId'
+    | '/vezham/resources/help-center'
+    | '/vezham/resources/support'
     | '/vezham/features/'
+    | '/vezham/resources/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -130,6 +192,7 @@ export interface RootRouteChildren {
   SignupLazyRoute: typeof SignupLazyRoute
   VezhamFeaturesLazyRoute: typeof VezhamFeaturesLazyRouteWithChildren
   VezhamPricingLazyRoute: typeof VezhamPricingLazyRoute
+  VezhamResourcesLazyRoute: typeof VezhamResourcesLazyRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -155,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vezham/resources': {
+      id: '/vezham/resources'
+      path: '/vezham/resources'
+      fullPath: '/vezham/resources'
+      preLoaderRoute: typeof VezhamResourcesLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vezham/pricing': {
       id: '/vezham/pricing'
       path: '/vezham/pricing'
@@ -169,12 +239,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VezhamFeaturesLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vezham/resources/': {
+      id: '/vezham/resources/'
+      path: '/'
+      fullPath: '/vezham/resources/'
+      preLoaderRoute: typeof VezhamResourcesIndexLazyRouteImport
+      parentRoute: typeof VezhamResourcesLazyRoute
+    }
     '/vezham/features/': {
       id: '/vezham/features/'
       path: '/'
       fullPath: '/vezham/features/'
       preLoaderRoute: typeof VezhamFeaturesIndexLazyRouteImport
       parentRoute: typeof VezhamFeaturesLazyRoute
+    }
+    '/vezham/resources/support': {
+      id: '/vezham/resources/support'
+      path: '/support'
+      fullPath: '/vezham/resources/support'
+      preLoaderRoute: typeof VezhamResourcesSupportLazyRouteImport
+      parentRoute: typeof VezhamResourcesLazyRoute
+    }
+    '/vezham/resources/help-center': {
+      id: '/vezham/resources/help-center'
+      path: '/help-center'
+      fullPath: '/vezham/resources/help-center'
+      preLoaderRoute: typeof VezhamResourcesHelpCenterLazyRouteImport
+      parentRoute: typeof VezhamResourcesLazyRoute
     }
     '/vezham/features/$featureId': {
       id: '/vezham/features/$featureId'
@@ -199,12 +290,28 @@ const VezhamFeaturesLazyRouteChildren: VezhamFeaturesLazyRouteChildren = {
 const VezhamFeaturesLazyRouteWithChildren =
   VezhamFeaturesLazyRoute._addFileChildren(VezhamFeaturesLazyRouteChildren)
 
+interface VezhamResourcesLazyRouteChildren {
+  VezhamResourcesHelpCenterLazyRoute: typeof VezhamResourcesHelpCenterLazyRoute
+  VezhamResourcesSupportLazyRoute: typeof VezhamResourcesSupportLazyRoute
+  VezhamResourcesIndexLazyRoute: typeof VezhamResourcesIndexLazyRoute
+}
+
+const VezhamResourcesLazyRouteChildren: VezhamResourcesLazyRouteChildren = {
+  VezhamResourcesHelpCenterLazyRoute: VezhamResourcesHelpCenterLazyRoute,
+  VezhamResourcesSupportLazyRoute: VezhamResourcesSupportLazyRoute,
+  VezhamResourcesIndexLazyRoute: VezhamResourcesIndexLazyRoute,
+}
+
+const VezhamResourcesLazyRouteWithChildren =
+  VezhamResourcesLazyRoute._addFileChildren(VezhamResourcesLazyRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   LoginLazyRoute: LoginLazyRoute,
   SignupLazyRoute: SignupLazyRoute,
   VezhamFeaturesLazyRoute: VezhamFeaturesLazyRouteWithChildren,
   VezhamPricingLazyRoute: VezhamPricingLazyRoute,
+  VezhamResourcesLazyRoute: VezhamResourcesLazyRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

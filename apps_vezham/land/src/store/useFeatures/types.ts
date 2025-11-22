@@ -94,11 +94,13 @@ export type coverType = {
 }
 
 export type submit = {
-  label: string
+  label?: string
+  href?: string
 }
 
 export type trial = {
-  placeholder: string
+  placeholder?: string
+  href?: string
 }
 
 export type Personalize = {

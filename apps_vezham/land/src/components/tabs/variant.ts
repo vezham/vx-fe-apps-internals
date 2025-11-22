@@ -3,7 +3,8 @@ import { VariantProps, tv } from '@vezham/react-utils'
 const tva = tv({
   slots: {
     base: 'overflow-x-auto rounded-full',
-    tabList: 'inline-flex overflow-x-auto !p-1 px-2',
+    tabList:
+      'inline-flex overflow-x-auto bg-white !p-1 px-2 dark:bg-neutral-800',
     tab: 'cursor-pointer rounded-full text-base'
   },
   variants: {

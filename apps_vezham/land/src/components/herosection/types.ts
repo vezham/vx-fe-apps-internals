@@ -28,9 +28,11 @@ interface Props extends tvProps, HTMLHeroUIProps<'div'> {
   actions?: {
     submit?: {
       label?: React.ReactNode | string
+      href?: string
     }
     trial?: {
       placeholder?: React.ReactNode | string
+      href?: string
     }
   }
 

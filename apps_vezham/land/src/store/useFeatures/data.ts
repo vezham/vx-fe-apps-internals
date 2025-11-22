@@ -2044,10 +2044,12 @@ export const personalizationsData: Personalize[] = [
         },
         actions: {
           submit: {
-            label: 'Request a demo'
+            label: 'Request a demo',
+            href: '#'
           },
           trial: {
-            placeholder: 'Book your trial'
+            placeholder: 'Book your trial',
+            href: '/signup'
           }
         }
       }

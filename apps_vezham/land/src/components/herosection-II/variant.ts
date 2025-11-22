@@ -7,13 +7,13 @@ const tva = tv({
       'flex flex-col items-center justify-center gap-4 p-5 text-center text-white',
     content: 'flex flex-col items-center justify-center sm:leading-[30px]',
     wrapper_super_title:
-      'mt-4 text-[30px] font-[900] tracking-tight sm:text-[54px]',
+      'mt-4 text-[30px] leading-[58px] font-[900] tracking-tight sm:text-[54px]',
     wrapper_title:
       'max-w-[650px] text-[30px] font-[900] tracking-tight sm:mt-4 sm:text-[54px] sm:leading-[58px]',
     wrapper_subtitle:
       'mt-4 max-w-[500px] text-[16px] sm:text-[24px] sm:leading-6',
     wrapper_description:
-      'mt-4 max-w-[500px] text-[12px] sm:text-[16px] sm:leading-6',
+      'text-default-500 mt-4 max-w-[500px] text-[12px] sm:text-[16px] sm:leading-6',
     footer: 'mt-4 flex w-full flex-col justify-center gap-4 sm:flex-row'
   },
   variants: {

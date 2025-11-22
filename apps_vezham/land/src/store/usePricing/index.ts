@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { Pricing } from './action'
-import { RQPersonalize } from './types'
+import { RQPersonalize, RQPricing } from './types'
 
 const CK_PRICING = 'pricing'
+const CK_PRICELIST = 'pricelist'
 
 const usePricing = {
   list: (rq: RQPersonalize) => {
@@ -11,6 +12,14 @@ const usePricing = {
     return useQuery({
       queryKey: [CK_PRICING, rq],
       queryFn: () => Pricing.list(rq)
+    })
+  },
+
+  pricelist: (rq: RQPricing) => {
+    console.log(Pricing.pricelist(rq))
+    return useQuery({
+      queryKey: [CK_PRICELIST, rq],
+      queryFn: () => Pricing.pricelist(rq)
     })
   }
 }

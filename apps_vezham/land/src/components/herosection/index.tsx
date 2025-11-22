@@ -76,13 +76,20 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
         </div>
 
         <div {...getFooterProps()}>
-          <Button as={Link} href="/signup" color="warning">
-            {actions?.trial?.placeholder}
-          </Button>
+          {actions?.trial?.placeholder && (
+            <Button as={Link} href={actions?.trial?.href} color="warning">
+              {actions.trial.placeholder}
+            </Button>
+          )}
 
-          <Button color="default" variant="bordered">
-            {actions?.submit?.label}
-          </Button>
+          {actions?.submit?.label && (
+            <Button
+              color="default"
+              href={actions?.submit?.href}
+              variant="faded">
+              {actions.submit.label}
+            </Button>
+          )}
         </div>
       </div>
     </Component>

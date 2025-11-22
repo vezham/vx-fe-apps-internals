@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { PricingComp } from '../../components/appPricing'
+import { ResourcesComp } from '../../components/appResources'
 import { HomeSection } from '../../components/herosection-II'
 import { AppNavbar } from '../../components/navbar'
 import { Footer } from '../../layouts/footers'
 import { usePersonalize } from '../../store/useHomeSection'
-import { usePricing } from '../../store/usePricing'
+import { useResources } from '../../store/useResources'
 
-const Pricing = () => {
+const Resources = () => {
   const { data: personal } = usePersonalize.list({})
-  const { data: pricing } = usePricing.list({})
+  const { data: resources } = useResources.homelist({})
 
   const navItems = personal?.navItems ?? []
   const items = personal?.tabItems ?? []
@@ -53,25 +53,28 @@ const Pricing = () => {
   }
 
   return (
-    <AppNavbar
-      navItems={navItems}
-      tabItems={items}
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-      activeNavbarItem={activeNavbarItem} // ✔ string
-      selectedTab={selectedTab}
-      activeItem={activeItem}
-      isDrawerOpen={isDrawerOpen}
-      onNavbarItemClick={handleNavbarClick}
-      onTabClick={handleTabClick}
-      onSelectionChange={handleSelectionChange}
-      onDrawerOpenChange={setIsDrawerOpen}
-      onDrawerClose={() => setIsDrawerOpen(false)}>
-      <HomeSection {...pricing?.cards?.welcome_message} />
-      <PricingComp />
-      <Footer />
-    </AppNavbar>
+    <div className="">
+      <AppNavbar
+        navItems={navItems}
+        tabItems={items}
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        activeNavbarItem={activeNavbarItem} // ✔ string
+        selectedTab={selectedTab}
+        activeItem={activeItem}
+        isDrawerOpen={isDrawerOpen}
+        onNavbarItemClick={handleNavbarClick}
+        onTabClick={handleTabClick}
+        onSelectionChange={handleSelectionChange}
+        onDrawerOpenChange={setIsDrawerOpen}
+        onDrawerClose={() => setIsDrawerOpen(false)}>
+        <HomeSection {...resources?.cards?.welcome_message} />
+        <ResourcesComp />
+
+        <Footer />
+      </AppNavbar>
+    </div>
   )
 }
 
-export { Pricing }
+export { Resources }

@@ -52,7 +52,7 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
       style={{
         backgroundImage: `linear-gradient(
       rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.8)
+      rgba(0, 0, 0, 0.9)
     ), url("${cover?.url}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -71,14 +71,17 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
         <div {...getFooterProps()}>
           {/* Show only if placeholder exists */}
           {actions?.trial?.placeholder && (
-            <Button as={Link} href="/signup" color="warning">
+            <Button as={Link} href={actions?.trial?.href} color="warning">
               {actions.trial.placeholder}
             </Button>
           )}
 
           {/* Show only if label exists */}
           {actions?.submit?.label && (
-            <Button color="default" variant="faded">
+            <Button
+              color="default"
+              href={actions?.submit?.href}
+              variant="faded">
               {actions.submit.label}
             </Button>
           )}

@@ -34,10 +34,12 @@ export const personalizationsData: Personalize[] = [
         chip_label: 'GST compliant accounting software',
         actions: {
           submit: {
-            label: 'Request a demo'
+            label: 'Request a demo',
+            href: '#'
           },
           trial: {
-            placeholder: 'Book your trial'
+            placeholder: 'Book your trial',
+            href: '/signup'
           }
         }
       }
@@ -386,16 +388,17 @@ export const personalizationsData: Personalize[] = [
       {
         label: 'Resources',
         key: 'resources',
+        href: '/vezham/resources',
         subItems: [
           {
-            key: 'brand-resource-center',
-            label: 'Brand Resource Center',
+            key: 'help-center',
+            label: 'Help Center',
             description: 'To use our brand assets',
             href: '#'
           },
           {
             key: 'support',
-            label: 'Support',
+            label: 'Support Plans',
             description: 'View and manage your helpsupport',
             href: '#'
           }

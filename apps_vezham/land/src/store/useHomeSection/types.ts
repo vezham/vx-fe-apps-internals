@@ -56,16 +56,18 @@ export type coverType = {
   url: string
 }
 
-export type submit = {
-  label: string
-}
-
 export type input = {
   placeholder: string
 }
 
+export type submit = {
+  label?: string
+  href?: string
+}
+
 export type trial = {
-  placeholder: string
+  placeholder?: string
+  href?: string
 }
 
 export type newsLetterAction = {
