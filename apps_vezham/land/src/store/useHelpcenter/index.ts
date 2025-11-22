@@ -7,7 +7,6 @@ const CK_HELPCENTER = 'helpcenter'
 
 const useHelpCenter = {
   list: (rq: RQHelpCenter) => {
-    console.log(HelpCenter.list(rq))
     return useQuery({
       queryKey: [CK_HELPCENTER, rq],
       queryFn: () => HelpCenter.list(rq)

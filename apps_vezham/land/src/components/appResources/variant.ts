@@ -31,15 +31,18 @@ const tva = tv({
     innerWrapper: '',
     bottomBar: 'flex w-full flex-row items-center justify-between px-3 pb-3',
     fileButton: '',
-    submitButton: '',
+    submitButton: 'cursor-pointer',
     submitButtonIcon: '[&>path]:stroke-[2px]',
-    submitButtonEnabled: 'text-primary-foreground',
-    submitButtonDisabled: 'text-default-600',
+    searchButton: 'cursor-pointer',
+    searchButtonIcon: '[&>path]:stroke-[2px]',
+    ButtonEnabled: 'text-primary-foreground',
+    ButtonDisabled: 'text-default-600',
     badge: 'opacity-0 group-hover:opacity-100',
     badgeButton: '',
     image:
       'rounded-small border-small border-default-200/50 h-14 w-14 object-cover',
-    tab: 'flex items-center justify-center py-8'
+    tab: 'flex items-center justify-center py-8',
+    btn: 'flex gap-2'
   },
   variants: {
     size: {

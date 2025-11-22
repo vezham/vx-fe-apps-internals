@@ -23,7 +23,6 @@ const useFeatures = {
   },
 
   list: (rq: RQPersonalize) => {
-    console.log(Features.list(rq))
     return useQuery({
       queryKey: [CK_FEATURES, rq],
       queryFn: () => Features.list(rq)

@@ -7,7 +7,6 @@ const CK_PERSONAL = 'personal'
 
 const usePersonalize = {
   list: (rq: RQPersonalize) => {
-    console.log(Personal.list(rq))
     return useQuery({
       queryKey: [CK_PERSONAL, rq],
       queryFn: () => Personal.list(rq)

@@ -2,7 +2,7 @@
 
 import { Icon } from '@iconify/react'
 import { Route, useRouter, useSearch } from '@tanstack/react-router'
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import { forwardRef } from '@vezham/react-utils'
 
@@ -95,10 +95,16 @@ const PromptInputAssets = ({
 
 const PromptInputFullLineComponent = ({
   prompt,
-  setPrompt
+  setPrompt,
+  onSearch,
+  isSearching,
+  onClearSearch
 }: {
   prompt: string
   setPrompt: React.Dispatch<React.SetStateAction<string>>
+  onSearch: (query: string) => void
+  isSearching: boolean
+  onClearSearch: () => void
 }) => {
   const {
     getPromptInputFullLineBaseProps,
@@ -110,14 +116,23 @@ const PromptInputFullLineComponent = ({
     getFileButtonProps,
     getSubmitButtonProps,
     getSubmitButtonIconProps,
+    getSearchButtonProps,
+    getSearchButtonIconProps,
     getBadgeProps,
     getBadgeButtonProps,
-    getImageProps
+    getImageProps,
+    getButtonProps
   } = useProps({})
 
   const [assets, setAssets] = useState<string[]>([])
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (!prompt.trim()) {
+      onClearSearch()
+    }
+  }, [prompt, onClearSearch])
 
   const handleSubmit = useCallback(() => {
     if (!prompt) return
@@ -125,6 +140,11 @@ const PromptInputFullLineComponent = ({
     setPrompt('')
     inputRef?.current?.focus()
   }, [prompt, setPrompt])
+
+  const handleSearch = useCallback(() => {
+    if (!prompt) return
+    onSearch(prompt)
+  }, [prompt, onSearch])
 
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
@@ -138,10 +158,14 @@ const PromptInputFullLineComponent = ({
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault()
-        handleSubmit()
+        if (e.ctrlKey || e.metaKey) {
+          handleSearch()
+        } else {
+          handleSubmit()
+        }
       }
     },
-    [handleSubmit]
+    [handleSubmit, handleSearch]
   )
 
   const handlePaste = useCallback(async (e: React.ClipboardEvent) => {
@@ -243,21 +267,44 @@ const PromptInputFullLineComponent = ({
             </VisuallyHidden>
           </Button>
         </Tooltip>
-        <Button
-          isIconOnly
-          color={!prompt ? 'default' : 'primary'}
-          isDisabled={!prompt}
-          radius="full"
-          size="sm"
-          type="submit"
-          variant="solid"
-          {...getSubmitButtonProps()}>
-          <Icon
-            {...getSubmitButtonIconProps(!!prompt)}
-            icon="solar:arrow-up-linear"
-            width={20}
-          />
-        </Button>
+
+        <div {...getButtonProps()}>
+          <Button
+            isIconOnly
+            color={!prompt ? 'primary' : 'default'}
+            isDisabled={!prompt}
+            radius="full"
+            size="sm"
+            type="submit"
+            variant="solid"
+            {...getSubmitButtonProps()}>
+            <Icon
+              {...getSubmitButtonIconProps(!!prompt)}
+              icon="solar:arrow-up-linear"
+              width={20}
+            />
+          </Button>
+          <Tooltip
+            showArrow
+            content="Search across Help Center and Support Plans">
+            <Button
+              isIconOnly
+              color={!prompt ? 'default' : 'primary'}
+              isDisabled={!prompt}
+              radius="full"
+              size="sm"
+              variant="solid"
+              isLoading={isSearching}
+              {...getSearchButtonProps()}
+              onPress={handleSearch}>
+              <Icon
+                {...getSearchButtonIconProps(!!prompt)}
+                icon={isSearching ? 'solar:loading-linear' : 'lucide:search'}
+                width={16}
+              />
+            </Button>
+          </Tooltip>
+        </div>
       </div>
     </Form>
   )
@@ -303,6 +350,8 @@ const PromptSuggestions = ({
 
 const ResourcesComp = forwardRef<'div', Props>((props, ref) => {
   const [prompt, setPrompt] = useState('')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [isSearching, setIsSearching] = useState(false)
 
   const { getResourcesBaseProps, getResourcesTitleProps, getTabProps } =
     useProps({
@@ -316,7 +365,6 @@ const ResourcesComp = forwardRef<'div', Props>((props, ref) => {
 
   const router = useRouter()
 
-  // Read ?tab from URL
   const { tab } = useSearch({ from: '/vezham/resources' })
   const selectedTab = tab ?? 'help-center'
 
@@ -324,6 +372,7 @@ const ResourcesComp = forwardRef<'div', Props>((props, ref) => {
   const tabs = resources?.tabs ?? []
 
   const handleSelectionChange = (key: string) => {
+    setSearchQuery('')
     router.navigate({
       from: '/vezham/resources',
       search: prev => ({
@@ -334,11 +383,35 @@ const ResourcesComp = forwardRef<'div', Props>((props, ref) => {
     })
   }
 
+  const handleSearch = useCallback(async (query: string) => {
+    if (!query.trim()) {
+      setSearchQuery('')
+      return
+    }
+
+    setIsSearching(true)
+    setSearchQuery(query)
+
+    await new Promise(resolve => setTimeout(resolve, 500))
+
+    setIsSearching(false)
+  }, [])
+
+  const handleClearSearch = useCallback(() => {
+    setSearchQuery('')
+  }, [])
+
   return (
     <>
       <div {...getResourcesBaseProps()}>
         <h1 {...getResourcesTitleProps()}>How can I help you today ?</h1>
-        <PromptInputFullLineComponent prompt={prompt} setPrompt={setPrompt} />
+        <PromptInputFullLineComponent
+          prompt={prompt}
+          setPrompt={setPrompt}
+          onSearch={handleSearch}
+          onClearSearch={handleClearSearch}
+          isSearching={isSearching}
+        />
         <PromptSuggestions onSelect={handleSuggestionSelect} />
       </div>
 
@@ -350,9 +423,19 @@ const ResourcesComp = forwardRef<'div', Props>((props, ref) => {
         />
       </div>
 
-      <div className="xl:max-6xl mx-auto mt-6 max-w-5xl">
-        {selectedTab === 'help-center' && <HelpCenter />}
-        {selectedTab === 'support-plans' && <Support />}
+      <div>
+        {selectedTab === 'help-center' && (
+          <HelpCenter
+            searchQuery={searchQuery}
+            onSearchQueryChange={setSearchQuery}
+          />
+        )}
+        {selectedTab === 'support-plans' && (
+          <Support
+            searchQuery={searchQuery}
+            onSearchQueryChange={setSearchQuery}
+          />
+        )}
       </div>
     </>
   )

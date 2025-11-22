@@ -61,6 +61,7 @@ const PricingComp = forwardRef<'div', PricingCompProps>((props, ref) => {
     getPriceAmountProps,
     getPriceSuffixProps,
     getPriceDescriptionProps,
+    getFaqShadowProps,
     selectedFrequency: propSelectedFrequency,
     selectedTier: propSelectedTier,
     onFrequencyChange: propOnFrequencyChange,
@@ -313,7 +314,8 @@ const PricingComp = forwardRef<'div', PricingCompProps>((props, ref) => {
                 <AccordionItem
                   key={i}
                   aria-label={item.title}
-                  title={item.title}>
+                  title={item.title}
+                  {...getFaqShadowProps()}>
                   <p className="text-default-600 text-sm">{item.description}</p>
                 </AccordionItem>
               ))}

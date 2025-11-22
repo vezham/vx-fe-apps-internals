@@ -4,8 +4,9 @@ const tva = tv({
   slots: {
     base: '',
 
-    popularTopicsTitle: 'px-5 pb-5 text-2xl font-semibold',
-    featuresGrid: 'grid grid-cols-1 gap-6 px-5 sm:grid-cols-2 md:grid-cols-3',
+    popularTopicsTitle: ': px-5 text-center text-2xl font-bold lg:text-4xl',
+    featuresGrid:
+      'mx-auto grid max-w-5xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:max-w-6xl',
 
     featureCard: 'bg-content2',
     featureCardHeader: 'flex flex-col gap-2 px-4 pt-6 pb-4',
@@ -16,7 +17,8 @@ const tva = tv({
       'rounded-medium bg-content3 text-content3-foreground flex min-h-[50px] px-3 py-2',
     featureCardDescriptionText: 'text-small',
 
-    helpDeskSection: 'space-y-8 px-5 py-8 text-justify',
+    helpDeskSection:
+      'mx-auto max-w-5xl space-y-8 px-5 py-8 text-justify xl:max-w-6xl',
     helpDeskItem:
       'dark:border-default-200 rounded-lg border border-gray-200 p-6',
     helpDeskTitle: 'text-xl font-semibold',
@@ -26,7 +28,7 @@ const tva = tv({
       'mt-4 list-disc space-y-1 pl-6 text-gray-600 dark:text-gray-400',
 
     faqSection: 'mx-auto w-full px-4 py-10',
-    faqContainer: 'mx-auto flex w-full max-w-5xl flex-col items-center gap-8',
+    faqContainer: 'mx-auto flex w-full max-w-6xl flex-col items-center gap-8',
     faqTitle:
       'from-foreground to-foreground-600 w-full bg-linear-to-br bg-clip-text px-2 text-center text-3xl leading-7 font-bold tracking-tight md:text-4xl',
     faqTitleMobile: 'inline-block md:hidden',
@@ -74,7 +76,7 @@ const tva = tv({
   variants: {
     size: {
       sm: {
-        popularTopicsTitle: 'px-4 pb-4 text-xl',
+        popularTopicsTitle: 'px-4 py-4 text-xl lg:text-3xl',
         featuresGrid: 'gap-4 px-4',
         helpDeskItem: 'p-4',
         helpDeskTitle: 'text-lg',
@@ -86,7 +88,7 @@ const tva = tv({
         cardReview: 'p-4'
       },
       md: {
-        popularTopicsTitle: 'px-5 pb-5 text-2xl',
+        popularTopicsTitle: 'px-5 py-6 text-3xl lg:text-4xl',
         featuresGrid: 'gap-6 px-5',
         helpDeskItem: 'p-6',
         helpDeskTitle: 'text-xl',
@@ -98,7 +100,7 @@ const tva = tv({
         cardReview: 'p-5'
       },
       lg: {
-        popularTopicsTitle: 'px-6 pb-6 text-3xl',
+        popularTopicsTitle: 'px-6 py-8 text-3xl lg:text-5xl',
         featuresGrid: 'gap-8 px-6',
         helpDeskItem: 'p-8',
         helpDeskTitle: 'text-2xl',

@@ -8,7 +8,6 @@ const CK_PRICELIST = 'pricelist'
 
 const usePricing = {
   list: (rq: RQPersonalize) => {
-    console.log(Pricing.list(rq))
     return useQuery({
       queryKey: [CK_PRICING, rq],
       queryFn: () => Pricing.list(rq)
@@ -16,7 +15,6 @@ const usePricing = {
   },
 
   pricelist: (rq: RQPricing) => {
-    console.log(Pricing.pricelist(rq))
     return useQuery({
       queryKey: [CK_PRICELIST, rq],
       queryFn: () => Pricing.pricelist(rq)

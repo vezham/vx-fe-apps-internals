@@ -239,8 +239,14 @@ const usePricingProps = (originalProps: PricingCompProps) => {
     className: slots.faqGroupTitle({ class: classNames?.faqGroupTitle })
   })
 
+  const getFaqShadowProps: PropGetter = () => ({
+    className: slots.faqShadow({ class: classNames?.faqShadow })
+  })
+
   const getDiscountContainerProps: PropGetter = () => ({
-    className: slots.discountContainer({ class: classNames?.discountContainer })
+    className: slots.discountContainer({
+      class: classNames?.discountContainer
+    })
   })
 
   const getDiscountTextProps: PropGetter = () => ({
@@ -307,6 +313,7 @@ const usePricingProps = (originalProps: PricingCompProps) => {
     getPriceAmountProps,
     getPriceSuffixProps,
     getPriceDescriptionProps,
+    getFaqShadowProps,
     pricingData,
     isLoading,
     selectedFrequency,

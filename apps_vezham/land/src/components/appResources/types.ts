@@ -129,7 +129,24 @@ const useProps = (originalProps: Props) => {
   const getSubmitButtonIconProps: PropGetter = (isEnabled: boolean) => ({
     className: slots.submitButtonIcon({
       class: cn(
-        isEnabled ? slots.submitButtonEnabled() : slots.submitButtonDisabled(),
+        isEnabled ? slots.ButtonEnabled() : slots.ButtonDisabled(),
+        classNames?.submitButtonIcon
+      )
+    })
+  })
+
+  const getButtonProps: PropGetter = () => ({
+    className: slots.btn({ class: classNames?.btn })
+  })
+
+  const getSearchButtonProps: PropGetter = () => ({
+    className: slots.searchButton({ class: classNames?.submitButton })
+  })
+
+  const getSearchButtonIconProps: PropGetter = (isEnabled: boolean) => ({
+    className: slots.searchButtonIcon({
+      class: cn(
+        isEnabled ? slots.ButtonEnabled() : slots.ButtonDisabled(),
         classNames?.submitButtonIcon
       )
     })
@@ -175,7 +192,10 @@ const useProps = (originalProps: Props) => {
     getBadgeProps,
     getBadgeButtonProps,
     getImageProps,
-    getTabProps
+    getTabProps,
+    getSearchButtonIconProps,
+    getSearchButtonProps,
+    getButtonProps
   }
 }
 

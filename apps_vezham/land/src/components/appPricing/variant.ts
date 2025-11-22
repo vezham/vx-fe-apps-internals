@@ -31,6 +31,7 @@ const pricingTva = tv({
     faqContainer: 'mx-auto max-w-4xl px-4 py-4 md:px-10 xl:max-w-5xl',
     faqGroup: 'space-y-4',
     faqGroupTitle: 'font-semibold',
+    faqShadow: 'border-default-300 border shadow-none dark:border-none',
 
     discountContainer:
       'flex flex-col items-center justify-center gap-2 sm:flex-row',
