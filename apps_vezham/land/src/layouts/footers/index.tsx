@@ -4,8 +4,6 @@ import { useFooters } from '../../store/useFooter'
 const Footer = () => {
   const { data: footerNavigation } = useFooters.list({})
 
-  console.log('Footer navigation data:', footerNavigation) // Debug what's being returned
-
   if (!footerNavigation) {
     return <div>Loading footer...</div>
   }

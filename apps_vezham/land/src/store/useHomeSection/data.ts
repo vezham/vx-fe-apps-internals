@@ -35,7 +35,7 @@ export const personalizationsData: Personalize[] = [
         actions: {
           submit: {
             label: 'Request a demo',
-            href: '#'
+            href: ''
           },
           trial: {
             placeholder: 'Book your trial',

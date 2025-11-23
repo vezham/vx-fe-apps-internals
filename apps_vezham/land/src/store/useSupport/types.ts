@@ -90,7 +90,7 @@ export type TeamMember = {
   role: string
   bio?: string
   social: {
-    twitter: string
+    phone: string
     linkedin: string
     github?: string
     mail?: string
@@ -108,5 +108,48 @@ export interface supportData {
   teamMembers: TeamMember[]
 }
 
+export type Personalize = {
+  cards: cards
+}
+
+export type cards = {
+  welcome_message: welcomeData
+}
+
+export type welcomeData = {
+  __type: string
+  icon?: React.ReactNode
+  chip_label?: string
+  super_title?: string
+  subtitle?: string
+  title?: string
+  description?: string
+  cover?: coverType
+  actions: welcomeDataAction
+}
+
+export type welcomeDataAction = {
+  submit: submit
+  trial: trial
+}
+
+export type coverType = {
+  __type: string
+  type?: string
+  alt_text?: string
+  url: string
+}
+
+export type submit = {
+  label?: string
+  href?: string
+}
+
+export type trial = {
+  placeholder?: string
+  href?: string
+}
+
 type RQSupport = object
-export type { RQSupport }
+type RQPersonalize = object
+export type { RQSupport, RQPersonalize }

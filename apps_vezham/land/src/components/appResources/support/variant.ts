@@ -2,17 +2,14 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const pricingTva = tv({
   slots: {
-    // Base
     base: 'mx-auto',
 
-    // Hero Sections
     heroContainer:
       'mx-auto max-w-[800px] px-5 py-5 text-justify md:text-center',
     heroGrid: 'grid gap-4',
     heroTitle: 'text-center text-3xl font-bold md:text-4xl',
     heroDescription: 'text-default-500',
 
-    // Services Grid
     servicesGrid:
       'mx-auto grid max-w-6xl grid-cols-1 gap-6 px-5 py-5 md:grid-cols-2 xl:grid-cols-4',
     serviceCard: 'cursor-pointer',
@@ -25,12 +22,10 @@ const pricingTva = tv({
     serviceBodyDescription: 'text-default-500 text-sm',
     serviceCardFooter: '',
 
-    // Plans Section
     plansContainer:
       'mx-auto max-w-[650px] px-5 py-5 text-justify md:pt-16 md:text-center',
     plansGrid: 'grid gap-4',
 
-    // Tiers Section
     tiersContainer:
       'relative mx-auto flex max-w-4xl flex-col items-center px-5',
     tiersSubContainer:
@@ -57,14 +52,12 @@ const pricingTva = tv({
     tierFeatureText: 'text-default-500',
     tierCardFooter: '',
 
-    // Tabs
     tabsContainer: 'flex w-full items-center justify-center pb-6',
     tabs: 'flex w-full items-center justify-center',
     tabList: 'no-scrollbar flex-nowrap overflow-x-auto',
     tab: 'whitespace-nowrap data-[hover-unselected=true]:opacity-90',
     tabContent: 'flex items-center gap-2',
 
-    // Comparison Table
     comparisonTable: 'isolate mx-auto hidden max-w-6xl md:block',
     tableContainer: 'relative',
     table: 'w-full table-fixed border-separate border-spacing-x-4 text-left',
@@ -80,20 +73,17 @@ const pricingTva = tv({
     featureCheckIcon: 'text-secondary mx-auto',
     featureCloseIcon: 'text-default-400 mx-auto',
 
-    // FAQ
     faqContainer: 'mx-auto max-w-6xl px-5 py-16',
     faqGroup: 'space-y-4',
     faqGroupTitle: 'pb-6 font-bold',
     faqShadow: 'border-default-300 border shadow-none dark:border-none',
     faqItemDescription: 'text-default-600 text-sm',
 
-    // Discount
     discountContainer:
       'flex flex-col items-center justify-center gap-2 sm:flex-row',
     discountText: 'text-default-400',
     discountLink: 'text-secondary',
 
-    // Team Section
     teamSection: 'mx-auto flex max-w-6xl flex-col items-center px-5',
     teamHeader: 'flex max-w-xl flex-col text-center',
     teamSubtitle: 'text-primary font-medium',
@@ -101,14 +91,13 @@ const pricingTva = tv({
     teamGrid:
       'mt-6 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4',
 
-    // Team Member Card
     teamMemberCard:
       'rounded-large bg-content1 shadow-small flex flex-col items-center px-4 py-6 text-center',
     teamMemberAvatar: 'h-20 w-20',
     teamMemberName: 'mt-2 font-medium',
     teamMemberRole: 'text-small text-default-500',
     teamMemberBio: 'text-default-600 mt-2 mb-4',
-    teamSocialLinks: 'flex gap-4',
+    teamSocialLinks: 'my-2 flex gap-4',
     teamSocialIcon: 'text-default-400'
   },
   variants: {

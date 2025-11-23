@@ -1,4 +1,4 @@
-import { FrequencyEnum, TiersEnum, supportData } from './types'
+import { FrequencyEnum, Personalize, TiersEnum, supportData } from './types'
 
 export const support: supportData = {
   frequencies: [
@@ -387,7 +387,7 @@ export const support: supportData = {
       role: 'Privacy Concerns',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
       social: {
-        twitter: '@john-doe',
+        phone: '@john-doe',
         linkedin: 'john-doe',
         github: '@john-doe',
         mail: '@john-doe'
@@ -399,7 +399,7 @@ export const support: supportData = {
       role: 'HelpDesk ',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
       social: {
-        twitter: '@jane-doe',
+        phone: '@jane-doe',
         linkedin: 'jane-doe',
         github: '@jane-doe',
         mail: '@jane-doe'
@@ -411,7 +411,7 @@ export const support: supportData = {
       role: 'HR',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
       social: {
-        twitter: '@robert-doe',
+        phone: '@robert-doe',
         linkedin: 'robert-doe',
         github: '@robert-doe',
         mail: '@robert-doe'
@@ -423,7 +423,7 @@ export const support: supportData = {
       role: 'Customer Support',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
       social: {
-        twitter: '@milan-doe',
+        phone: '@milan-doe',
         linkedin: 'milan-doe',
         github: '@milan-doe',
         mail: '@milan-doe'
@@ -431,3 +431,32 @@ export const support: supportData = {
     }
   ]
 }
+
+export const personalizationsData: Personalize[] = [
+  {
+    cards: {
+      welcome_message: {
+        __type: 'welcome_message',
+        super_title: 'Welcome to Support Center',
+        title: '',
+        subtitle: 'We are hear to assist ',
+        cover: {
+          __type: 'cover',
+          type: 'image',
+          alt_text: 'Paper bag poster',
+          url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80'
+        },
+        actions: {
+          submit: {
+            label: 'Contact us',
+            href: '#'
+          },
+          trial: {
+            placeholder: 'Raise Ticket',
+            href: '#'
+          }
+        }
+      }
+    }
+  }
+]

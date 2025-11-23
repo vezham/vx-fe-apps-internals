@@ -1,7 +1,7 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
 
-import { Support } from '../../../components/appResources/support'
+import { SupportComp } from '../../../pages/support'
 
 export const Route = createLazyFileRoute('/vezham/resources/support')({
-  component: () => <Support />
+  component: () => <SupportComp />
 })

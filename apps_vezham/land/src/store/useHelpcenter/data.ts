@@ -1,4 +1,4 @@
-import { HelpCenterProps } from './types'
+import { HelpCenterProps, Personalize } from './types'
 
 export const helpCenterData: HelpCenterProps = {
   faqs: [
@@ -194,3 +194,32 @@ export const helpCenterData: HelpCenterProps = {
     }
   ]
 }
+
+export const personalizationsData: Personalize[] = [
+  {
+    cards: {
+      welcome_message: {
+        __type: 'welcome_message',
+        super_title: 'Welcome to Help Center',
+        title: '',
+        subtitle: 'We are hear to assist ',
+        cover: {
+          __type: 'cover',
+          type: 'image',
+          alt_text: 'Paper bag poster',
+          url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80'
+        },
+        actions: {
+          submit: {
+            label: 'Contact us',
+            href: '/vezham/resources/support'
+          },
+          trial: {
+            placeholder: 'Book your Trial',
+            href: '#'
+          }
+        }
+      }
+    }
+  }
+]

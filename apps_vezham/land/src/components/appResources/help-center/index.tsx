@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react'
+import { useRouter } from '@tanstack/react-router'
 
 import { forwardRef } from '@vezham/react-utils'
 
@@ -147,6 +148,7 @@ const SearchNotFound = ({ searchQuery }: { searchQuery: string }) => {
 }
 
 const HelpCenter = forwardRef<'div', Props>((props, ref) => {
+  const router = useRouter()
   const { data: helpCenter } = useHelpCenter.list({})
   const { searchQuery } = props
 
@@ -303,7 +305,10 @@ const HelpCenter = forwardRef<'div', Props>((props, ref) => {
                 {...getContactButtonProps()}
                 endContent={<Icon icon="lucide:chevron-right" width={24} />}
                 size="md"
-                variant="shadow">
+                variant="shadow"
+                onPress={() =>
+                  router.navigate({ to: '/vezham/resources/support' })
+                }>
                 Contact Us
               </Button>
             </div>

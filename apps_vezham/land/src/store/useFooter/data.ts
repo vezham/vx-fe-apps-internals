@@ -17,6 +17,8 @@ export const footerNavigation: FooterNavigation = {
 
   resources: [
     { name: 'Blog', href: '#' },
+    { name: 'Help Center', href: '/vezham/resources/help-center' },
+    { name: 'Support Plans', href: '/vezham/resources/support' },
     { name: 'Case Studies', href: '#case-studies' },
     { name: 'Whitepapers', href: '#' },
     { name: 'Webinars', href: '#' }
@@ -30,7 +32,7 @@ export const footerNavigation: FooterNavigation = {
     { name: 'Careers', href: '#' },
     { name: 'Media Enquiries', href: '#' },
     { name: 'Collaborations', href: '#' },
-    { name: 'Contact Us', href: '/contact' }
+    { name: 'Contact Us', href: '/vezham/resources/support' }
   ],
 
   legal: [

@@ -31,7 +31,6 @@ import {
   useSupportProps
 } from './types'
 
-// Search Results Component for "Not Found" state
 const SearchNotFound = ({ searchQuery }: { searchQuery: string }) => {
   return (
     <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -165,11 +164,11 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
         <span {...getTeamMemberRoleProps()}>{role}</span>
         <p {...getTeamMemberBioProps()}>{bio}</p>
         <div {...getTeamSocialLinksProps()}>
-          {social?.twitter && (
+          {social?.phone && (
             <Link isExternal href="#">
               <Icon
                 {...getTeamSocialIconProps()}
-                icon="bi:twitter"
+                icon="bi:telephone-fill"
                 width={20}
               />
             </Link>
@@ -202,24 +201,20 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
     )
   )
 
-  // Enhanced filter data function that properly handles nested arrays
   const filterData = (data: any[], searchFields: string[]) => {
     if (!searchQuery) return data
 
     const query = searchQuery.toLowerCase()
     return data.filter(item => {
       return searchFields.some(field => {
-        // Handle nested properties with dot notation
         if (field.includes('.')) {
           const fieldParts = field.split('.')
           let currentValue = item
 
-          // Traverse the nested properties
           for (const part of fieldParts) {
             if (currentValue === null || currentValue === undefined) break
 
             if (Array.isArray(currentValue)) {
-              // If we hit an array, check each item in the array
               return currentValue.some(arrayItem => {
                 if (typeof arrayItem === 'object' && arrayItem !== null) {
                   const nestedValue = fieldParts
@@ -236,14 +231,12 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
 
           return checkValue(currentValue, query)
         } else {
-          // Handle flat properties
           return checkValue(item[field], query)
         }
       })
     })
   }
 
-  // Helper function to check value against query
   const checkValue = (value: any, query: string): boolean => {
     if (typeof value === 'string') {
       return value.toLowerCase().includes(query)
@@ -255,17 +248,14 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
     return false
   }
 
-  // Special filter for FAQs to handle nested subItems
   const filterFaqs = (faqsData: any[], query: string) => {
     if (!query) return faqsData
 
     return faqsData.filter(faqGroup => {
-      // Check the main label
       if (faqGroup.label?.toLowerCase().includes(query)) {
         return true
       }
 
-      // Check subItems
       if (faqGroup.subItems && Array.isArray(faqGroup.subItems)) {
         const hasMatchingSubItems = faqGroup.subItems.some((subItem: any) => {
           return (
@@ -283,7 +273,6 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
     })
   }
 
-  // Filter each section
   const filteredInfo = filterData(info, ['title', 'description'])
   const filteredServices = filterData(services, [
     'logotitle',
@@ -310,7 +299,6 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
     : faqs
   const filteredTeamMembers = filterData(teamMembers, ['name', 'role', 'bio'])
 
-  // Check if any section has results
   const hasSearchResults =
     filteredInfo.length > 0 ||
     filteredServices.length > 0 ||
@@ -320,12 +308,10 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
     filteredFaqs.length > 0 ||
     filteredTeamMembers.length > 0
 
-  // If searching and no results found
   if (searchQuery && !hasSearchResults) {
     return <SearchNotFound searchQuery={searchQuery} />
   }
 
-  // Filter FAQ subItems when searching to only show matching items
   const getFilteredFaqSubItems = (faqGroup: any) => {
     if (!searchQuery) return faqGroup.subItems || []
 
@@ -338,7 +324,6 @@ const Support = forwardRef<'div', PricingCompProps>((props, ref) => {
 
   return (
     <div {...getBaseProps()}>
-      {/* Only show sections that have content or when not searching */}
       {(!searchQuery || filteredInfo.length > 0) && (
         <div {...getHeroContainerProps()}>
           {(searchQuery ? filteredInfo : info).map((i, index) => (

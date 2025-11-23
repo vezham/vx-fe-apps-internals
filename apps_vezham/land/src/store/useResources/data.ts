@@ -60,10 +60,10 @@ export const personalizationsData: Personalize[] = [
         actions: {
           submit: {
             label: 'Contact us',
-            href: '#'
+            href: '/vezham/resources/support'
           },
           trial: {
-            placeholder: 'Raise Ticket',
+            placeholder: 'Book your Trial',
             href: '#'
           }
         }

@@ -53,7 +53,7 @@ type TeamMember = {
   role: string
   bio?: string
   social: {
-    twitter: string
+    phone: string
     linkedin: string
     github?: string
     mail?: string
@@ -504,16 +504,13 @@ const useSupportProps = (originalProps: PricingCompProps) => {
     classNames,
     children,
 
-    // Base
     getBaseProps,
 
-    // Hero
     getHeroContainerProps,
     getHeroGridProps,
     getHeroTitleProps,
     getHeroDescriptionProps,
 
-    // Services
     getServicesGridProps,
     getServiceCardProps,
     getServiceCardHeaderProps,
@@ -525,11 +522,9 @@ const useSupportProps = (originalProps: PricingCompProps) => {
     getServiceBodyDescriptionProps,
     getServiceCardFooterProps,
 
-    // Plans
     getPlansContainerProps,
     getPlansGridProps,
 
-    // Tiers
     getTiersContainerProps,
     getTiersSubContainerProps,
     getTiersBackgroundProps,
@@ -549,7 +544,6 @@ const useSupportProps = (originalProps: PricingCompProps) => {
     getTierFeatureTextProps,
     getTierCardFooterProps,
 
-    // Tabs
     getTabsContainerProps,
     getTabsProps,
     getTabListProps,
@@ -557,7 +551,6 @@ const useSupportProps = (originalProps: PricingCompProps) => {
     getTabContentProps,
     getRadioGroupProps,
 
-    // Comparison Table
     getComparisonTableProps,
     getTableContainerProps,
     getTableProps,
@@ -571,19 +564,16 @@ const useSupportProps = (originalProps: PricingCompProps) => {
     getFeatureCheckIconProps,
     getFeatureCloseIconProps,
 
-    // FAQ
     getFaqContainerProps,
     getFaqGroupProps,
     getFaqGroupTitleProps,
     getFaqShadowProps,
     getFaqItemDescriptionProps,
 
-    // Discount
     getDiscountContainerProps,
     getDiscountTextProps,
     getDiscountLinkProps,
 
-    // Team
     getTeamSectionProps,
     getTeamHeaderProps,
     getTeamSubtitleProps,
@@ -597,7 +587,6 @@ const useSupportProps = (originalProps: PricingCompProps) => {
     getTeamSocialLinksProps,
     getTeamSocialIconProps,
 
-    // Data and State
     pricingData,
     isLoading,
     selectedFrequency,

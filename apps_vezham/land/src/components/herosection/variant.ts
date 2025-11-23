@@ -22,7 +22,7 @@ const tva = tv({
         wrapper: 'py-12'
       },
       lg: {
-        wrapper: 'py-24'
+        wrapper: 'py-22'
       }
     }
   },

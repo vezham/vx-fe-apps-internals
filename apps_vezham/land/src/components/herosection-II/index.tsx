@@ -1,9 +1,25 @@
-import { Link } from '@tanstack/react-router'
+import { Link, useRouter } from '@tanstack/react-router'
+import { MailIcon } from 'lucide-react'
+import React from 'react'
 
 import { forwardRef } from '@vezham/react-utils'
 
-import { Button, Chip } from '@vx-oss/react'
+import {
+  Button,
+  Checkbox,
+  Chip,
+  Input,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  Textarea,
+  useDisclosure,
+  useDraggable
+} from '@vx-oss/react'
 
+import { Shortcut } from '../popover'
 import { Props, useProps } from './types'
 
 const HomeSection = forwardRef<'div', Props>((props, ref) => {
@@ -46,6 +62,30 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
     )
   }
 
+  const MailIcon = props => {
+    return (
+      <svg
+        aria-hidden="true"
+        fill="none"
+        focusable="false"
+        height="1em"
+        role="presentation"
+        viewBox="0 0 24 24"
+        width="1em"
+        {...props}>
+        <path
+          d="M17 3.5H7C4 3.5 2 5 2 8.5V15.5C2 19 4 20.5 7 20.5H17C20 20.5 22 19 22 15.5V8.5C22 5 20 3.5 17 3.5ZM17.47 9.59L14.34 12.09C13.68 12.62 12.84 12.88 12 12.88C11.16 12.88 10.31 12.62 9.66 12.09L6.53 9.59C6.21 9.33 6.16 8.85 6.41 8.53C6.67 8.21 7.14 8.15 7.46 8.41L10.59 10.91C11.35 11.52 12.64 11.52 13.4 10.91L16.53 8.41C16.85 8.15 17.33 8.2 17.58 8.53C17.84 8.85 17.79 9.33 17.47 9.59Z"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  }
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
+  const router = useRouter()
+  const targetRef = React.useRef(null)
+  const { moveProps } = useDraggable({ targetRef, isDisabled: !isOpen })
+
   return (
     <Component
       {...getBaseProps()}
@@ -69,23 +109,100 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
         </div>
 
         <div {...getFooterProps()}>
-          {/* Show only if placeholder exists */}
           {actions?.trial?.placeholder && (
             <Button as={Link} href={actions?.trial?.href} color="warning">
               {actions.trial.placeholder}
             </Button>
           )}
 
-          {/* Show only if label exists */}
           {actions?.submit?.label && (
             <Button
               color="default"
-              href={actions?.submit?.href}
-              variant="faded">
+              variant="faded"
+              onClick={() => {
+                if (actions?.submit?.href) {
+                  router.navigate({ to: actions.submit.href })
+                } else {
+                  onOpen()
+                }
+              }}>
               {actions.submit.label}
             </Button>
           )}
         </div>
+        <div>
+          <Shortcut onOpen={onOpen} />
+        </div>
+        <Modal
+          ref={targetRef}
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          backdrop="opaque"
+          placement="top-center"
+          scrollBehavior="inside"
+          size="sm"
+          classNames={{
+            backdrop:
+              'bg-linear-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20'
+          }}>
+          <ModalContent>
+            {onClose => (
+              <>
+                <ModalHeader {...moveProps} className="flex flex-col gap-1">
+                  Request Demo
+                </ModalHeader>
+                <ModalBody>
+                  <Input
+                    label="Name"
+                    placeholder="Enter your name"
+                    variant="bordered"
+                  />
+                  <Input
+                    label="Company Name"
+                    placeholder="Enter your name"
+                    variant="bordered"
+                  />
+                  <Input
+                    endContent={
+                      <MailIcon className="text-default-400 pointer-events-none shrink-0 text-2xl" />
+                    }
+                    label="Email"
+                    placeholder="Enter your email"
+                    variant="bordered"
+                  />
+                  <Input
+                    label="Phone"
+                    placeholder="Enter your number"
+                    variant="bordered"
+                  />
+                  <Input
+                    label="Country"
+                    placeholder="Enter your country"
+                    variant="bordered"
+                  />
+                  <Textarea />
+
+                  <div className="flex justify-between px-1 py-2">
+                    <Checkbox
+                      classNames={{
+                        label: 'text-small'
+                      }}>
+                      Remember me
+                    </Checkbox>
+                    <Link color="primary" href="#" size="sm">
+                      Forgot password?
+                    </Link>
+                  </div>
+                </ModalBody>
+                <ModalFooter>
+                  <Button className="w-full" color="primary" onPress={onClose}>
+                    Submit
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
       </div>
     </Component>
   )
