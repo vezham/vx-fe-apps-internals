@@ -15,7 +15,8 @@ const tva = tv({
       'rounded-medium bg-default-200/20 my-10 p-4 sm:my-14 sm:p-8 lg:my-16 lg:flex lg:items-center lg:justify-between lg:gap-2',
     subscribeTitle: 'text-small text-default-600 font-semibold',
     subscribeDesc: 'text-small text-default-400 mt-2',
-    footerBottom: 'flex flex-wrap justify-center gap-2 pt-8',
+    footerBottom:
+      'flex flex-col items-center justify-center gap-2 pb-16 sm:flex-row',
     footerText: 'text-small text-default-400',
     alertWrapper: 'fixed right-4 bottom-4 z-50 w-full max-w-sm',
     alertTitle: 'text-green font-bold',

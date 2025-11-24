@@ -12,7 +12,7 @@ const tva = tv({
     activeNavbarItem: 'text-primary text-base font-bold',
     inactiveNavbarItem: 'opacity-50',
     floatingTabs:
-      'fixed right-0 left-0 flex items-center justify-center gap-2 px-4'
+      'fixed right-0 left-0 z-20 flex items-center justify-center gap-2 px-4'
   },
   variants: {
     size: {

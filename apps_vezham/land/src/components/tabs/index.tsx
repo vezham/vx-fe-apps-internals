@@ -20,7 +20,7 @@ const NavbarTabs = forwardRef<'div', Props>((props, ref) => {
   })
 
   return (
-    <div {...getBaseProps()}>
+    <div>
       <Tabs
         aria-label="Navbar Tabs"
         radius="full"
@@ -28,6 +28,7 @@ const NavbarTabs = forwardRef<'div', Props>((props, ref) => {
         selectedKey={selectedTab}
         onSelectionChange={onSelectionChange}
         classNames={{
+          base: getBaseProps().className,
           tabList: getTabListProps().className,
           tab: getTabProps().className
         }}>

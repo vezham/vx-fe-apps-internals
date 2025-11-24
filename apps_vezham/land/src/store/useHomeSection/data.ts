@@ -1,5 +1,3 @@
-import { title } from 'process'
-
 import { Personalize } from './types'
 
 export const personalizationsData: Personalize[] = [
@@ -63,7 +61,7 @@ export const personalizationsData: Personalize[] = [
       {
         label: 'All Products',
         key: 'allproducts',
-        href: '/vezham/all_products',
+        href: '/vezham/products',
         subItems: [
           {
             title: 'Apps',
@@ -72,20 +70,329 @@ export const personalizationsData: Personalize[] = [
                 icon: 'lucide:zap',
                 name: 'Vezham One',
                 description: 'All-in-one suite for Personal use and Family',
-                link: '/apps/vezham-one'
+                link: '/vezham one',
+                detailedItems: [
+                  {
+                    detailedDescription:
+                      'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+                    image:
+                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    features: [
+                      {
+                        icon: 'lucide:database',
+                        title: 'Robust IT Infrastructure',
+                        description:
+                          'Integrated systems and platforms for seamless customer relationship management'
+                      },
+                      {
+                        icon: 'lucide:workflow',
+                        title: 'Workflow Automation',
+                        description:
+                          'Automated processes to reduce manual intervention and improve efficiency'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      }
+                    ],
+                    metrics: [
+                      {
+                        value: 40,
+                        title: 'Increased Efficiency',
+                        description:
+                          'Streamlined processes and reduced processing times for sales operations'
+                      },
+                      {
+                        value: 65,
+                        title: 'Enhanced Decision-Making',
+                        description:
+                          'Data-driven insights enabling better policy and sales strategy decisions'
+                      }
+                    ],
+                    pricing: [
+                      {
+                        name: 'Starter',
+                        price: '$5',
+                        period: 'per user/month',
+                        features: [
+                          '3 users',
+                          '5GB storage',
+                          'Email support',
+                          'Basic features'
+                        ],
+                        isPopular: false
+                      },
+                      {
+                        name: 'Growth',
+                        price: '$15',
+                        period: 'per user/month',
+                        features: [
+                          '10 users',
+                          '20GB storage',
+                          'Email & chat support',
+                          'All features'
+                        ],
+                        isPopular: true
+                      },
+                      {
+                        name: 'Business',
+                        price: '$25',
+                        period: 'per user/month',
+                        features: [
+                          '20 users',
+                          '50GB storage',
+                          'Priority support',
+                          'Advanced features',
+                          'API access'
+                        ],
+                        isPopular: false
+                      }
+                    ],
+                    // Add support data
+                    support: [
+                      {
+                        icon: 'lucide:mail',
+                        title: 'Email Support',
+                        description: 'Get help via email within 24 hours'
+                      },
+                      {
+                        icon: 'lucide:help-circle',
+                        title: 'Knowledge Base',
+                        description: 'Find answers to common questions'
+                      },
+                      {
+                        icon: 'lucide:users',
+                        title: 'Community Forum',
+                        description: 'Connect with other users and share tips'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 icon: 'lucide:building',
                 name: 'Vezham HQ',
                 description:
                   'Enterprise-grade suite for Businesses and Organizations',
-                link: '/apps/vezham-hq'
+                link: '/vezham-hq',
+                detailedItems: [
+                  {
+                    detailedDescription:
+                      'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+                    image:
+                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    features: [
+                      {
+                        icon: 'lucide:database',
+                        title: 'Robust IT Infrastructure',
+                        description:
+                          'Integrated systems and platforms for seamless customer relationship management'
+                      },
+                      {
+                        icon: 'lucide:workflow',
+                        title: 'Workflow Automation',
+                        description:
+                          'Automated processes to reduce manual intervention and improve efficiency'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      }
+                    ],
+                    metrics: [
+                      {
+                        value: 40,
+                        title: 'Increased Efficiency',
+                        description:
+                          'Streamlined processes and reduced processing times for sales operations'
+                      },
+                      {
+                        value: 65,
+                        title: 'Enhanced Decision-Making',
+                        description:
+                          'Data-driven insights enabling better policy and sales strategy decisions'
+                      }
+                    ],
+                    pricing: [
+                      {
+                        name: 'Starter',
+                        price: '$5',
+                        period: 'per user/month',
+                        features: [
+                          '3 users',
+                          '5GB storage',
+                          'Email support',
+                          'Basic features'
+                        ],
+                        isPopular: false
+                      },
+                      {
+                        name: 'Growth',
+                        price: '$15',
+                        period: 'per user/month',
+                        features: [
+                          '10 users',
+                          '20GB storage',
+                          'Email & chat support',
+                          'All features'
+                        ],
+                        isPopular: true
+                      },
+                      {
+                        name: 'Business',
+                        price: '$25',
+                        period: 'per user/month',
+                        features: [
+                          '20 users',
+                          '50GB storage',
+                          'Priority support',
+                          'Advanced features',
+                          'API access'
+                        ],
+                        isPopular: false
+                      }
+                    ],
+                    // Add support data
+                    support: [
+                      {
+                        icon: 'lucide:mail',
+                        title: 'Email Support',
+                        description: 'Get help via email within 24 hours'
+                      },
+                      {
+                        icon: 'lucide:help-circle',
+                        title: 'Knowledge Base',
+                        description: 'Find answers to common questions'
+                      },
+                      {
+                        icon: 'lucide:users',
+                        title: 'Community Forum',
+                        description: 'Connect with other users and share tips'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 icon: 'lucide:building',
                 name: 'Enterprises',
                 description: 'For large organizations',
-                link: '/apps/enterprises'
+                link: '/enterprises',
+                detailedItems: [
+                  {
+                    detailedDescription:
+                      'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+                    image:
+                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    features: [
+                      {
+                        icon: 'lucide:database',
+                        title: 'Robust IT Infrastructure',
+                        description:
+                          'Integrated systems and platforms for seamless customer relationship management'
+                      },
+                      {
+                        icon: 'lucide:workflow',
+                        title: 'Workflow Automation',
+                        description:
+                          'Automated processes to reduce manual intervention and improve efficiency'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      }
+                    ],
+                    metrics: [
+                      {
+                        value: 40,
+                        title: 'Increased Efficiency',
+                        description:
+                          'Streamlined processes and reduced processing times for sales operations'
+                      },
+                      {
+                        value: 65,
+                        title: 'Enhanced Decision-Making',
+                        description:
+                          'Data-driven insights enabling better policy and sales strategy decisions'
+                      }
+                    ],
+                    pricing: [
+                      {
+                        name: 'Starter',
+                        price: '$5',
+                        period: 'per user/month',
+                        features: [
+                          '3 users',
+                          '5GB storage',
+                          'Email support',
+                          'Basic features'
+                        ],
+                        isPopular: false
+                      },
+                      {
+                        name: 'Growth',
+                        price: '$15',
+                        period: 'per user/month',
+                        features: [
+                          '10 users',
+                          '20GB storage',
+                          'Email & chat support',
+                          'All features'
+                        ],
+                        isPopular: true
+                      },
+                      {
+                        name: 'Business',
+                        price: '$25',
+                        period: 'per user/month',
+                        features: [
+                          '20 users',
+                          '50GB storage',
+                          'Priority support',
+                          'Advanced features',
+                          'API access'
+                        ],
+                        isPopular: false
+                      }
+                    ],
+                    // Add support data
+                    support: [
+                      {
+                        icon: 'lucide:mail',
+                        title: 'Email Support',
+                        description: 'Get help via email within 24 hours'
+                      },
+                      {
+                        icon: 'lucide:help-circle',
+                        title: 'Knowledge Base',
+                        description: 'Find answers to common questions'
+                      },
+                      {
+                        icon: 'lucide:users',
+                        title: 'Community Forum',
+                        description: 'Connect with other users and share tips'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 icon: 'lucide:rocket',
@@ -114,7 +421,106 @@ export const personalizationsData: Personalize[] = [
                 icon: 'lucide:zap',
                 name: 'Vezham One',
                 description: 'All-in-one suite for Personal use and Family',
-                link: '/suites/vezham-one'
+                link: '/suites/vezham-one',
+                detailedItems: [
+                  {
+                    detailedDescription:
+                      'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+                    image:
+                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    features: [
+                      {
+                        icon: 'lucide:database',
+                        title: 'Robust IT Infrastructure',
+                        description:
+                          'Integrated systems and platforms for seamless customer relationship management'
+                      },
+                      {
+                        icon: 'lucide:workflow',
+                        title: 'Workflow Automation',
+                        description:
+                          'Automated processes to reduce manual intervention and improve efficiency'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      }
+                    ],
+                    metrics: [
+                      {
+                        value: 40,
+                        title: 'Increased Efficiency',
+                        description:
+                          'Streamlined processes and reduced processing times for sales operations'
+                      },
+                      {
+                        value: 65,
+                        title: 'Enhanced Decision-Making',
+                        description:
+                          'Data-driven insights enabling better policy and sales strategy decisions'
+                      }
+                    ],
+                    pricing: [
+                      {
+                        name: 'Starter',
+                        price: '$5',
+                        period: 'per user/month',
+                        features: [
+                          '3 users',
+                          '5GB storage',
+                          'Email support',
+                          'Basic features'
+                        ],
+                        isPopular: false
+                      },
+                      {
+                        name: 'Growth',
+                        price: '$15',
+                        period: 'per user/month',
+                        features: [
+                          '10 users',
+                          '20GB storage',
+                          'Email & chat support',
+                          'All features'
+                        ],
+                        isPopular: true
+                      },
+                      {
+                        name: 'Business',
+                        price: '$25',
+                        period: 'per user/month',
+                        features: [
+                          '20 users',
+                          '50GB storage',
+                          'Priority support',
+                          'Advanced features',
+                          'API access'
+                        ],
+                        isPopular: false
+                      }
+                    ],
+                    // Add support data
+                    support: [
+                      {
+                        icon: 'lucide:mail',
+                        title: 'Email Support',
+                        description: 'Get help via email within 24 hours'
+                      },
+                      {
+                        icon: 'lucide:help-circle',
+                        title: 'Knowledge Base',
+                        description: 'Find answers to common questions'
+                      },
+                      {
+                        icon: 'lucide:users',
+                        title: 'Community Forum',
+                        description: 'Connect with other users and share tips'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 icon: 'lucide:building',
@@ -156,7 +562,106 @@ export const personalizationsData: Personalize[] = [
                 icon: 'lucide:zap',
                 name: 'Vezham One',
                 description: 'All-in-one suite for Personal use and Family',
-                link: '/platforms/vezham-one'
+                link: '/platforms/vezham-one',
+                detailedItems: [
+                  {
+                    detailedDescription:
+                      'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+                    image:
+                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    features: [
+                      {
+                        icon: 'lucide:database',
+                        title: 'Robust IT Infrastructure',
+                        description:
+                          'Integrated systems and platforms for seamless customer relationship management'
+                      },
+                      {
+                        icon: 'lucide:workflow',
+                        title: 'Workflow Automation',
+                        description:
+                          'Automated processes to reduce manual intervention and improve efficiency'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      }
+                    ],
+                    metrics: [
+                      {
+                        value: 40,
+                        title: 'Increased Efficiency',
+                        description:
+                          'Streamlined processes and reduced processing times for sales operations'
+                      },
+                      {
+                        value: 65,
+                        title: 'Enhanced Decision-Making',
+                        description:
+                          'Data-driven insights enabling better policy and sales strategy decisions'
+                      }
+                    ],
+                    pricing: [
+                      {
+                        name: 'Starter',
+                        price: '$5',
+                        period: 'per user/month',
+                        features: [
+                          '3 users',
+                          '5GB storage',
+                          'Email support',
+                          'Basic features'
+                        ],
+                        isPopular: false
+                      },
+                      {
+                        name: 'Growth',
+                        price: '$15',
+                        period: 'per user/month',
+                        features: [
+                          '10 users',
+                          '20GB storage',
+                          'Email & chat support',
+                          'All features'
+                        ],
+                        isPopular: true
+                      },
+                      {
+                        name: 'Business',
+                        price: '$25',
+                        period: 'per user/month',
+                        features: [
+                          '20 users',
+                          '50GB storage',
+                          'Priority support',
+                          'Advanced features',
+                          'API access'
+                        ],
+                        isPopular: false
+                      }
+                    ],
+                    // Add support data
+                    support: [
+                      {
+                        icon: 'lucide:mail',
+                        title: 'Email Support',
+                        description: 'Get help via email within 24 hours'
+                      },
+                      {
+                        icon: 'lucide:help-circle',
+                        title: 'Knowledge Base',
+                        description: 'Find answers to common questions'
+                      },
+                      {
+                        icon: 'lucide:users',
+                        title: 'Community Forum',
+                        description: 'Connect with other users and share tips'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 icon: 'lucide:building',
@@ -198,7 +703,106 @@ export const personalizationsData: Personalize[] = [
                 icon: 'lucide:help-circle',
                 name: 'Help center',
                 description: 'Get help with your questions',
-                link: 'https://help.vezham.com'
+                link: 'https://help.vezham.com',
+                detailedItems: [
+                  {
+                    detailedDescription:
+                      'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+                    image:
+                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    features: [
+                      {
+                        icon: 'lucide:database',
+                        title: 'Robust IT Infrastructure',
+                        description:
+                          'Integrated systems and platforms for seamless customer relationship management'
+                      },
+                      {
+                        icon: 'lucide:workflow',
+                        title: 'Workflow Automation',
+                        description:
+                          'Automated processes to reduce manual intervention and improve efficiency'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      }
+                    ],
+                    metrics: [
+                      {
+                        value: 40,
+                        title: 'Increased Efficiency',
+                        description:
+                          'Streamlined processes and reduced processing times for sales operations'
+                      },
+                      {
+                        value: 65,
+                        title: 'Enhanced Decision-Making',
+                        description:
+                          'Data-driven insights enabling better policy and sales strategy decisions'
+                      }
+                    ],
+                    pricing: [
+                      {
+                        name: 'Starter',
+                        price: '$5',
+                        period: 'per user/month',
+                        features: [
+                          '3 users',
+                          '5GB storage',
+                          'Email support',
+                          'Basic features'
+                        ],
+                        isPopular: false
+                      },
+                      {
+                        name: 'Growth',
+                        price: '$15',
+                        period: 'per user/month',
+                        features: [
+                          '10 users',
+                          '20GB storage',
+                          'Email & chat support',
+                          'All features'
+                        ],
+                        isPopular: true
+                      },
+                      {
+                        name: 'Business',
+                        price: '$25',
+                        period: 'per user/month',
+                        features: [
+                          '20 users',
+                          '50GB storage',
+                          'Priority support',
+                          'Advanced features',
+                          'API access'
+                        ],
+                        isPopular: false
+                      }
+                    ],
+                    // Add support data
+                    support: [
+                      {
+                        icon: 'lucide:mail',
+                        title: 'Email Support',
+                        description: 'Get help via email within 24 hours'
+                      },
+                      {
+                        icon: 'lucide:help-circle',
+                        title: 'Knowledge Base',
+                        description: 'Find answers to common questions'
+                      },
+                      {
+                        icon: 'lucide:users',
+                        title: 'Community Forum',
+                        description: 'Connect with other users and share tips'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 icon: 'lucide:tag',
@@ -233,7 +837,106 @@ export const personalizationsData: Personalize[] = [
                 icon: 'lucide:graduation-cap',
                 name: 'Education',
                 description: 'Solutions for AI-driven EdTech',
-                link: '/solutions/industries/education'
+                link: '/solutions/industries/education',
+                detailedItems: [
+                  {
+                    detailedDescription:
+                      'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
+                    image:
+                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    features: [
+                      {
+                        icon: 'lucide:database',
+                        title: 'Robust IT Infrastructure',
+                        description:
+                          'Integrated systems and platforms for seamless customer relationship management'
+                      },
+                      {
+                        icon: 'lucide:workflow',
+                        title: 'Workflow Automation',
+                        description:
+                          'Automated processes to reduce manual intervention and improve efficiency'
+                      },
+                      {
+                        icon: 'lucide:brain',
+                        title: 'AI/ML-Based Smart Solutions',
+                        description:
+                          'Predictive analytics and intelligent systems for data-driven customer insights'
+                      }
+                    ],
+                    metrics: [
+                      {
+                        value: 40,
+                        title: 'Increased Efficiency',
+                        description:
+                          'Streamlined processes and reduced processing times for sales operations'
+                      },
+                      {
+                        value: 65,
+                        title: 'Enhanced Decision-Making',
+                        description:
+                          'Data-driven insights enabling better policy and sales strategy decisions'
+                      }
+                    ],
+                    pricing: [
+                      {
+                        name: 'Starter',
+                        price: '$5',
+                        period: 'per user/month',
+                        features: [
+                          '3 users',
+                          '5GB storage',
+                          'Email support',
+                          'Basic features'
+                        ],
+                        isPopular: false
+                      },
+                      {
+                        name: 'Growth',
+                        price: '$15',
+                        period: 'per user/month',
+                        features: [
+                          '10 users',
+                          '20GB storage',
+                          'Email & chat support',
+                          'All features'
+                        ],
+                        isPopular: true
+                      },
+                      {
+                        name: 'Business',
+                        price: '$25',
+                        period: 'per user/month',
+                        features: [
+                          '20 users',
+                          '50GB storage',
+                          'Priority support',
+                          'Advanced features',
+                          'API access'
+                        ],
+                        isPopular: false
+                      }
+                    ],
+                    // Add support data
+                    support: [
+                      {
+                        icon: 'lucide:mail',
+                        title: 'Email Support',
+                        description: 'Get help via email within 24 hours'
+                      },
+                      {
+                        icon: 'lucide:help-circle',
+                        title: 'Knowledge Base',
+                        description: 'Find answers to common questions'
+                      },
+                      {
+                        icon: 'lucide:users',
+                        title: 'Community Forum',
+                        description: 'Connect with other users and share tips'
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 icon: 'lucide:heart-pulse',

@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const shortcutTva = tv({
   slots: {
-    base: 'fixed top-20 right-0 grid place-items-center',
+    base: 'fixed top-20 right-0 z-5 grid place-items-center',
 
     button: 'rounded-r-none',
 

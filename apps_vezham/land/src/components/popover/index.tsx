@@ -20,7 +20,6 @@ const Shortcut = React.forwardRef<HTMLDivElement, ShortcutCompProps>(
 
     const { getBaseProps, getPopoverInnerProps, getShortcutListProps } =
       useShortcutProps({
-        shortcuts,
         ...otherProps,
         ref
       })
@@ -46,7 +45,7 @@ const Shortcut = React.forwardRef<HTMLDivElement, ShortcutCompProps>(
           backdrop="opaque"
           isOpen={open}
           onOpenChange={(next: boolean) => setOpen(next)}>
-          <PopoverTrigger>
+          <PopoverTrigger className="po">
             <Button
               variant="flat"
               color="primary"

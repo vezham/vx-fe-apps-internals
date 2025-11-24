@@ -81,7 +81,7 @@ export const AppDetailPage: React.FC<AppDetailProps> = ({ appId }) => {
               className="mt-4"
               onPress={() => router.navigate({ to: '/vezham/features' })}
               startContent={<Icon icon="lucide:arrow-left" width={16} />}>
-              Back to Apps
+              Back to Features
             </Button>
           </div>
         </div>
@@ -115,7 +115,7 @@ export const AppDetailPage: React.FC<AppDetailProps> = ({ appId }) => {
           size="sm"
           onPress={() => router.navigate({ to: '/vezham/features' })}
           startContent={<Icon icon="lucide:arrow-left" width={10} />}>
-          Back to Apps
+          Back to Features
         </Button>
         <div className="flex items-center">
           <Icon

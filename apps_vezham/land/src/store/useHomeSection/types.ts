@@ -9,8 +9,42 @@ export type NavbarItem = {
       name: string
       description: string
       link: string
+      detailedItems?: Array<{
+        detailedDescription?: string
+        image?: string
+        features?: Feature[]
+        metrics?: Metric[]
+        pricing?: PricingPlan[]
+        support?: SupportOption[]
+      }>
     }>
   }>
+}
+
+export type Feature = {
+  icon: string
+  title: string
+  description: string
+}
+
+export type Metric = {
+  value: number
+  title: string
+  description: string
+}
+
+export type PricingPlan = {
+  name: string
+  price: string
+  period: string
+  features: string[]
+  isPopular: boolean
+}
+
+export type SupportOption = {
+  icon: string
+  title: string
+  description: string
 }
 
 export interface TabItem {

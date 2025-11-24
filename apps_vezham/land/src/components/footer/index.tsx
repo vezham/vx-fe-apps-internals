@@ -190,9 +190,9 @@ const Footers = forwardRef<'footer', Props>((props, ref) => {
         {/* Footer Bottom */}
         <div {...getFooterBottomProps()}>
           <p {...getFooterTextProps()}>
-            &copy; {currentYear} Vezham Technologies Private Limited. All rights
-            reserved.
+            &copy; {currentYear} Vezham Technologies Private Limited.
           </p>
+          <p {...getFooterTextProps()}>All rights reserved.</p>
         </div>
       </div>
     </footer>

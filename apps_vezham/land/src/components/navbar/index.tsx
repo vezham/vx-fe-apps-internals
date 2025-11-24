@@ -99,6 +99,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false)
   const [filterValue, setFilterValue] = useState('')
   const searchInputRef = useRef<HTMLInputElement>(null)
+  const searchSectionRef = useRef<HTMLDivElement>(null) // Add this ref
 
   const [areTabsCollapsed, setAreTabsCollapsed] = useState(false)
 
@@ -109,6 +110,29 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
     null
   )
   const [activeNavItemKey, setActiveNavItemKey] = useState<string | null>(null)
+
+  const closeSearch = () => {
+    if (filterValue) {
+      setFilterValue('')
+    } else {
+      setIsSearchExpanded(false)
+      setAreTabsCollapsed(false)
+    }
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (isSearchExpanded) {
+        closeSearch()
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [isSearchExpanded])
 
   const toggleSearch = useCallback(() => {
     setIsSearchExpanded(true)
@@ -121,14 +145,25 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
     }
   }, [isSearchExpanded])
 
-  const closeSearch = () => {
-    if (filterValue) {
-      setFilterValue('')
-    } else {
-      setIsSearchExpanded(false)
-      setAreTabsCollapsed(false)
+  // Click outside handler
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // If search is expanded and click is outside search section, close search
+      if (isSearchExpanded && searchSectionRef.current) {
+        if (!searchSectionRef.current.contains(event.target as Node)) {
+          closeSearch()
+        }
+      }
     }
-  }
+
+    // Add event listener
+    document.addEventListener('mousedown', handleClickOutside)
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isSearchExpanded])
 
   const toggleTabs = () => {
     setAreTabsCollapsed(prev => !prev)
@@ -325,7 +360,9 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
           )}
         </motion.div>
 
+        {/* Add ref to the search section */}
         <motion.div
+          ref={searchSectionRef} // Add the ref here
           animate={{
             width: isSearchExpanded ? (isMobile ? '100%' : 435) : 40
           }}>

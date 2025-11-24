@@ -7,7 +7,6 @@ import { forwardRef } from '@vezham/react-utils'
 import {
   Button,
   Checkbox,
-  Chip,
   Input,
   Modal,
   ModalBody,
@@ -19,6 +18,7 @@ import {
   useDraggable
 } from '@vx-oss/react'
 
+import { useShortcut } from '../../store/useShortcut'
 import { Shortcut } from '../popover'
 import { Props, useProps } from './types'
 
@@ -81,6 +81,7 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
     )
   }
 
+  const { data: shortcuts } = useShortcut.list({})
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const router = useRouter()
   const targetRef = React.useRef(null)
@@ -131,7 +132,7 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
           )}
         </div>
         <div>
-          <Shortcut onOpen={onOpen} />
+          <Shortcut onOpen={onOpen} shortcuts={shortcuts} />
         </div>
         <Modal
           ref={targetRef}

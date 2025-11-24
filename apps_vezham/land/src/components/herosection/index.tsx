@@ -144,7 +144,6 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
       <div>
         <Shortcut onOpen={onOpen} shortcuts={shortcuts} />
       </div>
-
       <Modal
         ref={targetRef}
         isOpen={isOpen}
