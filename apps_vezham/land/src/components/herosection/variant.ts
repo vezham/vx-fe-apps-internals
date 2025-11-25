@@ -2,7 +2,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 
 const tva = tv({
   slots: {
-    base: 'flex min-h-screen items-center justify-center',
+    base: 'flex items-center justify-center',
     wrapper: 'flex flex-col items-center justify-center gap-4 p-5 text-center',
     content: 'flex flex-col items-center justify-center sm:leading-[30px]',
     wrapper_super_title:
@@ -22,7 +22,7 @@ const tva = tv({
         wrapper: 'py-12'
       },
       lg: {
-        wrapper: 'py-22'
+        wrapper: 'py-24'
       }
     }
   },

@@ -449,11 +449,11 @@ export const personalizationsData: Personalize[] = [
         actions: {
           submit: {
             label: 'Contact us',
-            href: '#'
+            href: ''
           },
           trial: {
             placeholder: 'Raise Ticket',
-            href: '#'
+            href: ''
           }
         }
       }

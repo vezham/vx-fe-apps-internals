@@ -1,6 +1,7 @@
 import { Link, useRouter } from '@tanstack/react-router'
 import { MailIcon } from 'lucide-react'
 import React from 'react'
+import { JSX } from 'react/jsx-runtime'
 
 import { forwardRef } from '@vezham/react-utils'
 
@@ -62,7 +63,9 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
     )
   }
 
-  const MailIcon = props => {
+  const MailIcon = (
+    props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+  ) => {
     return (
       <svg
         aria-hidden="true"
@@ -82,11 +85,23 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
   }
 
   const { data: shortcuts } = useShortcut.list({})
-  const { isOpen, onOpen, onOpenChange } = useDisclosure()
+  const {
+    isOpen: isRequestDemoOpen,
+    onOpen: openRequestDemo,
+    onOpenChange: onRequestDemoChange
+  } = useDisclosure()
+
+  const {
+    isOpen: isContactOpen,
+    onOpen: openContact,
+    onOpenChange: onContactChange
+  } = useDisclosure()
   const router = useRouter()
   const targetRef = React.useRef(null)
-  const { moveProps } = useDraggable({ targetRef, isDisabled: !isOpen })
-
+  const { moveProps } = useDraggable({
+    targetRef,
+    isDisabled: !isRequestDemoOpen && !isContactOpen
+  })
   return (
     <Component
       {...getBaseProps()}
@@ -116,28 +131,47 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
             </Button>
           )}
 
-          {actions?.submit?.label && (
+          {actions?.submit && actions.submit.label && (
             <Button
               color="default"
               variant="faded"
-              onClick={() => {
-                if (actions?.submit?.href) {
-                  router.navigate({ to: actions.submit.href })
-                } else {
-                  onOpen()
+              onPress={() => {
+                const submit = actions?.submit
+                const label = submit?.label?.toLowerCase()
+
+                if (submit?.href) {
+                  router.navigate({ to: submit.href })
+                  return
                 }
+
+                if (label === 'request a demo') {
+                  openRequestDemo()
+                  return
+                }
+
+                if (label === 'contact us') {
+                  openContact()
+                  return
+                }
+
+                // fallback
+                openRequestDemo()
               }}>
               {actions.submit.label}
             </Button>
           )}
         </div>
         <div>
-          <Shortcut onOpen={onOpen} shortcuts={shortcuts} />
+          <Shortcut
+            openRequestDemo={openRequestDemo}
+            openContact={openContact}
+            shortcuts={shortcuts}
+          />
         </div>
         <Modal
           ref={targetRef}
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}
+          isOpen={isRequestDemoOpen}
+          onOpenChange={onRequestDemoChange}
           backdrop="opaque"
           placement="top-center"
           scrollBehavior="inside"
@@ -198,6 +232,54 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
                 <ModalFooter>
                   <Button className="w-full" color="primary" onPress={onClose}>
                     Submit
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+        <Modal
+          ref={targetRef}
+          isOpen={isContactOpen}
+          onOpenChange={onContactChange}
+          backdrop="opaque"
+          placement="top-center"
+          scrollBehavior="inside"
+          size="sm"
+          classNames={{
+            backdrop:
+              'bg-linear-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20'
+          }}>
+          <ModalContent>
+            {onClose => (
+              <>
+                <ModalHeader {...moveProps} className="flex flex-col gap-1">
+                  Contact Us
+                </ModalHeader>
+                <ModalBody>
+                  <Input
+                    label="Name"
+                    placeholder="Enter your name"
+                    variant="bordered"
+                  />
+                  <Input
+                    endContent={
+                      <MailIcon className="text-default-400 pointer-events-none shrink-0 text-2xl" />
+                    }
+                    label="Email"
+                    placeholder="Enter your email"
+                    variant="bordered"
+                  />
+                  <Input
+                    label="Phone"
+                    placeholder="Enter your number"
+                    variant="bordered"
+                  />
+                  <Textarea />
+                </ModalBody>
+                <ModalFooter>
+                  <Button className="w-full" color="primary" onPress={onClose}>
+                    Send Message
                   </Button>
                 </ModalFooter>
               </>

@@ -68,7 +68,7 @@ const Contactus = React.forwardRef<HTMLDivElement, ContactusCompProps>(
                     <Icon icon="lucide:arrow-right" />
                   </motion.div>
                 }>
-                Explore
+                Explore Resources
               </Button>
             </div>
           </div>

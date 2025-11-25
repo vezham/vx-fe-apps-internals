@@ -6,6 +6,7 @@ import { Footer } from '../../layouts/footers'
 import { usePersonalize } from '../../store/useHomeSection'
 import { CookieBanner } from '../cookies'
 import { Developers } from './developers'
+import { FAQs } from './faqs'
 import { Features } from './features'
 import { Pricing } from './pricing'
 import { Contactus } from './resources'
@@ -77,6 +78,7 @@ const Home = () => {
       <Solutions />
       <Developers />
       <Contactus />
+      <FAQs />
       <CookieBanner />
       <Footer />
     </AppNavbar>

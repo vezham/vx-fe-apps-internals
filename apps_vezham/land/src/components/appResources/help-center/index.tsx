@@ -309,7 +309,7 @@ const HelpCenter = forwardRef<'div', Props>((props, ref) => {
                 onPress={() =>
                   router.navigate({ to: '/vezham/resources/support' })
                 }>
-                Contact Us
+                Support Desk
               </Button>
             </div>
             <Accordion

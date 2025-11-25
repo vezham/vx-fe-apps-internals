@@ -344,7 +344,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               isIconOnly
               variant="flat"
               onPress={toggleTabs}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-neutral-800">
+              className="flex h-10 w-10 items-center justify-center rounded-full dark:bg-neutral-800">
               <AppsIcon width={16} />
             </Button>
           ) : (
@@ -399,7 +399,7 @@ const AppNavbar = forwardRef<'div', Props>((props, ref) => {
               radius="full"
               variant="flat"
               onPress={toggleSearch}
-              className="h-10 w-10 rounded-full bg-white dark:bg-neutral-800">
+              className="h-10 w-10 rounded-full dark:bg-neutral-800">
               <SearchIcon size={16} />
             </Button>
           )}

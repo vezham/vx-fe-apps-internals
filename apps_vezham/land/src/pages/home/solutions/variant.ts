@@ -3,7 +3,7 @@ import { VariantProps, tv } from '@vezham/react-utils'
 const solutionsTva = tv({
   slots: {
     // Base container
-    base: 'flex min-h-screen flex-col items-center justify-center px-4 py-12 dark:bg-black',
+    base: 'flex flex-col items-center justify-center px-4 dark:bg-black',
 
     // Hero Section
     heroSection: 'mb-12 text-center',
@@ -30,7 +30,7 @@ const solutionsTva = tv({
     modalBody: 'space-y-4 text-[15px] leading-relaxed text-gray-700',
     modalSection: 'text-default-800',
     modalSectionTitle: 'text-default-500 mt-2 text-lg font-semibold',
-    modalList: 'text-default-300 ml-5 list-disc space-y-2',
+    modalList: 'text-default-400 ml-5 list-disc space-y-2',
     modalListItem: '',
     modalListItemText: '',
     modalFooter: '',

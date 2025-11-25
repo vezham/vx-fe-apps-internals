@@ -16,7 +16,7 @@ import { ShortcutCompProps, useShortcutProps } from './types'
 
 const Shortcut = React.forwardRef<HTMLDivElement, ShortcutCompProps>(
   (props, ref) => {
-    const { onOpen, ...otherProps } = props
+    const { openRequestDemo, openContact, ...otherProps } = props
 
     const { getBaseProps, getPopoverInnerProps, getShortcutListProps } =
       useShortcutProps({
@@ -27,14 +27,21 @@ const Shortcut = React.forwardRef<HTMLDivElement, ShortcutCompProps>(
     const router = useRouter()
     const [open, setOpen] = React.useState(false)
 
-    const handleItemClick = (item: { title?: string; href?: string }) => {
+    const handleItemClick = (item: { title: string; href: string }) => {
       setOpen(false)
+
+      if (item.title === 'Request a demo') {
+        openRequestDemo()
+        return
+      }
+
+      if (item.title === 'Contact us') {
+        openContact()
+        return
+      }
+
       if (item.href) {
-        setTimeout(() => {
-          router.navigate({ to: item.href })
-        }, 20)
-      } else {
-        onOpen?.()
+        setTimeout(() => router.navigate({ to: item.href }), 20)
       }
     }
 

@@ -14,7 +14,11 @@ export const shortcuts: ShortcutInfo[] = [
     href: '/vezham/resources/help-center'
   },
   {
-    title: 'Contact us',
+    title: 'Support Center',
     href: '/vezham/resources/support'
+  },
+  {
+    title: 'Contact us',
+    href: 't'
   }
 ]
