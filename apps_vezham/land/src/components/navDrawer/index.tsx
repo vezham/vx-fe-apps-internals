@@ -173,8 +173,8 @@ const NavDrawer = forwardRef<'div', Props>((props, ref) => {
                     </button>
                     <div {...getHeaderTitleProps()} {...getMobileTitleProps()}>
                       <Link
-                        isExternal={activeNavItem?.href?.startsWith('http')}
-                        showAnchorIcon={activeNavItem?.href?.startsWith('http')}
+                        isExternal
+                        showAnchorIcon
                         color="foreground"
                         onPress={() =>
                           router.navigate({ to: activeNavItem?.href })

@@ -75,8 +75,7 @@ export const personalizationsData: Personalize[] = [
                   {
                     detailedDescription:
                       'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
-                    image:
-                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    image: 'https://vezham.com/img/AboutUs.bbd5631b.jpg',
                     features: [
                       {
                         icon: 'lucide:database',
@@ -419,7 +418,7 @@ export const personalizationsData: Personalize[] = [
             Items: [
               {
                 icon: 'lucide:zap',
-                name: 'Vezham One',
+                name: 'Vezham Suites',
                 description: 'All-in-one suite for Personal use and Family',
                 link: '/suites/vezham-one',
                 detailedItems: [
@@ -427,7 +426,7 @@ export const personalizationsData: Personalize[] = [
                     detailedDescription:
                       'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
                     image:
-                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                      'https://buildfire.com/wp-content/uploads/2025/09/build-easily.png',
                     features: [
                       {
                         icon: 'lucide:database',
@@ -560,15 +559,14 @@ export const personalizationsData: Personalize[] = [
             Items: [
               {
                 icon: 'lucide:zap',
-                name: 'Vezham One',
+                name: 'Vezham CRM Platforms',
                 description: 'All-in-one suite for Personal use and Family',
                 link: '/platforms/vezham-one',
                 detailedItems: [
                   {
                     detailedDescription:
                       'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
-                    image:
-                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    image: 'https://heroui.com/images/card-example-2.jpeg',
                     features: [
                       {
                         icon: 'lucide:database',
@@ -708,8 +706,7 @@ export const personalizationsData: Personalize[] = [
                   {
                     detailedDescription:
                       'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
-                    image:
-                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    image: 'https://heroui.com/images/card-example-3.jpeg',
                     features: [
                       {
                         icon: 'lucide:database',
@@ -842,8 +839,7 @@ export const personalizationsData: Personalize[] = [
                   {
                     detailedDescription:
                       'Our CRM solution empowers sales teams to streamline operations, enhance customer relationships, and make data-driven decisions through innovative digital transformation. Track leads, manage contacts, and close deals more efficiently.',
-                    image:
-                      'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+                    image: 'https://heroui.com/images/card-example-4.jpeg',
                     features: [
                       {
                         icon: 'lucide:database',
@@ -1072,6 +1068,7 @@ export const personalizationsData: Personalize[] = [
       {
         label: 'Developers',
         key: 'developers',
+
         subItems: [
           {
             key: 'documentation',

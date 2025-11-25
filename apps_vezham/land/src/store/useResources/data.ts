@@ -1,4 +1,4 @@
-import { Personalize, Resources } from './types'
+import { CardProps, Personalize, Resources } from './types'
 
 export const resourceData: Resources = {
   promptsuggest: [
@@ -69,5 +69,66 @@ export const personalizationsData: Personalize[] = [
         }
       }
     }
+  }
+]
+
+export const contactcards1: CardProps[] = [
+  {
+    title: 'Get The Help You Need',
+    description:
+      'Get personalized answers in the Vezham Help Center or Chat with us for more support.',
+    button: 'Get help',
+    color: 'danger' as const,
+    url: 'https://heroui.com/images/card-example-4.jpeg'
+  },
+  {
+    title: 'Come Work with Us',
+    description:
+      'Check out available career opportunities and shape the future of the web.',
+    button: 'Explore Now',
+    url: 'https://heroui.com/images/card-example-3.jpeg',
+    color: 'primary' as const
+  },
+  {
+    title: 'Users community',
+    description:
+      'Grow your web dev or design agency by earning rewards for creating with Vezham.',
+    button: 'Learn more',
+    url: 'https://img.heroui.chat/image/dashboard?w=600&h=400&u=crm-dashboard',
+    color: 'secondary' as const
+  }
+]
+
+export const contactcards2: CardProps[] = [
+  {
+    title: 'Discover Enterprise Solutions',
+    description:
+      'Get in touch to find out about exclusive plans tailor-made for your brand.',
+    button: 'Contact support',
+    url: 'https://heroui.com/images/card-example-2.jpeg',
+    color: 'success' as const
+  },
+  {
+    title: 'Documentation',
+    description:
+      'Reach out about exciting partnerships and business development opportunities.',
+    button: 'Get in touch',
+    url: 'https://heroui.com/images/card-example-6.jpeg',
+    color: 'default' as const
+  },
+  {
+    title: "FAQ's",
+    description:
+      'Become a reseller and maximize your offering to your SMB customers.',
+    button: 'Learn more',
+    url: 'https://vezham.com/img/AboutUs.bbd5631b.jpg',
+    color: 'secondary' as const
+  },
+  {
+    title: 'Join the Affiliate Program',
+    description: 'Promote Wix on your website and earn commission.',
+    button: 'Read more',
+    url: 'https://buildfire.com/wp-content/uploads/2025/09/build-easily.png',
+    color: 'warning' as const
   }
 ]

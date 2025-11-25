@@ -4,6 +4,12 @@ import { HomeSection } from '../../components/herosection'
 import { AppNavbar } from '../../components/navbar'
 import { Footer } from '../../layouts/footers'
 import { usePersonalize } from '../../store/useHomeSection'
+import { CookieBanner } from '../cookies'
+import { Developers } from './developers'
+import { Features } from './features'
+import { Pricing } from './pricing'
+import { Contactus } from './resources'
+import { Solutions } from './solutions'
 
 const Home = () => {
   const { data: personal } = usePersonalize.list({})
@@ -65,6 +71,13 @@ const Home = () => {
       onDrawerOpenChange={setIsDrawerOpen}
       onDrawerClose={() => setIsDrawerOpen(false)}>
       <HomeSection {...personal?.cards?.welcome_message} />
+
+      <Features />
+      <Pricing />
+      <Solutions />
+      <Developers />
+      <Contactus />
+      <CookieBanner />
       <Footer />
     </AppNavbar>
   )

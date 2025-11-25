@@ -1,4 +1,5 @@
 import { Link, useRouter } from '@tanstack/react-router'
+import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion'
 import React from 'react'
 
 import { forwardRef } from '@vezham/react-utils'
@@ -90,10 +91,7 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
       <Component
         {...getBaseProps()}
         style={{
-          backgroundImage: `url("${cover?.url}")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundImage: `url("${cover?.url}")`
         }}>
         <div {...getWrapperProps()}>
           <div>
@@ -110,34 +108,97 @@ const HomeSection = forwardRef<'div', Props>((props, ref) => {
           </div>
 
           <div {...getContentProps()}>
-            <p {...getSuperTitleProps()}>{super_title}</p>
-
-            <p {...getTitleProps()}>{title}</p>
-
-            <p {...getDescriptionProps()}>{description}</p>
-          </div>
-
-          <div {...getFooterProps()}>
-            {actions?.trial?.placeholder && (
-              <Button as={Link} href={actions?.trial?.href} color="warning">
-                {actions.trial.placeholder}
-              </Button>
-            )}
-
-            {actions?.submit?.label && (
-              <Button
-                color="default"
-                variant="faded"
-                onClick={() => {
-                  if (actions?.submit?.href) {
-                    router.navigate({ to: actions.submit.href })
-                  } else {
-                    onOpen()
-                  }
+            <LazyMotion features={domAnimation}>
+              <m.div
+                animate="kick"
+                exit="auto"
+                initial="auto"
+                transition={{
+                  duration: 0.25,
+                  ease: 'easeInOut'
+                }}
+                variants={{
+                  auto: { width: 'auto' },
+                  kick: { width: 'auto' }
                 }}>
-                {actions.submit.label}
-              </Button>
-            )}
+                <AnimatePresence mode="wait">
+                  <m.div
+                    key="hero-section-title"
+                    animate={{ filter: 'blur(0px)', opacity: 1, x: 0 }}
+                    initial={{
+                      filter: 'blur(16px)',
+                      opacity: 0,
+                      x: 15 + 1 * 2
+                    }}
+                    transition={{
+                      bounce: 0,
+                      delay: 0.01 * 10,
+                      duration: 0.8 + 0.1 * 8,
+                      type: 'spring'
+                    }}>
+                    <p {...getSuperTitleProps()}>{super_title}</p>
+                    <p {...getTitleProps()}>{title}</p>
+                  </m.div>
+
+                  <m.div
+                    key="hero-section-description"
+                    animate={{ filter: 'blur(0px)', opacity: 1, x: 0 }}
+                    initial={{
+                      filter: 'blur(16px)',
+                      opacity: 0,
+                      x: 15 + 1 * 3
+                    }}
+                    transition={{
+                      bounce: 0,
+                      delay: 0.01 * 30,
+                      duration: 0.8 + 0.1 * 9,
+                      type: 'spring'
+                    }}>
+                    <p {...getDescriptionProps()}>{description}</p>
+                  </m.div>
+                  <m.div
+                    key="hero-section-buttons"
+                    animate={{ filter: 'blur(0px)', opacity: 1, x: 0 }}
+                    initial={{
+                      filter: 'blur(16px)',
+                      opacity: 0,
+                      x: 15 + 1 * 4
+                    }}
+                    transition={{
+                      bounce: 0,
+                      delay: 0.01 * 50,
+                      duration: 0.8 + 0.1 * 10,
+                      type: 'spring'
+                    }}>
+                    <div {...getFooterProps()}>
+                      {actions?.trial?.placeholder && (
+                        <Button
+                          as={Link}
+                          href={actions?.trial?.href}
+                          color="warning">
+                          {actions.trial.placeholder}
+                        </Button>
+                      )}
+
+                      {actions?.submit?.label && (
+                        <Button
+                          color="default"
+                          variant="faded"
+                          onClick={() => {
+                            if (actions?.submit?.href) {
+                              router.navigate({ to: actions.submit.href })
+                            } else {
+                              onOpen()
+                            }
+                          }}>
+                          {actions.submit.label}
+                        </Button>
+                      )}
+                    </div>
+                  </m.div>
+                </AnimatePresence>
+              </m.div>
+            </LazyMotion>
           </div>
         </div>
       </Component>

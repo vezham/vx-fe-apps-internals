@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@vx/start": "workspace:*",
-    "@vx/system-utils": "workspace:*"
+    "@vx/system-utils": "workspace:*",
+    "react-fast-marquee": "^1.6.5"
   }
 }

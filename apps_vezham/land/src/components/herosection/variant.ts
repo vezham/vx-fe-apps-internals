@@ -10,7 +10,7 @@ const tva = tv({
     wrapper_title:
       'max-w-[650px] text-[30px] font-[900] tracking-tight sm:mt-4 sm:text-[54px] sm:leading-[58px]',
     wrapper_description:
-      'text-default-500 mt-4 max-w-[500px] text-[12px] sm:text-[16px] sm:leading-6',
+      'text-default-500 mx-auto mt-4 max-w-[500px] text-[12px] sm:text-[16px] sm:leading-6',
     footer: 'mt-4 flex w-full flex-col justify-center gap-4 sm:flex-row'
   },
   variants: {

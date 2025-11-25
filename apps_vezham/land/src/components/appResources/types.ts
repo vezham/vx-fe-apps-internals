@@ -73,97 +73,6 @@ const useProps = (originalProps: Props) => {
     className: slots.resourcesTitle({ class: classNames?.resourcesTitle })
   })
 
-  const getSuggestionsBaseProps: PropGetter = () => ({
-    className: slots.suggestionsBase({ class: classNames?.suggestionsBase })
-  })
-
-  const getSuggestionButtonProps: PropGetter = () => ({
-    className: slots.suggestionButton({ class: classNames?.suggestionButton })
-  })
-
-  const getSuggestionButtonIconProps: PropGetter = () => ({
-    className: slots.suggestionButtonIcon({
-      class: classNames?.suggestionButtonIcon
-    })
-  })
-
-  const getPromptInputFullLineBaseProps: PropGetter = () => ({
-    className: slots.promptInputFullLineBase({
-      class: classNames?.promptInputFullLineBase
-    })
-  })
-
-  const getAssetsContainerProps: PropGetter = (hasAssets: boolean) => ({
-    className: slots.assetsContainer({
-      class: cn(
-        hasAssets && slots.assetsContainerWithAssets(),
-        classNames?.assetsContainer
-      )
-    })
-  })
-
-  const getInputWrapperProps: PropGetter = () => ({
-    className: slots.inputWrapper({ class: classNames?.inputWrapper })
-  })
-
-  const getInputProps: PropGetter = () => ({
-    className: slots.input({ class: classNames?.input })
-  })
-
-  const getInnerWrapperProps: PropGetter = () => ({
-    className: slots.innerWrapper({ class: classNames?.innerWrapper })
-  })
-
-  const getBottomBarProps: PropGetter = () => ({
-    className: slots.bottomBar({ class: classNames?.bottomBar })
-  })
-
-  const getFileButtonProps: PropGetter = () => ({
-    className: slots.fileButton({ class: classNames?.fileButton })
-  })
-
-  const getSubmitButtonProps: PropGetter = () => ({
-    className: slots.submitButton({ class: classNames?.submitButton })
-  })
-
-  const getSubmitButtonIconProps: PropGetter = (isEnabled: boolean) => ({
-    className: slots.submitButtonIcon({
-      class: cn(
-        isEnabled ? slots.ButtonEnabled() : slots.ButtonDisabled(),
-        classNames?.submitButtonIcon
-      )
-    })
-  })
-
-  const getButtonProps: PropGetter = () => ({
-    className: slots.btn({ class: classNames?.btn })
-  })
-
-  const getSearchButtonProps: PropGetter = () => ({
-    className: slots.searchButton({ class: classNames?.submitButton })
-  })
-
-  const getSearchButtonIconProps: PropGetter = (isEnabled: boolean) => ({
-    className: slots.searchButtonIcon({
-      class: cn(
-        isEnabled ? slots.ButtonEnabled() : slots.ButtonDisabled(),
-        classNames?.submitButtonIcon
-      )
-    })
-  })
-
-  const getBadgeProps: PropGetter = () => ({
-    className: slots.badge({ class: classNames?.badge })
-  })
-
-  const getBadgeButtonProps: PropGetter = () => ({
-    className: slots.badgeButton({ class: classNames?.badgeButton })
-  })
-
-  const getImageProps: PropGetter = () => ({
-    className: slots.image({ class: classNames?.image })
-  })
-
   const getTabProps: PropGetter = () => ({
     className: slots.tab({ class: classNames?.tab })
   })
@@ -177,25 +86,8 @@ const useProps = (originalProps: Props) => {
 
     getResourcesBaseProps,
     getResourcesTitleProps,
-    getSuggestionsBaseProps,
-    getSuggestionButtonProps,
-    getSuggestionButtonIconProps,
-    getPromptInputFullLineBaseProps,
-    getAssetsContainerProps,
-    getInputWrapperProps,
-    getInputProps,
-    getInnerWrapperProps,
-    getBottomBarProps,
-    getFileButtonProps,
-    getSubmitButtonProps,
-    getSubmitButtonIconProps,
-    getBadgeProps,
-    getBadgeButtonProps,
-    getImageProps,
-    getTabProps,
-    getSearchButtonIconProps,
-    getSearchButtonProps,
-    getButtonProps
+
+    getTabProps
   }
 }
 

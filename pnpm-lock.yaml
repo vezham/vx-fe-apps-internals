@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@react-aria/visually-hidden':
-        specifier: ^3.8.28
-        version: 3.8.28(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       framer-motion:
         specifier: ^12.23.12
         version: 12.23.22(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -444,6 +441,9 @@ importers:
       '@vx/system-utils':
         specifier: workspace:*
         version: link:../../packages/vx/system-utils
+      react-fast-marquee:
+        specifier: ^1.6.5
+        version: 1.6.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   apps_vezham/land-e2e: {}
 
@@ -8712,6 +8712,12 @@ packages:
     resolution: {integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==}
     peerDependencies:
       react: ^19.0.0
+
+  react-fast-marquee@1.6.5:
+    resolution: {integrity: sha512-swDnPqrT2XISAih0o74zQVE2wQJFMvkx+9VZXYYNSLb/CUcAzU9pNj637Ar2+hyRw6b4tP6xh4GQZip2ZCpQpg==}
+    peerDependencies:
+      react: '>= 16.8.0 || ^18.0.0'
+      react-dom: '>= 16.8.0 || ^18.0.0'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -20281,6 +20287,11 @@ snapshots:
     dependencies:
       react: 19.0.0
       scheduler: 0.25.0
+
+  react-fast-marquee@1.6.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   react-is@16.13.1: {}
 

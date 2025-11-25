@@ -64,6 +64,14 @@ export type trial = {
   href?: string
 }
 
+export type CardProps = {
+  title: string
+  description: string
+  button: string
+  color: 'default' | 'primary' | 'secondary' | 'danger' | 'success' | 'warning'
+  url: string
+}
+
 type RQResources = object
 type RQPersonalize = object
 
