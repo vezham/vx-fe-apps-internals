@@ -3,39 +3,6 @@
   "include": [],
   "references": [
     {
-      "path": "../../packages/components-store/v-ions"
-    },
-    {
-      "path": "../../packages/components-store/v-atoms"
-    },
-    {
-      "path": "../../packages/utilities/system-utils"
-    },
-    {
-      "path": "../../packages/vx/system-utils"
-    },
-    {
-      "path": "../../packages/vx/start"
-    },
-    {
-      "path": "../../packages/common/shared-variants"
-    },
-    {
-      "path": "../../packages/common/shared-utils"
-    },
-    {
-      "path": "../../packages/common/shared-types"
-    },
-    {
-      "path": "../../packages/hooks"
-    },
-    {
-      "path": "../../packages/contracts"
-    },
-    {
-      "path": "../../packages/layouts"
-    },
-    {
       "path": "./tsconfig.app.json"
     },
     {
